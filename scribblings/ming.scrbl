@@ -5,11 +5,11 @@
 @css/ming-fonts
 
 
-@title[#:style '(toc)]{名语言/Ming-Language}
+@title[#:style '(toc)]{Ming-Language}
 @author[(author+email (hyperlink "https://yanying.wang" "Yanying Wang") "yanyingwang1@gmail.com")]
 
 @defmodule[ming #:lang]
-名语言，LISP的中文化方言，Racket的中文化编程语言。
+A lisp dialect language，Racket spirit embodyed in Chineselized characters.@subscript{@smaller{@hyperlink["https://www.yanying.wang/ming-doc-zh-cn/" "中文版"]}}
 
 @(table-of-contents)
 
