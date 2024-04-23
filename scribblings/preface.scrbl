@@ -13,46 +13,29 @@
 @script/rainbow-delimiters*
 
 
-@title[#:tag "preface"]{序}
+@title[#:tag "preface"]{preface}
+ref to: @url{http://www.yanying.wang/SOICOL}
 
-另见：@url{http://www.yanying.wang/SOICOL/}
+@section{Rationale}
+Lisp, as an ancient programming language, when I was learning it with inherent ideas from modern programming languages such as Ruby, I noticed there are a few distinctions. Among them, The most prominent one is the forms.
 
-@section{灵感来源}
-纵观人类历史，很多有意义的成果往往都不是靠严谨的逻辑推理得来的，而是一时的灵感迸发，先有了结论，然后再去寻找现象去证明结论。
+LISP is profoundly uniformed, all are parenthesis. On the contrary, most modern PLs adhere to use different forms for different operations:
+@tabular[#:style 'boxed
+#:column-properties '(left left)
+#:row-properties '(bottom-border ())
+(list
+(list @bold{Operation} @bold{Ruby code} @bold{Racket code})
+(list "number addition" @code{1+2+3}     @code{(+ 1 2 3)} )
+(list "create array"    @code{[1, 2, 3]}           @code{(vector 1 2 3)})
+(list "create hash"     @code{{a: 1, b: 2, c: 3}}  @code{(hash 'a 1 'b 2)}  )
+(list "create array of a range of numbers"   @code{Array(1..5)}     @code{(build-list 5 values)})
+(list "create array of duplication elements" @code{Array.new(3, 1)} @code{(make-list 3 1)})
+)]
 
-所以有些事情，你不用管他对错有无，感觉对了就要开干。
+By the examples shown above, we can see in Ruby, different operations are formed in distinctive forms, while in Racket they are in same form: elements in one parenthesis. This each other resemled form of LISP impedes people to distinct them on a glimpse, thus the meaning of operations are more blamed on the function names(first word of elements in parenthesis).
 
-我大概在2015年的时候，开始使用Emacs编辑器。早之一两年学习Ruby语言的时候我就已经知道了LISP语言。大概从2018年开始，我才终于得以开始投入时间到Racket语言的学习上。
+In conclusion, the function names of LISP take more responsibilities to annotate operations than morden PLs. The more informations that function names show us, the better we can distinguish them and understand the purpose and usage of them.
 
-也是在2018年的时候，有次出差北京在和同事们的一次交谈中，我谈到说，自己曾经在维基百科上面看到过@hyperlink["https://zh.wikipedia.org/wiki/%E6%A2%B5%E8%AF%AD#%E8%A8%88%E7%AE%97%E8%AA%9E%E8%A8%80%E5%AD%B8" "一些提及"]，说在一些学术研究的边缘领域中，有讨论用梵语来替代英语作为编程语言的宿主语言，原因是英语的词法规则不工整（动词时态变形，名词主谓宾等等的单词变形规则不够严谨），梵语是已知的最为严谨的语言，从语法词态构词规则等等的角度讲。
-
-作为天生的中文使用者，但近代科学起源于西方，一二三次工业革命均发生在西方，编程语言亦起源于英语国家，这导致大量的一手文献资料都是英语写成的，工作和学习中不得不接触英文，这常常让我不禁的去思考中英文的语言差异。
-
-我想或许，梵语之说显然是西方人局限于西方语言（德语、法语、西班牙语、意大利语都算是拉丁语的方言吧）的固有模式所做出的推演。而实际上，中文才是更值得尝试的宿主语言，特别是对LISP来说。
-
-2021年夏，我的这个想法变得越发成熟。2022年夏，我着手了实现。
-
-@smaller{另可见我曾写过的文章：《@hyperlink["http://www.yanying.wang/2019/12/%E7%94%B1%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84.html" "由汉语编程所想到的"]》和《@hyperlink["http://www.yanying.wang/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html" "我的一种关于lisp方言式的汉语编程语言的构思"]》。}
-
-@section{LISP的基本语法规则}
-相较于现今主流的编程语言，LISP的语法是极其简单的（称为@hyperlink["https://en.wikipedia.org/wiki/S-expression" "S表达式"]）：
-@itemlist[
-@item{它首先由括号约定执行优先级；}
-@item{然后由每个括号中的第一个字词表示此括号内容的含义（称为@hyperlink["https://zh.wikipedia.org/wiki/%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" "前缀表达式"]）。}
-]
-例如：@code{1+1+1}用S表达式写作@racket[(+ 1 1 1)]，又如：@code{1+2-3}用S表达式写作@racket[(- (+ 1 2) 3)]。
-
-要理解S表达式，好有一个比喻：自然语言说的“我 爱 你”（主谓宾结构），如果采用S表达式说它的话是“(爱 我 你)”（谓主宾结构）。
-
-@section[#:tag "obscure-lisp"]{LISP代码为何难以读懂}
-首先，“谓主宾”的排序方式是不符合大家所使用的的自然语言常见的“主谓宾”排序的，这造成了一部分的阅读障碍。
-
-另外，就是因为括号所衍生出来的语法了：
-
-因为S表达式是前缀表达，相当于把“谓词”前置了。但此时的“谓词”却仅仅只是一个简单的谓词，没有清楚明确的表明出“谓词随后的数据”和“谓词”之间的具体关系（谓词之后的数据将怎样被处理，数据有多少，数据都是什么类型的等等）。而这种处理关系也并非是单纯而统一的，而是根据这个“谓词”的不同而变化的（因其可以被定义和扩展）。而这种变化在无形当中会造成思维上的负担和混乱。
-
-比如@racket[(+ 1 2 3)]表达式的“谓词”是@racket[+]，整个表达式的意思是@racket{1加2再加3}。@linebreak{}
-同样@racket[(if 1 2 3)]表达式的“谓词”是@racket[if]，但其意思却是@racket{如果1是真，则返回2，否则返回3}。
 
 @section[#:tag "retrofit-chinese-to-lisp"]{如何改进LISP的难读性}
 LISP诞生在上世纪五十年代，现今的编程语言相较之，舍弃了S表达式，引入了更多的关键字来替换括号，表达式也大都采用符合自然语言使用习惯的中缀表达。

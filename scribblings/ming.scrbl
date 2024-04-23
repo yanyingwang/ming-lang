@@ -9,11 +9,11 @@
 @author[(author+email (hyperlink "https://yanying.wang" "Yanying Wang") "yanyingwang1@gmail.com")]
 
 @defmodule[ming #:lang]
-A lisp dialect language，Racket spirit embodyed in Chineselized characters.@subscript{@smaller{@hyperlink["https://www.yanying.wang/ming-doc-zh-cn/" "中文版"]}}
+LISP spirit embodyed in chineseoid characters. @hspace[1] @smaller{@hyperlink["https://www.yanying.wang/ming-doc-zh-cn/" "(中文版)"]}
 
 @(table-of-contents)
 
-@include-section["preface.scrbl"]
+@include-section["rationale.scrbl"]
 @include-section["prepare.scrbl"]
 @include-section["naming-rules.scrbl"]
 @include-section["ming-lib.scrbl"]
