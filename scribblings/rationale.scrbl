@@ -16,10 +16,10 @@
 @title[#:tag "rationle"]{Rationale}
 ref to: @url{http://www.yanying.wang/SOICOL}
 
-@section{Lisp and parenthsis}
+@section{Lisp and its parenthsis}
 Lisp, as an ancient programming language, when I was learning it with inherent ideas from modern programming languages such as Ruby, I noticed there are a few distinctions. Among them, The most prominent one is the form.
 
-LISP is highly flat, all are parenthesis. On the contrary, most modern PLs adhere to use different forms for different operations:
+LISP is highly flat in forms, all are parenthesis. On the contrary, most modern PLs adhere to use different forms for different operations:
 @tabular[#:style 'boxed
          #:column-properties '(left left)
          #:row-properties '(bottom-border ())
@@ -40,7 +40,7 @@ In conclusion, the function names of LISP take more responsibilities to annotate
 @section[#:tag "retrofit-chinese-to-lisp"]{Chineseoid characters}
 Compare to English,the writing is based on the pronounciation of speaking, Chinese contrarily emphasize its writing more than speaking, which has actually developed a way to write related objects and concepts, we call it @hyperlink["https://en.wikipedia.org/wiki/Chinese_character_classification" "LiuShu(六书)"].
 
-With the fact that chinese characters are just the implement of using LiuShu for the communication of human, what I am doing here is using it to invent and design lots of chinese resembled characters(looks like chinese characters but can not be recognized by most Chinese people) for the concepts of Lisp and even the whole programming language world to make human interact better with it.
+With the fact that chinese characters are just the implementation of using LiuShu for the communication of human, what I am doing here is using it to invent and design lots of chinese resembled characters(looks like chinese characters but can not be recognized by most Chinese people) for the concepts of Lisp and even the whole programming language world to make human interact better with it.
 
 @tabular[#:style 'boxed
          #:column-properties '(left left)
