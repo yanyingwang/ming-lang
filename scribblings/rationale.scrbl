@@ -37,7 +37,7 @@ By the examples above, we can see in Ruby, different operations are wrote in dis
 In conclusion, the function names of LISP take more responsibilities to annotate diverse operations than modern PLs. The more informations that function names shown to us, the better we can distinguish them and understand the purpose and usage of them.
 
 
-@section[#:tag "retrofit-chinese-to-lisp"]{Chineseoid characters}
+@section{Chineseoid characters}
 Compare to English,the writing is based on the pronounciation of speaking, Chinese contrarily emphasize its writing more than speaking, which has actually developed a way to write related objects and concepts, we call it @hyperlink["https://en.wikipedia.org/wiki/Chinese_character_classification" "LiuShu(六书)"].
 
 With the fact that chinese characters are just the implementation of using LiuShu for the communication of human, what I am doing here is using it to invent and design lots of chinese resembled characters(looks like chinese characters but can not be recognized by most Chinese people) for the concepts of Lisp and even the whole programming language world to make human interact better with it.
@@ -63,3 +63,11 @@ As chart shown above, the keywords of Ming are much short in length, and in form
 Further more, the connotations behind the characters work the same way, they are related to each other and complex concepts are broke to simple concepts.
 
 And one more thing, the chineseoid characters implemented here also have the ability to imply to human about the arguments and results of functions, check @secref["naming-rules"] for more.
+
+
+@section[#:tag "character-implications"]{Character implications}
+Since the chineseoid chracters are much complicated than general western characters, there are few terminology we need to know in advance: radical, component, part(check the @hyperlink["https://en.wiktionary.org/wiki/%E5%81%8F%E6%97%81" "wiktionary page"] for details).
+
+Simply put it, phrase is composed by more than one characters, character is composed by more than on parts. And additionally, an specific character may have which  radical a component. In this condition, this at the same timeit additionally as its radical(which usually is another standalone and useful character at the same time), and the component of it implies an difference, such as the type of input or output.
+
+Take example of the procedure @racket[伄], the character is composed of @litchar{亻}(component) and @litchar{弔}(radical). By the composition, we can deduce that this procedure has a similar usage as @racket[弔] since it is the radical of @litchar{伄}. And the @litchar{亻} additionally means the output data is a list(read @secref["naming-rules"] for more).

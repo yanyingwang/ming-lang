@@ -8,7 +8,7 @@
 @(require (file "../private/scribble-styles/css/ming-fonts.css.rkt"))
 @css/ming-fonts
 
-@title[#:style '(toc) #:tag "ming libs"]{名语言标准库}
+@title[#:style '(toc) #:tag "ming libs"]{Ming Libraries}
 
 @(table-of-contents)
 

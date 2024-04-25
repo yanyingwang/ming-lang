@@ -11,14 +11,16 @@
 @(require scribble-rainbow-delimiters)
 @script/rainbow-delimiters*
 
-@title[#:tag "naming-rules"]{Naming rules}
+@title[#:tag "naming-rules"]{Naming Rules}
+
 
 @section[#:tag "character-rules"]{Characters}
+@margin-note{You may need to read @secref["character-implications"] first.}
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
          #:column-properties '(center)
          #:row-properties '(border)
-         (list (list @bold{Compoment} @bold{Connotation} @bold{Elucidation} @bold{Example})
+         (list (list @bold{Part} @bold{Connotation} @bold{Elucidation} @bold{Example})
                (list
                @elem{@bold{@litchar{亻}}}
                "general subset"

@@ -1,7 +1,7 @@
 #lang scribble/manual
 
 @(require (for-label ming/racket/base ming/racket/list ming/list)
-           ming/list
+           ming/scribble ming/list
            scribble/eval)
 @(define the-eval
          (make-eval-factory '(ming/racket/base ming/racket/list ming/list)))
@@ -14,8 +14,8 @@
 
 @title[#:tag "ming-list"]{􏿴}
 @defmodule[ming/list]
-Racket标准库@secref["pairs-and-lists"]的名语言扩展。
-@margin-note{本页所列之例程的实现代码是名语言，因此源代码有参照意义。}
+extended for @secref["pairs-and-lists"].
+@margin-note{All the procedures in this page are implemented in Ming, thus the source code can be seen as a demonstation of it.}
 
 
 @; @deftogether[(
@@ -39,10 +39,10 @@ Racket标准库@secref["pairs-and-lists"]的名语言扩展。
           􏿴?]
 )]{
 @itemlist[
-@item{@racket[伄]：以多个@racket[N]作为索引来查找出@racket[LST]中全部对应的元素并组成@racket[􏿴]返回。}
-@item{@racket[伄^]：与上同，除了入参类型不同外。 }
+@item{@racket[伄]：@elem{@racket[亻] + @racket[弔]}}
+@item{@racket[伄^]：@elem{@racket[亻] + @racket[弔]} + @racket[^]}
 ]
-@margin-note{@litchar{伄}为古活字，另见：@racket[弔]}
+@margin-note{@litchar{伄} is archaic chinese character.}
 @examples[#:eval (the-eval)
 (伄 '(a b c d e f g) 0 2 3)
 (伄^ '(a b c d e f g) '(0 2 3))
@@ -55,9 +55,8 @@ Racket标准库@secref["pairs-and-lists"]的名语言扩展。
 @; @defproc[(􏾝* [LST 􏿴?] [N1 􏺡?] [N2 􏺡?])
 @;           􏿴?]
 )]{
-@racket[􏾝]：返回@racket[LST]的第@racket[N1]至第@racket[N2]之间的元素（从0算起，包含N1不包含N2）。@linebreak[]
-@; @racket[􏾝*]：返回@racket[LST]的第@racket[N1]至第@racket[N2]之间的元素（从0算起，包含N1也包含N2）。
-@margin-note{@litchar{􏾝}为新造字，另见：@racket[􏾺]、@racket[𨚞]}
+@elem{@racket[弔] + @racket[阝]}
+@margin-note{@litchar{􏾝} is new designed character.}
 @examples[#:eval (the-eval)
 (􏾝 '(a b c d e f) 0 0)
 (􏾝 '(a b c d e f) 0 1)
@@ -83,10 +82,11 @@ Racket标准库@secref["pairs-and-lists"]的名语言扩展。
           􏿴?]
 )]{
 @itemlist[
-@item{@racket[􏾘]：从@racket[LST]中删除索引@racket[N]所对应的元素。}
-@item{@racket[􏾘^]：与上同，除了入参类型不同外。 }
+@item{@racket[􏾘]：@elem{@racket[弔] + @racket[刂]}}
+@item{@racket[􏾘^]：@elem{@racket[弔] + @racket[刂]} + @racket[^] }
 ]
-@margin-note{@litchar{􏾘}为新造字，另见：@racket[弔]，@racket[􏹊]，@racket[􏹇]}
+@margin-note{@litchar{􏾘} is new designed character.}
+@eleph-note{@racket[􏾺] @racket[𨚞]}
 @examples[#:eval (the-eval)
 (􏾘 '(a b c d e f g) 1)
 (􏾘^ '(a b c d e f g) '(0 1 3))
@@ -95,13 +95,10 @@ Racket标准库@secref["pairs-and-lists"]的名语言扩展。
 
 
 @defproc[(􏺊 [LST 􏿴?] [N 􏺡?] [M 􏺡?])
-          􏿴?]{
-返回@racket[LST]左边移除N个元素，右边移除M个元素后的结果。
-@margin-note{
-本例程等同于： @linebreak{}
-@code{(􏷴 (􏷵 LST N) M)}
-}
-@margin-note{@litchar{􏺊}为新造字，另见：@racket[􏷵]、@racket[􏷴]}
+                       􏿴?]{
+Shorts for @code{(􏷴 (􏷵 LST N) M)}.
+@margin-note{@litchar{􏺊} is new designed character. }
+@eleph-note{@racket[􏷵] @racket[􏷴]}
 @examples[#:eval (the-eval)
 (􏺊 '(a b c d e f g) 1 3)
 ]
@@ -109,8 +106,9 @@ Racket标准库@secref["pairs-and-lists"]的名语言扩展。
 
 @defproc[(􏹃 [LST 􏿴?] [PROC 程?])
           􏺡?]{
-以@racket[PROC]来测量@racket[LST]的长度。
-@margin-note{@bold{@litchar{􏹃}为新造字}，另见：@racket[巨]、@racket[􏹈巨]}
+@elem{@racket[巨] + @racket[入]}
+@margin-note{@litchar{􏹃} is new desgined character.}
+@eleph-note{@racket[巨] @racket[􏹈巨]}
 @examples[#:eval (the-eval)
 (􏹃 '(a b 12 c 33 d  58 f g) 米?)
 ]
@@ -118,8 +116,8 @@ Racket标准库@secref["pairs-and-lists"]的名语言扩展。
 
 @defproc[(偅 [LST 􏿴?])
           􏿴?]{
-返回@racket[LST]中的重复元素组成的@racket[􏿴]。
-@margin-note{@litchar{偅}为古活字，另见：@racket[重]}
+@elem{@racket[亻] + @racket[重]}
+@margin-note{@litchar{偅} is archaic chinese character.}
 @examples[#:eval (the-eval)
 (偅 '())
 (偅 '(11))
@@ -130,8 +128,9 @@ Racket标准库@secref["pairs-and-lists"]的名语言扩展。
 
 @defproc[(􏹊 [V any/c] [LST 􏿴?] (PROC 程? 同?))
           􏿴?]{
-从@racket[LST]中找出@racket[V]并移除之。
-@margin-note{@litchar{􏹊}为新造字，另见：@racket[􏹊~]、@racket[􏹊^]}
+@elem{@racket[彐] + @racket[刂]}
+@margin-note{@litchar{􏹊} new designed character.}
+@eleph-note{@racket[􏹊~] @racket[􏹊^]}
 @examples[#:eval (the-eval)
 (􏹊 'c '(a b c d e c f))
 ]
@@ -155,22 +154,17 @@ Racket标准库@secref["pairs-and-lists"]的名语言扩展。
 }
 
 @defproc[(􏼓 [V any?] [N 􏺡?] ...) 􏿴?]{
-same as @racket[􏼓0] except the reverse order of arguments.
+Same as @racket[􏼓0] except the reverse order of arguments.
 @examples[#:eval (the-eval)
 (􏼓 'val 8)
 ]
 }
 
-
 @defproc[(􏿳 [V any?] ...) 􏿳?]{
-生成元素是若干个“@racket[双]”的“@racket[􏿴]”，这种数据结构我们称之为“@racket[􏿳]”。“@racket[􏿳]”可以被看作是减配的“@racket[􏿰]”（比如“键值对”不必唯一）。
-@margin-note{
-@bold{@litchar{􏿳}为新造字}
-@itemlist[
-@item{@litchar{􏿳}：@litchar{双}+@litchar{􏿴}组合而成，表示其是由若干个“@racket[双]”组成的“@racket[􏿴]”数据结构；}
-]
-}
-@margin-note{另见：@racket[􏿰]}
+Generate association list.
+@racket[双] + @racket[􏿴]
+@margin-note{@litchar{􏿳}: new designed character.}
+@eleph-note{@racket[􏿰]}
 @examples[#:eval (the-eval)
 (􏿳 1 2 3 4 1 5)
 (􏿳)
@@ -198,20 +192,12 @@ If @racket[V] is @racket[􏿳] or not. Same as @code{(并 (􏿴? V) (􏷮 双? V
           @defproc[(􏺇 [ALST 􏿳?])
           􏿴?]
 )]{
-@itemlist[
-@item{@racket[􏺈]：返回所有元素的@racket[阳]组成的@racket[􏿴]；}
-@item{@racket[􏺇]：返回所有元素的@racket[阴]组成的@racket[􏿴]；}
-]
-@margin-note{
-分别等同于：
+Correspondingly sames as：
 @itemlist[
 @item{@code{(佫 阳 ALST)}}
 @item{@code{(佫 阴 ALST)}}
 ]
-}
-@margin-note{
-另见：@racket[􏹉]，@racket[􏿰􏺈]、@racket[􏿰􏺇]
-}
+@eleph-note{@racket[阴] @racket[阳] @racket[􏹉] @racket[􏿰􏺈] @racket[􏿰􏺇]}
 
 @examples[#:eval (the-eval)
 (􏺈 '((1 . 2) (3 . 4)))

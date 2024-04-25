@@ -5,7 +5,7 @@
 @css/ming-fonts
 
 
-@title[#:style '(toc)]{Ming-Language}
+@title[#:style '(toc)]{Ming Language}
 @author[(author+email (hyperlink "https://yanying.wang" "Yanying Wang") "yanyingwang1@gmail.com")]
 
 @defmodule[ming #:lang]
