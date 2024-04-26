@@ -1,4 +1,4 @@
-#lang scribble/manual
+        #lang scribble/manual
 
 @(require (for-label racket ming ming/list)
            scribble/eval
@@ -13,24 +13,24 @@
 @script/rainbow-delimiters*
 
 
-@title[#:tag "pairs-and-lists"]{双和􏿴}
-@margin-note{另见名扩展库：@secref["ming-list"]}
-“双”（@tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"]）是LISP语言最最基础的数据结构。
+@title[#:tag "pairs-and-lists"]{双 and 􏿴}
+@margin-note{Extention：@secref["ming-list"]}
+ref to:  @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")]
+@; @litchar{双} means @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"] and @lithcar{􏿴} means @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"].
 
 
-@section[#:tag "list-rules"]{例程命名规则}
-见@secref["naming-rules"]，有：
-
+@section[#:tag "nameing-rules-of-pair-list"]{Naming Rules}
+To extend @secref["naming-rules"], specificlly there are：
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
          #:column-properties '(center)
          #:row-properties '(border)
-         (list (list @bold{成字} @bold{含义} @bold{进出参} @bold{举例})
+         (list (list @bold{Character} @bold{Connotation} @bold{Elucidation} @bold{Example})
                (list
-               @elem{@bold{@litchar{􏿴}}偏旁}
-               @elem{构造生成规律元素所组成的@racket[􏿴]}
-               @elem{出参数据结构是@racket[􏿴]}
-               @elem{@racket[􏼓]、@racket[􏼎]、@racket[􏼏]、@racket[􏿝]}
+               @elem{@litchar{􏿴} as radical}
+               @elem{resembles @racket[􏿴]}
+               @elem{Has the similar function proceeding and the output is list accordingly.}
+               @elem{@racket[􏼓] @racket[􏼎] @racket[􏼏] @racket[􏿝]}
                )
                (list
                @elem{左偏旁@bold{@litchar{亻}}}

@@ -14,7 +14,7 @@
 
 @title[#:tag "ming-list"]{􏿴}
 @defmodule[ming/list]
-extended for @secref["pairs-and-lists"].
+Extend @secref["pairs-and-lists"].
 @margin-note{All the procedures in this page are implemented in Ming, thus the source code can be seen as a demonstation of it.}
 
 
@@ -38,11 +38,7 @@ extended for @secref["pairs-and-lists"].
 @defproc[(伄^ [LST 􏿴?] [N-LST (listof 􏺡?)])
           􏿴?]
 )]{
-@itemlist[
-@item{@racket[伄]：@elem{@racket[亻] + @racket[弔]}}
-@item{@racket[伄^]：@elem{@racket[亻] + @racket[弔]} + @racket[^]}
-]
-@margin-note{@litchar{伄} is archaic chinese character.}
+Composed of @racket[亻], @racket[弔], @racket[^].
 @examples[#:eval (the-eval)
 (伄 '(a b c d e f g) 0 2 3)
 (伄^ '(a b c d e f g) '(0 2 3))
@@ -55,8 +51,7 @@ extended for @secref["pairs-and-lists"].
 @; @defproc[(􏾝* [LST 􏿴?] [N1 􏺡?] [N2 􏺡?])
 @;           􏿴?]
 )]{
-@elem{@racket[弔] + @racket[阝]}
-@margin-note{@litchar{􏾝} is new designed character.}
+Composed of @racket[弔], @racket[阝].
 @examples[#:eval (the-eval)
 (􏾝 '(a b c d e f) 0 0)
 (􏾝 '(a b c d e f) 0 1)
@@ -81,11 +76,7 @@ extended for @secref["pairs-and-lists"].
 @defproc[(􏾘^ [LST 􏿴?] [N-LST (listof? 􏺡?)])
           􏿴?]
 )]{
-@itemlist[
-@item{@racket[􏾘]：@elem{@racket[弔] + @racket[刂]}}
-@item{@racket[􏾘^]：@elem{@racket[弔] + @racket[刂]} + @racket[^] }
-]
-@margin-note{@litchar{􏾘} is new designed character.}
+Composed of @racket[弔], @racket[刂], @racket[^].
 @eleph-note{@racket[􏾺] @racket[𨚞]}
 @examples[#:eval (the-eval)
 (􏾘 '(a b c d e f g) 1)
@@ -97,8 +88,6 @@ extended for @secref["pairs-and-lists"].
 @defproc[(􏺊 [LST 􏿴?] [N 􏺡?] [M 􏺡?])
                        􏿴?]{
 Shorts for @code{(􏷴 (􏷵 LST N) M)}.
-@margin-note{@litchar{􏺊} is new designed character. }
-@eleph-note{@racket[􏷵] @racket[􏷴]}
 @examples[#:eval (the-eval)
 (􏺊 '(a b c d e f g) 1 3)
 ]
@@ -106,9 +95,8 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 @defproc[(􏹃 [LST 􏿴?] [PROC 程?])
           􏺡?]{
-@elem{@racket[巨] + @racket[入]}
-@margin-note{@litchar{􏹃} is new desgined character.}
-@eleph-note{@racket[巨] @racket[􏹈巨]}
+Composed of @racket[巨], @racket[入].
+@eleph-note{@racket[􏹈巨]}
 @examples[#:eval (the-eval)
 (􏹃 '(a b 12 c 33 d  58 f g) 米?)
 ]
@@ -116,8 +104,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 @defproc[(偅 [LST 􏿴?])
           􏿴?]{
-@elem{@racket[亻] + @racket[重]}
-@margin-note{@litchar{偅} is archaic chinese character.}
+Composed of @racket[亻], @racket[重].
 @examples[#:eval (the-eval)
 (偅 '())
 (偅 '(11))
@@ -128,8 +115,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 @defproc[(􏹊 [V any/c] [LST 􏿴?] (PROC 程? 同?))
           􏿴?]{
-@elem{@racket[彐] + @racket[刂]}
-@margin-note{@litchar{􏹊} new designed character.}
+Composed of @racket[彐], @racket[刂].
 @eleph-note{@racket[􏹊~] @racket[􏹊^]}
 @examples[#:eval (the-eval)
 (􏹊 'c '(a b c d e c f))
@@ -154,6 +140,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 }
 
 @defproc[(􏼓 [V any?] [N 􏺡?] ...) 􏿴?]{
+Composed of @racket[三], @racket[􏿴].
 Same as @racket[􏼓0] except the reverse order of arguments.
 @examples[#:eval (the-eval)
 (􏼓 'val 8)
@@ -161,9 +148,8 @@ Same as @racket[􏼓0] except the reverse order of arguments.
 }
 
 @defproc[(􏿳 [V any?] ...) 􏿳?]{
-Generate association list.
-@racket[双] + @racket[􏿴]
-@margin-note{@litchar{􏿳}: new designed character.}
+Composed of @racket[双], @racket[􏿴].
+Means generate association list.
 @eleph-note{@racket[􏿰]}
 @examples[#:eval (the-eval)
 (􏿳 1 2 3 4 1 5)
@@ -192,7 +178,7 @@ If @racket[V] is @racket[􏿳] or not. Same as @code{(并 (􏿴? V) (􏷮 双? V
           @defproc[(􏺇 [ALST 􏿳?])
           􏿴?]
 )]{
-Correspondingly sames as：
+Same as：
 @itemlist[
 @item{@code{(佫 阳 ALST)}}
 @item{@code{(佫 阴 ALST)}}
