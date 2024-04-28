@@ -29,59 +29,59 @@ To extend @secref["naming-rules"], specificlly there are：
                (list
                @elem{@litchar{􏿴} as radical}
                @elem{resembles @racket[􏿴]}
-               @elem{Has the similar function proceeding and the output is list accordingly.}
+               @elem{Has the similar function proceeding as it resembled and the output is list accordingly.}
                @elem{@racket[􏼓] @racket[􏼎] @racket[􏼏] @racket[􏿝]}
                )
                (list
-               @elem{左偏旁@bold{@litchar{亻}}}
-               "相似集（类型相同且元素相似）"
-               @elem{出参数据与进参数据相比，类型相同且内容类似}
-               @elem{@racket[伄]、@racket[𰁣]、@racket[攸]、@racket[𰂋]、@racket[偏]、@racket[􏾜]、@racket[􏾛]、@racket[偅]、@racket[𠆯]、@racket[􏹈]、@racket[仔?]}
+               @elem{@litchar{亻} as component}
+               "general subset"
+               @elem{Returns a new list with elements produced from the input list.}
+               @elem{@racket[伄] @racket[𰁣] @racket[攸] @racket[𰂋] @racket[偏] @racket[􏾜] @racket[􏾛] @racket[偅] @racket[𠆯] @racket[􏹈] @racket[仔?]}
                )
                (list
-               @elem{右偏旁@bold{@litchar{阝}}}
-               "连续集（类型相同且元素连续相同）"
-               @elem{出参数据与进参数据相比，类型相同且前者是后者的一部分}
-               @elem{@racket[􏾝]、@racket[􏾺]、@racket[𨚞]、@racket[䢼]、@racket[􏹋]}
+               @elem{@litchar{阝} as component}
+               "serial subset"
+               @elem{Returns a new list with elements serially produced from the input list.}
+               @elem{@racket[􏾝] @racket[􏾺] @racket[𨚞] @racket[䢼] @racket[􏹋]}
                )
                (list
-               @elem{右偏旁@bold{@litchar{刂}}}
-               "缺失集（删除、移走、去掉部分元素之后的集合）"
-               @elem{出参数据与进参数据相比，类型相同且前者是后者的子集}
-               @elem{@racket[􏷵]、@racket[􏷴]、@racket[􏺊]、@racket[􏾘]、@racket[𠝤]、@racket[􏹊]、@racket[􏹇]}
+               @elem{@litchar{刂} as component}
+               "broken subset"
+               @elem{Returns a new list with removing some elements from the input list.}
+               @elem{@racket[􏷵] @racket[􏷴] @racket[􏺊] @racket[􏾘] @racket[𠝤] @racket[􏹊] @racket[􏹇]}
                )
                (list
-               @elem{下偏旁@bold{@litchar{入}}}
-               @elem{提示入参类型，通@litchar{/入}}
-               @elem{进参并非常规数据，而是函数}
-               @elem{@racket[􏹃]、@racket[􏹌]、@racket[􏹅]、@racket[􏹇]、@racket[􏹂]、@racket[􏹁]}
+               @elem{@litchar{入} as component}
+               @elem{same as @litchar{/入}}
+               @elem{Implies the type of input data is functions.}
+               @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂] @racket[􏹁]}
                )
                (list
-               @elem{左偏旁@bold{@litchar{土}}}
-               "“构建”、“创建”的意思"
-               @elem{出参类型不一而多变}
+               @elem{@litchar{土} as component}
+               @elem{product data}
+               @elem{Manufactures data and product new one, implies the type of output data is not same as input.}
                @elem{@racket[垎]}
                )
-               (list @bold{组词} @bold{-} @bold{-} @bold{-})
+               (list @bold{Phrase} @bold{-} @bold{-} @bold{-})
                (list
-               @elem{以@bold{@litchar{分}}结尾}
-               "分离成复值"
-               @elem{出参数据为复值}
-               @elem{@racket[􏾺分]、@racket[𨚞分]、@racket[䢼分]、@racket[􏷳分]、@racket[􏹈分]}
+               @elem{suffixes with @litchar{分}}
+               "split data to values"
+               @elem{Implies the type of output data is values(@racket[並]).}
+               @elem{@racket[􏾺分] @racket[𨚞分] @racket[䢼分] @racket[􏷳分] @racket[􏹈分]}
                )
-               (list @bold{标点} @bold{-} @bold{-} @bold{-})
+               (list @bold{Punctuation} @bold{-} @bold{-} @bold{-})
                (list
-               @elem{以@bold{@litchar{*}}结尾}
-               "加强力度至出参"
-               "出参内容更加丰富"
+               @elem{suffixed with @litchar{*}}
+               "strengthen"
+               "Strengthen the process, thus the output data may become longer."
                @; @elem{@racket[弓*]、@racket[􏼏*]}
                @elem{@racket[􏼏*]}
                )
                (list
-               @elem{以@bold{@litchar{~}}结尾}
-               "减轻力度至出参"
-               "出参内容更加贫瘠"
-               @elem{@racket[􏹊~]、@racket[􏹇~]}
+               @elem{suffixed sith @litchar{~}}
+               "soften"
+               "Soften the process, thus the output data shorter."
+               @elem{@racket[􏹊~] @racket[􏹇~]}
                )
                @; (list
                @; @elem{以@bold{@litchar{v}}结尾}
@@ -90,10 +90,10 @@ To extend @secref["naming-rules"], specificlly there are：
                @; @elem{@racket[引v]}
                @; )
                (list
-               @elem{以@bold{@litchar{^}}结尾}
-               @elem{加强力度（通过改变入参成@racket[􏿴]）}
-               @elem{入参内容更加丰富且被封装进@racket[􏿴]数据结构}
-               @elem{@racket[􏹊^]、@racket[伄^]、@racket[􏾘^]}
+               @elem{suffixes with @litchar{^}}
+               @elem{list as input}
+               @elem{Implies the type of input data is list.}
+               @elem{@racket[􏹊^] @racket[伄^] @racket[􏾘^]}
                )
                @; (list
                @; @elem{以@litchar{􏿴}结尾}
@@ -102,18 +102,18 @@ To extend @secref["naming-rules"], specificlly there are：
                @; @elem{@racket[序􏿴]、@racket[复􏿴]、@racket[𥸬􏿴]}
                @; )
                (list
-               @elem{以@bold{@litchar{/}}符号分割}
-               @elem{@litchar{/}之后的内容是为修饰@litchar{/}之前的内容的}
-               @elem{出参数据由@litchar{/}之前的内容决定}
-               @elem{@racket[􏿴/组合]、@racket[􏿴/分组]}
+               @elem{inserts with @litchar{/}}
+               @elem{extend suffix}
+               @elem{Suffix of @litchar{/} is an extend explanation of prefix.}
+               @elem{@racket[􏿴/组合] @racket[􏿴/分组]}
                )
 
                (list @bold{混合} @bold{-} @bold{-} @bold{-})
                (list
                @elem{@bold{@litchar{/入}}}
-               "提示进参类型"
-               @elem{进参并非常规数据，而是函数}
-               @elem{@racket[攸/入]、@racket[􏾺/入]、@racket[𨚞/入]}
+               "function as input"
+               @elem{Implies the type of input data is list.}
+               @elem{@racket[攸/入] @racket[􏾺/入] @racket[𨚞/入]}
                )
          )]
 
