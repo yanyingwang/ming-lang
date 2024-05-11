@@ -247,7 +247,7 @@
          ]
 
 
-@section[#:tag "hybird-rules"]{Hybirds}
+@section[#:tag "hybrid-rules"]{Hybrids}
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
          #:column-properties '(center)

@@ -1,4 +1,4 @@
-        #lang scribble/manual
+#lang scribble/manual
 
 @(require (for-label racket ming ming/list)
            scribble/eval
@@ -16,10 +16,11 @@
 @title[#:tag "pairs-and-lists"]{双 and 􏿴}
 @margin-note{Extention：@secref["ming-list"]}
 ref to:  @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")]
-@; @litchar{双} means @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"] and @lithcar{􏿴} means @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"].
+@; @litchar{双} means @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"] and @litchar{􏿴} means @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"].
 
 
 @section[#:tag "nameing-rules-of-pair-list"]{Naming Rules}
+
 To extend @secref["naming-rules"], specificlly there are：
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
@@ -27,58 +28,58 @@ To extend @secref["naming-rules"], specificlly there are：
          #:row-properties '(border)
          (list (list @bold{Character} @bold{Connotation} @bold{Elucidation} @bold{Example})
                (list
-               @elem{@litchar{􏿴} as radical}
+               @elem{@defradical[􏷫]}
                @elem{resembles @racket[􏿴]}
-               @elem{Has the similar function proceeding as it resembled and the output is list accordingly.}
+               @elem{Has the similar function proceeding as it resembling and the output is list(@racket[􏿴?]) accordingly.}
                @elem{@racket[􏼓] @racket[􏼎] @racket[􏼏] @racket[􏿝]}
                )
                (list
-               @elem{@litchar{亻} as component}
+               @elem{@defcomponent[亻]}
                "general subset"
                @elem{Returns a new list with elements produced from the input list.}
                @elem{@racket[伄] @racket[𰁣] @racket[攸] @racket[𰂋] @racket[偏] @racket[􏾜] @racket[􏾛] @racket[偅] @racket[𠆯] @racket[􏹈] @racket[仔?]}
                )
                (list
-               @elem{@litchar{阝} as component}
+               @elem{@defcomponent[阝]}
                "serial subset"
                @elem{Returns a new list with elements serially produced from the input list.}
                @elem{@racket[􏾝] @racket[􏾺] @racket[𨚞] @racket[䢼] @racket[􏹋]}
                )
                (list
-               @elem{@litchar{刂} as component}
+               @elem{@defcomponent[刂]}
                "broken subset"
                @elem{Returns a new list with removing some elements from the input list.}
                @elem{@racket[􏷵] @racket[􏷴] @racket[􏺊] @racket[􏾘] @racket[𠝤] @racket[􏹊] @racket[􏹇]}
                )
                (list
-               @elem{@litchar{入} as component}
-               @elem{same as @litchar{/入}}
+               @elem{@defcomponent[入]}
+               @elem{same as @zi{/入}}
                @elem{Implies the type of input data is functions.}
                @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂] @racket[􏹁]}
                )
                (list
-               @elem{@litchar{土} as component}
+               @elem{@defcomponent[土]}
                @elem{product data}
                @elem{Manufactures data and product new one, implies the type of output data is not same as input.}
                @elem{@racket[垎]}
                )
                (list @bold{Phrase} @bold{-} @bold{-} @bold{-})
                (list
-               @elem{suffixes with @litchar{分}}
+               @elem{@defsuffix[分]}
                "split data to values"
                @elem{Implies the type of output data is values(@racket[並]).}
                @elem{@racket[􏾺分] @racket[𨚞分] @racket[䢼分] @racket[􏷳分] @racket[􏹈分]}
                )
                (list @bold{Punctuation} @bold{-} @bold{-} @bold{-})
                (list
-               @elem{suffixed with @litchar{*}}
+               @elem{@defsuffix[*]}
                "strengthen"
                "Strengthen the process, thus the output data may become longer."
                @; @elem{@racket[弓*]、@racket[􏼏*]}
                @elem{@racket[􏼏*]}
                )
                (list
-               @elem{suffixed sith @litchar{~}}
+               @elem{@defsuffix[~]}
                "soften"
                "Soften the process, thus the output data shorter."
                @elem{@racket[􏹊~] @racket[􏹇~]}
@@ -90,7 +91,7 @@ To extend @secref["naming-rules"], specificlly there are：
                @; @elem{@racket[引v]}
                @; )
                (list
-               @elem{suffixes with @litchar{^}}
+               @elem{@defsuffix[^]}
                @elem{list as input}
                @elem{Implies the type of input data is list.}
                @elem{@racket[􏹊^] @racket[伄^] @racket[􏾘^]}
@@ -102,50 +103,32 @@ To extend @secref["naming-rules"], specificlly there are：
                @; @elem{@racket[序􏿴]、@racket[复􏿴]、@racket[𥸬􏿴]}
                @; )
                (list
-               @elem{inserts with @litchar{/}}
+               @elem{@definsert[/]}
                @elem{extend suffix}
                @elem{Suffix of @litchar{/} is an extend explanation of prefix.}
                @elem{@racket[􏿴/组合] @racket[􏿴/分组]}
                )
 
-               (list @bold{混合} @bold{-} @bold{-} @bold{-})
+               (list @bold{Hybrid} @bold{-} @bold{-} @bold{-})
                (list
-               @elem{@bold{@litchar{/入}}}
+               @elem{@defhas[/入]}
                "function as input"
                @elem{Implies the type of input data is list.}
                @elem{@racket[攸/入] @racket[􏾺/入] @racket[𨚞/入]}
                )
          )]
 
-@section+elemref[#:tag "pair-car-cdr-list-list*"]{双，􏿴、􏿫}
-对于名语言来说，如果我们把两个数据配成对（@racket[双]在一块），我们就得到一个“双”，而双在一块的这两个数据分别处于他们所构成的这个“双”的@racket[阳]位和@racket[阴]位。
+@section[#:tag "pair-car-cdr-list-list*"]{双，􏿴、􏿫}
+Abstractly, we can pair two data together. As a whole, it is called @racket[双]. And the first position of it is call @racket[阳], the secondary position is call @racket[阴].
 
-进而，@elemtag["what-is-􏿴􏿫" "如果一个“双”的阴位存的是另外一个“双”，数个双如此前后相接成链状："]
-@itemlist[
-@item{末尾双的阴位留@racket[空]，这样的数据结构称之为@racket[􏿴]（@racket[list]）；}
-@item{末尾双的阴位不留@racket[空]，这样的数据结构称之为@racket[􏿫]（@racket[list*]）。}
-]
+Further more, when we put another @racket[双] to the @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if the @racket[阴] of the ending @racket[双] is empty(@racket[空]), we call it @racket[􏿴]; if not, we call it @racket[􏿫].
 
-@margin-note{
-@bold{@litchar{􏿴}、@litchar{􏿫}为@elemtag["the-char-creating-of-􏿴􏿫" "新造字"]}
-@itemlist[
-@item{
-因其所代表的数据结构（list）和@litchar{双}所代表的数据结构（pair）互相之间的内生性变换转化关系而得造：
-@itemlist[
-@item{多个“@racket[双]”互相衔接并且最后一个双的阴位留空即成“@racket[􏿴]”（不留空是为@racket[􏿫]）；}
-@item{每一个“􏿴”类型的数据同时也是“双”类型。}
-]
-}
-@item{
-两字由@litchar{又}和@litchar{㐅}、@litchar{又}组成，含义：
-@itemlist[
-@item{其中左起半包围结构的@litchar{又}表示其是一种类似链一样的内部元素之间依次互相衔接、可以向后延绵不绝的数据结构；}
-@item{其中被包围的居于之后的@litchar{㐅}（组成@litchar{􏿴}）表示本数据结构的末位元素总是一个空值。}
-@item{其中被包围的居于之后的@litchar{又}（组成@litchar{􏿫}）表示本数据结构的末位元素不是空值。}
-]
-}
-]
-}
+@defzi[双]{@litchar{又} is a stick figure of "human hand". Two human hand here stand for an object which inludes two holding data.}
+
+@defzi[􏿴]{The reaching to left bottom @litchar{又} means multiple @racket[双] linked together, @litchar{㐅} means ending with empty(@racket[空]).}
+
+@defzi[􏿫]{Resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@racket[空]).}
+
 
 @examples[#:eval (the-eval)
 (双 1 2)

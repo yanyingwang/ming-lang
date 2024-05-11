@@ -6,6 +6,8 @@
          defzi defzi/puauni zi
          modernly-simplifies anciently-simplifies
          modernly-means mingly-resembles
+         ;; defradical defcomponent defcharacter defhybrid
+         defradical defcomponent defsuffix definsert defhas
          )
 (require scribble/manual racket/string scribble/core
          (for-syntax racket/base racket/string racket/list
@@ -15,6 +17,44 @@
 (define-syntax-rule (defhzify cnid rsn enid)
   (defthing #:kind "汉字化" cnid (unsyntax (racketvalfont rsn)) #:value enid)
   )
+
+(define-syntax (defradical stx)
+  (syntax-case stx ()
+    [(_ zi)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
+       #'(elem (bold (litchar str-zi)) (hspace 1) "as radical"))
+     ])
+  )
+
+(define-syntax (defcomponent stx)
+  (syntax-case stx ()
+    [(_ zi)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
+       #'(elem (bold (litchar str-zi)) (hspace 1) "as component" ))
+     ])
+  )
+(define-syntax (defsuffix stx)
+  (syntax-case stx ()
+    [(_ zi)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
+       #'(elem "suffixed with" (hspace 1) (bold (litchar str-zi)) ))
+     ])
+  )
+(define-syntax (definsert stx)
+  (syntax-case stx ()
+    [(_ zi)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
+       #'(elem "inserted with" (hspace 1) (bold (litchar str-zi))))
+     ])
+  )
+(define-syntax (defhas stx)
+  (syntax-case stx ()
+    [(_ zi)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
+       #'(elem "has" (hspace 1) (bold (litchar str-zi))))
+     ])
+  )
+
 
 (define-syntax (section+elemref stx)
   (syntax-case stx ()
@@ -70,7 +110,12 @@
      ])
   )
 
+
 (define (zi c) ;; zi shorts for hanzi, means chinese char.
+  (elem #:style "RktInBG"
+        (elemref c (racketplainfont c)))
+  )
+(define ( c) ;; zi shorts for hanzi, means chinese char.
   (elem #:style "RktInBG"
         (elemref c (racketplainfont c)))
   )
@@ -100,5 +145,3 @@
 (define (anciently-simplifies zi elucidation ming-elu . content)
   @elem{simplifies for @litchar{@zi} in ancient chinese, means @elucidate{@elucidation}, especially means @elucidate{@ming-elu} in ming-lang. @content}
   )
-
-
