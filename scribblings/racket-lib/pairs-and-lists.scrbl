@@ -21,7 +21,7 @@ ref to:  @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")]
 
 @section[#:tag "nameing-rules-of-pair-list"]{Naming Rules}
 
-To extend @secref["naming-rules"], specificlly there are：
+To extend @secref["naming-rules"], specifically there are：
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
          #:column-properties '(center)
@@ -118,17 +118,20 @@ To extend @secref["naming-rules"], specificlly there are：
                )
          )]
 
-@section[#:tag "pair-car-cdr-list-list*"]{双，􏿴、􏿫}
+@section[#:tag "pair-car-cdr-list-list*"]{双, 􏿴, 􏿫, 阴, 阳}
 Abstractly, we can pair two data together. As a whole, it is called @racket[双]. And the first position of it is call @racket[阳], the secondary position is call @racket[阴].
 
 Further more, when we put another @racket[双] to the @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if the @racket[阴] of the ending @racket[双] is empty(@racket[空]), we call it @racket[􏿴]; if not, we call it @racket[􏿫].
 
 @defzi[双]{@litchar{又} is a stick figure of "human hand". Two human hand here stand for an object which inludes two holding data.}
 
-@defzi[􏿴]{The reaching to left bottom @litchar{又} means multiple @racket[双] linked together, @litchar{㐅} means ending with empty(@racket[空]).}
+@defzi[􏿴]{The reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@racket[空]).}
 
 @defzi[􏿫]{Resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@racket[空]).}
 
+@defzi[阳]{@litchar{日} means sun, ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
+
+@defzi[阴]{@litchar{月} means moon, ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 
 @examples[#:eval (the-eval)
 (双 1 2)
@@ -139,13 +142,7 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 (双 1 (双 2 (双 3 4)))
 (􏿫 1 2 3 4)
 (􏿫 1 2 3 '(4))
-]
 
-@section+elemref{阴、阳，阴之阳、阳之阳、阴之阴阳、阳之阴阳}
-@margin-note{
-“阴”、“阳”是@hyperlink["https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%B9%B2"]{中国传统哲学的一种二元论观念}。
-}
-@examples[#:eval (the-eval)
 (阳 '(1 . 2))
 (阴 '(1 . 2))
 

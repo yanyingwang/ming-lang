@@ -1,8 +1,8 @@
 #lang at-exp s-exp "../../../private/mapping-lang.rkt"
 
 
->>> cons 双 @elem{把两个数据配成对，即成一个双} ;; 组合， 对:把两个东西双在一块,配对在一块.     接 合 连 构 结 创 造
->>> pair? 双? ;; 对子? 双
+>>> cons 双  ;; 组合， 对:把两个东西双在一块,配对在一块.     接 合 连 构 结 创 造
+>>> pair? 双? @elem{@racket[双] + @racket[?]} ;; 对子? 双
 
 >>> car 阳 @elem{返回@racket[双]中的第一个数据}
 >>> cdr 阴 @elem{返回@racket[双]中的第二个数据}
