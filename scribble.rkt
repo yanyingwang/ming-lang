@@ -15,14 +15,14 @@
 
 
 (define-syntax-rule (defhzify cnid rsn enid)
-  (defthing #:kind "汉字化" cnid (unsyntax (racketvalfont rsn)) #:value enid)
+  (defthing #:kind "汉字化" cnid (unsyntax (racketidfont rsn)) #:value enid)
   )
 
 (define-syntax (defradical stx)
   (syntax-case stx ()
     [(_ zi)
      (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
-       #'(elem (bold (litchar str-zi)) (hspace 1) "as radical"))
+       #'(elem (elemtag str-zi (bold (litchar str-zi))) (hspace 1) "as radical"))
      ])
   )
 
@@ -30,28 +30,28 @@
   (syntax-case stx ()
     [(_ zi)
      (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
-       #'(elem (bold (litchar str-zi)) (hspace 1) "as component" ))
+       #'(elem (elemtag str-zi (bold (litchar str-zi))) (hspace 1) "as component" ))
      ])
   )
 (define-syntax (defsuffix stx)
   (syntax-case stx ()
     [(_ zi)
      (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
-       #'(elem "suffixed with" (hspace 1) (bold (litchar str-zi)) ))
+       #'(elem "suffixed with" (hspace 1) (elemtag str-zi (bold (litchar str-zi))) ))
      ])
   )
 (define-syntax (definsert stx)
   (syntax-case stx ()
     [(_ zi)
      (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
-       #'(elem "inserted with" (hspace 1) (bold (litchar str-zi))))
+       #'(elem "inserted with" (hspace 1) (elemtag str-zi (bold (litchar str-zi)))))
      ])
   )
 (define-syntax (defhas stx)
   (syntax-case stx ()
     [(_ zi)
      (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
-       #'(elem "has" (hspace 1) (bold (litchar str-zi))))
+       #'(elem "has" (hspace 1) (elemtag str-zi (bold (litchar str-zi)))))
      ])
   )
 
@@ -71,12 +71,23 @@
   (define (gen-defhzify ecr)
     (define enid (car ecr))
     (define cnid (cadr ecr))
-    (define rsn
+    (define exploded
       (if (> (length ecr) 2)
-          `(elem ,(caddr ecr) (hspace 1))
+          (if (list? (caddr ecr))
+              `(elem
+                ,@(add-between (map (lambda (e)
+                                      `(zi ,(cond
+                                              [(symbol? e) (symbol->string e)]
+                                              [(string? e) e]
+                                              [(list? e) "need to fix"]
+                                              [else "empty"]
+                                              )
+                                           ))
+                                    (caddr ecr))
+                               " + "))
+              (caddr ecr))
           ""))
-    (define rsn+secref `(elem ,rsn (elemref #:underline? #f  ,(symbol->string cnid) "【MORE】") ))
-    (datum->syntax stx `(defhzify ,cnid ,rsn+secref ,enid)))
+    (datum->syntax stx `(defhzify ,cnid ,exploded ,enid)))
   (syntax-case stx ()
     [(_ path)
      (with-syntax ([(defth ...)
@@ -112,10 +123,6 @@
 
 
 (define (zi c) ;; zi shorts for hanzi, means chinese char.
-  (elem #:style "RktInBG"
-        (elemref c (racketplainfont c)))
-  )
-(define ( c) ;; zi shorts for hanzi, means chinese char.
   (elem #:style "RktInBG"
         (elemref c (racketplainfont c)))
   )
