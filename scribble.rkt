@@ -71,22 +71,25 @@
   (define (gen-defhzify ecr)
     (define enid (car ecr))
     (define cnid (cadr ecr))
-    (define exploded
-      (if (> (length ecr) 2)
-          (if (list? (caddr ecr))
-              `(elem
-                ,@(add-between (map (lambda (e)
-                                      `(zi ,(cond
-                                              [(symbol? e) (symbol->string e)]
-                                              [(string? e) e]
-                                              [(list? e) "need to fix"]
-                                              [else "empty"]
-                                              )
-                                           ))
-                                    (caddr ecr))
-                               " + "))
-              (caddr ecr))
-          ""))
+    (define raw-exploded
+      (cond [(and (> (length ecr) 2)
+                  (list? (caddr ecr)))
+             (map (lambda (e) `(zi ,(cond
+                                 [(symbol? e) (symbol->string e)]
+                                 [(string? e) e]
+                                 [(list? e) "need to fix"]
+                                 [else "empty"])))
+                  (caddr ecr))]
+            [(and (= (length ecr) 2)
+                  (string-contains? (symbol->string cnid) "/"))
+             (add-between (map (lambda (e) `(racket ,(string->symbol e)))
+                               (string-split (symbol->string cnid) "/"))
+                          `(zi "/"))]
+            [(= (length ecr) 2)
+             (map (lambda (e) `(zi ,e))
+                  (filter non-empty-string? (string-split (symbol->string cnid) "")))]
+            [else '()]))
+    (define exploded `(elem ,@(add-between raw-exploded " + ")))
     (datum->syntax stx `(defhzify ,cnid ,exploded ,enid)))
   (syntax-case stx ()
     [(_ path)
