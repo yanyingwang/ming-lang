@@ -30,8 +30,14 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defradical[􏷫]}
                @elem{resembles @racket[􏿴]}
-               @elem{Has the similar function process as it resembling and the output is list(@racket[􏿴?]) accordingly.}
+               @elem{Has the similar function process as it resembling and the type of output is same as @racket[􏿴] accordingly.}
                @elem{@racket[􏼓] @racket[􏼎] @racket[􏼏] @racket[􏿝]}
+               )
+               (list
+               @elem{@defradical[􏷩]}
+               @elem{resembles @racket[􏿫]}
+               @elem{Has the similar function process as it resembling and the type of output is same as (@racket[􏿫]) accordingly.}
+               @elem{@racket[􏿜]}
                )
                (list
                @elem{@defcomponent[亻]}
@@ -54,7 +60,7 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defcomponent[入]}
                @elem{same as @zi{/入}}
-               @elem{Implies the type of input data is functions.}
+               @elem{Implies the type of input data is function.}
                @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂] @racket[􏹁]}
                )
                (list
@@ -119,7 +125,7 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defhas[/入]}
                "function as input"
-               @elem{Implies the type of input data is list.}
+               @elem{Implies the type of input data is function.}
                @elem{@racket[攸/入] @racket[􏾺/入] @racket[𨚞/入]}
                )
          )]
@@ -129,15 +135,15 @@ Abstractly, we can pair two data together. As a whole, it is called @racket[双]
 
 Further more, when we put another @racket[双] to the @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if the @racket[阴] of the ending @racket[双] is empty(@racket[空]), we call it @racket[􏿴]; if not, we call it @racket[􏿫].
 
-@defzi[双]{@litchar{又} is a stick figure of "human hand". Two human hand here stand for an object which inludes two holding data.}
+@defzi[双]{@litchar{又} is a stick figure of "human hand". Two human hand here stand for an object which includes two holding data.}
 
 @defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@racket[空]).}
 
 @defzi[􏿫]{resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@racket[空]).}
 
-@defzi[阳]{@defzi[日]{means sun, implicitly means the former part of an object, or the position aspect of an object}, ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
+@defzi[阳]{@defzi[日]{means sun, implicitly means the former part of an object, or the position aspect of an object}. Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 
-@defzi[阴]{@defzi[月]{means moon, implicitly means the secondary part of of an object, or the negative aspect of an object}, ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
+@defzi[阴]{@defzi[月]{means moon, implicitly means the secondary part of of an object, or the negative aspect of an object}. Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 
 @examples[#:eval (the-eval)
 (双 1 2)
@@ -162,8 +168,8 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 (阳之阴阳 '((1 1.1) 2 3 4))
 ]
 
-@section+elemref{􏼏, 􏼏*}
-@defzi[􏼏]{@defzi[米]{means numbers, ref to: @secref["numbers"]}.}
+@section{􏼏, 􏼏*}
+@defzi[􏼏]{@defzi[米]{means @italic{numbers}, ref to: @secref["numbers"]}.}
 
 @examples[#:eval (the-eval)
 (􏼏 10)
@@ -173,16 +179,9 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 (􏼏* 10 20 2)
 ]
 
-@section+elemref{􏼓0、􏼎}
-用于构造@elemref["what-is-􏿴􏿫" "􏿴"]类型的数据。
-@margin-note{
-@bold{@litchar{􏼓}为新造字}  @linebreak{}
-@bold{@litchar{􏼎}为新造字}
-@itemlist[
-@item{@litchar{弔}：原被用于“索引”之意（见@racket[弔]），但因索引是从零开始的序数，在此借用为“序数”之意；}
-@item{@litchar{三}：道生一，一生二，二生三，三生万物，故三个相同的@litchar{一}在此为“若干个相同元素”之意；}
-]
-}
+@section{􏼓0、􏼎}
+@defzi[􏼓0]{@defzi[三]{ means three, implicitly means duplicated data. Ref to: @racket[􏼓].}} @linebreak{}
+@defzi[􏼎]{ref to: @zi{弓}.}
 @examples[#:eval (the-eval)
 (􏼓 'foo 5)
 (􏼎 5 並)
@@ -191,15 +190,8 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
         (􏼓 'foo 5)))
 ]
 
-@section+elemref{􏿝、􏿜}
-用于对@elemref["what-is-􏿴􏿫" "􏿴"]类结构数据进行处理并输出相同于@racket[􏿴]、@racket[􏿫]例程输出数据之结构的数据。
-@margin-note{
-@bold{@litchar{􏿝}、@litchar{􏿜}为新造字}
-@itemlist[
-@item{两字分别是仿照@elemref["the-char-creating-of-􏿴􏿫" "􏿴、􏿫"]字而造：因为与他们处理数据后输出的结果之数据类型相同（不同在于新造字例程的输入参数之数据类型为@elemref["what-is-􏿴􏿫" "􏿴"]）；}
-@item{左上起笔处的偏旁@litchar{毌}，表示“贯穿”之意（@litchar{毌}是@litchar{贯}的古字）：因此意思即为把数个@elemref["what-is-􏿴􏿫" "􏿴"]贯穿起来组成一个新的@elemref["what-is-􏿴􏿫" "􏿴"]并返回之。}
-]
-}
+@section{􏿝, 􏿜}
+@defzi[毌]{simplified from @litchar{贯}, which means @italic{append, going through a few objects and connect them together}.}
 @examples[#:eval (the-eval)
 (􏿴 1 2 3 4)
 (􏿝 '(1) '(2) '(3) '(4))
@@ -225,14 +217,7 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 
 
 @section+elemref{攸}
-修改􏿴中的某个元素为新值并返回修改后的􏿴。
-@margin-note{
-@bold{@litchar{攸}为古活字}
-@itemlist[
-@item{@litchar{攵}本意是“用手敲打敦促使其改变”，在此引申为“修改”之意；}
-@item{另外，也可以认为该字分别取@litchar{修}字左部的偏旁（@litchar{亻丨}）和@litchar{改}字右部偏旁（@litchar{攵}）组成，也即含有“修改”的意思。}
-]
-}
+@defzi[攵]{means @litchar{raping over something to make it changing itself}, especially means @litchar{set value}.}
 @examples[#:eval (the-eval)
 (攸 '(10 15 20 25) 1 1555)
 (攸/入 '(10 15 20 25) 1 􏽊)

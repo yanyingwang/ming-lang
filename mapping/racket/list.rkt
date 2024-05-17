@@ -49,8 +49,7 @@
 >>> drop-common-prefix 􏷳分  ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分
 >>> split-common-prefix 䢼分
 
-
->>> append* 􏿜 (毌 􏿫) ;; 􏿜 􏾞
+>>> append* 􏿜 (毌 􏷩) ;; 􏿜 􏾞
 
 >>> add-between 𰂋 (亻 间) ;; 侠 夹 间 插 搀 掺 􏿃 侠
 >>> flatten 偏 (亻 扁) ;; 平 伻
