@@ -30,7 +30,7 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defradical[􏷫]}
                @elem{resembles @racket[􏿴]}
-               @elem{Has the similar function proceeding as it resembling and the output is list(@racket[􏿴?]) accordingly.}
+               @elem{Has the similar function process as it resembling and the output is list(@racket[􏿴?]) accordingly.}
                @elem{@racket[􏼓] @racket[􏼎] @racket[􏼏] @racket[􏿝]}
                )
                (list
@@ -70,6 +70,12 @@ To extend @secref["naming-rules"], specifically there are：
                @elem{Implies the type of output data is values(@racket[並]).}
                @elem{@racket[􏾺分] @racket[𨚞分] @racket[䢼分] @racket[􏷳分] @racket[􏹈分]}
                )
+               (list
+               @elem{@defsuffix[0]}
+               "original function"
+               @elem{Implies there is another function named as omitted the litchar{0}.}
+               @elem{@racket[􏼓0]}
+               )
                (list @bold{Punctuation} @bold{-} @bold{-} @bold{-})
                (list
                @elem{@defsuffix[*]}
@@ -104,8 +110,8 @@ To extend @secref["naming-rules"], specifically there are：
                @; )
                (list
                @elem{@definsert[/]}
-               @elem{extend suffix}
-               @elem{Suffix of @litchar{/} is an extend explanation of prefix.}
+               @elem{extend prefix}
+               @elem{Suffix of @litchar{/} can be considered as an extending explanation of its prefix.}
                @elem{@racket[􏿴/组合] @racket[􏿴/分组]}
                )
 
@@ -125,13 +131,13 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 
 @defzi[双]{@litchar{又} is a stick figure of "human hand". Two human hand here stand for an object which inludes two holding data.}
 
-@defzi[􏿴]{The reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@racket[空]).}
+@defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@racket[空]).}
 
-@defzi[􏿫]{Resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@racket[空]).}
+@defzi[􏿫]{resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@racket[空]).}
 
-@defzi[阳]{@litchar{日} means sun, ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
+@defzi[阳]{@defzi[日]{means sun, implicitly means the former part of an object, or the position aspect of an object}, ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 
-@defzi[阴]{@litchar{月} means moon, ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
+@defzi[阴]{@defzi[月]{means moon, implicitly means the secondary part of of an object, or the negative aspect of an object}, ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 
 @examples[#:eval (the-eval)
 (双 1 2)
@@ -156,16 +162,9 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 (阳之阴阳 '((1 1.1) 2 3 4))
 ]
 
-@section+elemref{􏼏、􏼏*}
-用于构造元素是一段连续数字的􏿴。
-@margin-note{
-@; @bold{@litchar{𥸬}为古活字}
-@bold{@litchar{􏼏}为新造字}
-@itemlist[
-@item{@litchar{米}：@litchar{数}的简写，见@racket[米?]；}
-@; @item{@litchar{阝}、@litchar{􏿴}，见：@secref["list-rules"]。}
-]
-}
+@section+elemref{􏼏, 􏼏*}
+@defzi[􏼏]{@defzi[米]{means numbers, ref to: @secref["numbers"]}.}
+
 @examples[#:eval (the-eval)
 (􏼏 10)
 (􏼏 10 20)
