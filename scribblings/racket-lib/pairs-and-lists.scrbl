@@ -188,21 +188,14 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏿜 '(a))
 ]
 
-@section+elemref{弔, 弓, 􏹂, 𰁣, 􏹁}
-@defzi[弓]{resembles @italic{ropes wraped on stick, thus ropes can be used to count how many circles wrapped}. Especially means @italic{the indexes} of an object in ming-lang.}
-@defzi[弔]{simplified from @litchar{第} and resembles @italic{an stick wrapped with ropes, thus it can be used to ref to an specific wrap}. Especially means @italic{reference} in ming-lang.}
-@eleph-note{
-@racket[伄] @racket[􏾘] @racket[􏾝] @;，@racket[弓*]、@racket[弓*/入]
-}
+
+@section{攸}
+@defzi[攸]{@defzi/sub[攵]{means @italic{raping over something to make it changing itself}, especially means @italic{set value}.}}
 @examples[#:eval (the-eval)
-(弔 '(a b c d e c f) 2)
-
-(弓 '(a b c d e c f) 'c)
-(𰁣 '(a b c d e c f) 'c)
-
-(􏹂 '(a b 11 d 22 c f) 米?)
-(􏹁 '(a b 11 d 22 c f) 米?)
+(攸 '(10 15 20 25) 1 1555)
+(攸/入 '(10 15 20 25) 1 􏽊)
 ]
+
 
 @section{􏼏, 􏼏*}
 @defzi[􏼏]{@defzi/sub[米]{means @italic{numbers}, ref to: @secref["numbers"]}.}
@@ -226,12 +219,20 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
         (􏼓 5 'foo)))
 ]
 
-
-@section{攸}
-@defzi[攸]{@defzi/sub[攵]{means @italic{raping over something to make it changing itself}, especially means @italic{set value}.}}
+@section{弔, 弓, 􏹂, 𰁣, 􏹁}
+@defzi[弓]{resembles @italic{ropes wraped on stick, thus ropes can be used to count how many circles wrapped}. Especially means @italic{the indexes} of an object in ming-lang.}
+@defzi[弔]{simplified from @litchar{第} and resembles @italic{an stick wrapped with ropes, thus it can be used to ref to an specific wrap}. Especially means @italic{reference} in ming-lang.}
+@eleph-note{
+@racket[伄] @racket[􏾘] @racket[􏾝] @;，@racket[弓*]、@racket[弓*/入]
+}
 @examples[#:eval (the-eval)
-(攸 '(10 15 20 25) 1 1555)
-(攸/入 '(10 15 20 25) 1 􏽊)
+(弔 '(a b c d e c f) 2)
+
+(弓 '(a b c d e c f) 'c)
+(𰁣 '(a b c d e c f) 'c)
+
+(􏹂 '(a b 11 d 22 c f) 米?)
+(􏹁 '(a b 11 d 22 c f) 米?)
 ]
 
 @section{􏷦, 􏷥, 􏷤, 􏷣, 􏷢, 􏷡, 􏷠, 􏷟, 􏷞, 􏷝}
