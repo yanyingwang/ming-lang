@@ -3,13 +3,16 @@
 
 (provide defmapping defhzify section+elemref section+autotag
          eleph-note elucidate
-         defzi defzi/puauni zi
+         defzi defzi/puauni zi defzi/sub
+         means
          modernly-simplifies anciently-simplifies
          modernly-means mingly-resembles
+         ori-esp-means
          ;; defradical defcomponent defcharacter defhybrid
          defradical defcomponent defsuffix definsert defhas
          )
 (require scribble/manual racket/string scribble/core
+         scribble/html-properties
          (for-syntax racket/base racket/string racket/list
                      "private/zitable.rkt"))
 
@@ -122,7 +125,16 @@
   (syntax-case stx ()
     [(_ zi content ...)
      (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
-       #'(elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...)))
+       #'(elem  #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
+                (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...))))
+     ])
+  )
+(define-syntax (defzi/sub stx)
+  (syntax-case stx ()
+    [(_ zi content ...)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
+       #'(elem #:style (style #f (list (attributes '([style . "margin-bottom: 0; "]))))
+               (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...))))
      ])
   )
 
@@ -135,6 +147,9 @@
 (define (section+autotag . content)
   (define tag (string-join content ""))
   (section #:tag tag content))
+
+(define (means . content)
+  (elem "means" (hspace 1) @(italic content)))
 
 (define (eleph-note . content) ;; 像注, elephant in chinese is wrote as 象, and 像 means like, resemble
   (margin-note (elem "🐘" (hspace 1) content))) ;; 💡
@@ -156,4 +171,8 @@
 
 (define (anciently-simplifies zi elucidation ming-elu . content)
   @elem{simplifies for @litchar{@zi} in ancient chinese, means @elucidate{@elucidation}, especially means @elucidate{@ming-elu} in ming-lang. @content}
+  )
+
+(define (ori-esp-means ori-elu esp-elu . content)
+  @elem{originally means @elucidate{@ori-elu}, especially means @elucidate{@esp-elu} in ming-lang. @content}
   )

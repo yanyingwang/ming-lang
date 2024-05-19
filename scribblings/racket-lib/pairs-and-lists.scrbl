@@ -15,8 +15,7 @@
 
 @title[#:tag "pairs-and-lists"]{双 and 􏿴}
 @margin-note{Extention：@secref["ming-list"]}
-ref to:  @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")]
-@; @litchar{双} means @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"] and @litchar{􏿴} means @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "pair"].
+Originate: @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")]
 
 
 @section[#:tag "nameing-rules-of-pair-list"]{Naming Rules}
@@ -79,7 +78,7 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defsuffix[0]}
                "original function"
-               @elem{Implies there is another function named as omitted the litchar{0}.}
+               @elem{Implies there is another function named with omitting @litchar{0}.}
                @elem{@racket[􏼓0]}
                )
                (list @bold{Punctuation} @bold{-} @bold{-} @bold{-})
@@ -131,19 +130,15 @@ To extend @secref["naming-rules"], specifically there are：
          )]
 
 @section[#:tag "pair-car-cdr-list-list*"]{双, 􏿴, 􏿫, 阴, 阳}
-Abstractly, we can pair two data together. As a whole, it is called @racket[双]. And the first position of it is call @racket[阳], the secondary position is call @racket[阴].
+Abstractly, we can pair two data together. Integrally, it is called @racket[双]. Separately, the position where set the first data is call @racket[阳], the second is call @racket[阴].
 
-Further more, when we put another @racket[双] to the @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if the @racket[阴] of the ending @racket[双] is empty(@racket[空]), we call it @racket[􏿴]; if not, we call it @racket[􏿫].
+Further more, if we put another @racket[双] to @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if we leave @racket[阴] of the ending @racket[双] to be empty(@racket[空]), we get a data called @racket[􏿴]; if not, we call it @racket[􏿫].
 
-@defzi[双]{@litchar{又} is a stick figure of "human hand". Two human hand here stand for an object which includes two holding data.}
-
+@defzi[双]{@defzi/sub[又]{is a stick figure of @italic{human hand}}. Two human hand here stand for an object with including two holding data.}
 @defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@racket[空]).}
-
 @defzi[􏿫]{resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@racket[空]).}
-
-@defzi[阳]{@defzi[日]{means sun, implicitly means the former part of an object, or the position aspect of an object}. Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
-
-@defzi[阴]{@defzi[月]{means moon, implicitly means the secondary part of of an object, or the negative aspect of an object}. Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
+@defzi[阳]{@defzi/sub[日]{means sun, implicitly means the former part of an object, or the position aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
+@defzi[阴]{@defzi/sub[月]{means moon, implicitly means the secondary part of of an object, or the negative aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 
 @examples[#:eval (the-eval)
 (双 1 2)
@@ -166,28 +161,6 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 (阳 '((1 1.1) 2 3 4))
 (阳之阳 '((1 1.1) 2 3 4))
 (阳之阴阳 '((1 1.1) 2 3 4))
-]
-
-@section{􏼏, 􏼏*}
-@defzi[􏼏]{@defzi[米]{means @italic{numbers}, ref to: @secref["numbers"]}.}
-
-@examples[#:eval (the-eval)
-(􏼏 10)
-(􏼏 10 20)
-(􏼏 10 20 2)
-(􏼏* 10 20)
-(􏼏* 10 20 2)
-]
-
-@section{􏼓0、􏼎}
-@defzi[􏼓0]{@defzi[三]{ means three, implicitly means duplicated data. Ref to: @racket[􏼓].}} @linebreak{}
-@defzi[􏼎]{ref to: @zi{弓}.}
-@examples[#:eval (the-eval)
-(􏼓 'foo 5)
-(􏼎 5 並)
-(􏼎 5 􏽊)
-(􏼎 5 (入 (n)
-        (􏼓 'foo 5)))
 ]
 
 @section{􏿝, 􏿜}
@@ -215,24 +188,69 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 (􏿜 '(a))
 ]
 
+@section+elemref{弔, 弓, 􏹂, 𰁣, 􏹁}
+@defzi[弓]{resembles @italic{ropes wraped on stick, thus ropes can be used to count how many circles wrapped}. Especially means @italic{the indexes} of an object in ming-lang.}
+@defzi[弔]{simplified from @litchar{第} and resembles @italic{an stick wrapped with ropes, thus it can be used to ref to an specific wrap}. Especially means @italic{reference} in ming-lang.}
+@eleph-note{
+@racket[伄] @racket[􏾘] @racket[􏾝] @;，@racket[弓*]、@racket[弓*/入]
+}
+@examples[#:eval (the-eval)
+(弔 '(a b c d e c f) 2)
 
-@section+elemref{攸}
-@defzi[攵]{means @litchar{raping over something to make it changing itself}, especially means @litchar{set value}.}
+(弓 '(a b c d e c f) 'c)
+(𰁣 '(a b c d e c f) 'c)
+
+(􏹂 '(a b 11 d 22 c f) 米?)
+(􏹁 '(a b 11 d 22 c f) 米?)
+]
+
+@section{􏼏, 􏼏*}
+@defzi[􏼏]{@defzi/sub[米]{means @italic{numbers}, ref to: @secref["numbers"]}.}
+
+@examples[#:eval (the-eval)
+(􏼏 10)
+(􏼏 10 20)
+(􏼏 10 20 2)
+(􏼏* 10 20)
+(􏼏* 10 20 2)
+]
+
+@section{􏼓, 􏼎}
+@defzi[􏼓]{@defzi/sub[三]{@ori-esp-means["three" "duplicate data"]}}
+@defzi[􏼎]{ref to: @zi{弓}.}
+@examples[#:eval (the-eval)
+(􏼓 5 'foo)
+(􏼎 5 並)
+(􏼎 5 􏽊)
+(􏼎 5 (入 (n)
+        (􏼓 5 'foo)))
+]
+
+
+@section{攸}
+@defzi[攸]{@defzi/sub[攵]{means @italic{raping over something to make it changing itself}, especially means @italic{set value}.}}
 @examples[#:eval (the-eval)
 (攸 '(10 15 20 25) 1 1555)
 (攸/入 '(10 15 20 25) 1 􏽊)
 ]
 
-
-@section+elemref{甲、乙、丙、丁、戊、己、庚、辛、壬、癸}
-@margin-note{
-“甲”、“乙”、“丙”、“丁”、“戊”、“己”、“庚”、“辛”、“壬”、“癸”是@hyperlink["https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%B9%B2"]{中国古代的一种文字记序符号} 。
-}
+@section{􏷦, 􏷥, 􏷤, 􏷣, 􏷢, 􏷡, 􏷠, 􏷟, 􏷞, 􏷝}
+@defzi[一]{@means{one}.}
+@defzi[二]{@means{two}.}
+@defzi[三]{@means{three}.}
+@defzi[四]{@means{four}.}
+@defzi[五]{@means{five}.}
+@defzi[六]{@means{six}.}
+@defzi[七]{@means{seven}.}
+@defzi[八]{@means{eight}.}
+@defzi[九]{@means{nine}.}
+@defzi[十]{@means{ten}.}
 @examples[#:eval (the-eval)
-(甲 '(1 2 3 4 5 6 7 8 9 10))
-(乙 '(1 2 3 4 5 6 7 8 9 10))
-(丙 '(1 2 3 4 5 6 7 8 9 10))
-(癸 '(1 2 3 4 5 6 7 8 9 10))
+(􏷦 '(1 2 3 4 5 6 7 8 9 10))
+(􏷥 '(1 2 3 4 5 6 7 8 9 10))
+(􏷤 '(1 2 3 4 5 6 7 8 9 10))
+(􏷣 '(1 2 3 4 5 6 7 8 9 10))
+(􏷝 '(1 2 3 4 5 6 7 8 9 10))
 ]
 
 @section+elemref{末、􏹨}
@@ -264,28 +282,6 @@ Further more, when we put another @racket[双] to the @racket[阴] position of t
 ]
 
 
-@section+elemref{弔，弓、􏹂，𰁣、􏹁}
-@margin-note{
-@bold{@litchar{弔}为古活字} @linebreak{}
-@bold{@litchar{弓}为活用字}
-@itemlist[
-@item{@litchar{弔}：@litchar{第}的简写，像是绳子缠绕在树干表皮上，表示是用某索引提取相对应的值。}
-@item{@litchar{弓}：@litchar{引}的简写，像是缠绕在树干表皮上的绳子，即“索引”的意思，亦即返回某值的索引；}
-@item{@litchar{亻}，见：@secref["list-rules"]。}
-]
-}
-@margin-note{
-另见：@racket[伄]、@racket[􏾘]、@racket[􏾝] @;，@racket[弓*]、@racket[弓*/入]
-}
-@examples[#:eval (the-eval)
-(弔 '(a b c d e c f) 2)
-
-(弓 '(a b c d e c f) 'c)
-(𰁣 '(a b c d e c f) 'c)
-
-(􏹂 '(a b 11 d 22 c f) 米?)
-(􏹁 '(a b 11 d 22 c f) 米?)
-]
 
 @section+elemref{􏾺、𨚞，􏷵、􏷴，􏾺分、𨚞分，􏾺/入、𨚞/入，􏾺于?}
 @margin-note{

@@ -46,20 +46,21 @@ Composed of @racket[亻], @racket[弔], @racket[^].
 }
 
 @deftogether[(
-@defproc[(􏾝 [LST 􏿴?] [N1 􏺡?] [N2 􏺡?])
+@defproc[(􏾝 [LST 􏿴?] [N1 􏺡?] [N2 􏺡? +inf.0])
           􏿴?]
 @; @defproc[(􏾝* [LST 􏿴?] [N1 􏺡?] [N2 􏺡?])
 @;           􏿴?]
 )]{
 Composed of @racket[弔], @racket[阝].
 @examples[#:eval (the-eval)
+(􏾝 '(a b c d e f) 0)
 (􏾝 '(a b c d e f) 0 0)
 (􏾝 '(a b c d e f) 0 1)
 (􏾝 '(a b c d e f) 1 2)
 (􏾝 '(a b c d e f) 0 2)
 (􏾝 '(a b c d e f) 0 5)
 (􏾝 '(a b c d e f) 2 5)
-(􏾝 '(a b c d e f) 2)
+
 
 @; (􏾝* '(a b c d e f) 0 0)
 @; (􏾝* '(a b c d e f) 0 1)
@@ -139,13 +140,13 @@ Composed of @racket[彐], @racket[刂].
 ]
 }
 
-@defproc[(􏼓 [V any?] [N 􏺡?] ...) 􏿴?]{
-Composed of @racket[三], @racket[􏿴].
-Same as @racket[􏼓0] except the reverse order of arguments.
-@examples[#:eval (the-eval)
-(􏼓 'val 8)
-]
-}
+@; @defproc[(􏼓 [V any?] [N 􏺡?] ...) 􏿴?]{
+@; Composed of @racket[三], @racket[􏿴].
+@; Same as @racket[􏼓0] except the reverse order of arguments.
+@; @examples[#:eval (the-eval)
+@; (􏼓 'val 8)
+@; ]
+@; }
 
 @defproc[(􏿳 [V any?] ...) 􏿳?]{
 Composed of @racket[双], @racket[􏿴].
