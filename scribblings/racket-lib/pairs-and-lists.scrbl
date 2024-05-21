@@ -119,6 +119,12 @@ To extend @secref["naming-rules"], specifically there are：
                @elem{Suffix of @litchar{/} can be considered as an extending explanation of its prefix.}
                @elem{@racket[􏿴/组合] @racket[􏿴/分组]}
                )
+               (list
+               @elem{@defsuffix[?]}
+               @elem{boolean as output}
+               @elem{Implies the type of output data is boolean.}
+               @elem{@racket[双?] @racket[􏿴?] @racket[􏿳?]}
+               )
 
                (list @bold{Hybrid} @bold{-} @bold{-} @bold{-})
                (list
@@ -220,8 +226,8 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section{弔, 弓, 􏹂, 𰁣, 􏹁}
-@defzi[弓]{resembles @italic{ropes wraped on stick, thus ropes can be used to count how many circles wrapped}. Especially means @italic{the indexes} of an object in ming-lang.}
-@defzi[弔]{simplified from @litchar{第} and resembles @italic{an stick wrapped with ropes, thus it can be used to ref to an specific wrap}. Especially means @italic{reference} in ming-lang.}
+@defzi[弓]{resembles @italic{a rope wraped on stick, thus this rope can be used to count how many circles it is wrapping on stick}. Especially means @italic{the indexes} of an object in ming-lang.}
+@defzi[弔]{simplified from @litchar{第} and resembles @italic{an stick wrapped with a rope in circles, thus it can be used to ref to an specific circle}. Especially means @italic{reference} in ming-lang.}
 @eleph-note{
 @racket[伄] @racket[􏾘] @racket[􏾝] @;，@racket[弓*]、@racket[弓*/入]
 }
@@ -235,7 +241,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏹁 '(a b 11 d 22 c f) 米?)
 ]
 
-@section{􏷦, 􏷥, 􏷤, 􏷣, 􏷢, 􏷡, 􏷠, 􏷟, 􏷞, 􏷝}
+@section{􏷜, 􏷛, 􏷚, 􏷙, 􏷘, 􏷗, 􏷖, 􏷕, 􏷔, 􏷓}
 @defzi[一]{@means{one}.}
 @defzi[二]{@means{two}.}
 @defzi[三]{@means{three}.}
@@ -247,23 +253,15 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 @defzi[九]{@means{nine}.}
 @defzi[十]{@means{ten}.}
 @examples[#:eval (the-eval)
-(􏷦 '(1 2 3 4 5 6 7 8 9 10))
-(􏷥 '(1 2 3 4 5 6 7 8 9 10))
-(􏷤 '(1 2 3 4 5 6 7 8 9 10))
-(􏷣 '(1 2 3 4 5 6 7 8 9 10))
-(􏷝 '(1 2 3 4 5 6 7 8 9 10))
+(􏷜 '(1 2 3 4 5 6 7 8 9 10))
+(􏷛 '(1 2 3 4 5 6 7 8 9 10))
+(􏷚 '(1 2 3 4 5 6 7 8 9 10))
+(􏷙 '(1 2 3 4 5 6 7 8 9 10))
+(􏷓 '(1 2 3 4 5 6 7 8 9 10))
 ]
 
 @section+elemref{末、􏹨}
-返回􏿴中末尾位置的元素。
-@margin-note{
-@bold{@litchar{􏹨}为新造字}
-@itemlist[
-@item{@litchar{末}：见@racket[末]；}
-@item{@litchar{双}：见@racket[双]；}
-@; @item{@litchar{又}：@litchar{双}的简写，见@racket[双]。}
-]
-}
+@defzi[末]{@ori-esp-means["treetop" "last"]{(@litchar{木} @means{tree or wood}, @litchar{本} @means{tree root.})}}
 @examples[#:eval (the-eval)
 (末 '(1 2 3 4))
 (􏹨 '(1 2 3 4))
@@ -271,13 +269,8 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section+elemref{巨}
-@margin-note{
-@bold{@litchar{巨}为活用字}
-@itemlist[
-@item{@litchar{巨}：测量返回长度（本意是“木工用方尺做丈量”（圆是规，方是矩，固有“无规矩不成方圆”之说））。}
-]
-}
-@margin-note{另见：@racket[􏹃]}
+@defzi[巨]{simplified from @litchar{矩}, @ori-esp-means["straight edge" "measure length"]}
+@eleph-note{@racket[􏹃]}
 @examples[#:eval (the-eval)
 (巨 '(a b c d e 3 f g))
 ]

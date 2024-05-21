@@ -176,3 +176,7 @@
 (define (ori-esp-means ori-elu esp-elu . content)
   @elem{originally means @elucidate{@ori-elu}, especially means @elucidate{@esp-elu} in ming-lang. @content}
   )
+
+(define (simplified-from zi)
+  @elem{simplified from @litchar{@zi}}
+  )

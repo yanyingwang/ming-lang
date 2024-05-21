@@ -2,21 +2,21 @@
 
 
 ;;; (empty 空) not need as one defined same in base (null 空)
->>> first 􏷦 (弔 一)
->>> second 􏷥 (弔 二)
->>> third 􏷤 (弔 三)
->>> fourth 􏷣 (弔 四)
->>> fifth 􏷢 (弔 五)
->>> sixth 􏷡 (弔 六)
->>> seventh 􏷠 (弔 七)
->>> eighth 􏷟 (弔 八)
->>> ninth 􏷞 (弔 九)
->>> tenth 􏷝 (弔 十)
+>>> first 􏷜 (弔 一)
+>>> second 􏷛 (弔 二)
+>>> third 􏷚 (弔 三)
+>>> fourth 􏷙 (弔 四)
+>>> fifth 􏷘 (弔 五)
+>>> sixth 􏷗 (弔 六)
+>>> seventh 􏷖 (弔 七)
+>>> eighth 􏷕 (弔 八)
+>>> ninth 􏷔 (弔 九)
+>>> tenth 􏷓 (弔 十)
 >>> last 末
 >>> last-pair 􏹨 (末 双) ;; 末链（链一定为双） 􏿦 􏷽 􏹨
 ;; >>> rest 末** "􏿴除去甲以外剩下的􏿴" ;; 甲外 剩余 去甲 舍甲
 
->>> make-list (三 􏷫) ;; 复 㙏 复􏿴 构造复@racket[􏿴]（数据内各个元素是相同的，类比（昆虫）“复眼”一词取名 􏼓0
+>>> make-list 􏼓 (三 􏷫) ;; 复 㙏 复􏿴 构造复@racket[􏿴]（数据内各个元素是相同的，类比（昆虫）“复眼”一词取名 􏼓0
 
 >>> list-set 攸 (亻 丨 攵) ;; 修 更 改 新 肖 攸 􏿛
 >>> list-update 攸/入 ;; 攸
