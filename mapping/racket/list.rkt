@@ -1,6 +1,7 @@
 #lang at-exp s-exp "../../private/mapping-lang.rkt"
 
 
+
 ;;; (empty 空) not need as one defined same in base (null 空)
 >>> first 􏷜 (弔 一)
 >>> second 􏷛 (弔 二)
@@ -44,7 +45,7 @@
 >>> splitf-at 􏾺分/入
 >>> splitf-at-right 𨚞分/入
 
->>> list-prefix? 􏾺于?
+>>> list-prefix? 􏾺?
 >>> take-common-prefix 䢼 (共 阝) ;;􏾺共项 􏾺共相 共同/􏾺 左䢼
 >>> drop-common-prefix 􏷳分  ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分
 >>> split-common-prefix 䢼分

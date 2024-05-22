@@ -6,6 +6,7 @@
          defzi defzi/puauni zi defzi/sub
          means
          modernly-simplifies anciently-simplifies
+         simplified-from
          modernly-means mingly-resembles
          ori-esp-means
          ;; defradical defcomponent defcharacter defhybrid

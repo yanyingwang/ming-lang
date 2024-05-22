@@ -140,7 +140,7 @@ Abstractly, we can pair two data together. Integrally, it is called @racket[双]
 
 Further more, if we put another @racket[双] to @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if we leave @racket[阴] of the ending @racket[双] to be empty(@racket[空]), we get a data called @racket[􏿴]; if not, we call it @racket[􏿫].
 
-@defzi[双]{@defzi/sub[又]{is a stick figure of @italic{human hand}}. Two human hand here stand for an object with including two holding data.}
+@defzi[双]{@defzi/sub[又]{resembles @italic{the picture of human's right hand trying to hold an object}}. Two human hand here stand for an object with including two holding data.}
 @defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@racket[空]).}
 @defzi[􏿫]{resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@racket[空]).}
 @defzi[阳]{@defzi/sub[日]{means sun, implicitly means the former part of an object, or the position aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
@@ -170,7 +170,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section{􏿝, 􏿜}
-@defzi[毌]{simplified from @litchar{贯}, which means @italic{append, going through a few objects and connect them together}.}
+@defzi[􏿝]{@defzi[􏿜]{@defzi[毌]{simplified from @litchar{贯}, which means @italic{append, going through a few objects and connect them together}.}}}
 @examples[#:eval (the-eval)
 (􏿴 1 2 3 4)
 (􏿝 '(1) '(2) '(3) '(4))
@@ -260,7 +260,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏷓 '(1 2 3 4 5 6 7 8 9 10))
 ]
 
-@section+elemref{末、􏹨}
+@section{末、􏹨}
 @defzi[末]{@ori-esp-means["treetop" "last"]{(@litchar{木} @means{tree or wood}, @litchar{本} @means{tree root.})}}
 @examples[#:eval (the-eval)
 (末 '(1 2 3 4))
@@ -268,8 +268,8 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏹨 '(1 2 3 . 4))
 ]
 
-@section+elemref{巨}
-@defzi[巨]{simplified from @litchar{矩}, @ori-esp-means["straight edge" "measure length"]}
+@section{巨}
+@defzi[巨]{simplified from @litchar{矩}, @ori-esp-means["straightedge, ruler" "measure length"]}
 @eleph-note{@racket[􏹃]}
 @examples[#:eval (the-eval)
 (巨 '(a b c d e 3 f g))
@@ -277,20 +277,10 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 
 
 
-@section+elemref{􏾺、𨚞，􏷵、􏷴，􏾺分、𨚞分，􏾺/入、𨚞/入，􏾺于?}
-@margin-note{
-@bold{
-@litchar{􏾺}、@litchar{𨚞}为新造字 @linebreak{}
-@litchar{􏷵}、@litchar{􏷴}为新造字
-}
-@itemlist[
-@item{@litchar{左}：从左；}
-@item{@litchar{右}：从右；}
-@item{@litchar{口}：@litchar{右}的简写；}
-@item{@litchar{阝}、@litchar{刂}见：@secref["list-rules"]。}
-]
-}
-@margin-note{另见：@racket[􏺊]}
+@section{􏾺、𨚞，􏷵、􏷴，􏾺分、𨚞分，􏾺/入、𨚞/入，􏾺于?}
+@defzi[􏾺]{@defzi/sub[左]{@means{left}.}}
+@defzi[𨚞]{@defzi/sub[右]{@means{right}.}}
+@eleph-note{@racket[􏺊]}
 @examples[#:eval (the-eval)
 (􏾺 '(a b c d e f g) 2)
 (𨚞 '(a b c d e f g) 2)
@@ -304,18 +294,13 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏾺/入 '(8 4 a b 1 c d 2 e f g 3 5 9) 米?)
 (𨚞/入 '(8 4 a b 1 c d 2 e f g 3 5 9) 米?)
 
-(􏾺于? '(a b) '(a b c d e f g))
-(􏾺于? '(a b z) '(a b c d e f g))
+(􏾺? '(a b) '(a b c d e f g))
+(􏾺? '(a b z) '(a b c d e f g))
 ]
 
-@section+elemref{䢼，􏷳分，䢼分}
-@margin-note{
-@bold{@litchar{䢼}、@litchar{􏷳}为新造字}
-@itemlist[
-@item{@litchar{共}：共同、共有；}
-@item{@litchar{阝}、@litchar{刂}，见：@secref["list-rules"]。}
-]
-}
+@section{䢼，􏷳分，䢼分}
+@defzi[䢼]{@defzi/sub[􏷳]{@defzi/sub[共]{@means{share}.}}}
+
 @examples[#:eval (the-eval)
 (䢼 '(a b x y z) '(a b c d e f g))
 (􏷳分 '(a b x y z) '(a b c d e f g))
@@ -323,26 +308,12 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 
-@section+elemref{𰂋，偏，􏾜，重、𠝤}
-@margin-note{
-@bold{
-@litchar{𰂋}为新造字 @linebreak{}
-@litchar{偏}为活用字 @linebreak{}
-@litchar{􏾜}为新造字 @linebreak{}
-@litchar{𠝤}为古活字
-}
-@itemlist[
-@item{@litchar{间}：间以；}
-@item{@litchar{扁}：扁平；}
-@item{@litchar{糸}：乱（@litchar{紊}去掉声旁，@litchar{紊}是“乱”的意思（故有成语“有条不紊”））；}
-@item{@litchar{重}：重复之元素；}
-@item{@litchar{亻}、@litchar{刂}，见：@secref["list-rules"]。}
-]
-}
-
-@margin-note{
-另见：@racket[偅]
-}
+@section{𰂋，偏，􏾜，重、𠝤}
+@defzi[间]{@means{insert between}.}
+@defzi[扁]{@means{faltten}.}
+@defzi[糸]{@simplified-from{紊}, @means{shuffle}.}
+@defzi[重]{@means{duplication}.}
+@eleph-note{@racket[偅]}
 
 @examples[#:eval (the-eval)
 (𰂋 '(a b c d) '和)
@@ -354,16 +325,9 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 
-@section+elemref{􏾛、𠆯}
-@margin-note{
-@bold{@litchar{􏾛}为新造字} @linebreak{}
-@bold{@litchar{𠆯}为古活字}
-@itemlist[
-@item{@litchar{屰}：倒序（通@litchar{逆}，甲骨文、金文是“一个倒立的人”）；}
-@item{@litchar{川}：理顺（类比@litchar{驯}、@litchar{训}而得造）。}
-@item{@litchar{亻}，见：@secref["list-rules"]。}
-]
-}
+@section{􏾛、𠆯}
+@defzi[屰]{resembles @italic{the picture of one person standing on his head}, @means{reverse} in ming-lang.}
+@defzi[川]{@simplified-from{顺}, @means{in order}.}
 @examples[#:eval (the-eval)
 (􏾛 '(21 3 888 666 55 77 1000))
 (𠆯 '(21 3 888 666 55 77 1000) <)
@@ -372,20 +336,9 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (𠆯 '("cat" "dog" "chicken" "duck" "fox") 句>?)
 ]
 
-@section+elemref{􏹋、􏹉、􏹊~、􏹊^，􏹅，􏹄，􏹌、􏹈，􏹇~、􏹇}
-@margin-note{
-@bold{
-@litchar{􏹋}、@litchar{􏹊}、@litchar{􏹉}为新造字 @linebreak{}
-@litchar{􏹌}、@litchar{􏹈}、@litchar{􏹇}为新造字 @linebreak{}
-}
-@itemlist[
-@item{@litchar{彐}：寻找（@litchar{寻}的简写）；}
-@item{@litchar{日}：取@racket[阳]；}
-@item{@litchar{入}：入参是lambda(λ)函数（λ的汉字偏旁写法）；}
-@item{@litchar{~}、@litchar{^}，@litchar{亻}、@litchar{刂}、@litchar{阝}，见：@secref["list-rules"]。}
-]
-}
-@margin-note{另见：@racket[􏹊]，@racket[􏾘]，@racket[􏺈]、@racket[􏺇]}
+@section{􏹋、􏹉、􏹊~、􏹊^，􏹅，􏹄，􏹌、􏹈，􏹇~、􏹇}
+@defzi[􏹌]{@defzi/sub[􏹊]{@defzi/sub[􏹅]{@defzi/sub[􏹈]{@defzi/sub[􏹄]{@defzi/sub[彐]{@simplified-from{寻}, @means{find, search}.}}}}}}
+@eleph-note{@racket[􏹊] @racket[􏾘] @racket[􏺈] @racket[􏺇]}
 @examples[#:eval (the-eval)
 (􏹋 'c '(a b c d e f))
 (􏹉 'c '((a b) (c d) (e f)))
@@ -403,7 +356,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section+elemref{􏹈分，􏹈巨}
-@margin-note{另见：@racket[巨]、@racket[􏹃]}
+@eleph-note{@racket[巨] @racket[􏹃]}
 @examples[#:eval (the-eval)
 (􏹈分 米? '(a b 1 c d 3 e 9 f))
 (􏹈巨 米? '(a b 1 c d 3 e 9 f))
@@ -477,10 +430,10 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 
-@section[#:tag "list-base"]{基础例程}
+@section[#:tag "list-base"]{ming/racket/base}
 @defmodule[ming/racket/base]
 @defmapping[racket/base/pairs-and-lists]
 
-@section[#:tag "list-additional"]{扩展例程}
+@section[#:tag "list-additional"]{ming/racket/list}
 @defmodule[ming/racket/list]
 @defmapping[racket/list]
