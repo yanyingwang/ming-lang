@@ -3,7 +3,7 @@
 
 (provide defmapping defhzify section+elemref section+autotag
          eleph-note elucidate
-         defzi defzi/puauni zi defzi/sub
+         defzi defzis defzi/puauni zi defzi/sub
          means
          modernly-simplifies anciently-simplifies
          simplified-from
@@ -122,14 +122,6 @@
      ])
   )
 
-(define-syntax (defzi stx)
-  (syntax-case stx ()
-    [(_ zi content ...)
-     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
-       #'(elem  #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
-                (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...))))
-     ])
-  )
 (define-syntax (defzi/sub stx)
   (syntax-case stx ()
     [(_ zi content ...)
@@ -138,6 +130,29 @@
                (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...))))
      ])
   )
+
+(define-syntax (defzis stx)
+  (define (zis-of-str stx-zis)
+    (string-split (symbol->string (syntax-e stx-zis)) "/"))
+  (define (elemtag z)
+    `(elemtag ,z (bold (racket (code:hilite ,(string->symbol z))))))
+  (define (elemtags zis)
+    (datum->syntax  stx (cons 'elem (add-between (map elemtag zis) "/"))))
+  (syntax-case stx ()
+    [(_ zis content ...)
+     #`(elem #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
+             #,(elemtags (zis-of-str #'zis)) ":" (hspace 1) content ...)
+     ])
+  )
+(define-syntax (defzi stx)
+  (syntax-case stx ()
+    [(_ zi content ...)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
+       #'(elem  #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
+                (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...))))
+     ])
+  )
+
 
 
 (define (zi c) ;; zi shorts for hanzi, means chinese char.

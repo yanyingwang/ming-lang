@@ -170,7 +170,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section{􏿝, 􏿜}
-@defzi[􏿝]{@defzi[􏿜]{@defzi[毌]{simplified from @litchar{贯}, which means @italic{append, going through a few objects and connect them together}.}}}
+@defzis[􏿝/􏿜]{@defzi/sub[毌]{simplified from @litchar{贯}, which means @italic{append, going through a few objects and connect them together}.}}
 @examples[#:eval (the-eval)
 (􏿴 1 2 3 4)
 (􏿝 '(1) '(2) '(3) '(4))
@@ -299,7 +299,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section{䢼，􏷳分，䢼分}
-@defzi[䢼]{@defzi/sub[􏷳]{@defzi/sub[共]{@means{share}.}}}
+@defzis[䢼/􏷳]{@defzi/sub[共]{@means{share}.}}
 
 @examples[#:eval (the-eval)
 (䢼 '(a b x y z) '(a b c d e f g))
@@ -337,7 +337,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section{􏹋、􏹉、􏹊~、􏹊^，􏹅，􏹄，􏹌、􏹈，􏹇~、􏹇}
-@defzi[􏹌]{@defzi/sub[􏹊]{@defzi/sub[􏹅]{@defzi/sub[􏹈]{@defzi/sub[􏹄]{@defzi/sub[彐]{@simplified-from{寻}, @means{find, search}.}}}}}}
+@defzis[􏹅/􏹈/􏹄/􏹊/􏹌]{@defzi/sub[彐]{@simplified-from{寻}, @means{find, search}.}}
 @eleph-note{@racket[􏹊] @racket[􏾘] @racket[􏺈] @racket[􏺇]}
 @examples[#:eval (the-eval)
 (􏹋 'c '(a b c d e f))
