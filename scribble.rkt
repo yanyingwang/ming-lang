@@ -156,7 +156,7 @@
 
 
 (define (zi c) ;; zi shorts for hanzi, means chinese char.
-  (elem #:style "RktInBG"
+  (elem #:style (style #f (list (attributes '([class . "highlighted"]))))
         (elemref c (racketplainfont c)))
   )
 

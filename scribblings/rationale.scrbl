@@ -2,7 +2,8 @@
 
 @(require (for-label racket ming ming/list ming/vector)
            scribble/example
-           scribble-rainbow-delimiters)
+           scribble-rainbow-delimiters
+           ming/scribble)
 @(define the-eval
          (make-eval-factory '(racket/base racket/list ming/list ming/racket/base ming/racket/list)))
 
@@ -34,7 +35,7 @@ LISP is highly flat in forms, all are parenthesis. On the contrary, most modern 
 
 By the examples above, we can see in Ruby, different operations are wrote in distinctive forms, but in Racket they are in same form: elements in one parenthesis. This each other resembled form of LISP impedes people differentiate them on a glimpse, thus the meaning of operations are more blamed on the function names(first word of elements in parenthesis).
 
-In conclusion, the function names of LISP take more responsibilities to annotate diverse operations than modern PLs. The more informations that function names shown to us, the better we can distinguish them and understand the purpose and usage of them.
+In conclusion, the function names of LISP take more responsibilities to annotate various operations than modern PLs. The more informations that function names shown to us, the better we can distinguish them and understand the purpose and usage of them.
 
 
 @section{Chineseoid characters}
@@ -58,7 +59,7 @@ With the fact that chinese characters are just the implementation of using LiuSh
 (list @code{(􏿰 'a 'b 'c 'd)} @code{(hash 'a 'b 'c 'd)})
 )]
 
-As chart shown above, the keywords of Ming are much short in length, and in forms the complex characters are usually consituted by other simpler characters, and those simpler characters are usually used for related function names as well.
+As chart shown above, the keywords of Ming are much short in length, and in forms the complex characters are usually constituted by other simpler characters, and those simpler characters are usually used for related function names as well.
 
 Further more, the connotations behind the characters work the same way, they are related to each other and complex concepts are broke to simple concepts.
 
@@ -66,8 +67,8 @@ And one more thing, the chineseoid characters implemented here also have the abi
 
 
 @section[#:tag "character-implications"]{Character implications}
-Since the chineseoid chracters are much complicated than general western characters, there are few terminology we need to know in advance: radical, component, part(check the @hyperlink["https://en.wiktionary.org/wiki/%E5%81%8F%E6%97%81" "wiktionary page"] for details).
+Since the chineseoid chracters are much complicated than general western characters, there are few terminologies we need to know in advance: @italic{radical}, @italic{component}, @italic{part}(check the @hyperlink["https://en.wiktionary.org/wiki/%E5%81%8F%E6%97%81" "wiktionary page"] for details).
 
-Simply put it, phrase is composed by more than one characters, character is composed by more than on parts. And additionally, an specific character may have which  radical a component. In this condition, this at the same timeit additionally as its radical(which usually is another standalone and useful character at the same time), and the component of it implies an difference, such as the type of input or output.
+Simply put it, @italic{phrase} is composed by more than one @italic{characters}, @italic{character} is composed by more than on @italic{parts}. For the @italic{parts} of an @italic{specific character}, only one of them can be count as @italic{radical}, which usually is another @italic{standalone character} that provides the basic meaning for the @italic{specific character}, and another one can be count as @italic{component}, which usually implies the difference(type of input, type of output, etc.) between the meaning of @italic{radical} and the @italic{specific character}.
 
-Take example of the procedure @racket[伄], the character is composed of @litchar{亻}(component) and @litchar{弔}(radical). By the composition, we can deduce that this procedure has a similar usage as @racket[弔] since it is the radical of @litchar{伄}. And the @litchar{亻} additionally means the output data is a list(read @secref["naming-rules"] for more).
+Take example of the procedure @racket[伄], this @italic{character} is composed of two @italic{parts}:  @zi{亻} as @italic{component} and @zi{弔} as @italic{radical}. By composition, we can deduce that this procedure has a similar usage as @racket[弔] since it is the @italic{radical}. And the @zi{亻} additionally means the type of output data is list(read @secref["naming-rules"] for more).
