@@ -64,15 +64,15 @@
 ;;                   IDX-LST)))
 
 (名 (伄 LST . IDX-LST)
-  (佫 (入 (IDX) (弔 LST IDX))
+  (𢓜 (入 (IDX) (弔 LST IDX))
     IDX-LST))
 (名 (伄^ LST IDX-LST)
-  (佫 (入 (IDX) (弔 LST IDX))
+  (𢓜 (入 (IDX) (弔 LST IDX))
       IDX-LST))
 
 (名 (􏾝 LST N1 [N2 +inf.0])
     (令 演 ([LST LST] [I 0] [N1 N1] [N2 N2])
-        (当 [(空? LST) '()]
+        (当 [(㐅? LST) '()]
             [(>= I N2) '()]
             [(< I N1) (演 (阴 LST) (􏽊 I) N1 N2)]
             [(>= I N1) (双 (阳 LST) (演 (阴 LST) (􏽊 I) N1 N2))]
@@ -85,14 +85,14 @@
     (􏸟 (􏺡? N)
        (报参错 '􏾘 "􏺡?" 1 LST N))
     (令 演 ([LST LST] [I 0] [N N])
-        (当 [(空? LST) '()]
+        (当 [(㐅? LST) '()]
             [(= I N)
              (演 (阴 LST) (􏽊 I) N)]
             [夬 (双 (阳 LST) (演 (阴 LST) (􏽊 I) N))])))
 
 (名 (􏾘^ LST N-LST)
     (令 演 ([LST LST] [I 0] [N N-LST])
-        (当 [(空? LST) '()]
+        (当 [(㐅? LST) '()]
             [(弓 N-LST I)
              (演 (阴 LST) (􏽊 I) N-LST)]
             [夬 (双 (阳 LST) (演 (阴 LST) (􏽊 I) N-LST))])))
@@ -103,10 +103,10 @@
     (􏷴 (􏷵 LIST0 N1) N2))
 
 (名 (偅 LST)
-    (令 演 ([LST LST] [C 空] [R-LST '()])
-        (当 [(空? LST)
+    (令 演 ([LST LST] [C 㐅] [R-LST '()])
+        (当 [(㐅? LST)
              '()]
-            [(空? C)
+            [(㐅? C)
              (演 (阴 LST) (阳 LST) R-LST)]
             [(弓 R-LST C)
              (演 (阴 LST) (阳 LST) R-LST)]
@@ -121,8 +121,8 @@
        LST1))
 
 (名 (􏿳 . V-LST)
-    (令 演 ([LST V-LST] [I 0] [X 空])
-        (当 [(空? LST) '()]
+    (令 演 ([LST V-LST] [I 0] [X 㐅])
+        (当 [(㐅? LST) '()]
             [(􏺦? I)
              (演 (阴 LST) (􏽊 I) (阳 LST))]
             [(􏺧? I)
@@ -134,10 +134,10 @@
 
 
 (名 (􏺈 ALST)
-    (佫 阳 ALST))
+    (𢓜 阳 ALST))
 
 (名 (􏺇 ALST)
-    (佫 阴 ALST))
+    (𢓜 阴 ALST))
 
 ;; (名 (􏼓 V LEN)
 ;;     (􏼓0 LEN V))

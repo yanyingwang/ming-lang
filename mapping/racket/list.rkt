@@ -39,16 +39,16 @@
 >>> dropf 􏷵/入  ;􏾹
 >>> dropf-right 􏷴/入  ;􏾸
 
->>> split-at 􏾺分
->>> split-at-right 𨚞分
+>>> split-at 􏸄 (左 分)
+>>> split-at-right 􏸃 (右 分)
 
->>> splitf-at 􏾺分/入
->>> splitf-at-right 𨚞分/入
+>>> splitf-at 􏸄/入
+>>> splitf-at-right 􏸃/入
 
 >>> list-prefix? 􏾺?
->>> take-common-prefix 䢼 (共 阝) ;;􏾺共项 􏾺共相 共同/􏾺 左䢼
->>> drop-common-prefix 􏷳分  ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分
->>> split-common-prefix 䢼分
+>>> take-common-prefix 􏸇 (左 同 􏸋) ;;􏾺共项 􏾺共相 共同/􏾺 左䢼
+>>> drop-common-prefix 􏸈 (左 同 􏸌)  ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分
+>>> split-common-prefix 􏸉 (左 同 􏸍)
 
 >>> append* 􏿜 (毌 􏷩) ;; 􏿜 􏾞
 
@@ -62,8 +62,8 @@
 >>> partition 􏹈分  ;; 筛开 筛分 筛离 筛分 􏾽分
 >>> count 􏹈巨  ;;度/入 计 λ 度/入
 
->>> filter-map 佫􏹈 ;; 佫之􏷹 􏷹佫 􏷯 {等同于@code{(􏹈 (入 (x) x) (佫 proc lst))}}
->>> append-map 佫􏿝 ;;@elem{等同于@code{(􏿝 (佫 proc lst))}} ;佫之􏿝
+>>> filter-map 􏹈𢓜 ;; 佫之􏷹 􏷹佫 􏷯 {等同于@code{(􏹈 (入 (x) x) (佫 proc lst))}}
+>>> append-map 𢓜􏿝 ;;@elem{等同于@code{(􏿝 (佫 proc lst))}} ;佫之􏿝
 
 >>> range 􏼏 (米 􏷫) ;􏿴/数段 𥸬􏿴
 >>> inclusive-range 􏼏* ;𥸬􏿴
@@ -73,8 +73,8 @@
 >>> in-combinations 􏿴序列/组合
 >>> in-permutations 􏿴序列/排列组合
 
->>> argmax 佫之􏺗 ; @elem{@racket[佫]之@racket[􏺗]}
->>> argmin 佫之􏺘 ; @elem{@racket[佫]之@racket[􏺘]}
+>>> argmax 𢓜􏺗 ; @elem{@racket[佫]之@racket[􏺗]}
+>>> argmin 𢓜􏺘 ; @elem{@racket[佫]之@racket[􏺘]}
 
 >>> group-by 􏿴/分组
 >>> cartesian-product 􏿴/笛卡尔积

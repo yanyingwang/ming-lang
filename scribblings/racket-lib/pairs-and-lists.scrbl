@@ -41,20 +41,50 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defcomponent[亻]}
                "general subset"
-               @elem{Returns a new list with elements produced from the input list.}
+               @elem{Returns a new list with elements produced from the input list.(Implies the input data and output data are the same type.)}
                @elem{@racket[伄] @racket[𰁣] @racket[攸] @racket[𰂋] @racket[偏] @racket[􏾜] @racket[􏾛] @racket[偅] @racket[𠆯] @racket[􏹈] @racket[仔?]}
+               )
+               (list
+               @elem{@defcomponent[彳]}
+               "resembler"
+               @elem{Returns a resemblant list of the input.}
+               @elem{@racket[𢓜]}
                )
                (list
                @elem{@defcomponent[阝]}
                "serial subset"
-               @elem{Returns a new list with elements serially produced from the input list.}
-               @elem{@racket[􏾝] @racket[􏾺] @racket[𨚞] @racket[䢼] @racket[􏹋]}
+               @elem{Returns a new list with elements serially produced from the input list.(Implies the input data and output data are the same type.)}
+               @elem{@racket[􏾝] @racket[􏾺] @racket[𨚞] @racket[􏹋]}
+               )
+               (list
+               @elem{@defcomponent[􏸋]}
+               "serial subset of lists"
+               @elem{Returns a new list with elements serially produced from the input lists.(Implies the multiple input data and output data are the same type.)}
+               @elem{@racket[􏸇]}
                )
                (list
                @elem{@defcomponent[刂]}
                "broken subset"
                @elem{Returns a new list with removing some elements from the input list.}
                @elem{@racket[􏷵] @racket[􏷴] @racket[􏺊] @racket[􏾘] @racket[𠝤] @racket[􏹊] @racket[􏹇]}
+               )
+               (list
+               @elem{@defcomponent[􏸌]}
+               "broken subset of lists"
+               @elem{Returns a new list with removing some elements from the input lists.(Implies the multiple input data and output data are the same type.)}
+               @elem{@racket[􏸈]}
+               )
+               (list
+               @elem{@defcomponent[分]}
+               "split input list to values"
+               @elem{Implies the type of output data is values(@racket[並]).}
+               @elem{@racket[􏸄] @racket[􏸃]}
+               )
+               (list
+               @elem{@defcomponent[􏸍]}
+               "split input lists to values"
+               @elem{Implies input data is lists and the type of output data is values(@racket[並]).}
+               @elem{@racket[􏸄] @racket[􏸃]}
                )
                (list
                @elem{@defcomponent[入]}
@@ -72,8 +102,8 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defsuffix[分]}
                "split data to values"
-               @elem{Implies the type of output data is values(@racket[並]).}
-               @elem{@racket[􏾺分] @racket[𨚞分] @racket[䢼分] @racket[􏷳分] @racket[􏹈分]}
+               @elem{@zi{分}}
+               @elem{@racket[􏹈分]}
                )
                (list
                @elem{@defsuffix[0]}
@@ -135,21 +165,22 @@ To extend @secref["naming-rules"], specifically there are：
                )
          )]
 
-@section[#:tag "pair-car-cdr-list-list*"]{双, 􏿴, 􏿫, 阴, 阳}
+@section[#:tag "pair-car-cdr-list-list*"]{双, 㐅, 􏿴, 􏿫, 阴, 阳 }
 Abstractly, we can pair two data together. Integrally, it is called @racket[双]. Separately, the position where set the first data is call @racket[阳], the second is call @racket[阴].
 
-Further more, if we put another @racket[双] to @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if we leave @racket[阴] of the ending @racket[双] to be empty(@racket[空]), we get a data called @racket[􏿴]; if not, we call it @racket[􏿫].
+Further more, if we put another @racket[双] to @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if we leave @racket[阴] of the ending @racket[双] to be empty(@racket[㐅]), we get a data called @racket[􏿴]; if not, we call it @racket[􏿫].
 
 @defzi[双]{@defzi/sub[又]{resembles @italic{the picture of human's right hand trying to hold an object}}. Two human hand here stand for an object with including two holding data.}
-@defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@racket[空]).}
-@defzi[􏿫]{resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@racket[空]).}
+@defzi[㐅]{@simplified-from{空}, @means{empty}.}
+@defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@zi{㐅}).}
+@defzi[􏿫]{resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi{㐅}).}
 @defzi[阳]{@defzi/sub[日]{means sun, implicitly means the former part of an object, or the position aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 @defzi[阴]{@defzi/sub[月]{means moon, implicitly means the secondary part of of an object, or the negative aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 
 @examples[#:eval (the-eval)
 (双 1 2)
 
-(双 1 (双 2 (双 3 (双 4 空))))
+(双 1 (双 2 (双 3 (双 4 㐅))))
 (􏿴 1 2 3 4)
 
 (双 1 (双 2 (双 3 4)))
@@ -216,7 +247,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 
 @section{􏼓, 􏼎}
 @defzi[􏼓]{@defzi/sub[三]{@ori-esp-means["three" "duplicate data"]}}
-@defzi[􏼎]{ref to: @zi{弓}.}
+@defzi[􏼎]{@zi{弓}.}
 @examples[#:eval (the-eval)
 (􏼓 5 'foo)
 (􏼎 5 並)
@@ -260,7 +291,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏷓 '(1 2 3 4 5 6 7 8 9 10))
 ]
 
-@section{末、􏹨}
+@section{末, 􏹨}
 @defzi[末]{@ori-esp-means["treetop" "last"]{(@litchar{木} @means{tree or wood}, @litchar{本} @means{tree root.})}}
 @examples[#:eval (the-eval)
 (末 '(1 2 3 4))
@@ -277,9 +308,9 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 
 
 
-@section{􏾺、𨚞，􏷵、􏷴，􏾺分、𨚞分，􏾺/入、𨚞/入，􏾺于?}
-@defzi[􏾺]{@defzi/sub[左]{@means{left}.}}
-@defzi[𨚞]{@defzi/sub[右]{@means{right}.}}
+@section{􏾺,𨚞, 􏷵,􏷴, 􏸄,􏸃, 􏾺/入,𨚞/入, 􏾺?}
+@defzis[􏾺/􏷵/􏸄]{@defzi/sub[左]{@means{left}.}}
+@defzis[𨚞/􏷴/􏸃]{@defzi/sub[右]{@means{right}.}}
 @eleph-note{@racket[􏺊]}
 @examples[#:eval (the-eval)
 (􏾺 '(a b c d e f g) 2)
@@ -288,8 +319,8 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏷵 '(a b c d e f g) 2)
 (􏷴 '(a b c d e f g) 2)
 
-(􏾺分 '(a b c d e f g) 2)
-(𨚞分 '(a b c d e f g) 2)
+(􏸄 '(a b c d e f g) 2)
+(􏸃 '(a b c d e f g) 2)
 
 (􏾺/入 '(8 4 a b 1 c d 2 e f g 3 5 9) 米?)
 (𨚞/入 '(8 4 a b 1 c d 2 e f g 3 5 9) 米?)
@@ -298,13 +329,12 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏾺? '(a b z) '(a b c d e f g))
 ]
 
-@section{䢼，􏷳分，䢼分}
-@defzis[䢼/􏷳]{@defzi/sub[共]{@means{share}.}}
-
+@section{􏸇, 􏸈, 􏸉}
+@defzis[􏸇/􏸈/􏸉]{@zi{左}.}
 @examples[#:eval (the-eval)
-(䢼 '(a b x y z) '(a b c d e f g))
-(􏷳分 '(a b x y z) '(a b c d e f g))
-(䢼分 '(a b x y z) '(a b c d e f g))
+(􏸇 '(a b x y z) '(a b c d e f g))
+(􏸈 '(a b x y z) '(a b c d e f g))
+(􏸉 '(a b x y z) '(a b c d e f g))
 ]
 
 
@@ -326,7 +356,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 
 
 @section{􏾛、𠆯}
-@defzi[屰]{resembles @italic{the picture of one person standing on his head}, @means{reverse} in ming-lang.}
+@defzi[屰]{resembles @italic{the picture of person standing on his head}, @means{reverse} in ming-lang.}
 @defzi[川]{@simplified-from{顺}, @means{in order}.}
 @examples[#:eval (the-eval)
 (􏾛 '(21 3 888 666 55 77 1000))
@@ -337,7 +367,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section{􏹋、􏹉、􏹊~、􏹊^，􏹅，􏹄，􏹌、􏹈，􏹇~、􏹇}
-@defzis[􏹅/􏹈/􏹄/􏹊/􏹌]{@defzi/sub[彐]{@simplified-from{寻}, @means{find, search}.}}
+@defzis[􏹅/􏹇/􏹄/􏹈/􏹌/􏹊]{@defzi/sub[彐]{@simplified-from{寻}, @means{find, search}.}}
 @eleph-note{@racket[􏹊] @racket[􏾘] @racket[􏺈] @racket[􏺇]}
 @examples[#:eval (the-eval)
 (􏹋 'c '(a b c d e f))
@@ -355,47 +385,24 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏹇~ 米? '(a b 1 c d 3 e 9 f))
 ]
 
-@section+elemref{􏹈分，􏹈巨}
+@section{􏹈分，􏹈巨}
 @eleph-note{@racket[巨] @racket[􏹃]}
 @examples[#:eval (the-eval)
 (􏹈分 米? '(a b 1 c d 3 e 9 f))
 (􏹈巨 米? '(a b 1 c d 3 e 9 f))
 ]
 
-@section+elemref{各，佫，􏷱、􏷰，垎、右垎，佫􏹈、佫􏿝} @;􏷮，􏷭
-@margin-note{
-@bold{@litchar{佫}为古活字} @linebreak{}
-@bold{@litchar{􏷱}为新造字} @linebreak{}
-@bold{@litchar{􏷰}为新造字} @linebreak{}
-@bold{@litchar{垎}为活用字}
-@itemlist[
-@item{@litchar{各}：表意，各个元素依次；}
-@item{@litchar{亻}，见：@secref["list-rules"]；}
-@item{@litchar{土}，表意，构建。见：@secref["list-rules"]；}
-@item{@litchar{并}：见@racket[并]；}
-@item{@litchar{戈}：见@racket[戈]；}
-]
-}
-@margin-note{
-为便理解，列下代码，两两等同：
-@itemlist[
-@item{@code{(佫 PROC (􏿴 a b c))}}
-@item{@code{(􏿴 (PROC a) (PROC b) (PROC c))}}
-@item{@code{(􏷱 PROC (􏿴 a b c))}}
-@item{@code{(并 (PROC a) (PROC b) (PROC c))}}
-@item{@code{(􏷰 PROC (􏿴 a b c))}}
-@item{@code{(戈 (PROC a) (PROC b) (PROC c))}}
-@item{@code{(垎 PROC z (􏿴 a b c))}}
-@item{@code{(PROC c (PROC b (PROC a z)))}}
-@item{@code{(右垎 PROC z (􏿴 a b c))}}
-@item{@code{(PROC a (PROC b (PROC c z)))}}
-]
-}
+@section{各,𢓜, 􏷱,􏷰，垎,右垎} @;􏷮，􏷭
+@defzi[各]{@means{each}.}
+@defzi[𢓜]{@code{(𢓜 PROC (􏿴 a b c))} is simplified from: @code{(􏿴 (PROC a) (PROC b) (PROC c))}}
+@defzi[􏷱]{@code{(􏷱 PROC (􏿴 a b c))} is simplified-from: @code{(并 (PROC a) (PROC b) (PROC c))}}
+@defzi[􏷰]{@code{(􏷰 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))}}
+@defzi[垎]{@code{(垎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC c (PROC b (PROC a z)))} @linebreak{} @code{(右垎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC a (PROC b (PROC c z)))}}
 
 @examples[#:eval (the-eval)
 (各 行示 (􏿴 2 4 6 8))
-(佫 􏽊 '(1 2 3 4))
-(佫 + '(1 2 3 4) '(100 200 300 400))
+(𢓜 􏽊 '(1 2 3 4))
+(𢓜 + '(1 2 3 4) '(100 200 300 400))
 
 (􏷱 􏻛? '(1 2 -3 4))
 (􏷱 + '(1 2 3 4) '(100 200 300 400))
@@ -406,18 +413,18 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (垎 + 0 '(1 2 -3 4))
 (垎 双 '() '(1 2 -3 4))
 (右垎 双 '() '(1 2 -3 4))
-
-(佫􏹈 (入 (x) (并 (􏻛? x) (􏽊 x))) '(1 3 -4 5))
-(佫􏿝 􏻿化􏿴 '(#(1) #(2 3) #(4)))
 ]
 
 
-@section+elemref{佫之􏺗、佫之􏺘}
+@section{𢓜􏹈,𢓜􏿝, 𢓜􏺗、𢓜􏺘}
 @examples[#:eval (the-eval)
-(佫之􏺗 char->integer '(#\a #\y #\b #\k #\c #\j #\d))
-(佫之􏺘 char->integer '(#\a #\y #\b #\k #\c #\j #\d))
-(佫之􏺗 阳 '((3 pears) (1 banana) (2 apples)))
-(佫之􏺘 阳 '((3 pears) (1 banana) (2 apples)))
+(􏹈𢓜 (入 (x) (并 (􏻛? x) (􏽊 x))) '(-2 -1 0 1 2))
+(𢓜􏿝 􏻿化􏿴 '(#(1) #(2 3) #(4)))
+
+(𢓜􏺗 char->integer '(#\a #\y #\b #\k #\c #\j #\d))
+(𢓜􏺘 char->integer '(#\a #\y #\b #\k #\c #\j #\d))
+(𢓜􏺗 阳 '((3 pears) (1 banana) (2 apples)))
+(𢓜􏺘 阳 '((3 pears) (1 banana) (2 apples)))
 ]
 
 
