@@ -14,9 +14,9 @@
 
 
 @title[#:tag "pairs-and-lists"]{双 and 􏿴}
-@margin-note{Extention：@secref["ming-list"]}
-Originate: @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")]
 
+Originates from: @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")] @linebreak{}
+Extends to：@secref["ming-list"]
 
 @section[#:tag "nameing-rules-of-pair-list"]{Naming Rules}
 
@@ -40,16 +40,16 @@ To extend @secref["naming-rules"], specifically there are：
                )
                (list
                @elem{@defcomponent[亻]}
-               "general subset"
+               "resembler"
                @elem{Returns a new list with elements produced from the input list.(Implies the input data and output data are the same type.)}
                @elem{@racket[伄] @racket[𰁣] @racket[攸] @racket[𰂋] @racket[偏] @racket[􏾜] @racket[􏾛] @racket[偅] @racket[𠆯] @racket[􏹈] @racket[仔?]}
                )
-               (list
-               @elem{@defcomponent[彳]}
-               "resembler"
-               @elem{Returns a resemblant list of the input.}
-               @elem{@racket[𢓜]}
-               )
+               @; (list
+               @; @elem{@defcomponent[彳]}
+               @; "resembler"
+               @; @elem{Returns a resemblant list of the input.}
+               @; @elem{@racket[𢓜]}
+               @; )
                (list
                @elem{@defcomponent[阝]}
                "serial subset"
@@ -392,48 +392,48 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏹈巨 米? '(a b 1 c d 3 e 9 f))
 ]
 
-@section{各,𢓜, 􏷱,􏷰，垎,右垎} @;􏷮，􏷭
-@defzi[各]{@means{each}.}
-@defzi[𢓜]{@code{(𢓜 PROC (􏿴 a b c))} is simplified from: @code{(􏿴 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷱]{@code{(􏷱 PROC (􏿴 a b c))} is simplified-from: @code{(并 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷰]{@code{(􏷰 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))}}
-@defzi[垎]{@code{(垎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC c (PROC b (PROC a z)))} @linebreak{} @code{(右垎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC a (PROC b (PROC c z)))}}
+@section{􏷒,􏷑, 􏷐,􏷏，􏷎,右􏷎} @;􏷮，􏷭
+@defzi[􏷒]{@defzi/sub[夂]{@simplified-from{各}, @means{each}.}}
+@defzi[􏷑]{@code{(􏷑 PROC (􏿴 a b c))} is simplified from: @code{(􏿴 (PROC a) (PROC b) (PROC c))}}
+@defzi[􏷐]{@code{(􏷱 PROC (􏿴 a b c))} is simplified-from: @code{(并 (PROC a) (PROC b) (PROC c))}}
+@defzi[􏷏]{@code{(􏷰 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))}}
+@defzi[􏷎]{@code{(垎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC c (PROC b (PROC a z)))} @linebreak{} @code{(右垎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC a (PROC b (PROC c z)))}}
 
 @examples[#:eval (the-eval)
-(各 行示 (􏿴 2 4 6 8))
-(𢓜 􏽊 '(1 2 3 4))
-(𢓜 + '(1 2 3 4) '(100 200 300 400))
+(􏷒 行示 (􏿴 2 4 6 8))
+(􏷑 􏽊 '(1 2 3 4))
+(􏷑 + '(1 2 3 4) '(100 200 300 400))
 
-(􏷱 􏻛? '(1 2 -3 4))
-(􏷱 + '(1 2 3 4) '(100 200 300 400))
+(􏷐 􏻛? '(1 2 -3 4))
+(􏷐 + '(1 2 3 4) '(100 200 300 400))
 
-(􏷱 􏻚? '(1 2 -3 4))
-(􏷰 + '(1 2 3 4) '(100 200 300 400))
+(􏷐 􏻚? '(1 2 -3 4))
+(􏷏 + '(1 2 3 4) '(100 200 300 400))
 
-(垎 + 0 '(1 2 -3 4))
-(垎 双 '() '(1 2 -3 4))
-(右垎 双 '() '(1 2 -3 4))
+(􏷎 + 0 '(1 2 -3 4))
+(􏷎 双 '() '(1 2 -3 4))
+(右􏷎 双 '() '(1 2 -3 4))
 ]
 
 
-@section{𢓜􏹈,𢓜􏿝, 𢓜􏺗、𢓜􏺘}
+@section{􏷑􏹈,􏷑􏿝, 􏷑􏺗、􏷑􏺘}
 @examples[#:eval (the-eval)
-(􏹈𢓜 (入 (x) (并 (􏻛? x) (􏽊 x))) '(-2 -1 0 1 2))
-(𢓜􏿝 􏻿化􏿴 '(#(1) #(2 3) #(4)))
+(􏹈􏷑 (入 (x) (并 (􏻛? x) (􏽊 x))) '(-2 -1 0 1 2))
+(􏷑􏿝 􏻿化􏿴 '(#(1) #(2 3) #(4)))
 
-(𢓜􏺗 char->integer '(#\a #\y #\b #\k #\c #\j #\d))
-(𢓜􏺘 char->integer '(#\a #\y #\b #\k #\c #\j #\d))
-(𢓜􏺗 阳 '((3 pears) (1 banana) (2 apples)))
-(𢓜􏺘 阳 '((3 pears) (1 banana) (2 apples)))
+(􏷑􏺗 char->integer '(#\a #\y #\b #\k #\c #\j #\d))
+(􏷑􏺘 char->integer '(#\a #\y #\b #\k #\c #\j #\d))
+(􏷑􏺗 阳 '((3 pears) (1 banana) (2 apples)))
+(􏷑􏺘 阳 '((3 pears) (1 banana) (2 apples)))
 ]
 
 
-@section+elemref{􏿴/组合、􏿴/排列组合，􏿴/笛卡尔积，􏿴/分组}
+@section+elemref{􏷍/组合、􏷍/排列组合，􏷍/笛卡尔积，􏷍/分组}
 @examples[#:eval (the-eval)
-(􏿴/组合 '(a b c))
-(􏿴/排列组合 '(a b c))
-(􏿴/笛卡尔积 '(1 2 3) '(a b c))
-(􏿴/分组 米? '(1 a 2 b 3 c))
+(􏷍/组合 '(a b c))
+(􏷍/排列组合 '(a b c))
+(􏷍/笛卡尔积 '(1 2 3) '(a b c))
+(􏷍/分组 米? '(1 a 2 b 3 c))
 ]
 
 

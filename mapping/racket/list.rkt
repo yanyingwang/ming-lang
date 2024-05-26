@@ -62,22 +62,22 @@
 >>> partition 􏹈分  ;; 筛开 筛分 筛离 筛分 􏾽分
 >>> count 􏹈巨  ;;度/入 计 λ 度/入
 
->>> filter-map 􏹈𢓜 ;; 佫之􏷹 􏷹佫 􏷯 {等同于@code{(􏹈 (入 (x) x) (佫 proc lst))}}
->>> append-map 𢓜􏿝 ;;@elem{等同于@code{(􏿝 (佫 proc lst))}} ;佫之􏿝
+>>> filter-map 􏹈􏷑 ;; 佫之􏷹 􏷹佫 􏷯 {等同于@code{(􏹈 (入 (x) x) (佫 proc lst))}}
+>>> append-map 􏷑􏿝 ;;@elem{等同于@code{(􏿝 (佫 proc lst))}} ;佫之􏿝
 
 >>> range 􏼏 (米 􏷫) ;􏿴/数段 𥸬􏿴
 >>> inclusive-range 􏼏* ;𥸬􏿴
 
->>> combinations 􏿴/组合
->>> permutations 􏿴/排列组合
->>> in-combinations 􏿴序列/组合
->>> in-permutations 􏿴序列/排列组合
+>>> combinations 􏷍/组合
+>>> permutations 􏷍/排列组合
+>>> in-combinations 􏷍序列/组合
+>>> in-permutations 􏷍序列/排列组合
 
->>> argmax 𢓜􏺗 ; @elem{@racket[佫]之@racket[􏺗]}
->>> argmin 𢓜􏺘 ; @elem{@racket[佫]之@racket[􏺘]}
+>>> argmax 􏷑􏺗 ; @elem{@racket[佫]之@racket[􏺗]}
+>>> argmin 􏷑􏺘 ; @elem{@racket[佫]之@racket[􏺘]}
 
->>> group-by 􏿴/分组
->>> cartesian-product 􏿴/笛卡尔积
+>>> group-by 􏷍/分组
+>>> cartesian-product 􏷍/笛卡尔积
 
  >>> remf 􏹇~ ;; 删/入 (elem "以例程做对比来消除某一符合条件元素" ) ;消 迭
 ;; >>> remf* 删*/入 (elem "以例程做对比来消除所有符合条件元素" ) ; 消* 迭， 见：fitler-not

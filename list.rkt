@@ -11,7 +11,7 @@
          􏹃
          􏹊
          偅
-         仔?
+         􏷍?
          􏿳 􏿳?
          􏺈 􏺇
          ;; 􏼓
@@ -64,10 +64,10 @@
 ;;                   IDX-LST)))
 
 (名 (伄 LST . IDX-LST)
-  (𢓜 (入 (IDX) (弔 LST IDX))
+  (􏷑 (入 (IDX) (弔 LST IDX))
     IDX-LST))
 (名 (伄^ LST IDX-LST)
-  (𢓜 (入 (IDX) (弔 LST IDX))
+  (􏷑 (入 (IDX) (弔 LST IDX))
       IDX-LST))
 
 (名 (􏾝 LST N1 [N2 +inf.0])
@@ -115,8 +115,8 @@
             [夬 (演 (阴 LST) (阳 LST) R-LST)]))
     )
 
-(名 (仔? LST1 LST2) ; 阜 人
-    (􏷱 (入 (e)
+(名 (􏷍? LST1 LST2) ; 阜 人
+    (􏷐 (入 (e)
            (并 (弓 LST2 e) #t))
        LST1))
 
@@ -130,14 +130,14 @@
 
 
 (名 (􏿳? V)
-    (并 (􏿴? V) (􏷱 双? V)))
+    (并 (􏿴? V) (􏷐 双? V)))
 
 
 (名 (􏺈 ALST)
-    (𢓜 阳 ALST))
+    (􏷑 阳 ALST))
 
 (名 (􏺇 ALST)
-    (𢓜 阴 ALST))
+    (􏷑 阴 ALST))
 
 ;; (名 (􏼓 V LEN)
 ;;     (􏼓0 LEN V))
