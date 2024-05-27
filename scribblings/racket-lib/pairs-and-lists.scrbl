@@ -15,8 +15,7 @@
 
 @title[#:tag "pairs-and-lists"]{双 and 􏿴}
 
-Originates from: @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")] @linebreak{}
-Extends to：@secref["ming-list"]
+Originates from @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")] and Extends to @secref["ming-list"].
 
 @section[#:tag "nameing-rules-of-pair-list"]{Naming Rules}
 
@@ -40,9 +39,9 @@ To extend @secref["naming-rules"], specifically there are：
                )
                (list
                @elem{@defcomponent[亻]}
-               "resembler"
+               "general subset or cousion"
                @elem{Returns a new list with elements produced from the input list.(Implies the input data and output data are the same type.)}
-               @elem{@racket[伄] @racket[𰁣] @racket[攸] @racket[𰂋] @racket[偏] @racket[􏾜] @racket[􏾛] @racket[偅] @racket[𠆯] @racket[􏹈] @racket[仔?]}
+               @elem{@racket[伄] @racket[攸] @racket[𰂋] @racket[偏] @racket[􏾜] @racket[􏾛] @racket[偅] @racket[𠆯] @racket[􏹈] @racket[􏷍?]}
                )
                @; (list
                @; @elem{@defcomponent[彳]}
@@ -60,7 +59,7 @@ To extend @secref["naming-rules"], specifically there are：
                @elem{@defcomponent[􏸋]}
                "serial subset of lists"
                @elem{Returns a new list with elements serially produced from the input lists.(Implies the multiple input data and output data are the same type.)}
-               @elem{@racket[􏸇]}
+               @elem{@racket[左􏸑]}
                )
                (list
                @elem{@defcomponent[刂]}
@@ -72,7 +71,7 @@ To extend @secref["naming-rules"], specifically there are：
                @elem{@defcomponent[􏸌]}
                "broken subset of lists"
                @elem{Returns a new list with removing some elements from the input lists.(Implies the multiple input data and output data are the same type.)}
-               @elem{@racket[􏸈]}
+               @elem{@racket[左􏸒]}
                )
                (list
                @elem{@defcomponent[分]}
@@ -90,13 +89,13 @@ To extend @secref["naming-rules"], specifically there are：
                @elem{@defcomponent[入]}
                @elem{same as @zi{/入}}
                @elem{Implies the type of input data is function.}
-               @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂] @racket[􏹁]}
+               @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂]}
                )
                (list
                @elem{@defcomponent[土]}
                @elem{product data}
                @elem{Manufactures data and product new one, implies the type of output data is not same as input.}
-               @elem{@racket[垎]}
+               @elem{@racket[􏷎]}
                )
                (list @bold{Phrase} @bold{-} @bold{-} @bold{-})
                (list
@@ -105,19 +104,19 @@ To extend @secref["naming-rules"], specifically there are：
                @elem{@zi{分}}
                @elem{@racket[􏹈分]}
                )
-               (list
-               @elem{@defsuffix[0]}
-               "original function"
-               @elem{Implies there is another function named with omitting @litchar{0}.}
-               @elem{@racket[􏼓0]}
-               )
+               @; (list
+               @; @elem{@defsuffix[0]}
+               @; "original function"
+               @; @elem{Implies there is another function named with omitting @litchar{0}.}
+               @; @elem{@racket[􏼓0]}
+               @; )
                (list @bold{Punctuation} @bold{-} @bold{-} @bold{-})
                (list
                @elem{@defsuffix[*]}
                "strengthen"
-               "Strengthen the process, thus the output data may become longer."
+               "Strengthen the process, thus the data of output may become longer, and the type may changed accordingly."
                @; @elem{@racket[弓*]、@racket[􏼏*]}
-               @elem{@racket[􏼏*]}
+               @elem{@racket[弓*] @racket[􏼏*]}
                )
                (list
                @elem{@defsuffix[~]}
@@ -147,7 +146,7 @@ To extend @secref["naming-rules"], specifically there are：
                @elem{@definsert[/]}
                @elem{extend prefix}
                @elem{Suffix of @litchar{/} can be considered as an extending explanation of its prefix.}
-               @elem{@racket[􏿴/组合] @racket[􏿴/分组]}
+               @elem{@racket[􏷍/组合] @racket[􏷍/分组]}
                )
                (list
                @elem{@defsuffix[?]}
@@ -192,13 +191,21 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 
 (阳 '(1 2 3 4))
 (阴 '(1 2 3 4))
-(阴之阳 '(1 2 3 4))
-(阴之阴阳 '(1 2 3 4))
+
+]
+
+@section{阴阳+-}
+@defzis[阳+/阴+/阳-/阴-]{For the case of functions starting with @zi{阴} or @zi{阳} and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi{阳} and @litchar{-} stands for @zi{阴}. @linebreak{}
+For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}. }
+@examples[#:eval (the-eval)
+(阴+ '(1 2 3 4))
+(阴-+ '(1 2 3 4))
 
 (阳 '((1 1.1) 2 3 4))
-(阳之阳 '((1 1.1) 2 3 4))
-(阳之阴阳 '((1 1.1) 2 3 4))
+(阳+ '((1 1.1) 2 3 4))
+(阳-+ '((1 1.1) 2 3 4))
 ]
+
 
 @section{􏿝, 􏿜}
 @defzis[􏿝/􏿜]{@defzi/sub[毌]{simplified from @litchar{贯}, which means @italic{append, going through a few objects and connect them together}.}}
@@ -256,8 +263,8 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
         (􏼓 5 'foo)))
 ]
 
-@section{弔, 弓, 􏹂, 𰁣, 􏹁}
-@defzi[弓]{resembles @italic{a rope wraped on stick, thus this rope can be used to count how many circles it is wrapping on stick}. Especially means @italic{the indexes} of an object in ming-lang.}
+@section{弔, 弓,弓*, 􏹂, 􏹂*}
+@defzi[􏹂]{@defzi/sub[弓]{resembles @italic{a rope wraped on stick, thus this rope can be used to count how many circles it is wrapping on stick}. Especially means @italic{the index} of an object in ming-lang.}}
 @defzi[弔]{simplified from @litchar{第} and resembles @italic{an stick wrapped with a rope in circles, thus it can be used to ref to an specific circle}. Especially means @italic{reference} in ming-lang.}
 @eleph-note{
 @racket[伄] @racket[􏾘] @racket[􏾝] @;，@racket[弓*]、@racket[弓*/入]
@@ -266,10 +273,10 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (弔 '(a b c d e c f) 2)
 
 (弓 '(a b c d e c f) 'c)
-(𰁣 '(a b c d e c f) 'c)
+(弓* '(a b c d e c f) 'c)
 
 (􏹂 '(a b 11 d 22 c f) 米?)
-(􏹁 '(a b 11 d 22 c f) 米?)
+(􏹂* '(a b 11 d 22 c f) 米?)
 ]
 
 @section{􏷜, 􏷛, 􏷚, 􏷙, 􏷘, 􏷗, 􏷖, 􏷕, 􏷔, 􏷓}
@@ -329,12 +336,12 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 (􏾺? '(a b z) '(a b c d e f g))
 ]
 
-@section{􏸇, 􏸈, 􏸉}
-@defzis[􏸇/􏸈/􏸉]{@zi{左}.}
+@section{左􏸑, 左􏸒, 左􏸓}
+@defzis[􏸑/􏸒/􏸓]{@zi{同}.}
 @examples[#:eval (the-eval)
-(􏸇 '(a b x y z) '(a b c d e f g))
-(􏸈 '(a b x y z) '(a b c d e f g))
-(􏸉 '(a b x y z) '(a b c d e f g))
+(左􏸑 '(a b x y z) '(a b c d e f g))
+(左􏸒 '(a b x y z) '(a b c d e f g))
+(左􏸓 '(a b x y z) '(a b c d e f g))
 ]
 
 
@@ -395,9 +402,9 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 @section{􏷒,􏷑, 􏷐,􏷏，􏷎,右􏷎} @;􏷮，􏷭
 @defzi[􏷒]{@defzi/sub[夂]{@simplified-from{各}, @means{each}.}}
 @defzi[􏷑]{@code{(􏷑 PROC (􏿴 a b c))} is simplified from: @code{(􏿴 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷐]{@code{(􏷱 PROC (􏿴 a b c))} is simplified-from: @code{(并 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷏]{@code{(􏷰 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷎]{@code{(垎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC c (PROC b (PROC a z)))} @linebreak{} @code{(右垎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC a (PROC b (PROC c z)))}}
+@defzi[􏷐]{@code{(􏷐 PROC (􏿴 a b c))} is simplified-from: @code{(并 (PROC a) (PROC b) (PROC c))}}
+@defzi[􏷏]{@code{(􏷏 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))}}
+@defzi[􏷎]{@code{(􏷎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC c (PROC b (PROC a z)))} @linebreak{} @code{(右􏷎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC a (PROC b (PROC c z)))}}
 
 @examples[#:eval (the-eval)
 (􏷒 行示 (􏿴 2 4 6 8))

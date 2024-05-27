@@ -24,8 +24,8 @@
 
 >>> index-of 弓  ;; 引 导 笈 扱 𫼛 弔
 >>> index-where 􏹂 (弓 入) ;; 引 导  函 =》以例 􏿊 􏷻 弔 弓/入
->>> indexes-of 𰁣 (亻 弓) ;; 􏿉 􏿊 伋 􏷺 伄 𠇁 弓v
->>> indexes-where 􏹁 (亻 弓 入) ;; 􏿊 伄 引 𠇁 弓v 𰁣/入
+>>> indexes-of 弓* ;; 􏿉 􏿊 伋 􏷺 伄 𠇁 弓v
+>>> indexes-where 􏹂*  ;; 􏿊 伄 引 𠇁 弓v 𰁣/入
 
 >>> take 􏾺 (左 阝)
 >>> take-right 𨚞 (右 阝)
@@ -46,9 +46,9 @@
 >>> splitf-at-right 􏸃/入
 
 >>> list-prefix? 􏾺?
->>> take-common-prefix 􏸇 (左 同 􏸋) ;;􏾺共项 􏾺共相 共同/􏾺 左䢼
->>> drop-common-prefix 􏸈 (左 同 􏸌)  ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分
->>> split-common-prefix 􏸉 (左 同 􏸍)
+>>> take-common-prefix 左􏸑 (左 同 􏸋) ;;􏾺共项 􏾺共相 共同/􏾺 左䢼
+>>> drop-common-prefix 左􏸒 (左 同 􏸌)  ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分
+>>> split-common-prefix 左􏸓 (左 同 􏸍)
 
 >>> append* 􏿜 (毌 􏷩) ;; 􏿜 􏾞
 

@@ -61,31 +61,31 @@
 >>> foldr 右􏷎  ;;右掺
 
 
->>> caar 阳之阳
->>> cdar 阳之阴
->>> cadr 阴之阳
->>> cddr 阴之阴
->>> caaar 阳之阳阳
->>> cdaar 阳之阳阴
->>> cadar 阳之阴阳
->>> caadr 阳之阴阴
->>> caddr 阴之阴阴
->>> caddr 阴之阴阳
->>> cdadr 阴之阳阴
->>> caadr 阴之阳阳
->>> caaaar 阳之阳阳阳
->>> caaadr 阴之阳阳阳
->>> caadar 阳之阴阳阳
->>> caaddr 阴之阴阳阳
->>> cadaar 阳之阳阴阳
->>> cadadr 阴之阳阴阳
->>> caddar 阳之阴阴阳
->>> cadddr 阴之阴阴阳
->>> cdaaar 阳之阳阳阴
->>> cdaadr 阴之阳阳阴
->>> cdadar 阳之阴阳阴
->>> cdaddr 阴之阴阳阴
->>> cddaar 阳之阳阴阴
->>> cddadr 阴之阳阴阴
->>> cdddar 阳之阴阴阴
->>> cddddr 阴之阴阴阴
+>>> caar 阳+ (阳+)
+>>> cadr 阴+ (阴+)
+>>> cdar 阳- (阳-)
+>>> cddr 阴- (阴-)
+>>> caaar 阳++ (阳+)
+>>> caadr 阴++ (阴+)
+>>> cadar 阳-+ (阳-)
+>>> caddr 阴-+ (阴-)
+>>> cdaar 阳+- (阳+)
+>>> cdadr 阴+- (阴+)
+>>> cddar 阳-- (阳-)
+>>> cdddr 阴-- (阴-)
+>>> caaaar 阳+++ (阳+)
+>>> caaadr 阴+++ (阴+)
+>>> caadar 阳-++ (阳-)
+>>> caaddr 阴-++ (阴-)
+>>> cadaar 阳+-+ (阳+)
+>>> cadadr 阴+-+ (阴+)
+>>> caddar 阳--+ (阳-)
+>>> cadddr 阴--+ (阴-)
+>>> cdaaar 阳++- (阳+)
+>>> cdaadr 阴++- (阴+)
+>>> cdadar 阳-+- (阳-)
+>>> cdaddr 阴-+- (阴-)
+>>> cddaar 阳+-- (阳+)
+>>> cddadr 阴+-- (阴+)
+>>> cdddar 阳--- (阳-)
+>>> cddddr 阴--- (阴-)

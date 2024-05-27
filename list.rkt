@@ -19,8 +19,8 @@
 ;; (provide 筛分* 分* 右分* 分*/入 右分*/入 段)
 (require "racket/base.rkt" "racket/list.rkt")
 
-(名 (弓* LST V)
-    (𡊤 並 (𰁣 LST V)))
+;; (名 (弓* LST V)
+;;     (𡊤 並 (𰁣 LST V)))
 
 ;; (名 (􏹂* LST V)
 ;;     (apply 􏸼 (􏹂 LST V)))
