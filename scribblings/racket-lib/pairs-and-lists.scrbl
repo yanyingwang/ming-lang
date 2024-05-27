@@ -114,9 +114,9 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defsuffix[*]}
                "strengthen"
-               "Strengthen the process, thus the data of output may become longer, and the type may changed accordingly."
+               "Strengthen the process, thus the data of output may become longer, and the type may be changed accordingly."
                @; @elem{@racket[弓*]、@racket[􏼏*]}
-               @elem{@racket[弓*] @racket[􏼏*]}
+               @elem{@racket[弓*] @racket[􏹂*] @racket[􏼏*]}
                )
                (list
                @elem{@defsuffix[~]}
