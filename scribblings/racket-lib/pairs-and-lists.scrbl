@@ -14,11 +14,9 @@
 
 
 @title[#:tag "pairs-and-lists"]{双 and 􏿴}
-
 Originates from @secref["pairs" #:doc '(lib "scribblings/reference/reference.scrbl")] and Extends to @secref["ming-list"].
 
 @section[#:tag "nameing-rules-of-pair-list"]{Naming Rules}
-
 To extend @secref["naming-rules"], specifically there are：
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
@@ -87,7 +85,7 @@ To extend @secref["naming-rules"], specifically there are：
                )
                (list
                @elem{@defcomponent[入]}
-               @elem{same as @zi{/入}}
+               @elem{same as @zi[/入]}
                @elem{Implies the type of input data is function.}
                @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂]}
                )
@@ -101,7 +99,7 @@ To extend @secref["naming-rules"], specifically there are：
                (list
                @elem{@defsuffix[分]}
                "split data to values"
-               @elem{@zi{分}}
+               @elem{@zi[分]}
                @elem{@racket[􏹈分]}
                )
                @; (list
@@ -170,9 +168,9 @@ Abstractly, we can pair two data together. Integrally, it is called @racket[双]
 Further more, if we put another @racket[双] to @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if we leave @racket[阴] of the ending @racket[双] to be empty(@racket[㐅]), we get a data called @racket[􏿴]; if not, we call it @racket[􏿫].
 
 @defzi[双]{@defzi/sub[又]{resembles @italic{the picture of human's right hand trying to hold an object}}. Two human hand here stand for an object with including two holding data.}
-@defzi[㐅]{@simplified-from{空}, @means{empty}.}
-@defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi{双} linked together, @litchar{㐅} means ending with empty(@zi{㐅}).}
-@defzi[􏿫]{resembles @zi{􏿴} except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi{㐅}).}
+@defzi[㐅]{@simplf-from{穴}. @defzi/sub[穴]{@simplf-from{空}, @whmeans{empty}}.}
+@defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi[双] linked together, @litchar{㐅} means ending with empty(@zi[㐅]).}
+@defzi[􏿫]{resembles @zi[􏿴] except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi[㐅]).}
 @defzi[阳]{@defzi/sub[日]{means sun, implicitly means the former part of an object, or the position aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 @defzi[阴]{@defzi/sub[月]{means moon, implicitly means the secondary part of of an object, or the negative aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
 
@@ -195,7 +193,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 ]
 
 @section{阴阳+-}
-@defzis[阳+/阴+/阳-/阴-]{For the case of functions starting with @zi{阴} or @zi{阳} and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi{阳} and @litchar{-} stands for @zi{阴}. @linebreak{}
+@defzis[阳+/阴+/阳-/阴-]{For the case of functions starting with @zi[阴] or @zi[阳] and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi[阳] and @litchar{-} stands for @zi[阴]. @linebreak{}
 For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}. }
 @examples[#:eval (the-eval)
 (阴+ '(1 2 3 4))
@@ -208,7 +206,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 
 
 @section{􏿝, 􏿜}
-@defzis[􏿝/􏿜]{@defzi/sub[毌]{simplified from @litchar{贯}, which means @italic{append, going through a few objects and connect them together}.}}
+@defzis[􏿝/􏿜]{@defzi/sub[毌]{@simplf-from{贯}, which means @italic{append, going through a few objects and connect them together}.}}
 @examples[#:eval (the-eval)
 (􏿴 1 2 3 4)
 (􏿝 '(1) '(2) '(3) '(4))
@@ -234,7 +232,8 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 
 
 @section{攸}
-@defzi[攸]{@defzi/sub[攵]{means @italic{raping over something to make it changing itself}, especially means @italic{set value}.}}
+@defzi[攸]{@defzi/sub[攵]{means @italic{raping over something to make it changing itself}, especially means @italic{set value}.} @defzi/sub[丨]{@means{only changing one value.}}}
+@eleph-note{@racket[𰁦] @racket[􏾩] @racket[𢪛]}
 @examples[#:eval (the-eval)
 (攸 '(10 15 20 25) 1 1555)
 (攸/入 '(10 15 20 25) 1 􏽊)
@@ -254,7 +253,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 
 @section{􏼓, 􏼎}
 @defzi[􏼓]{@defzi/sub[三]{@ori-esp-means["three" "duplicate data"]}}
-@defzi[􏼎]{@zi{弓}.}
+@defzi[􏼎]{@zi[弓].}
 @examples[#:eval (the-eval)
 (􏼓 5 'foo)
 (􏼎 5 並)
@@ -307,7 +306,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{巨}
-@defzi[巨]{simplified from @litchar{矩}, @ori-esp-means["straightedge, ruler" "measure length"]}
+@defzi[巨]{@simplf-from{矩}, @ori-esp-means["straightedge, ruler" "measure length"]}
 @eleph-note{@racket[􏹃]}
 @examples[#:eval (the-eval)
 (巨 '(a b c d e 3 f g))
@@ -337,7 +336,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{左􏸑, 左􏸒, 左􏸓}
-@defzis[􏸑/􏸒/􏸓]{@zi{同}.}
+@defzis[􏸑/􏸒/􏸓]{@zi[同].}
 @examples[#:eval (the-eval)
 (左􏸑 '(a b x y z) '(a b c d e f g))
 (左􏸒 '(a b x y z) '(a b c d e f g))
@@ -348,7 +347,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 @section{𰂋，偏，􏾜，重、𠝤}
 @defzi[间]{@means{insert between}.}
 @defzi[扁]{@means{faltten}.}
-@defzi[糸]{@simplified-from{紊}, @means{shuffle}.}
+@defzi[糸]{@simplf-from{紊}, @means{shuffle}.}
 @defzi[重]{@means{duplication}.}
 @eleph-note{@racket[偅]}
 
@@ -364,7 +363,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 
 @section{􏾛、𠆯}
 @defzi[屰]{resembles @italic{the picture of person standing on his head}, @means{reverse} in ming-lang.}
-@defzi[川]{@simplified-from{顺}, @means{in order}.}
+@defzi[川]{@simplf-from{顺}, @means{in order}.}
 @examples[#:eval (the-eval)
 (􏾛 '(21 3 888 666 55 77 1000))
 (𠆯 '(21 3 888 666 55 77 1000) <)
@@ -374,7 +373,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{􏹋、􏹉、􏹊~、􏹊^，􏹅，􏹄，􏹌、􏹈，􏹇~、􏹇}
-@defzis[􏹅/􏹇/􏹄/􏹈/􏹌/􏹊]{@defzi/sub[彐]{@simplified-from{寻}, @means{find, search}.}}
+@defzis[􏹅/􏹇/􏹄/􏹈/􏹌/􏹊]{@defzi/sub[彐]{@simplf-from{寻}, @means{find, search}.}}
 @eleph-note{@racket[􏹊] @racket[􏾘] @racket[􏺈] @racket[􏺇]}
 @examples[#:eval (the-eval)
 (􏹋 'c '(a b c d e f))
@@ -400,9 +399,9 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{􏷒,􏷑, 􏷐,􏷏，􏷎,右􏷎} @;􏷮，􏷭
-@defzi[􏷒]{@defzi/sub[夂]{@simplified-from{各}, @means{each}.}}
+@defzi[􏷒]{@defzi/sub[夂]{@simplf-from{各}, @means{each}.}}
 @defzi[􏷑]{@code{(􏷑 PROC (􏿴 a b c))} is simplified from: @code{(􏿴 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷐]{@code{(􏷐 PROC (􏿴 a b c))} is simplified-from: @code{(并 (PROC a) (PROC b) (PROC c))}}
+@defzi[􏷐]{@code{(􏷐 PROC (􏿴 a b c))} is simplf-from: @code{(并 (PROC a) (PROC b) (PROC c))}}
 @defzi[􏷏]{@code{(􏷏 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))}}
 @defzi[􏷎]{@code{(􏷎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC c (PROC b (PROC a z)))} @linebreak{} @code{(右􏷎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC a (PROC b (PROC c z)))}}
 

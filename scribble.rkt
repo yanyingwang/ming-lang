@@ -4,13 +4,13 @@
 (provide defmapping defhzify section+elemref section+autotag
          eleph-note elucidate
          defzi defzis defzi/puauni zi defzi/sub
-         means
+         means whmeans
          modernly-simplifies anciently-simplifies
-         simplified-from
+         simplf-from
          modernly-means mingly-resembles
          ori-esp-means
          ;; defradical defcomponent defcharacter defhybrid
-         defradical defcomponent defsuffix definsert defhas
+         defradical defcomponent defsuffix defprefix definsert defhas
          )
 (require scribble/manual racket/string scribble/core
          scribble/html-properties
@@ -44,6 +44,15 @@
                                (number->string (syntax-e #'zi))
                                (symbol->string (syntax-e #'zi)))])
        #'(elem "suffixed with" (hspace 1) (elemtag str-zi (bold (litchar str-zi)))))
+     ])
+  )
+(define-syntax (defprefix stx)
+  (syntax-case stx ()
+    [(_ zi)
+     (with-syntax ([str-zi (if (number? (syntax-e #'zi))
+                               (number->string (syntax-e #'zi))
+                               (symbol->string (syntax-e #'zi)))])
+       #'(elem "prefixed with" (hspace 1) (elemtag str-zi (bold (litchar str-zi)))))
      ])
   )
 (define-syntax (definsert stx)
@@ -81,18 +90,18 @@
       (cond [(and (> (length ecr) 2)
                   (list? (caddr ecr)))
              (map (lambda (e) `(zi ,(cond
-                                 [(symbol? e) (symbol->string e)]
-                                 [(string? e) e]
-                                 [(list? e) "need to fix"]
-                                 [else "empty"])))
+                                 [(symbol? e) e]
+                                 [(string? e) (string->symbol e)]
+                                 [(list? e) 'needtofix]
+                                 [else 'needtofix])))
                   (caddr ecr))]
             [(and (= (length ecr) 2)
                   (string-contains? (symbol->string cnid) "/"))
              (add-between (map (lambda (e) `(racket ,(string->symbol e)))
                                (string-split (symbol->string cnid) "/"))
-                          `(zi "/"))]
+                          `(zi /))]
             [(= (length ecr) 2)
-             (map (lambda (e) `(zi ,e))
+             (map (lambda (e) `(zi ,(string->symbol e)))
                   (filter non-empty-string? (string-split (symbol->string cnid) "")))]
             [else '()]))
     (define exploded `(elem ,@(add-between raw-exploded " + ")))
@@ -155,9 +164,17 @@
 
 
 
-(define (zi c) ;; zi shorts for hanzi, means chinese char.
-  (elem #:style (style #f (list (attributes '([class . "highlighted"]))))
-        (elemref c (racketplainfont c)))
+;; (define (zi c) ;; zi shorts for hanzi, means chinese char.
+;;   (elem #:style (style #f (list (attributes '([class . "highlighted"]))))
+;;         (elemref c (racketplainfont c)))
+;;   )
+(define-syntax (zi stx) ;; zi shorts for hanzi, means chinese char.
+  (syntax-case stx ()
+    [(_ z)
+     (with-syntax ([str-z (symbol->string (syntax-e #'z))])
+       #'(elem #:style (style #f (list (attributes '([class . "highlighted"]))))
+               (elemref str-z (racketplainfont str-z))))
+     ])
   )
 
 (define (section+autotag . content)
@@ -166,6 +183,8 @@
 
 (define (means . content)
   (elem "means" (hspace 1) @(italic content)))
+(define (whmeans . content)
+  (elem "which means" (hspace 1) @(italic content)))
 
 (define (eleph-note . content) ;; 像注, elephant in chinese is wrote as 象, and 像 means like, resemble
   (margin-note (elem "🐘" (hspace 1) content))) ;; 💡
@@ -193,6 +212,6 @@
   @elem{originally means @elucidate{@ori-elu}, especially means @elucidate{@esp-elu} in ming-lang. @content}
   )
 
-(define (simplified-from zi)
+(define (simplf-from zi)
   @elem{simplified from @litchar{@zi}}
   )

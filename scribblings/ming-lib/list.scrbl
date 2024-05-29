@@ -38,7 +38,7 @@ Extend @secref["pairs-and-lists"].
 @defproc[(伄^ [LST 􏿴?] [N-LST (listof 􏺡?)])
           􏿴?]
 )]{
-Composed of @racket[亻], @racket[弔], @racket[^].
+@defzi[伄]{Composed of @racket[亻] + @racket[弔] + @racket[^].}
 @examples[#:eval (the-eval)
 (伄 '(a b c d e f g) 0 2 3)
 (伄^ '(a b c d e f g) '(0 2 3))
@@ -51,7 +51,7 @@ Composed of @racket[亻], @racket[弔], @racket[^].
 @; @defproc[(􏾝* [LST 􏿴?] [N1 􏺡?] [N2 􏺡?])
 @;           􏿴?]
 )]{
-Composed of @racket[弔], @racket[阝].
+@defzi[􏾝]{composed of @racket[弔] + @racket[阝].}
 @examples[#:eval (the-eval)
 (􏾝 '(a b c d e f) 0)
 (􏾝 '(a b c d e f) 0 0)
@@ -77,7 +77,7 @@ Composed of @racket[弔], @racket[阝].
 @defproc[(􏾘^ [LST 􏿴?] [N-LST (listof? 􏺡?)])
           􏿴?]
 )]{
-Composed of @racket[弔], @racket[刂], @racket[^].
+@defzi[􏾘]{Composed of @racket[弔] + @racket[刂] + @racket[^].}
 @eleph-note{@racket[􏾺] @racket[𨚞]}
 @examples[#:eval (the-eval)
 (􏾘 '(a b c d e f g) 1)
@@ -126,7 +126,7 @@ Composed of @racket[彐], @racket[刂].
 @defproc[(􏷍? [LST1 􏿴?] [LST2 􏿴?])
           boolean?]{
 @racket[LST1]是否是@racket[LST2]的子集。
-@defzi[􏷍]{Composed of @zi{亻}, @zi{􏿴}.}
+@defzi[􏷍]{Composed of @zi[亻], @zi[􏿴].}
 @examples[#:eval (the-eval)
 (􏷍? '(a b) '(a b c d e f g))
 (􏷍? '(a e) '(a b c d e f g))

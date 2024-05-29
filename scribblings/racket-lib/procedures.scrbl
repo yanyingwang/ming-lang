@@ -14,7 +14,7 @@
 
 
 @title[#:tag "procedures"]{禾}
-Racket's @secref["procedures" #:doc '(lib "scribblings/reference/reference.scrbl")] is especially called @zi{禾} in ming-lang.
+Racket's @secref["procedures" #:doc '(lib "scribblings/reference/reference.scrbl")] is especially called @zi[禾] in ming-lang.
 
 
 

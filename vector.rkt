@@ -2,7 +2,7 @@
 
 (provide ;; 空􏻿
          易? 􏻽 􏻽? 􏻼?
-         􏻿化􏸼
+         􏻿化並
          ;; 􏻿􏾝化􏸼*
          ;; 􏻿􏾝* 􏻿􏾩/以􏾝*
          )
@@ -21,8 +21,8 @@
 
 
 ;; TODO: enh below funcs with let loop
-(名 (􏻿化􏸼 VEC)
-    (􏻿􏾝化􏸼 VEC))
+(名 (􏻿化並 VEC)
+    (􏻿􏾝化並 VEC))
 
 ;; (名 (􏻿􏾝化􏸼* VEC N1 N2)
 ;;     (􏻿􏾝化􏸼 VEC N1 (􏽊 N2)))

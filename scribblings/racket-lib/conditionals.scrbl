@@ -19,7 +19,7 @@
 @eleph-note{@racket[􏸞]}
 @itemlist[
 @item{@defzi[丫]{imagine a data flow that is importing in, and there are two paths it can be exported out.}}
-@item{@defzi[􏸣]{for the data flow case of @zi{丫}, imagine @litchar{一} as a barrier which has blocked one direction of the export paths, thus the other export path is extended.}}
+@item{@defzi[􏸣]{for the data flow case of @zi[丫], imagine @litchar{一} as a barrier which has blocked one direction of the export paths, thus the other export path is extended.}}
 @item{@defzi[􏸟]{@code{(􏸟 a b1 ...)} is short for @code{(􏸣 (非 a) b1 ...)}.}}
 ]
 @examples[#:eval (the-eval)

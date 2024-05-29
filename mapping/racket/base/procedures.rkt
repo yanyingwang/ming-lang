@@ -3,15 +3,15 @@
 
 ;; >>> lambda 禾 ;; 道 犭 刁
 >>> λ 入
->>> case-lambda 􏸗 @elem{@zi{入} + @zi{肖}} ;; 􏸗 􏸖 􏸗 𤇕
+>>> case-lambda 􏸗 (入 肖) ;; 􏸗 􏸖 􏸗 𤇕
 >>> define 名 ;; define: (名 a "aaa") ;; define-procedure (禾名 a1 (a) (displayln a)) <= (名 a1 (λ (a) (displayln a1)))
 >>> let 令
 >>> apply 𡊤 ;; 应 使 土 士 􏸛 乞 饣 食
 
->>> procedure? 禾? @elem{@zi{禾} + @zi{?}}
->>> compose 秝 @elem{@zi{禾} + @zi{禾}} ; 秝 秝 􏸛
->>> compose1 􏸕 @elem{@zi{秝} + @litchar{一}}
->>> procedure-rename 􏸘 @elem{@zi{禾} + @zi{名} + @zi{攵}} ;;  名攵 shorts for it
+>>> procedure? 禾? (禾 ?)
+>>> compose 秝 (禾 禾) ; 秝 秝 􏸛
+>>> compose1 􏸕 (秝 一)
+>>> procedure-rename 􏸘 (禾 名 攵) ;;  名攵 shorts for it
 ;; procedure-realm
 ;; procedure->method
 ;; procedure-closure-contents-eq?
