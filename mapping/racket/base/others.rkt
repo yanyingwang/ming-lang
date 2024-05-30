@@ -27,5 +27,5 @@
 >>> void? 无?
 >>> void 无
 
->>> immutable? 固? @elem{是否是不可变的} ;; 反义：花 定 坚
+>>> immutable? 山?  ;; 反义：花 定 坚 固
 >>> raise-argument-error 报参错

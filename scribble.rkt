@@ -12,6 +12,7 @@
          defradical defcomponent defsuffix defprefix definsert defhas
          defzi defzis defzi/puauni zi defzi/sub
          defcompost
+         short-for-code short-for-racket
          )
 (require scribble/manual racket/string scribble/core
          scribble/html-properties
@@ -20,7 +21,7 @@
 
 
 (define-syntax-rule (defhzify cnid rsn enid)
-  (defthing #:kind "汉字化" cnid (unsyntax (racketidfont rsn)) #:value enid)
+  (defthing #:kind "composition" cnid (unsyntax (racketidfont rsn)) #:value enid)
   )
 
 (define-syntax (defradical stx)
@@ -141,34 +142,45 @@
      ])
   )
 
+(define-for-syntax (r-background-label label)
+  `(elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabelInner"]))))
+         ,label)
+  )
 (define-syntax (defzis stx)
   (define (zis-of-str stx-zis)
     (string-split (symbol->string (syntax-e stx-zis)) "/"))
-  (define (elemtag z)
+  (define (gen-elemtag z)
     `(elemtag ,z (bold (racket (code:hilite ,(string->symbol z))))))
-  (define (elemtags zis)
-    (datum->syntax  stx (cons 'elem (add-between (map elemtag zis) "/"))))
+  (define (gen-elemtags zis)
+    (datum->syntax  stx (cons 'elem (add-between (map gen-elemtag zis) "/"))))
   (syntax-case stx ()
     [(_ zis content ...)
      #`(elem #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
-             #,(elemtags (zis-of-str #'zis)) ":" (hspace 1) content ...)
+             #,(gen-elemtags (zis-of-str #'zis)) ":" (hspace 1) content ... #,(r-background-label "zi"))
      ])
   )
+
 (define-syntax (defzi stx)
   (syntax-case stx ()
     [(_ zi content ...)
      (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
-       #'(elem  #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
-                (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...))))
+       #`(elem  #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
+                (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...
+                                      (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
+                                            #,(r-background-label "zi"))
+                                      ))))
      ])
   )
 
+(define-syntax (defcompost stx) ;; define compostion
+  (define (gen-parts ps)
+    (datum->syntax stx (cons 'elem (add-between (map (lambda (p) `(zi ,p)) ps) " + "))))
+  (syntax-case stx ()
+    [(_ zi (parts ...) content ...)
+     #`(defzi zi #,(gen-parts (syntax->datum #'(parts ...))) "." (hspace 1) content ...)
+     ])
+  )
 
-
-;; (define (zi c) ;; zi shorts for hanzi, means chinese char.
-;;   (elem #:style (style #f (list (attributes '([class . "highlighted"]))))
-;;         (elemref c (racketplainfont c)))
-;;   )
 (define-syntax (zi stx) ;; zi shorts for hanzi, means chinese char.
   (syntax-case stx ()
     [(_ z)
@@ -177,6 +189,10 @@
                (elemref str-z (racketplainfont str-z))))
      ])
   )
+;; (define (zi c) ;; zi shorts for hanzi, means chinese char.
+;;   (elem #:style (style #f (list (attributes '([class . "highlighted"]))))
+;;         (elemref c (racketplainfont c)))
+;;   )
 
 (define (section+autotag . content)
   (define tag (string-join content ""))
@@ -187,7 +203,7 @@
 (define (whmeans . content)
   (elem "which means" (hspace 1) @(italic content)))
 
-(define (eleph-note . content) ;; 像注, elephant in chinese is wrote as 象, and 像 means like, resemble
+(define (eleph-note . content) ;; 像注, elephant in chinese is wrote as 象, and 像 means like
   (margin-note (elem "🐘" (hspace 1) content))) ;; 💡
 
 (define (elucidate . content) ;; 释义
@@ -217,11 +233,17 @@
   @elem{simplified from @litchar{@zi}}
   )
 
-(define-syntax (defcompost stx) ;; define compostion
-  (define (gen-parts ps)
-    (datum->syntax stx (cons 'elem (add-between (map (lambda (p) `(zi ,p)) ps) " + "))))
+
+(define-syntax (short-for-code stx)
   (syntax-case stx ()
-    [(_ zi (parts ...) content ...)
-     #`(defzi zi #,(gen-parts (syntax->datum #'(parts ...))) "." content ...)
+    [(_ c ...)
+     #'(elem "Shorts for " (code c ...))
      ])
   )
+(define-syntax (short-for-racket stx)
+  (syntax-case stx ()
+    [(_ c ...)
+     #'(elem "Shorts for " (racket c ...))
+     ])
+)
+  ;; @elem{Shorts for @code{@rawcode}.})

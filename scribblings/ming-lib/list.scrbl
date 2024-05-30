@@ -100,7 +100,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 @defproc[(􏹃 [LST 􏿴?] [PROC 程?])
           􏺡?]{
-Composed of @racket[巨], @racket[入].
+@defcompost[􏹃 (巨 入)]
 @eleph-note{@racket[􏹈巨]}
 @examples[#:eval (the-eval)
 (􏹃 '(a b 12 c 33 d  58 f g) 米?)

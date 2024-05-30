@@ -8,7 +8,7 @@
          􏽪? 􏽩? 􏽨? 􏽧?
          􏽢? 􏽡? 􏽠? 􏽟?
          )
-(require "racket/function.rkt" "racket/base.rkt" "racket/hash.rkt" "list.rkt")
+(require "racket/function.rkt" "racket/base.rkt" "racket/hash.rkt" "list.rkt" "bool.rkt")
 
 
 (名 (􏾌 . V-LST)
@@ -20,18 +20,18 @@
 
 
 (名 (􏾐? V)
-    (并 (􏿰? V) (固? V)))
+    (并 (􏿰? V) (山? V)))
 (名 (􏾑? V)
-    (并 (􏿰? V) (易? V)))
+    (并 (􏿰? V) (水? V)))
 
 (名 (􏽞? V)
-    (并 (􏾎? V) (固? V)))
+    (并 (􏾎? V) (山? V)))
 (名 (􏽝? V)
-    (并 (􏾎? V) (易? V)))
+    (并 (􏾎? V) (水? V)))
 (名 (􏽜? V)
-    (并 (􏾏? V) (固? V)))
+    (并 (􏾏? V) (山? V)))
 (名 (􏽛? V)
-    (并 (􏾏? V) (易? V)))
+    (并 (􏾏? V) (水? V)))
 
 (名 (􏽮? V)
     (并 (􏾌? V) (􏾎? V) (􏾐? V)))
@@ -72,8 +72,3 @@
 ;; (名 (􏿰𦙨? H V)
 
 ;;     )
-
-
-
-(名 (易? V)
-    ((𥟍 固?) V))

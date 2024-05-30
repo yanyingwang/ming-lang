@@ -1,7 +1,8 @@
 #lang scribble/manual
 
 @(require (for-label ming/racket/base ming/racket/vector ming/racket/list
-                     ming ming/vector ming/list)
+                      ming/vector ming/list ming/bool)
+           ming/vector ming/scribble
            scribble/eval)
 @(define the-eval
          (make-eval-factory '(ming/racket/base ming/racket/vector ming/vector)))
@@ -13,9 +14,7 @@
 
 @title[#:tag "ming-vector"]{􏻿}
 @defmodule[ming/vector]
-Racket标准库@secref["vector"]的名语言扩展。
-@margin-note{本页所列之例程的实现代码是名语言，因此源代码有参照意义。}
-
+Exention of @secref["vector"].
 
 @; @defthing[空􏻿 􏻿?]{
 @; 生成@racket[空]@racket[􏻿]，与@code{(􏻿)}等同。
@@ -25,11 +24,10 @@ Racket标准库@secref["vector"]的名语言扩展。
 @; ]
 @; }
 
-@defproc[(􏻽 [V 精确非负整数?] ...)
+@defproc[(􏻽 [V 􏺡?] ...)
 􏻽?]{
-@margin-note{参见：@racket[易?]}
-@margin-note{另见：@racket[􏻿]、@racket[􏻼]}
-生成内容可以被修改的数组。
+@defcompost[􏻽 (𭕄  􏻿)]
+@eleph-note{@racket[􏻿] @racket[􏻼]}
 @examples[#:eval (the-eval)
 (􏻽 1 2 3 4)
 ]
@@ -38,20 +36,11 @@ Racket标准库@secref["vector"]的名语言扩展。
 @deftogether[(
 @defproc[(􏻽? [VEC any?])
           boolean?]
-          @defproc[(􏻼? [VEC any?])
+@defproc[(􏻼? [VEC any?])
           boolean?])]{
-@margin-note{
-两例程分别等同于：
-@itemlist[
-@item{
-@code{(且 (易? VEC) (􏻿? VEC))}
-}
-@item{
-@code{(且 (固? VEC) (􏻿? VEC))}
-}
-]
-}
-是否是@racket[􏻽]和@racket[􏻼]。
+@defcompost[􏻽? (􏻽 ?)]
+@defcompost[􏻼? (􏻼 ?)]
+Short for @racket[(并 (水? VEC) (􏻿? VEC))] and @racket[(并 (山? VEC) (􏻿? VEC))].
 @examples[#:eval (the-eval)
 (􏻽? '#(1 2 3 4))
 (􏻼? '#(1 2 3 4))
