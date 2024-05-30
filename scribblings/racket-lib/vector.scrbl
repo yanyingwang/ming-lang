@@ -53,7 +53,7 @@ To extend @secref["naming-rules"], specifically there are：
                @; )
                (list
                @elem{@defcomponent[扌]}
-               @elem{directly modify}
+               @elem{direct modification}
                @elem{directly modify the orignal data and return void}
                @elem{@racket[􏻿􏾩] @racket[􏻿􏽒] @racket[􏻿􏷉]}
                )
@@ -66,7 +66,7 @@ To extend @secref["naming-rules"], specifically there are：
                @; )
                (list
                @elem{@defprefix[􏻿]}
-               @elem{@racket[􏻿] as input}
+               @elem{@zi[􏻿] as input}
                @elem{implies the type of input data is @racket[􏻿]}
                @elem{@racket[􏻿巨] @racket[􏻿弔] @racket[􏻿𠆯]}
                )

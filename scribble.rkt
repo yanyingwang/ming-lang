@@ -3,7 +3,6 @@
 
 (provide defmapping defhzify section+elemref section+autotag
          eleph-note elucidate
-         defzi defzis defzi/puauni zi defzi/sub
          means whmeans
          modernly-simplifies anciently-simplifies
          simplf-from
@@ -11,6 +10,8 @@
          ori-esp-means
          ;; defradical defcomponent defcharacter defhybrid
          defradical defcomponent defsuffix defprefix definsert defhas
+         defzi defzis defzi/puauni zi defzi/sub
+         defcompost
          )
 (require scribble/manual racket/string scribble/core
          scribble/html-properties
@@ -209,9 +210,18 @@
   )
 
 (define (ori-esp-means ori-elu esp-elu . content)
-  @elem{originally means @elucidate{@ori-elu}, especially means @elucidate{@esp-elu} in ming-lang. @content}
+  @elem{originally means @elucidate{@ori-elu}, especially means @elucidate{@esp-elu}. @content}
   )
 
 (define (simplf-from zi)
   @elem{simplified from @litchar{@zi}}
+  )
+
+(define-syntax (defcompost stx) ;; define compostion
+  (define (gen-parts ps)
+    (datum->syntax stx (cons 'elem (add-between (map (lambda (p) `(zi ,p)) ps) " + "))))
+  (syntax-case stx ()
+    [(_ zi (parts ...) content ...)
+     #`(defzi zi #,(gen-parts (syntax->datum #'(parts ...))) "." content ...)
+     ])
   )
