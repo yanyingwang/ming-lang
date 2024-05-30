@@ -41,7 +41,9 @@ In conclusion, the function names of LISP take more responsibilities to annotate
 @section{Chineseoid characters}
 Compare to English, of which the writing is based on the pronounciation of speaking, Chinese contrarily emphasize its writing more than speaking, which has actually developed a way to write related objects and concepts, we call it @hyperlink["https://en.wikipedia.org/wiki/Chinese_character_classification" "LiuShu(六书)"].
 
-With the fact that chinese characters are just the implementation of using LiuShu for the communication of human, what I am doing here is using it to invent and design lots of @italic{chinese resembled characters}(where we draw the phrase @italic{chineseoid characters}, which means looking like chinese characters but can not be recognized by most Chinese people) for the concepts of Lisp and even the whole programming language world to make human interact better with it.
+With the fact that chinese characters are just the implementation of using LiuShu for the communication of human, what I am doing here is using it to invent and design lots of @italic{chinese resembled characters}, where we draw the phrase @italic{chineseoid characters}, which especially is also called @italic{zi}, means looking like chinese characters but can not be recognized by most Chinese people.
+
+At last, we use those characters instead of common English words for the concepts of Lisp and even the whole programming language world to make human interact better with it.
 
 @tabular[#:style 'boxed
          #:column-properties '(left left)
