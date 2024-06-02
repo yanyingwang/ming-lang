@@ -14,7 +14,7 @@
 
 @title[#:tag "ming-list"]{􏿴}
 @defmodule[ming/list]
-Extendtion of @secref["pairs-and-lists"].
+Extention of @secref["pairs-and-lists"].
 @margin-note{All the procedures in this page are implemented in Ming, therefore, the source code can be seen as a demonstation of it.}
 
 

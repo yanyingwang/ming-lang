@@ -4,7 +4,7 @@
            scribble/eval ming/scribble)
 
 @(define the-eval
-         (make-eval-factory '(ming/racket/base ming/racket/list)))
+         (make-eval-factory '(ming/racket/base ming/racket/list ming/string)))
 
 
 @(require (file "../../private/scribble-styles/css/ming-fonts.css.rkt"))
@@ -28,38 +28,33 @@
 @; ]
 @; }
 
-@section+elemref{同?、􏾗?、􏾃?、侗?}
-@margin-note{
-@bold{@litchar{􏾗}为新造字} @linebreak{}
-@bold{@litchar{􏾃}为新造字} @linebreak{}
-@bold{@litchar{侗}为活用字} @linebreak{}
-@itemlist[
-@item{偏旁@litchar{古}：表示“稳固的、不变的”（见@racket[固?]）；}
-@item{偏旁@litchar{舌}：@litchar{古}+@litchar{丿}，@litchar{丿}表示“复合数据”（list/struct等）；}
-@item{偏旁@litchar{亻}：表示“实体上一样”。}
-]
-}
-@examples[#:eval (the-eval)
-(􏾗? (句 #\a #\b #\b) (句 #\a #\b #\b))
-(􏾗? (􏽁 #\a #\b #\b) (􏽁 #\a #\b #\b))
+@section+elemref{同? 􏷇? 􏷆? 􏷈?}
+@defzi[同]{@means{equal} in Chinese.}
+@defzi[􏷇]{almost same as @zi[同] other than that @zi[𭕄] implies difference about mutable data.}
+@defzi[􏷆]{the simplification version of @zi[同].}
+@defzi[􏷈]{almost same as @zi[􏷆] other than that @zi[米] implies difference about numbers.}
 
-(􏾗? (list 1 2) (list 1 2))
-(􏾗? (expt 2 100) (expt 2 100))
-]
 @examples[#:eval (the-eval)
-(􏾃? (make-string 3 #\z) (make-string 3 #\z))
-(􏾃? (list 1 2) (list 1 2))
-(􏾃? (expt 2 100) (expt 2 100))
-]
-@examples[#:eval (the-eval)
-(侗? (make-string 3 #\z) (make-string 3 #\z))
-(侗? (list 1 2) (list 1 2))
-(侗? (expt 2 100) (expt 2 100))
-]
-@examples[#:eval (the-eval)
-(同? (make-string 3 #\z) (make-string 3 #\z))
-(同? (list 1 2) (list 1 2))
+(同? (􏽀 #\a #\b #\c) (􏽀 #\a #\b #\c))
+(同? (􏿴 1 2) (􏿴 1 2))
 (同? (expt 2 100) (expt 2 100))
+]
+@examples[#:eval (the-eval)
+(􏷇? (􏽀 #\a #\b #\b) (􏽀 #\a #\b #\b))
+(􏷇? (􏽁 #\a #\b #\b) (􏽁 #\a #\b #\b))
+(􏷇? (􏿴 1 2) (􏿴 1 2))
+(􏷇? (expt 2 100) (expt 2 100))
+]
+
+@examples[#:eval (the-eval)
+(􏷆? (􏽀 #\a #\b #\c) (􏽀 #\a #\b #\c))
+(􏷆? (􏿴 1 2) (􏿴 1 2))
+(􏷆? (expt 2 100) (expt 2 100))
+]
+@examples[#:eval (the-eval)
+(􏷈? (􏽀 #\a #\b #\c) (􏽀 #\a #\b #\c))
+(􏷈? (􏿴 1 2) (􏿴 1 2))
+(􏷈? (expt 2 100) (expt 2 100))
 ]
 
 @section+elemref{遍?}
