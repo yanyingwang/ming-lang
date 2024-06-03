@@ -24,21 +24,21 @@
 >>> reverse 􏾛 (亻 屰) ;; 颠 倒 仮 􏾛 仮
 
 >>> remove 􏹊~ ;; 刈 删 缺
->>> remw 􏹊~/􏾗
->>> remv 􏹊~/􏾃
->>> remq 􏹊~/侗
+>>> remw 􏹊~/􏷇
+>>> remv 􏹊~/􏷅
+>>> remq 􏹊~/冃
 ;; 刈~ should be acting as 刈, and result of (刈 'c '(a b c c d)) should be same as (刈* '(c) '(a b c c d))
 >>> remove* 􏹊^
->>> remw* 􏹊^/􏾗
->>> remv* 􏹊^/􏾃
->>> remq* 􏹊^/侗
+>>> remw* 􏹊^/􏷇
+>>> remv* 􏹊^/􏷅
+>>> remq* 􏹊^/冃
 
 >>> sort 𠆯 (亻 川) ; 亻理 𠍣 􏿀 􏿀
 
 >>> member 􏹋 (彐 阝)  ;; 后􏿴 索 ;; 索 寻 寻随
->>> memw 􏹋/􏾗
->>> memv 􏹋/􏾃
->>> memq 􏹋/侗
+>>> memw 􏹋/􏷇
+>>> memv 􏹋/􏷅
+>>> memq 􏹋/冃
 >>> memf 􏹅 (􏹌 阝)
 
 >>> assoc 􏹉 (日 彐)  ; 探 挖 掘

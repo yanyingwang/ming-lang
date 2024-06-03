@@ -28,35 +28,6 @@
 @; ]
 @; }
 
-@section+elemref{同? 􏷇? 􏷆? 􏷈?}
-@defzi[同]{@means{equal} in Chinese.}
-@defzi[􏷇]{almost same as @zi[同] other than that @zi[𭕄] implies difference about mutable data.}
-@defzi[􏷆]{the simplification version of @zi[同].}
-@defzi[􏷈]{almost same as @zi[􏷆] other than that @zi[米] implies difference about numbers.}
-
-@examples[#:eval (the-eval)
-(同? (􏽀 #\a #\b #\c) (􏽀 #\a #\b #\c))
-(同? (􏿴 1 2) (􏿴 1 2))
-(同? (expt 2 100) (expt 2 100))
-]
-@examples[#:eval (the-eval)
-(􏷇? (􏽀 #\a #\b #\b) (􏽀 #\a #\b #\b))
-(􏷇? (􏽁 #\a #\b #\b) (􏽁 #\a #\b #\b))
-(􏷇? (􏿴 1 2) (􏿴 1 2))
-(􏷇? (expt 2 100) (expt 2 100))
-]
-
-@examples[#:eval (the-eval)
-(􏷆? (􏽀 #\a #\b #\c) (􏽀 #\a #\b #\c))
-(􏷆? (􏿴 1 2) (􏿴 1 2))
-(􏷆? (expt 2 100) (expt 2 100))
-]
-@examples[#:eval (the-eval)
-(􏷈? (􏽀 #\a #\b #\c) (􏽀 #\a #\b #\c))
-(􏷈? (􏿴 1 2) (􏿴 1 2))
-(􏷈? (expt 2 100) (expt 2 100))
-]
-
 @section+elemref{遍?}
 @examples[#:eval (the-eval)
 (遍 ([i (􏿴/数段* 1 5)])

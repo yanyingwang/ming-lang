@@ -28,6 +28,7 @@
          (rename-in "../mapping/racket/base/values.rkt" [mapping mapping/racket/base/values])
          (rename-in "../mapping/racket/base/syntax.rkt" [mapping mapping/racket/base/syntax])
          (rename-in "../mapping/racket/base/vector.rkt" [mapping mapping/racket/base/vector])
+         (rename-in "../mapping/racket/base/equality.rkt" [mapping mapping/racket/base/equality])
          )
 
 (define zitable
@@ -57,6 +58,7 @@
           'racket/base/values mapping/racket/base/values
           'racket/base/syntax mapping/racket/base/syntax
           'racket/base/vector mapping/racket/base/vector
+          'racket/base/equality mapping/racket/base/equality
           ))
 
 (define (get-zis path)

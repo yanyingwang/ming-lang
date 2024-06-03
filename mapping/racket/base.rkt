@@ -17,7 +17,7 @@
          (rename-in "base/vector.rkt" [mapping mapping14])
          (rename-in "base/conditionals.rkt" [mapping mapping15])
          (rename-in "base/values.rkt" [mapping mapping16])
-         ;; (rename-in "base/function.rkt" [mapping mapping17])
+         (rename-in "base/equality.rkt" [mapping mapping17])
          ;; (rename-in "base/function.rkt" [mapping mapping18])
          ;; (rename-in "base/function.rkt" [mapping mapping19])
          ;; (rename-in "base/function.rkt" [mapping mapping20])
@@ -43,7 +43,7 @@
           mapping14
           mapping15
           mapping16
-          ;; mapping17
+          mapping17
           ;; mapping18
           ;; mapping19
           ;; mapping20
