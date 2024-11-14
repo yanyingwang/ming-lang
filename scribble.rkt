@@ -22,7 +22,7 @@
 
 
 (define-syntax-rule (defhzify cnid rsn enid)
-  (defthing #:kind "composition" cnid (unsyntax (racketidfont rsn)) #:value enid)
+  (defthing #:kind "word" cnid (unsyntax (racketidfont rsn)) #:value enid) ; prev kind: composition
   )
 
 (define-syntax (defradical stx)
@@ -159,7 +159,7 @@
   (syntax-case stx ()
     [(_ zis content ...)
      #`(elem #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
-             #,(gen-elemtags (zis-of-str #'zis)) ":" (hspace 1) content ... #,(r-background-label "zi"))
+             #,(gen-elemtags (zis-of-str #'zis)) ":" (hspace 1) content ... #,(r-background-label "pictograms")) ; prev label: zi
      ])
   )
 
@@ -170,7 +170,7 @@
        #`(elem  #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
                 (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...
                                       (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                            #,(r-background-label "zi"))
+                                            #,(r-background-label "pictogram")) ; prev label zi
                                       ))))
      ])
   )
