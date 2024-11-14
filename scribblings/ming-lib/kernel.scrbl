@@ -23,7 +23,7 @@
 
 @section{ming/kenel}
 @defmodule[ming/kernel]
-The kernel methods and syntaxes of ming lang.
+The kernel methods and syntaxes of Ming.
 
 @deftogether[(
 @defform[(􏸧 exprs ...)]

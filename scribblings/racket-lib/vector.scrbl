@@ -189,10 +189,10 @@ vec
 vec
 ]
 
-@section[#:tag "vector-base"]{基础例程}
+@section[#:tag "vector-base"]{ming/racket/base}
 @defmodule[ming/racket/base]
 @defmapping[racket/base/vector]
 
-@section[#:tag "vector-additional"]{额外例程}
+@section[#:tag "vector-additional"]{ming/racket/vector}
 @defmodule[ming/racket/vector]
 @defmapping[racket/vector]

@@ -13,29 +13,29 @@
 @(require scribble-rainbow-delimiters)
 @script/rainbow-delimiters*
 
-@title[#:tag "keywords"]{勾}
-“勾”（@tech[#:doc '(lib "scribblings/reference/reference.scrbl") "keywords"]）是与@secref["symbols"]类似的数据结构，特别地被用于例程的参数中使用。
+@title[#:tag "keywords"]{􏶿}
+“􏶿”（@tech[#:doc '(lib "scribblings/reference/reference.scrbl") "keywords"]）是与@secref["symbols"]类似的数据结构，特别地被用于例程的参数中使用。
 
 
 @section[#:tag "list-rules"]{例程命名规则}
 见@secref["naming-rules"]中关于@litchar{化}的条目。
 
 
-@section+elemref{勾?，勾化句、句化勾、勾化􏽁}
+@section+elemref{􏶿?，􏶿化􏷁、􏷁化􏶿、􏶿化􏽁}
 @margin-note{
-@bold{@litchar{勾}为活用字}
+@bold{@litchar{􏶿}为活用字}
 @itemlist[
 @item{@litchar{勹}：工厂、容器、外壳；}
 @item{@litchar{厶}：参数（通@litchar{参}）；}
-@item{@litchar{勾}：在古代通@litchar{句}，在此借用为表示@racket[勾]是和@racket[句]相近的一种数据结构；}
+@item{@litchar{􏶿}：在古代通@litchar{􏷁}，在此借用为表示@racket[􏶿]是和@racket[􏷁]相近的一种数据结构；}
 ]
 }
 @examples[#:eval (the-eval)
-(勾? '#:keyword)
+(􏶿? '#:keyword)
 
-(勾化句 '#:keyword)
-(勾化􏽁 '#:keyword)
-(句化勾 "string")
+(􏶿化􏷁 '#:keyword)
+(􏶿化􏽁 '#:keyword)
+(􏷁化􏶿 "string")
 ]
 
 

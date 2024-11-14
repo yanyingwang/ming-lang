@@ -1,6 +1,6 @@
 #lang at-exp s-exp "../../../private/mapping-lang.rkt"
 
->>> keyword? 勾? "是否是勾结构"
->>> keyword->string 勾化句 "将勾转化成句"
->>> string->keyword 句化勾 "将句转化成勾"
->>> keyword<? 勾<? "是否渐大排序"
+>>> keyword? 􏶿? "是否是􏶿结构"
+>>> keyword->string 􏶿化􏷁 "将􏶿转化成􏷁"
+>>> string->keyword 􏷁化􏶿 "将􏷁转化成􏶿"
+>>> keyword<? 􏶿<? "是否渐大排序"

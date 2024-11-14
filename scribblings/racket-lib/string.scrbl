@@ -14,9 +14,9 @@
 @script/rainbow-delimiters*
 
 
-@title[#:tag "string"]{句}
+@title[#:tag "string"]{􏷁}
 @margin-note{另见名扩展库：@secref["ming-string"]}
-“句”（@tech[#:doc '(lib "scribblings/reference/reference.scrbl") "String"]）就是通常所说的“字符串”数据结构，名语言用单字表示之称为“句”。
+“􏷁”（@tech[#:doc '(lib "scribblings/reference/reference.scrbl") "String"]）就是通常所说的“字符串”数据结构，名语言用单字表示之称为“􏷁”。
 
 
 @section[#:tag "list-rules"]{例程命名规则}
@@ -28,33 +28,33 @@
          #:row-properties '(border)
          (list (list @bold{规则} @bold{指示} @bold{含义} @bold{举例})
                (list
-               @elem{下偏旁@bold{@litchar{句}}}
+               @elem{下偏旁@bold{@litchar{􏷁}}}
                @elem{指示出参}
-               @elem{出参是句结构}
-               @elem{@racket[句]、@racket[􏽀]、@racket[􏼅]、@racket[􏼄]、@racket[􏼃]、@racket[􏼂]}
+               @elem{出参是􏷁结构}
+               @elem{@racket[􏷁]、@racket[􏽀]、@racket[􏼅]、@racket[􏼄]、@racket[􏼃]、@racket[􏼂]}
                )
                (list
-               @elem{右偏旁@bold{@litchar{句}}}
+               @elem{右偏旁@bold{@litchar{􏷁}}}
                @elem{指示出参}
-               @elem{出参是句结构}
+               @elem{出参是􏷁结构}
                @elem{@racket[􏼪]、@racket[􏼲]}
                )
                (list
-               @elem{左偏旁@bold{@litchar{句}}}
+               @elem{左偏旁@bold{@litchar{􏷁}}}
                @elem{指示入参}
-               @elem{入参是句结构}
+               @elem{入参是􏷁结构}
                @elem{@racket[􏺕]、@racket[􏼭]、@racket[􏼩]、@racket[􏼳]、@racket[􏼥]、@racket[􏼝]、@racket[􏼛]、@racket[􏺔]、@racket[􏺓]、@racket[􏺒]}
                )
          )]
 
 
-@section+elemref{句、􏽀、􏽁，句?、􏽀?、􏽁?，􏼟?}
+@section+elemref{􏷁、􏽀、􏽁，􏷁?、􏽀?、􏽁?，􏼟?}
 @margin-note{
-@bold{@litchar{句}为活用字} @linebreak{}
+@bold{@litchar{􏷁}为活用字} @linebreak{}
 @bold{@litchar{􏽁}为新造字} @linebreak{}
 @bold{@litchar{􏽀}为新造字}
 @itemlist[
-@item{@litchar{勹}：工厂、容器、外壳；（@litchar{勹}是@litchar{丩}的增笔，有扭曲盘勾之意思）}
+@item{@litchar{勹}：工厂、容器、外壳；（@litchar{勹}是@litchar{丩}的增笔，有扭曲盘􏶿之意思）}
 @item{@litchar{口}：无实意，代表"数据内容"；}
 @item{@litchar{山}：稳定的、内容不变的（因为“山”是稳定的，见：@racket[􏽁?]）；}
 @item{@litchar{氵}：易动的、内容可变的（因为“水”是易变的，见：@racket[􏽀?]）；}
@@ -65,21 +65,21 @@
 @margin-note{参见：@racket[􏻼]、@racket[􏻽]}
 @margin-note{另见：@secref["symbols"]、@secref["keywords"]，@racket[􏻷?]}
 
-像@secref["vector"]和@secref["hash"]一样，“句”按内容是否可以被修改，也可以被分为：“易句”和“固句”（简写为“@racket[􏽁]”和“@racket[􏽀]”）。@racket[句]默认创建的是“@racket[􏽀]”，通过英文双引号（""）创建的则是“@racket[􏽁]”。
+像@secref["vector"]和@secref["hash"]一样，“􏷁”按内容是否可以被修改，也可以被分为：“易􏷁”和“固􏷁”（简写为“@racket[􏽁]”和“@racket[􏽀]”）。@racket[􏷁]默认创建的是“@racket[􏽀]”，通过英文双引号（""）创建的则是“@racket[􏽁]”。
 @examples[#:eval (the-eval)
-(句 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。)
-(句? (句 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
-(􏽀? (句 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
+(􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。)
+(􏷁? (􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
+(􏽀? (􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
 (􏽁? (􏽁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
 (􏽁? "鹅鹅鹅，曲项向天歌。")
-(句? "鹅鹅鹅，曲项向天歌。")
+(􏷁? "鹅鹅鹅，曲项向天歌。")
 (􏼟? "鹅鹅鹅")
 (􏼟? "")
 ]
 
 @section+elemref{􏽁化，􏽀化}
 @examples[#:eval (the-eval)
-(􏽁? (􏽁化 (句 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。)))
+(􏽁? (􏽁化 (􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。)))
 (􏽀? (􏽀化 "鹅鹅鹅，曲项向天歌。"))
 ]
 
@@ -116,7 +116,7 @@
 ]
 
 
-@section+elemref{􏺕，􏼭，句􏾝}
+@section+elemref{􏺕，􏼭，􏷁􏾝}
 @margin-note{
 @bold{@litchar{􏺕}为新造字} @linebreak{}
 @bold{@litchar{􏼭}为新造字} @linebreak{}
@@ -125,7 +125,7 @@
 @item{@litchar{巨}：“测量长度”的意思，参见：@racket[巨]；}
 @item{@litchar{弔}：“第”的意思，参见：@racket[弔]；}
 @; @item{@litchar{阝}：“部分”的意思。}
-@; @item{@litchar{邭}：@litchar{句􏾝}的缩写。}
+@; @item{@litchar{邭}：@litchar{􏷁􏾝}的缩写。}
 ]
 }
 @margin-note{参见：@racket[巨]，@racket[弔]，@racket[􏾝]，@racket[􏻿􏾝]}
@@ -135,8 +135,8 @@
 
 (􏼭 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" 3)
 
-(句􏾝 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" 3)
-(句􏾝 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" 3 8)
+(􏷁􏾝 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" 3)
+(􏷁􏾝 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" 3 8)
 ]
 
 @section+elemref{􏼘，􏼘/以􏾝，􏼅𰅡}
@@ -154,7 +154,7 @@
 @margin-note{另见：@racket[􏼅]}
 @margin-note{参见：@racket[攸]、@racket[􏻿􏾩]、@racket[􏿰􏾩]，@racket[􏻿􏾩/以􏾝]}
 @examples[#:eval (the-eval)
-(名 str (句 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
+(名 str (􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
 
 (􏼘 str 1 #\白)
 str
@@ -176,10 +176,10 @@ str
 @item{@litchar{子}：@litchar{字}的简写（见：@secref["characters"]）；}
 @item{上下结构的@litchar{又}+@litchar{㐅}：@racket[􏿴]；}
 @item{上下结构的@litchar{又}+@litchar{子}：组成元素是“@racket[字]”的@racket[􏿴]；}
-@item{@litchar{􏼩}：把@racket[句]转化为@racket[􏿴]；}
-@item{@litchar{􏼳}：把@racket[句]转化为组成元素是字的@racket[􏿴]；}
-@item{@litchar{􏼪}：把@racket[􏿴]转化为@racket[句]；}
-@item{@litchar{􏼲}：把组成元素是@racket[字]的@racket[􏿴]转化为@racket[句]。}
+@item{@litchar{􏼩}：把@racket[􏷁]转化为@racket[􏿴]；}
+@item{@litchar{􏼳}：把@racket[􏷁]转化为组成元素是字的@racket[􏿴]；}
+@item{@litchar{􏼪}：把@racket[􏿴]转化为@racket[􏷁]；}
+@item{@litchar{􏼲}：把组成元素是@racket[字]的@racket[􏿴]转化为@racket[􏷁]。}
 ]
 }
 @examples[#:eval (the-eval)

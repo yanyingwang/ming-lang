@@ -368,8 +368,8 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 (􏾛 '(21 3 888 666 55 77 1000))
 (𠆯 '(21 3 888 666 55 77 1000) <)
 (𠆯 '(21 3 888 666 55 77 1000) >)
-(𠆯 '("cat" "dog" "chicken" "duck" "fox") 句<?)
-(𠆯 '("cat" "dog" "chicken" "duck" "fox") 句>?)
+(𠆯 '("cat" "dog" "chicken" "duck" "fox") 􏷁<?)
+(𠆯 '("cat" "dog" "chicken" "duck" "fox") 􏷁>?)
 ]
 
 @section{􏹋、􏹉、􏹊~、􏹊^，􏹅，􏹄，􏹌、􏹈，􏹇~、􏹇}

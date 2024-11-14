@@ -11,6 +11,7 @@
          ;; defradical defcomponent defcharacter defhybrid
          defradical defcomponent defsuffix defprefix definsert defhas
          defzi defzis defzi/puauni zi defzi/sub
+         zitools-ref
          defcompost
          short-for-code short-for-racket
          )
@@ -118,6 +119,8 @@
     )
   )
 
+(define (zitools-ref zi [lit-zi zi])
+  (hyperlink (string-append "https://zi.tools/zi/" zi) lit-zi #:style (style #f (list (attributes '([target . "_blank"]))))))
 
 (define (defzi0/puauni tag) ;; unicode from pivate use areas
   (elemtag tag (elem (bold (litchar tag)) ":" (hspace 1) "PUA unicode, especially designs for ming-lang.")))
@@ -222,11 +225,11 @@
   )
 
 (define (anciently-simplifies zi elucidation ming-elu . content)
-  @elem{simplifies for @litchar{@zi} in ancient chinese, means @elucidate{@elucidation}, especially means @elucidate{@ming-elu} in ming-lang. @content}
+  @elem{simplifies for @litchar{@zi} in ancient chinese, means @elucidate{@elucidation}, especially means @elucidate{@ming-elu} in Ming. @content}
   )
 
 (define (ori-esp-means ori-elu esp-elu . content)
-  @elem{originally means @elucidate{@ori-elu}, especially means @elucidate{@esp-elu}. @content}
+  @elem{originally means @elucidate{@ori-elu}, especially means @elucidate{@esp-elu} in Ming. @content}
   )
 
 (define (simplf-from zi)
