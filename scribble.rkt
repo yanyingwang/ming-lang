@@ -22,7 +22,7 @@
 
 
 (define-syntax-rule (defhzify cnid rsn enid)
-  (defthing #:kind "word" cnid (unsyntax (racketidfont rsn)) #:value enid) ; prev kind: composition
+  (defthing #:kind "word" cnid (unsyntax (racketidfont rsn)) #:value enid)
   )
 
 (define-syntax (defradical stx)
@@ -120,7 +120,7 @@
   )
 
 (define (zitools-ref zi [lit-zi zi])
-  (hyperlink (string-append "https://zi.tools/zi/" zi) lit-zi #:style (style #f (list (attributes '([target . "_blank"]))))))
+  (hyperlink (string-append "https://zi.tools/zi/" zi) lit-zi #:style (style #f (list (attributes '([target . "_blank"] [style . "background:   #d5f5e3; "]))))))
 
 (define (defzi0/puauni tag) ;; unicode from pivate use areas
   (elemtag tag (elem (bold (litchar tag)) ":" (hspace 1) "PUA unicode, especially designs for ming-lang.")))
@@ -159,7 +159,7 @@
   (syntax-case stx ()
     [(_ zis content ...)
      #`(elem #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
-             #,(gen-elemtags (zis-of-str #'zis)) ":" (hspace 1) content ... #,(r-background-label "pictograms")) ; prev label: zi
+             #,(gen-elemtags (zis-of-str #'zis)) ":" (hspace 1) content ... #,(r-background-label "ideograph"))
      ])
   )
 
@@ -170,7 +170,7 @@
        #`(elem  #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
                 (elemtag str-zi (elem (bold (racket (code:hilite zi))) ":" (hspace 1) content ...
                                       (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                            #,(r-background-label "pictogram")) ; prev label zi
+                                            #,(r-background-label "ideograph"))
                                       ))))
      ])
   )
@@ -217,19 +217,19 @@
   )
 
 (define (mingly-resembles zi elucidation . content)
-  @elem{resembles @litchar{@zi}, especially means @elucidate{@elucidation} in ming-lang. @content}
+  @elem{resembles @litchar{@zi}, stands for @elucidate{@elucidation} in Ming. @content}
   )
 
 (define (modernly-simplifies zi elucidation . content)
-  @elem{simplifies for @(litchar zi), which means @(elucidate elucidation) in modern chinese. @content}
+  @elem{simplified from @(litchar zi), which means @(elucidate elucidation) in modern chinese. @content}
   )
 
 (define (anciently-simplifies zi elucidation ming-elu . content)
-  @elem{simplifies for @litchar{@zi} in ancient chinese, means @elucidate{@elucidation}, especially means @elucidate{@ming-elu} in Ming. @content}
+  @elem{simplified from @litchar{@zi} in ancient chinese, means @elucidate{@elucidation}, stands for @elucidate{@ming-elu} in Ming. @content}
   )
 
 (define (ori-esp-means ori-elu esp-elu . content)
-  @elem{originally means @elucidate{@ori-elu}, especially means @elucidate{@esp-elu} in Ming. @content}
+  @elem{originally means @elucidate{@ori-elu}, stands for @elucidate{@esp-elu} in Ming. @content}
   )
 
 (define (simplf-from zi)
