@@ -14,25 +14,16 @@
 @script/rainbow-delimiters*
 
 @title[#:tag "keywords"]{􏶿}
-“􏶿”（@tech[#:doc '(lib "scribblings/reference/reference.scrbl") "keywords"]）是与@secref["symbols"]类似的数据结构，特别地被用于例程的参数中使用。
+Originates from @secref["keywords" #:doc '(lib "scribblings/reference/reference.scrbl")].
 
-
-@section[#:tag "list-rules"]{例程命名规则}
-见@secref["naming-rules"]中关于@litchar{化}的条目。
-
+@section[#:tag "nameing-rules-of-keyword"]{Naming Rules}
+@secref["naming-rules"]
 
 @section+elemref{􏶿?，􏶿化􏷁、􏷁化􏶿、􏶿化􏽁}
-@margin-note{
-@bold{@litchar{􏶿}为活用字}
-@itemlist[
-@item{@litchar{勹}：工厂、容器、外壳；}
-@item{@litchar{厶}：参数（通@litchar{参}）；}
-@item{@litchar{􏶿}：在古代通@litchar{􏷁}，在此借用为表示@racket[􏶿]是和@racket[􏷁]相近的一种数据结构；}
-]
-}
+@defzi[􏶿]{@mingly-resembles["􏷂" "keyword"]}
+
 @examples[#:eval (the-eval)
 (􏶿? '#:keyword)
-
 (􏶿化􏷁 '#:keyword)
 (􏶿化􏽁 '#:keyword)
 (􏷁化􏶿 "string")
@@ -40,10 +31,10 @@
 
 
 
-@section[#:tag "symbols-base"]{基础例程}
+@section[#:tag "symbols-base"]{ming/racket/base}
 @defmodule[ming/racket/base]
 @defmapping[racket/base/keywords]
 
-@section[#:tag "symbols-additional"]{额外例程}
-@defmodule[ming/racket/keywords]
+@section[#:tag "symbols-additional"]{ming/racket/keyword}
+@defmodule[ming/racket/keyword]
 @defmapping[racket/keyword]

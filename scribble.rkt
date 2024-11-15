@@ -10,9 +10,8 @@
          ori-esp-means
          ;; defradical defcomponent defcharacter defhybrid
          defradical defcomponent defsuffix defprefix definsert defhas
-         defzi defzis defzi/puauni zi defzi/sub
-         zitools-ref
-         defcompost
+         defzi defzis defzi/puauni defzi/sub defcompost
+         zi zi-ref zitools-ref
          short-for-code short-for-racket
          )
 (require scribble/manual racket/string scribble/core
@@ -120,7 +119,7 @@
   )
 
 (define (zitools-ref zi [lit-zi zi])
-  (hyperlink (string-append "https://zi.tools/zi/" zi) lit-zi #:style (style #f (list (attributes '([target . "_blank"] [style . "background:   #d5f5e3; "]))))))
+  (hyperlink (string-append "https://zi.tools/zi/" zi) lit-zi #:style (style #f (list (attributes '([target . "_blank"] [style . "background: #ebf5fb; "]))))))
 
 (define (defzi0/puauni tag) ;; unicode from pivate use areas
   (elemtag tag (elem (bold (litchar tag)) ":" (hspace 1) "PUA unicode, especially designs for ming-lang.")))
@@ -188,14 +187,13 @@
   (syntax-case stx ()
     [(_ z)
      (with-syntax ([str-z (symbol->string (syntax-e #'z))])
-       #'(elem #:style (style #f (list (attributes '([class . "highlighted"]))))
-               (elemref str-z (racketplainfont str-z))))
+       #'(zi-ref str-z))
      ])
   )
-;; (define (zi c) ;; zi shorts for hanzi, means chinese char.
-;;   (elem #:style (style #f (list (attributes '([class . "highlighted"]))))
-;;         (elemref c (racketplainfont c)))
-;;   )
+(define (zi-ref c) ;; zi shorts for hanzi, means chinese char.
+  (elem #:style (style #f (list (attributes '([style . "background:  #f5eef8; "])))) ; [class . "highlighted"]
+        (elemref c (racketplainfont c)))
+  )
 
 (define (section+autotag . content)
   (define tag (string-join content ""))
@@ -217,7 +215,7 @@
   )
 
 (define (mingly-resembles zi elucidation . content)
-  @elem{resembles @litchar{@zi}, stands for @elucidate{@elucidation} in Ming. @content}
+  @elem{resembles @zi-ref[@zi], stands for @elucidate{@elucidation} in Ming. @content}
   )
 
 (define (modernly-simplifies zi elucidation . content)

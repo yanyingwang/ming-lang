@@ -16,7 +16,7 @@
 @title[#:tag "symbols"]{􏷂}
 Originates from @secref["symbols" #:doc '(lib "scribblings/reference/reference.scrbl")].
 
-@section[#:tag "nameing-rules-of-symbol"]{Naming Rules}
+@section[#:tag "naming-rules-of-symbol"]{Naming Rules}
 @secref["naming-rules"]
 
 @section[#:tag "symbol-interned-uninterned-unreadable"]{􏷂 􏺏 􏺍 􏺋}
