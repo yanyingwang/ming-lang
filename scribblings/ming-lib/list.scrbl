@@ -148,7 +148,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 @; }
 
 @defproc[(􏿳 [V any?] ...) 􏿳?]{
-@defcompost[􏿳 (双 􏿴)]{@means{association list}.}
+@defcompost[􏿳 (双 􏿴)]{@stands-for{association list}.}
 @eleph-note{@racket[􏿰]}
 @examples[#:eval (the-eval)
 (􏿳 1 2 3 4 1 5)

@@ -201,6 +201,12 @@
                @elem{The type of input data is list}
                @elem{@code{􏹊^ 伄^}}
                )
+               (list
+               @elem{suffix @bold{@litchar{+}}}
+               "same type objects as input"
+               @elem{"more than one same type objects as input" }
+               @elem{@code{􏿰攸+ 􏿰􏾩+}}
+               )
 
                (list
                @elem{include @bold{@litchar{/}}}

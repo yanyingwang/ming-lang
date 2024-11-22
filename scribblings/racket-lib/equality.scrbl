@@ -15,7 +15,7 @@
 
 @title[#:tag "equality"]{同}
 @section+elemref{同? 􏷇? 冃? 􏷅?}
-@defzi[同]{@means{equal} in Chinese.}
+@defzi[同]{@same-as-cnchar["同" "equal"].}
 @defzi[􏷇]{almost same as @zi[同] other than that @zi[𭕄] implies difference about mutable data.}
 @defzi[冃]{the simplification version of @zi[同]. (Do not confuse with @zi[月])}
 @defzi[􏷅]{almost same as @zi[冃] other than that @zi[米] implies difference about numbers.}
