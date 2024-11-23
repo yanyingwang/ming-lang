@@ -18,7 +18,7 @@
 ref to: @url{http://www.yanying.wang/SOICOL}
 
 @section{Lisp and its parenthsis}
-Lisp, as an ancient programming language, when I was learning it with inherent ideas from modern programming languages such as Ruby, I noticed there are a few distinctions. Among them, The most prominent one is the form.
+Lisp, as an ancient programming language, when I was learning it with inherent ideas from modern programming languages such as Ruby, I noticed there are a few distinctions. Among these, The most prominent one is the form.
 
 LISP is highly flat in forms, all are parenthesis. On the contrary, most modern PLs adhere to use different forms for different operations:
 @tabular[#:style 'boxed
