@@ -35,7 +35,15 @@ LISP is highly flat in forms, all are parenthesis. On the contrary, most modern 
 
 By the examples above, we can see in Ruby, different operations are wrote in distinctive forms, but in Racket they are in same form: elements in one parenthesis. This each other resembled form of LISP impedes people differentiate them on a glimpse, therefore, the meaning of operations are more blamed on the function names(first word of elements in parenthesis).
 
-In conclusion, the function names of LISP take more responsibilities to annotate various operations than modern PLs. The more informations that function names show to us, the better we can distinguish them and understand the purpose and usage of them.
+In conclusion, the function names of LISP take more responsibilities to annotate various operations than modern PLs. The more informations that function names convey to us, the better we can distinguish them and understand the purpose and usage of them.
+
+
+@section{Ideogram}
+Following my theory above, we need to break down concepts of current programming languages to atomic components, with those components we build up all the ideogram characters and words for all the function names. (Upon which, we may possibly and hopefully turn bunch of code to sentences in the future.)
+
+To this date since what has been broadly used ideogram is Chinese character, I intentionally design Ming's ideographs with Chinese characters flavour. This is also the reason that most Chinese speaking people find them seeming familar but not recognizable.
+
+Because I also intentionally originate Chinese ideograms to an ancient time, reserve the ideogram components and leave out the sound components(hopefully I can make English words used as sound components in the future), thus to be redeveloped and adapted for PL concepts, as well as redesign them be easily learned for international users.
 
 
 @section{Chineseoid characters}
