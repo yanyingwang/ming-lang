@@ -35,14 +35,14 @@ Originates from @secref["symbols" #:doc '(lib "scribblings/reference/reference.s
 (􏺏? (􏺌 'apple))
 ]
 
-@section[#:tag "convert-symbols-to-others"]{􏷂化􏽁 􏷂化􏷁 􏷁化􏷂 􏷁化􏺍 􏷁化􏺋}
+@section[#:tag "convert-symbols-to-others"]{􏷂化􏽁 􏷂化句 句化􏷂 句化􏺍 句化􏺋}
 @examples[#:eval (the-eval)
 (􏷂化􏽁 'symbol)
-(􏷂化􏷁 'symbol)
+(􏷂化句 'symbol)
 
-(􏷁化􏷂 "string")
-(􏷁化􏺍 "string")
-(􏷁化􏺋 "string")
+(句化􏷂 "string")
+(句化􏺍 "string")
+(句化􏺋 "string")
 ]
 
 @section[#:tag "symbols-base"]{ming/racket/base}

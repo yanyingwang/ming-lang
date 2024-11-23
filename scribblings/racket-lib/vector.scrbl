@@ -99,8 +99,7 @@ To extend @secref["naming-rules"], specifically there are：
 
 @section+elemref{􏻿 􏻽 􏻼, 􏻿? 􏻽? 􏻼?, 􏻸?}
 @defzi[􏻿]{@defzi/sub[矢]{@ori-esp-means["arrow" "vector"]} @zi[十], @ori-esp-means["ten" "fixed length"].}
-@defzi[􏻽]{@defzi/sub[𭕄]{is the horizontal way to write @litchar{氵}, which is @simplf-from{水}, @ori-esp-means["water" @elem{mutable(@racket[水?])}]}}
-@defzi[􏻼]{@defzi/sub[山]{@ori-esp-means["mountain" @elem{immutable(@racket[山?])}]}}
+@defzis[􏻼/􏻽]{@zi[山]/@zi[𭕄 ] + @zi[􏻿].}
 @defzi[􏻸]{@zi[穴].}
 @examples[#:eval (the-eval)
 (􏻽 1 2 3 4)

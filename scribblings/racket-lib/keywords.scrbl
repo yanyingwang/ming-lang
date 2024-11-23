@@ -19,14 +19,14 @@ Originates from @secref["keywords" #:doc '(lib "scribblings/reference/reference.
 @section[#:tag "nameing-rules-of-keyword"]{Naming Rules}
 @secref["naming-rules"]
 
-@section+elemref{􏶿?，􏶿化􏷁、􏷁化􏶿、􏶿化􏽁}
+@section+elemref{􏶿?，􏶿化句、句化􏶿、􏶿化􏽁}
 @defzi[􏶿]{@mingly-resembles["􏷂" "keyword"]}
 
 @examples[#:eval (the-eval)
 (􏶿? '#:keyword)
-(􏶿化􏷁 '#:keyword)
+(􏶿化句 '#:keyword)
 (􏶿化􏽁 '#:keyword)
-(􏷁化􏶿 "string")
+(句化􏶿 "string")
 ]
 
 

@@ -11,7 +11,7 @@
 @(require scribble-rainbow-delimiters)
 @script/rainbow-delimiters*
 
-@title[#:tag "ming-string"]{􏷁}
+@title[#:tag "ming-string"]{句}
 @defmodule[ming/string]
 Racket标准库@secref["string"]的名语言扩展。
 @margin-note{本页所列之例程的实现代码是名语言，因此源代码有参照意义。}
@@ -42,8 +42,8 @@ Racket标准库@secref["string"]的名语言扩展。
 }
 
 
-@; @defproc[(邭* [STR 􏷁?] [N1 精确非负整数?] [N2 精确非负整数?])
-@; 􏷁?]{
+@; @defproc[(邭* [STR 句?] [N1 精确非负整数?] [N2 精确非负整数?])
+@; 句?]{
 @; @margin-note{另见：@racket[邭]}
 @; @examples[#:eval (the-eval)
 @; (邭* "abcdefg" 0 2)
@@ -60,8 +60,8 @@ boolean?]{
 }
 
 
-@defproc[(􏸵 [STR 􏷁?])
-􏷁?]{
+@defproc[(􏸵 [STR 句?])
+句?]{
 @margin-note{
 @bold{@litchar{􏸵}为新造字}
 @itemlist[

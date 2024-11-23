@@ -41,9 +41,9 @@ In conclusion, the function names of LISP take more responsibilities to annotate
 @section{Ideogram}
 Following my theory above, we need to break down concepts of current programming languages to atomic components, with those components we build up all the ideogram characters and words for all the function names. (Upon which, we may possibly and hopefully turn bunch of code to sentences in the future.)
 
-To this date since what has been broadly used ideogram is Chinese character, I intentionally design Ming's ideographs with Chinese characters flavour. This is also the reason that most Chinese speaking people find them seeming familar but not recognizable.
+To this date since what has been broadly used ideogram is Chinese character, I intentionally design Ming's ideographs with Chinese characters flavour. This is also the reason that most Chinese speakers find them seeming familar but not recognizable.
 
-Because I also intentionally originate Chinese ideograms to an ancient time, reserve the ideogram components and leave out the sound components(hopefully I can make English words used as sound components in the future), thus to be redeveloped and adapted for PL concepts, as well as redesign them be easily learned for international users.
+Because I also intentionally originate Chinese ideograms to an ancient time, reserve the ideographic components and leave out the phonetic components(hopefully in the future I can make English words used as phonetic components but not suggest sound here espectially borrow its meaning in Ming), thus to be redeveloped and adapted for PL concepts, as well as redesign them be easily learned for international users.
 
 
 @section{Chineseoid characters}

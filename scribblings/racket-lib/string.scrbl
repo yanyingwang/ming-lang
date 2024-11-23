@@ -14,98 +14,72 @@
 @script/rainbow-delimiters*
 
 
-@title[#:tag "string"]{􏷁}
-@margin-note{另见名扩展库：@secref["ming-string"]}
-“􏷁”（@tech[#:doc '(lib "scribblings/reference/reference.scrbl") "String"]）就是通常所说的“字符串”数据结构，名语言用单字表示之称为“􏷁”。
+@title[#:tag "string"]{句}
+Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.scrbl")] and Extends to @secref["ming-string"].
 
 
-@section[#:tag "list-rules"]{例程命名规则}
-见@secref["naming-rules"]，有：
+@section[#:tag "nameing-rules-of-string"]{Naming Rules}
+Overall @secref["naming-rules"]
 
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
          #:column-properties '(center)
          #:row-properties '(border)
-         (list (list @bold{规则} @bold{指示} @bold{含义} @bold{举例})
+         (list (list @bold{Rules} @bold{Connotation} @bold{Elucidation} @bold{Examples})
                (list
-               @elem{下偏旁@bold{@litchar{􏷁}}}
-               @elem{指示出参}
-               @elem{出参是􏷁结构}
-               @elem{@racket[􏷁]、@racket[􏽀]、@racket[􏼅]、@racket[􏼄]、@racket[􏼃]、@racket[􏼂]}
-               )
+               @elem{@bold{@litchar{句}} as component on the bottom}
+               @elem{indicate output type}
+               @elem{output type is @zi[句]}
+               @elem{@code{句 􏽀 􏼅 􏼄 􏼃 􏼂}})
                (list
-               @elem{右偏旁@bold{@litchar{􏷁}}}
-               @elem{指示出参}
-               @elem{出参是􏷁结构}
-               @elem{@racket[􏼪]、@racket[􏼲]}
-               )
+               @elem{@bold{@litchar{句}} as compoment on the right}
+               @elem{indicate output type}
+               @elem{output type is @zi[句]}
+               @elem{@code{􏼪 􏼲}})
                (list
-               @elem{左偏旁@bold{@litchar{􏷁}}}
-               @elem{指示入参}
-               @elem{入参是􏷁结构}
-               @elem{@racket[􏺕]、@racket[􏼭]、@racket[􏼩]、@racket[􏼳]、@racket[􏼥]、@racket[􏼝]、@racket[􏼛]、@racket[􏺔]、@racket[􏺓]、@racket[􏺒]}
-               )
+               @elem{@bold{@litchar{句}} as component on the left}
+               @elem{indicate input type}
+               @elem{input type is @zi[句]}
+               @elem{@code{􏺕 􏼭 􏼩 􏼳 􏼥 􏼝 􏼛 􏺔 􏺓 􏺒}})
          )]
 
 
-@section+elemref{􏷁、􏽀、􏽁，􏷁?、􏽀?、􏽁?，􏼟?}
-@margin-note{
-@bold{@litchar{􏷁}为活用字} @linebreak{}
-@bold{@litchar{􏽁}为新造字} @linebreak{}
-@bold{@litchar{􏽀}为新造字}
-@itemlist[
-@item{@litchar{勹}：工厂、容器、外壳；（@litchar{勹}是@litchar{丩}的增笔，有扭曲盘􏶿之意思）}
-@item{@litchar{口}：无实意，代表"数据内容"；}
-@item{@litchar{山}：稳定的、内容不变的（因为“山”是稳定的，见：@racket[􏽁?]）；}
-@item{@litchar{氵}：易动的、内容可变的（因为“水”是易变的，见：@racket[􏽀?]）；}
-@; @item{@litchar{穴}：@litchar{空}的简写；}
-@item{上下结构的@litchar{穴}+@litchar{非}：非空。}
-]
-}
-@margin-note{参见：@racket[􏻼]、@racket[􏻽]}
-@margin-note{另见：@secref["symbols"]、@secref["keywords"]，@racket[􏻷?]}
-
-像@secref["vector"]和@secref["hash"]一样，“􏷁”按内容是否可以被修改，也可以被分为：“易􏷁”和“固􏷁”（简写为“@racket[􏽁]”和“@racket[􏽀]”）。@racket[􏷁]默认创建的是“@racket[􏽀]”，通过英文双引号（""）创建的则是“@racket[􏽁]”。
+@section{句 􏽀 􏽁, 句? 􏽀? 􏽁?, 􏼟?}
+@eleph-note{@zi[􏷂] @zi[􏶿]}
+@defzi[句]{@same-as-cnchar-but["句" "sentences" "string"].}
+@defzis[􏽁/􏽀]{@zi[山]/@zi[𭕄 ] + @zi[句]. resembles @zi[句], but is specified to be immutable or mutable.}
 @examples[#:eval (the-eval)
-(􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。)
-(􏷁? (􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
-(􏽀? (􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
-(􏽁? (􏽁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
-(􏽁? "鹅鹅鹅，曲项向天歌。")
-(􏷁? "鹅鹅鹅，曲项向天歌。")
-(􏼟? "鹅鹅鹅")
+(句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g)
+(句? (句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g))
+(􏽀? (句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g))
+(􏽁? (句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g))
+(􏽁? "ThisIsString")
+(句? "ThisIsString")
+(􏼟? "ThisIsString")
 (􏼟? "")
 ]
 
-@section+elemref{􏽁化，􏽀化}
+@section{􏽁化 􏽀化}
 @examples[#:eval (the-eval)
-(􏽁? (􏽁化 (􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。)))
-(􏽀? (􏽀化 "鹅鹅鹅，曲项向天歌。"))
+(􏽁? (􏽁化 (句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g)))
+(􏽀? (􏽀化 "ThisIsString"))
 ]
 
-@section+elemref{􏼅，􏼄}
-@margin-note{
-@bold{@litchar{􏼅}为新造字} @linebreak{}
-@bold{@litchar{􏼄}为新造字}  @linebreak{}
-}
-@margin-note{参见：@racket[􏼓]，@racket[􏼎]。}
+@section{􏼅, 􏼄}
+@eleph-note{@racket[􏼓] @racket[􏼎]}
+@defzi[􏼅]{@zi[三] + @zi[句]}
+@defzi[􏼄]{@zi[弓] + @zi[句]}
 @examples[#:eval (the-eval)
-(􏼅 5 #\鹅)
+(􏼅 5 #\t)
 (􏼄 5 数化字)
 ]
 
-@section+elemref{􏼃，􏼁，􏼂}
-@margin-note{
-@bold{@litchar{􏼃}为新造字} @linebreak{}
-@bold{@litchar{􏼂}为新造字} @linebreak{}
-@bold{@litchar{􏼁}为新造字}
-@itemlist[
-@item{@litchar{申}：“贯穿”的意思；}
-@item{@litchar{山}：见：@racket[􏽁]；}
-@item{@litchar{毌}+@litchar{又}：“贯穿”的意思，且末尾数据是@racket[􏿴]。}
-]
-}
-@margin-note{参见：@racket[􏼓]，@racket[􏼎]。}
+@section{􏼃, 􏼁, 􏼂}
+@eleph-note{@racket[􏿝] @racket[􏿜]}
+@defzi[􏼃]{@zi[毌] + @zi[句]}
+@defzi[􏼂]{@zi[毌] + @zi[又] + @zi[句]. @zi[毌]+@zi[又]: means append inputs with last input being @zi[􏿴] type.}
+@defzi[􏼁]{@zi[山] + @zi[􏼃]}
+
 @examples[#:eval (the-eval)
 (􏼃 "AAA" "BBB" "CCC")
 (􏼁 "AAA" "BBB" "CCC")
@@ -116,30 +90,22 @@
 ]
 
 
-@section+elemref{􏺕，􏼭，􏷁􏾝}
-@margin-note{
-@bold{@litchar{􏺕}为新造字} @linebreak{}
-@bold{@litchar{􏼭}为新造字} @linebreak{}
-@; @bold{@litchar{邭}为古活字}
-@itemlist[
-@item{@litchar{巨}：“测量长度”的意思，参见：@racket[巨]；}
-@item{@litchar{弔}：“第”的意思，参见：@racket[弔]；}
-@; @item{@litchar{阝}：“部分”的意思。}
-@; @item{@litchar{邭}：@litchar{􏷁􏾝}的缩写。}
-]
-}
-@margin-note{参见：@racket[巨]，@racket[弔]，@racket[􏾝]，@racket[􏻿􏾝]}
+@section{􏺕, 􏼭, 句􏾝}
+@eleph-note{@racket[巨]  @racket[弔]  @racket[􏾝] @racket[􏻿􏾝]}
+@defzi[􏺕]{@zi[句] + @zi[巨]. @defzi/sub[巨]{@same-as-cnchar-but["巨" "huge" "measure, length"]}}
+@defzi[􏼭]{@zi[句] + @zi[弔].}
 @; @margin-note{另见：@racket[邭*]}
 @examples[#:eval (the-eval)
-(􏺕 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。")
+(􏺕 "ThisIsstring")
 
-(􏼭 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" 3)
+(􏼭 "ThisIsstring" 3)
 
-(􏷁􏾝 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" 3)
-(􏷁􏾝 "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" 3 8)
+(句􏾝 "ThisIsstring" 3)
+(句􏾝 "ThisIsstring" 3 8)
 ]
 
-@section+elemref{􏼘，􏼘/以􏾝，􏼅𰅡}
+
+@section{􏼘, 􏼘/以􏾝, 􏼅𰅡}
 @margin-note{
 @; @bold{@litchar{拘}为古活字} @linebreak{}
 @; @bold{@litchar{􏼿}为古活字}
@@ -150,11 +116,11 @@
 @item{@litchar{扌}：“@litchar{!}”的意思；}
 ]
 }
-@; @margin-note{另见：@racket[􏼅]，@racket[邭]}
+@; @margin-note{另见：@racket[􏼅], @racket[邭]}
 @margin-note{另见：@racket[􏼅]}
-@margin-note{参见：@racket[攸]、@racket[􏻿􏾩]、@racket[􏿰􏾩]，@racket[􏻿􏾩/以􏾝]}
+@margin-note{参见：@racket[攸] @racket[􏻿􏾩] @racket[􏿰􏾩], @racket[􏻿􏾩/以􏾝]}
 @examples[#:eval (the-eval)
-(名 str (􏷁 #\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
+(名 str (句 #\鹅 #\鹅 #\鹅 #\,  #\曲 #\项 #\向 #\天 #\歌 #\。))
 
 (􏼘 str 1 #\白)
 str
@@ -166,7 +132,7 @@ str
 str
 ]
 
-@section+elemref{􏼩、􏼪，􏼳、􏼲}
+@section{􏼩 􏼪, 􏼳 􏼲}
 @margin-note{
 @bold{@litchar{􏼩}为新造字} @linebreak{}
 @bold{@litchar{􏼪}为新造字} @linebreak{}
@@ -176,70 +142,70 @@ str
 @item{@litchar{子}：@litchar{字}的简写（见：@secref["characters"]）；}
 @item{上下结构的@litchar{又}+@litchar{㐅}：@racket[􏿴]；}
 @item{上下结构的@litchar{又}+@litchar{子}：组成元素是“@racket[字]”的@racket[􏿴]；}
-@item{@litchar{􏼩}：把@racket[􏷁]转化为@racket[􏿴]；}
-@item{@litchar{􏼳}：把@racket[􏷁]转化为组成元素是字的@racket[􏿴]；}
-@item{@litchar{􏼪}：把@racket[􏿴]转化为@racket[􏷁]；}
-@item{@litchar{􏼲}：把组成元素是@racket[字]的@racket[􏿴]转化为@racket[􏷁]。}
+@item{@litchar{􏼩}：把@racket[句]转化为@racket[􏿴]；}
+@item{@litchar{􏼳}：把@racket[句]转化为组成元素是字的@racket[􏿴]；}
+@item{@litchar{􏼪}：把@racket[􏿴]转化为@racket[句]；}
+@item{@litchar{􏼲}：把组成元素是@racket[字]的@racket[􏿴]转化为@racket[句]。}
 ]
 }
 @examples[#:eval (the-eval)
-(􏼪 '("鹅" "鹅" "鹅" "，" "曲" "项" "向" "天" "歌"))
-(􏼪 '("鹅" "鹅" "鹅" "，" "曲" "项" "向" "天" "歌") "")
-(􏼪 '("鹅" "鹅" "鹅" "，" "曲" "项" "向" "天" "歌") "-")
+(􏼪 '("鹅" "鹅" "鹅" ", " "曲" "项" "向" "天" "歌"))
+(􏼪 '("鹅" "鹅" "鹅" ", " "曲" "项" "向" "天" "歌") "")
+(􏼪 '("鹅" "鹅" "鹅" ", " "曲" "项" "向" "天" "歌") "-")
 
-(􏼩 "鹅鹅鹅，曲项向天歌")
-(􏼩 "鹅鹅鹅，曲项向天歌" "")
-(􏼩 "鹅鹅鹅，曲项向天歌" "，")
+(􏼩 "鹅鹅鹅, 曲项向天歌")
+(􏼩 "鹅鹅鹅, 曲项向天歌" "")
+(􏼩 "鹅鹅鹅, 曲项向天歌" ", ")
 (􏼩 "鹅-鹅-鹅-曲-项-向-天-歌" "-")
 
-(􏼲 '(#\鹅 #\鹅 #\鹅 #\， #\曲 #\项 #\向 #\天 #\歌 #\。))
-(􏼳 "鹅鹅鹅，曲项向天歌。")
+(􏼲 '(#\鹅 #\鹅 #\鹅 #\,  #\曲 #\项 #\向 #\天 #\歌 #\。))
+(􏼳 "鹅鹅鹅, 曲项向天歌。")
 ]
 
-@section+elemref{􏼥，􏼝，􏼛}
+@section{􏼥, 􏼝, 􏼛}
 @margin-note{
 @bold{@litchar{􏼥}为新造字} @linebreak{}
 @bold{@litchar{􏼝}为新造字} @linebreak{}
 @bold{@litchar{􏼛}为新造字}
 @itemlist[
-@item{@litchar{戈}：本意是“兵器”，引申为“修改、替换”之意；}
-@item{@litchar{匕}：本意是“匕首”，引申为“修剪、删除”之意；}
+@item{@litchar{戈}：本意是“兵器”, 引申为“修改 替换”之意；}
+@item{@litchar{匕}：本意是“匕首”, 引申为“修剪 删除”之意；}
 @item{@litchar{穴}：@litchar{空}的简写；}
 @item{上下结构的@litchar{丷}+@litchar{匕}：修剪起始处和结尾处；}
 @item{上下结构的@litchar{穴}+@litchar{一}：将相连的多个空格单一化成一个。}
 ]
 }
 @examples[#:eval (the-eval)
-(􏼥 "鹅鹅鹅，曲项向天歌。" "鹅鹅鹅" "小黄鸭")
-(􏼥 "鹅鹅鹅，曲项向天歌。" "鹅" "")
-(􏼥 "\n\r鹅鹅鹅，\n\r曲项向天歌。\n\r\n\r" "\n\r" "")
+(􏼥 "鹅鹅鹅, 曲项向天歌。" "鹅鹅鹅" "小黄鸭")
+(􏼥 "鹅鹅鹅, 曲项向天歌。" "鹅" "")
+(􏼥 "\n\r鹅鹅鹅, \n\r曲项向天歌。\n\r\n\r" "\n\r" "")
 
-(􏼝 "\n\r鹅鹅鹅，\n\r曲项向天歌。\n\r\n\r")
-(􏼝 "鹅鹅鹅，曲项向天歌。" "鹅鹅鹅")
+(􏼝 "\n\r鹅鹅鹅, \n\r曲项向天歌。\n\r\n\r")
+(􏼝 "鹅鹅鹅, 曲项向天歌。" "鹅鹅鹅")
 
 (􏼛 "鹅  鹅    鹅   \n \n 曲项向天歌 \n\r")
 ]
 
-@section+elemref{􏼹?，􏼸?，􏸶?}
+@section{􏼹?, 􏼸?, 􏸶?}
 @margin-note{
 @bold{@litchar{􏼹}为新造字} @linebreak{}
 @bold{@litchar{􏼸}为新造字} @linebreak{}
 @; @bold{@litchar{􏼢}为新造字}
 @itemlist[
-@item{@litchar{本}：本意是“树根”，在此引申为“起始、开头”之意；}
-@item{@litchar{末}：本意是“树梢”，在此引申为“结尾、末尾”之意；}
-@item{@litchar{干}：本意是“枝干”，在此引申为“中间、包含”之意；}
+@item{@litchar{本}：本意是“树根”, 在此引申为“起始 开头”之意；}
+@item{@litchar{末}：本意是“树梢”, 在此引申为“结尾 末尾”之意；}
+@item{@litchar{干}：本意是“枝干”, 在此引申为“中间 包含”之意；}
 ]
 }
 @examples[#:eval (the-eval)
-(􏼹? "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" "鹅鹅鹅")
-(􏼸? "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" "拨清波。")
-(􏸶? "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" "鹅鹅鹅")
-(􏸶? "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" "拨清波。")
-(􏸶? "鹅鹅鹅，曲项向天歌。白毛浮绿水，红掌拨清波。" "白毛")
+(􏼹? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "鹅鹅鹅")
+(􏼸? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "拨清波。")
+(􏸶? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "鹅鹅鹅")
+(􏸶? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "拨清波。")
+(􏸶? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "白毛")
 ]
 
-@section+elemref{􏺔，􏺓，􏺒}
+@section{􏺔, 􏺓, 􏺒}
 @margin-note{
 @bold{@litchar{􏺔}为新造字} @linebreak{}
 @bold{@litchar{􏺓}为新造字} @linebreak{}

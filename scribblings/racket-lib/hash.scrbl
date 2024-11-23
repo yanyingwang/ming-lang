@@ -70,10 +70,7 @@ resemble @zi[􏿰].
 @defzi/sub[口]/@defzi/sub[􏶯]/@defzi/sub[􏶮]/@defzi/sub[=] are simplified way to write @zi[同]/@zi[􏷇]/@zi[􏷅]/@zi[冃], which indicate the keys are uniqued by using which comparison procedures.}
 
 @section{􏾐 􏾑}
-@defzis[􏾐/􏾑]{resemble @zi[􏿰].
-@defzi/sub[山]{@same-as-cnchar-but["山" "mountain" "immutable"]};
-@defzi/sub[𭕄]{@same-as-cnchar-but["水" "water" "mutable"]}.
-}
+@defzis[􏾐/􏾑]{@zi[山]/@zi[𭕄 ] +  @zi[􏿰].}
 
 @section{􏾎 􏾏 􏾈}
 @defzis[􏾎/􏾏/􏾈]{
@@ -137,7 +134,7 @@ resemble @zi[􏿰].
 
 
 
-@section+elemref{􏿰􏺈 􏿰􏺇，􏿰日?}
+@section{􏿰􏺈 􏿰􏺇，􏿰日?}
 @defzi[􏺈]{@zi[日] + @zi[阝], @stands-for{the keys of @racket[􏿰] object.}}
 @defzi[􏺇]{@zi[日] + @zi[阝], @stands-for{the values of @racket[􏿰] object.}}
 @defzi[明]{@zi[日] + @zi[月], @stands-for{the pair(key+value) of @racket[􏿰] object.}}
@@ -148,8 +145,8 @@ resemble @zi[􏿰].
 ]
 
 
-@; @section+elemref{􏿰􏽚 􏿰𦙨}
-@section+elemref{􏿰弔 􏿰𫼛，􏿰􏽙，􏿰􏾘 􏿰􏽘}
+@; @section{􏿰􏽚 􏿰𦙨}
+@section{􏿰弔 􏿰𫼛，􏿰􏽙，􏿰􏾘 􏿰􏽘}
 @defzi[𫼛]{@zi[扌] + @zi[弔]}
 {@defzi[􏽙]{@zi[弔] + @zi[日]}
 {@defzi[􏾘]{@zi[弔] + @zi[刂]}
@@ -178,7 +175,7 @@ h
 ]
 
 
-@section+elemref{􏿰攸 􏿰攸+，􏿰􏾩 􏿰􏾩+，􏿰攸/入 􏿰􏾩/入}
+@section{􏿰攸 􏿰攸+，􏿰􏾩 􏿰􏾩+，􏿰攸/入 􏿰􏾩/入}
 @eleph-note{@racket[攸]}
 @examples[#:eval (the-eval)
 (􏿰攸 (􏿰 'a "apple" 'b "banana") 'b "ba")
@@ -191,7 +188,7 @@ h
 ]
 
 
-@section+elemref{􏿰𠛮 􏿰􏽗，𠛮􏿰}
+@section{􏿰𠛮 􏿰􏽗，𠛮􏿰}
 @defzi[𠛮]{@zi[全] + @zi[刂].}
 @examples[#:eval (the-eval)
 (􏿰𠛮 (􏿰 'a "apple" 'b "banana"))
@@ -201,7 +198,7 @@ h
 (𠛮􏿰 (􏿰 'a "apple" 'b "banana"))
 ]
 
-@section+elemref{􏿰􏷒 􏿰􏷑 􏿰􏷑化􏿴}
+@section{􏿰􏷒 􏿰􏷑 􏿰􏷑化􏿴}
 @eleph-note{@racket[􏷑]}
 @examples[#:eval (the-eval)
 (􏿰􏷒 (􏿰 'a "apple" 'b "banana") (入 (K V) (示 K) (示 V)))
@@ -209,7 +206,7 @@ h
 (􏿰􏷑化􏿴 (􏿰 'a "apple" 'b "banana") (入 (K V) (􏿴 V K)))
 ]
 
-@section+elemref{􏿰􏺈?^}
+@section{􏿰􏺈?^}
 @eleph-note{@racket[􏿰􏺈]}
 @examples[#:eval (the-eval)
 (􏿰􏺈?^ (􏿰 'a "aa" 'b "bb") (􏿰 'a "aaa" 'b "bbb" 'c "ccc"))
@@ -218,7 +215,7 @@ h
 (􏿰􏺈?^ (􏿰 'b "bb") (􏿰 'a "aaa" 'b "bbb" 'c "ccc"))
 ]
 
-@section+elemref{􏿰巨 􏻵?}
+@section{􏿰巨 􏻵?}
 @eleph-note{@racket[巨 穴?]}
 @defzi[􏻵]{@zi[穴] + @zi[􏿰].}
 @examples[#:eval (the-eval)
@@ -226,7 +223,7 @@ h
 (􏻵? (􏿰 'a "aa" 'b "bb"))
 ]
 
-@section+elemref{􏾑化}
+@section{􏾑化}
 @; @margin-note{
 @; @bold{@litchar{􏽕}为新造字}
 @; @itemlist[
@@ -241,10 +238,10 @@ h
 
 
 
-@section[#:tag "hash-base"]{基础例程}
+@section[#:tag "hash-base"]{ming/racket/base}
 @defmodule[ming/racket/base]
 @defmapping[racket/base/hash]
 
-@section[#:tag "hash-addtional"]{额外例程}
+@section[#:tag "hash-addtional"]{ming/racket/hash}
 @defmodule[ming/racket/hash]
 @defmapping[racket/hash]

@@ -32,7 +32,7 @@ boolean?]{
 @defproc[(􏹔 [N 米?])
 釆?]{
 返回小数后保留N位（默认2）的近视值，采用“四舍六入五成双（奇进偶退）法”。
-@margin-note{另见：@racket[宩化􏹔􏷁]}
+@margin-note{另见：@racket[宩化􏹔句]}
 @examples[#:eval (the-eval)
 (􏹔 0.014)
 (􏹔 0.015)

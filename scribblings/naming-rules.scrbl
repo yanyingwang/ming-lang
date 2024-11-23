@@ -2,6 +2,7 @@
 
 @(require (for-label racket ming ming/list ming/vector ming/hash ming/string)
            scribble/example
+           ming/scribble
            scribble-rainbow-delimiters)
 @(define the-eval
          (make-eval-factory '(racket/base racket/list ming/racket/base ming/racket/list)))
@@ -16,6 +17,18 @@
 
 @section[#:tag "character-rules"]{Characters}
 @margin-note{You may need to read @secref["character-implications"] first.}
+
+@defzi[山]{
+@same-as-cnchar-but["山" "mountain" "immutable"].
+Example: @code{山? 􏻼 􏾐 􏽁}
+}
+
+@defzis[水/氵/𭕄]{
+@same-as-cnchar-but["水" "water" "mutable"].
+Example: @code{水? 􏻽 􏾐 􏽀}
+}
+
+
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
          #:column-properties '(center)
@@ -217,7 +230,20 @@
          )
          ]
 
-@section[#:tag "phrase-rules"]{Phrases}
+@section[#:tag "word-rules"]{Words}
+
+@defzi[化]{@same-as-cnchar["化" "convert"].}
+@itemlist[
+@item{
+In the end of word：means slightly converting data, such as from @zi[山] to @zi[水].
+Example: @code{􏻼化 􏽀化 􏽁化}
+}
+@item{
+In the middle of word：means converting data from one type to the other.
+Example: {@code{􏻿化􏿴 􏿴化􏻿}}
+}
+]
+
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
          #:column-properties '(center)
@@ -237,18 +263,7 @@
                @; @elem{@racket[序􏿴]、@racket[复􏿴]、@racket[𥸬􏿴]}
                @; )
 
-               (list
-               @elem{suffix @bold{@litchar{化}}}
-               @elem{attribute convert}
-               @elem{Convert attributes of data, such as from mutable to immutable.}
-               @elem{@code{􏻼化 􏽀化 􏽁化}}
-               )
-               (list
-               @elem{insert @bold{@litchar{化}}}
-               @elem{type convert}
-               @elem{Convert types of data.}
-               @elem{@code{􏻿化􏿴 􏿴化􏻿}}
-               )
+               
          )
          ]
 
@@ -274,3 +289,4 @@
                )
          )
          ]
+

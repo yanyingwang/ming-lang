@@ -1,18 +1,18 @@
 #lang at-exp s-exp "../../private/mapping-lang.rkt"
 
 
->>> string-append* 􏼂 @elem{类@racket[􏼱]，不过最后一个􏷁是@racket[􏿴]} ;􏼰
+>>> string-append* 􏼂 ;􏼰
 
->>> string-join 􏼪 "把一个􏿴内的各个元素聚集在一块组成􏷁" ; 􏼻
->>> string-split 􏼩 "把􏷁分割并组成􏿴" ;􏼼 􏼼 􏼼
+>>> string-join 􏼪  ; 􏼻
+>>> string-split 􏼩 ;􏼼 􏼼 􏼼
 
->>> string-normalize-spaces 􏼛 "内容中的空格回车等字符都简化成一个空格" ; 㲁 椌 𤗇 𤗇 瞾 箜 𭄲 􏷁􏼺 􏼮 􏼛 􏼚
->>> string-replace 􏼥 "将数据内容的一部分更换成另一部分" ;敂
+>>> string-normalize-spaces 􏼛 ; 㲁 椌 𤗇 𤗇 瞾 箜 𭄲 句􏼺 􏼮 􏼛 􏼚
+>>> string-replace 􏼥 ;敂
 
->>> string-trim 􏼝 @elem{修剪􏷁} ; 􏼡 􏼙
->>> non-empty-string? 􏼟? @elem{非空􏷁?}; 䆜 􏼠 􏻷 􏻶
+>>> string-trim 􏼝 ; 􏼡 􏼙
+>>> non-empty-string? 􏼟?
 
->>> string-contains? 􏸶? @elem{某􏷁是否是某􏷁中间的一部分} ;; create a procedure named: 诗含字 􏼴 邭 􏼢
->>> string-prefix? 􏼹? @elem{某􏷁是否是某􏷁起头的一部分} ;; 诗起于字 􏼶 􏼤
->>> string-suffix? 􏼸? @elem{某􏷁是否是某􏷁末尾的一部分} ;; 诗终于字 􏼵􏼣
+>>> string-contains? 􏸶? ;; create a procedure named: 诗含字 􏼴 邭 􏼢
+>>> string-prefix? 􏼹? ;; 诗起于字 􏼶 􏼤
+>>> string-suffix? 􏼸? ;; 诗终于字 􏼵􏼣
 ;; 玽 欨 劬 眗 竘 𭇕 𮍘 𭴔 𫲢 䪷 𡱈 坸 佝 𠛎 𤖵 𠣪 軥 胊 㽛 玽 岣 驹 夠

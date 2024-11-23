@@ -84,9 +84,9 @@
 ;random-sample
 
 ;; 4.3.2.9 Number–String Conversions
->>> number->string 米化􏷁
->>> string->number 􏷁化米
->>> real->decimal-string 宩化􏹔􏷁 @elem{将@racket[宩]转化成@racket[􏹔]@racket[􏷁]}
+>>> number->string 米化句
+>>> string->number 句化米
+>>> real->decimal-string 宩化􏹔句 @elem{将@racket[宩]转化成@racket[􏹔]@racket[句]}
 ;; >>> integer-bytes->integer ->?integer-bytes->integer
 ;; >>> integer->integer-bytes ->?integer->integer-bytes
 ;; >>> floating-point-bytes->real ->?floating-point-bytes->real
