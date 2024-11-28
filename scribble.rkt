@@ -3,7 +3,9 @@
 
 (provide defmapping defhzify section+elemref section+autotag
          eleph-note elucidate
-         stands-for whstands-for same-as-cnchar same-as-cnchar-but
+         stands-for whstands-for
+         same-as-cnchar same-as-cnchar-but same-as-cnchar-and
+         simplified-from-cnchar simplified-from-cnchar-but simplified-from-cnchar-and
          modernly-simplifies anciently-simplifies
          simplf-from
          modernly-means mingly-resembles
@@ -203,10 +205,21 @@
   (elem "stands for" (hspace 1) @(elucidate content)))
 (define (whstands-for . content)
   (elem "which stands for" (hspace 1) @(elucidate content)))
+
+(define (same-as-cnchar-and cnchar ori-meaning standing)
+  (elem "same as cnchar " @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", and especially "  @stands-for[@standing] " in Ming"))
 (define (same-as-cnchar-but cnchar ori-meaning standing)
-  (elem "same as Chinese character " @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", but borrowed to "  @stands-for[@standing] " in Ming"))
+  (elem "same as cnchar " @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", but borrowed to "  @stands-for[@standing] " in Ming"))
 (define (same-as-cnchar cnchar meaning)
-  (elem "same as Chinese character" (hspace 1) @zitools-ref[cnchar] ", " @stands-for[@meaning] " in Ming"))
+  (elem "same as cnchar " (hspace 1) @zitools-ref[cnchar] ", " @stands-for[@meaning] " in Ming"))
+
+(define (simplified-from-cnchar-and cnchar ori-meaning meaning)
+  (elem "simplified from cnchar " (hspace 1) @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", and especially " @stands-for[@meaning] " in Ming"))
+(define (simplified-from-cnchar-but cnchar ori-meaning meaning)
+  (elem "simplified from cnchar " (hspace 1) @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", but borrowed to " @stands-for[@meaning] " in Ming"))
+(define (simplified-from-cnchar cnchar meaning)
+  (elem "simplified from cnchar " (hspace 1) @zitools-ref[cnchar] ", " @stands-for[@meaning] " in Ming"))
+
 
 (define (eleph-note . content) ;; 像注, elephant in chinese is wrote as 象, and 像 means like
   (margin-note (elem "🐘" (hspace 1) content))) ;; 💡
@@ -237,7 +250,6 @@
 (define (simplf-from zi)
   @elem{simplified from @litchar{@zi}}
   )
-
 
 (define-syntax (short-for-code stx)
   (syntax-case stx ()

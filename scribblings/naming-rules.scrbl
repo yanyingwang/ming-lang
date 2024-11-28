@@ -73,14 +73,14 @@ Example: @code{水? 􏻽 􏾐 􏽀}
                @elem{@bold{@litchar{戈}}}
                "substitute"
                @elem{Means @italic{substitute}.}
-               @elem{@racket[􏼥]}
+               @elem{@racket[􏶐]}
                )
 
                @; (list
                @; @elem{@bold{@litchar{匕}}}
                @; @elem{小幅度的修改}
                @; @elem{}
-               @; @elem{@racket[􏼝]、@racket[􏺚]、@racket[􏺽]、@racket[􏺾]}
+               @; @elem{@racket[􏶊]、@racket[􏺚]、@racket[􏺽]、@racket[􏺾]}
                @; )
 
                (list

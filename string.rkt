@@ -5,6 +5,7 @@
          ;; 邭*
          􏻷?
          􏸵
+         ;; 􏶊*
          )
 (require "racket/base.rkt" "racket/string.rkt" "racket/function.rkt" "bool.rkt")
 
@@ -30,4 +31,8 @@
     ((𥟍 􏼟?) V))
 
 (名 (􏸵 S)
-    (􏼥 S " " ""))
+    (􏶐 S " " ""))
+
+
+;; (名 (􏶊* S . RST)
+;;     (􏶊 #:repeat? #t S RST))

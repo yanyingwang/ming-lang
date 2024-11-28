@@ -35,12 +35,12 @@ Overall @secref["naming-rules"]
                @elem{@bold{@litchar{句}} as compoment on the right}
                @elem{indicate output type}
                @elem{output type is @zi[句]}
-               @elem{@code{􏼪 􏼲}})
+               @elem{@code{􏶒 􏿴化句}})
                (list
                @elem{@bold{@litchar{句}} as component on the left}
                @elem{indicate input type}
                @elem{input type is @zi[句]}
-               @elem{@code{􏺕 􏼭 􏼩 􏼳 􏼥 􏼝 􏼛 􏺔 􏺓 􏺒}})
+               @elem{@code{􏺕 􏼭 􏶑 句化􏿴 􏶐 􏶊 􏶋 􏶉 􏶈 􏶇}})
          )]
 
 
@@ -90,39 +90,35 @@ Overall @secref["naming-rules"]
 ]
 
 
-@section{􏺕, 􏼭, 句􏾝}
+@section{􏺕, 􏼭, 邭}
 @eleph-note{@racket[巨]  @racket[弔]  @racket[􏾝] @racket[􏻿􏾝]}
 @defzi[􏺕]{@zi[句] + @zi[巨]. @defzi/sub[巨]{@same-as-cnchar-but["巨" "huge" "measure, length"]}}
 @defzi[􏼭]{@zi[句] + @zi[弔].}
+@defzi[邭]{@zi[句] + @zi[阝]. Shorts for @litchar{句􏾝}, @stands-for{substring}.}
 @; @margin-note{另见：@racket[邭*]}
 @examples[#:eval (the-eval)
-(􏺕 "ThisIsstring")
+(􏺕 "ThisIsString")
 
-(􏼭 "ThisIsstring" 3)
+(􏼭 "ThisIsString" 3)
 
-(句􏾝 "ThisIsstring" 3)
-(句􏾝 "ThisIsstring" 3 8)
+(邭 "ThisIsString" 3)
+(邭 "ThisIsString" 3 8)
 ]
 
 
 @section{􏼘, 􏼘/以􏾝, 􏼅𰅡}
-@margin-note{
 @; @bold{@litchar{拘}为古活字} @linebreak{}
 @; @bold{@litchar{􏼿}为古活字}
-@bold{@litchar{􏼘}为新造字} @linebreak{}
+@defzi[􏼘]{ @zi[扌] + @zi[句] + @zi[攵] }
 @; @bold{@litchar{邭}为古活字} @linebreak{}
-@bold{@litchar{𰅡}为古活字} @linebreak{}
-@itemlist[
-@item{@litchar{扌}：“@litchar{!}”的意思；}
-]
-}
-@; @margin-note{另见：@racket[􏼅], @racket[邭]}
-@margin-note{另见：@racket[􏼅]}
-@margin-note{参见：@racket[攸] @racket[􏻿􏾩] @racket[􏿰􏾩], @racket[􏻿􏾩/以􏾝]}
-@examples[#:eval (the-eval)
-(名 str (句 #\鹅 #\鹅 #\鹅 #\,  #\曲 #\项 #\向 #\天 #\歌 #\。))
+@defzi[𰅡]{ @zi[扌] + @zi[匕]. Resembles @zi[化], @stands-for{Convert data to a specific type by modifing the original data.}}
 
-(􏼘 str 1 #\白)
+@; @margin-note{另见：@racket[􏼅], @racket[邭]}
+@eleph-note{@racket[􏼅] @racket[攸] @racket[􏻿􏾩] @racket[􏿰􏾩] @racket[􏻿􏾩/以􏾝]}
+@examples[#:eval (the-eval)
+(名 str (句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g))
+
+(􏼘 str 1 #\H)
 str
 
 (􏼘/以􏾝 str 0 "ABCDEFG" 2 4)
@@ -132,99 +128,63 @@ str
 str
 ]
 
-@section{􏼩 􏼪, 􏼳 􏼲}
-@margin-note{
-@bold{@litchar{􏼩}为新造字} @linebreak{}
-@bold{@litchar{􏼪}为新造字} @linebreak{}
-@bold{@litchar{􏼳}为新造字} @linebreak{}
-@bold{@litchar{􏼲}为新造字}
-@itemlist[
-@item{@litchar{子}：@litchar{字}的简写（见：@secref["characters"]）；}
-@item{上下结构的@litchar{又}+@litchar{㐅}：@racket[􏿴]；}
-@item{上下结构的@litchar{又}+@litchar{子}：组成元素是“@racket[字]”的@racket[􏿴]；}
-@item{@litchar{􏼩}：把@racket[句]转化为@racket[􏿴]；}
-@item{@litchar{􏼳}：把@racket[句]转化为组成元素是字的@racket[􏿴]；}
-@item{@litchar{􏼪}：把@racket[􏿴]转化为@racket[句]；}
-@item{@litchar{􏼲}：把组成元素是@racket[字]的@racket[􏿴]转化为@racket[句]。}
-]
-}
+
+@section{􏶑 􏶒, 句化􏿴 􏿴化句}
 @examples[#:eval (the-eval)
-(􏼪 '("鹅" "鹅" "鹅" ", " "曲" "项" "向" "天" "歌"))
-(􏼪 '("鹅" "鹅" "鹅" ", " "曲" "项" "向" "天" "歌") "")
-(􏼪 '("鹅" "鹅" "鹅" ", " "曲" "项" "向" "天" "歌") "-")
+(􏶑 '("This" "Is" "String"))
+(􏶑 '("This" "Is" "String") "")
+(􏶑 '("This" "Is" "String") "-")
 
-(􏼩 "鹅鹅鹅, 曲项向天歌")
-(􏼩 "鹅鹅鹅, 曲项向天歌" "")
-(􏼩 "鹅鹅鹅, 曲项向天歌" ", ")
-(􏼩 "鹅-鹅-鹅-曲-项-向-天-歌" "-")
+(􏶒 "This Is String")
+(􏶒 "This Is String" "")
+(􏶒 "This Is String" " ")
+(􏶒 "This-Is-String" "-")
 
-(􏼲 '(#\鹅 #\鹅 #\鹅 #\,  #\曲 #\项 #\向 #\天 #\歌 #\。))
-(􏼳 "鹅鹅鹅, 曲项向天歌。")
+(句化􏿴 "ThisIsString")
+(􏿴化句 '(#\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g))
 ]
 
-@section{􏼥, 􏼝, 􏼛}
-@margin-note{
-@bold{@litchar{􏼥}为新造字} @linebreak{}
-@bold{@litchar{􏼝}为新造字} @linebreak{}
-@bold{@litchar{􏼛}为新造字}
-@itemlist[
-@item{@litchar{戈}：本意是“兵器”, 引申为“修改 替换”之意；}
-@item{@litchar{匕}：本意是“匕首”, 引申为“修剪 删除”之意；}
-@item{@litchar{穴}：@litchar{空}的简写；}
-@item{上下结构的@litchar{丷}+@litchar{匕}：修剪起始处和结尾处；}
-@item{上下结构的@litchar{穴}+@litchar{一}：将相连的多个空格单一化成一个。}
-]
-}
+@section{􏶐, 􏶊, 􏶋}
+@defzi[􏶐]{resembles @zi[敂]. Vertical @defzi/sub[㚘]{@same-as-cnchar["替" "substitue"]}.}
+@defzi[􏶊]{@zi[句] + @zi[𡯂]. @defzi/sub[𡯂]{@simplified-from-cnchar-and["秃" "naked, not sharp" "a state of an object with removing something from its begining and ending"]}.}
+@defzi[􏶋]{@zi[句] + @zitools-ref{立} + @zitools-ref{正}.}
 @examples[#:eval (the-eval)
-(􏼥 "鹅鹅鹅, 曲项向天歌。" "鹅鹅鹅" "小黄鸭")
-(􏼥 "鹅鹅鹅, 曲项向天歌。" "鹅" "")
-(􏼥 "\n\r鹅鹅鹅, \n\r曲项向天歌。\n\r\n\r" "\n\r" "")
-
-(􏼝 "\n\r鹅鹅鹅, \n\r曲项向天歌。\n\r\n\r")
-(􏼝 "鹅鹅鹅, 曲项向天歌。" "鹅鹅鹅")
-
-(􏼛 "鹅  鹅    鹅   \n \n 曲项向天歌 \n\r")
+(􏶐 "ThisIsString" "Is" "Isnot")
+(􏶊 "\n\r this is string \n\r\n")
+(􏶊 "---this--is--string---" "-" #:repeat? #t) 89
+(􏶋 "\n\rthis  is  \n\r string \n\r\n")
+(􏶋 "---this--is--string---" "-" "+" #:repeat? #t #:trim? #f)
 ]
 
-@section{􏼹?, 􏼸?, 􏸶?}
-@margin-note{
-@bold{@litchar{􏼹}为新造字} @linebreak{}
-@bold{@litchar{􏼸}为新造字} @linebreak{}
+@section{句􏾺?, 句𨚞?, 邭?}
 @; @bold{@litchar{􏼢}为新造字}
-@itemlist[
-@item{@litchar{本}：本意是“树根”, 在此引申为“起始 开头”之意；}
-@item{@litchar{末}：本意是“树梢”, 在此引申为“结尾 末尾”之意；}
-@item{@litchar{干}：本意是“枝干”, 在此引申为“中间 包含”之意；}
-]
-}
+@defzi[本]{@same-as-cnchar-but["本" "root of tree" "from begining, from left"]}
+@defzi[末]{@same-as-cnchar-but["末" "top of tree" "from ending, from right"]}
+
 @examples[#:eval (the-eval)
-(􏼹? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "鹅鹅鹅")
-(􏼸? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "拨清波。")
-(􏸶? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "鹅鹅鹅")
-(􏸶? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "拨清波。")
-(􏸶? "鹅鹅鹅, 曲项向天歌。白毛浮绿水, 红掌拨清波。" "白毛")
+(句􏾺? "ThisIsString" "Thi")
+(句𨚞? "ThisIsString" "ing")
+
+(邭? "ThisIsString" "sIs")
+(邭? "ThisIsString" "Thi")
+(邭? "ThisIsString" "ing")
 ]
 
-@section{􏺔, 􏺓, 􏺒}
-@margin-note{
-@bold{@litchar{􏺔}为新造字} @linebreak{}
-@bold{@litchar{􏺓}为新造字} @linebreak{}
-@bold{@litchar{􏺒}为新造字}
-@itemlist[
-@item{@litchar{与}：@litchar{写}的简写；}
-]
-}
+@section{􏶉 􏶈 􏶇}
+@defzi[􏶉]{@zi[句] + @litchar{AA}.}
+@defzi[􏶈]{@zi[句] + @litchar{aa}.}
+@defzi[􏶇]{@zi[句] + @litchar{Aa}.}
 @examples[#:eval (the-eval)
-(􏺔 "string upper case")
-(􏺓 "string lower case")
-(􏺒 "string title case")
+(􏶉 "string upper case")
+(􏶈 "string lower case")
+(􏶇 "string title case")
 ]
 
-@section[#:tag "string-base"]{基础例程}
+@section[#:tag "string-base"]{ming/racket/base}
 @defmapping[racket/base/string]
 @defmodule[ming/racket/base]
 
-@section[#:tag "string-additional"]{额外例程}
+@section[#:tag "string-additional"]{ming/racket/string}
 @defmodule[ming/racket/string]
 
 @defmapping[racket/string]

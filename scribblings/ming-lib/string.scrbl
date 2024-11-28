@@ -70,7 +70,7 @@ boolean?]{
 ]
 }
 @margin-note{
-等同于：@code{(􏼥 STR " " "")}}
+等同于：@code{(􏶐 STR " " "")}}
 将@racket[STR]的空格全部移除。
 @examples[#:eval (the-eval)
 (􏸵 " a b  cd    e   ")

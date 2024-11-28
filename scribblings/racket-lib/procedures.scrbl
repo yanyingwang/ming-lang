@@ -48,7 +48,7 @@ Racket's @secref["procedures" #:doc '(lib "scribblings/reference/reference.scrbl
 ]
 @examples[#:eval (the-eval)
 ((􏸛 􏿴 􏾺分) '("a" "b" "c") 2)
-((􏸚 句化􏷂 􏼪) '("a" "b" "c"))
+((􏸚 句化􏷂 􏶒) '("a" "b" "c"))
 ]
 
 @section+autotag{􏸘}
