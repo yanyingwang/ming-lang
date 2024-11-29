@@ -40,7 +40,7 @@ Overall @secref["naming-rules"]
                @elem{@bold{@litchar{句}} as component on the left}
                @elem{indicate input type}
                @elem{input type is @zi[句]}
-               @elem{@code{􏺕 􏼭 􏶑 句化􏿴 􏶐 􏶊 􏶋 􏶉 􏶈 􏶇}})
+               @elem{@code{􏺕 􏼭 􏶑 句化􏿴 􏶐 􏶊 􏶋 􏶉 􏶈 􏶇 􏶆}})
          )]
 
 
@@ -128,8 +128,22 @@ str
 str
 ]
 
+@section{􏶑 􏶒 􏼟}
+@defzi[􏶑]{@zi[合] + @zi[句].}
+@defzi[􏶒]{@zi[句] + @zi[亻] + @zi[分].}
+@defzi[􏼟]{@zi[句] + @zi[穴] + @zi[非].}
 
-@section{􏶑 􏶒, 句化􏿴 􏿴化句}
+@examples[#:eval (the-eval)
+(􏶑 '("This" "Is" "String"))
+(􏶑 '("This" "Is" "String") "")
+(􏶑 '("This" "Is" "String") "-")
+
+(􏶒 "This Is String")
+(􏶒 "This Is String" "")
+(􏶒 "This Is String" " ")
+(􏶒 "This-Is-String" "-")
+]
+@section{句化􏿴 􏿴化句}
 @examples[#:eval (the-eval)
 (􏶑 '("This" "Is" "String"))
 (􏶑 '("This" "Is" "String") "")
@@ -157,9 +171,10 @@ str
 ]
 
 @section{句􏾺?, 句𨚞?, 邭?}
+@eleph-note{@racket[邭] @raket[􏾺] @raket[𨚞]}
 @; @bold{@litchar{􏼢}为新造字}
-@defzi[本]{@same-as-cnchar-but["本" "root of tree" "from begining, from left"]}
-@defzi[末]{@same-as-cnchar-but["末" "top of tree" "from ending, from right"]}
+@; @defzi[本]{@same-as-cnchar-but["本" "root of tree" "from begining, from left"]}
+@; @defzi[末]{@same-as-cnchar-but["末" "top of tree" "from ending, from right"]}
 
 @examples[#:eval (the-eval)
 (句􏾺? "ThisIsString" "Thi")
@@ -170,14 +185,16 @@ str
 (邭? "ThisIsString" "ing")
 ]
 
-@section{􏶉 􏶈 􏶇}
+@section{􏶉 􏶈 􏶇 􏶆}
 @defzi[􏶉]{@zi[句] + @litchar{AA}.}
 @defzi[􏶈]{@zi[句] + @litchar{aa}.}
 @defzi[􏶇]{@zi[句] + @litchar{Aa}.}
+@defzi[􏶆]{@zi[句] + (@litchar{ß} -> @litchar{ss}).}
 @examples[#:eval (the-eval)
 (􏶉 "string upper case")
 (􏶈 "string lower case")
 (􏶇 "string title case")
+(􏶆 "ßtring fold case")
 ]
 
 @section[#:tag "string-base"]{ming/racket/base}

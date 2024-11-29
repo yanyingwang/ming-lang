@@ -33,4 +33,4 @@
 >>> string-upcase 􏶉 ;􏼨 􏺔
 >>> string-downcase 􏶈 ;􏼧 􏶈
 >>> string-titlecase 􏶇 ;􏶇 􏶇
->>> string-foldcase 􏶈* ;
+>>> string-foldcase 􏶆 ;
