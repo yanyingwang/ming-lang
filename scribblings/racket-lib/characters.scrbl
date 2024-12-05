@@ -13,14 +13,13 @@
 @(require scribble-rainbow-delimiters)
 @script/rainbow-delimiters*
 
-@title[#:tag "characters"]{字}
+@title[#:tag "characters"]{􏶃}
+Originated from @secref["characters" #:doc '(lib "scribblings/reference/reference.scrbl")].
+
+@section{􏶃, 􏶃?}
+@defzi[􏶃]{@simplified-from-cnchar["字" "character"].}
 
 
-@section+elemref{字，字?}
-“字”（@tech[#:doc '(lib "scribblings/reference/reference.scrbl") "characters"]）就是通常所谓的“字符”。
-
-
-
-@section[#:tag "character-base"]{例程}
-@defmodule[ming/racket/base]
+@section[#:tag "character-base"]{ming/racket/base}
 @defmapping[racket/base/characters]
+@defmodule[ming/racket/base]

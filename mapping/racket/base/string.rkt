@@ -24,11 +24,11 @@
 >>> string>? 句>?
 >>> string>=? 句>=?
 
->>> string-ci=? 句ci=?
->>> string-ci<? 句ci<?
->>> string-ci<=? 句ci<=?
->>> string-ci>? 句ci>?
->>> string-ci>=? 句ci>=?
+>>> string-ci=? 􏶅=? (􏶅 =?)
+>>> string-ci<? 􏶅<? (􏶅 <?)
+>>> string-ci<=? 􏶅<=? (􏶅 <=?)
+>>> string-ci>? 􏶅>? (􏶅 <=?)
+>>> string-ci>=? 􏶅>=? (􏶅 >=?)
 
 >>> string-upcase 􏶉 ;􏼨 􏺔
 >>> string-downcase 􏶈 ;􏼧 􏶈

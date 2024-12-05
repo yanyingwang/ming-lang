@@ -171,7 +171,7 @@ str
 ]
 
 @section{句􏾺?, 句𨚞?, 邭?}
-@eleph-note{@racket[邭] @raket[􏾺] @raket[𨚞]}
+@eleph-note{@racket[邭] @racket[􏾺] @racket[𨚞]}
 @; @bold{@litchar{􏼢}为新造字}
 @; @defzi[本]{@same-as-cnchar-but["本" "root of tree" "from begining, from left"]}
 @; @defzi[末]{@same-as-cnchar-but["末" "top of tree" "from ending, from right"]}
@@ -190,6 +190,7 @@ str
 @defzi[􏶈]{@zi[句] + @litchar{aa}.}
 @defzi[􏶇]{@zi[句] + @litchar{Aa}.}
 @defzi[􏶆]{@zi[句] + (@litchar{ß} -> @litchar{ss}).}
+@defzi[􏶅]{@zi[句] + (@litchar{a} in @litchar{A}).}
 @examples[#:eval (the-eval)
 (􏶉 "string upper case")
 (􏶈 "string lower case")

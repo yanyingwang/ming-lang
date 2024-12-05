@@ -1,37 +1,37 @@
 #lang at-exp s-exp "../../../private/mapping-lang.rkt"
 
->>> char? 字?
->>> char->integer 字化数
->>> integer->char 数化字
+>>> char? 􏶃?
+>>> char->integer 􏶃化米
+>>> integer->char 米化􏶃
 
->>> char-utf-8-length 字度/utf-8
->>> char=? 字=?
->>> char<? 字<?
->>> char<=? 字<=?
->>> char>? 字>?
->>> char>=? 字>=?
->>> char-ci=? 字=?/ci
->>> char-ci<? 字<?/ci
->>> char-ci<=? 字<=?/ci
->>> char-ci>? 字>?/ci
->>> char-ci>=? 字>=?/ci
->>> char-alphabetic? 字?/英
->>> char-lower-case? 字?/小写
->>> char-upper-case? 字?/大写
->>> char-title-case? 字?/标题
->>> char-numeric? 数字?
->>> char-symbolic? 字?/符号
->>> char-punctuation? 字?/标点
->>> char-graphic? 字?/象形
->>> char-whitespace? 字?/whitespace
->>> char-blank? 字?/blank
->>> char-iso-control? 字?/iso-control
->>> char-extended-pictographic? 汉字?
->>> char-general-category 字类
->>> char-grapheme-break-property 字属
->>> make-known-char-range-list ake-known-char-range-list
->>> char-upcase 字大写化
->>> char-downcase 字小写化
->>> char-titlecase 字标题化
->>> char-foldcase 字标题化*
->>> char-grapheme-step har-grapheme-step
+>>> char-utf-8-length 􏶂/utf-8
+>>> char=? 􏶃=? (􏶃 =?)
+>>> char<? 􏶃<? (􏶃 <?)
+>>> char<=? 􏶃<=? (􏶃 <=?)
+>>> char>? 􏶃>? (􏶃 >?)
+>>> char>=? 􏶃>=? (􏶃 >=?)
+>>> char-ci=? 􏶁=? (􏶁 =?)
+>>> char-ci<? 􏶁<? (􏶁 <?)
+>>> char-ci<=? 􏶁<=? (􏶁 <=?)
+>>> char-ci>? 􏶁>? (􏶁 >?)
+>>> char-ci>=? 􏶁>=? (􏶁 >=?)
+>>> char-alphabetic? 􏵹?
+>>> char-lower-case? 􏵿?
+>>> char-upper-case? 􏶀?
+>>> char-title-case? 􏵾?
+>>> char-numeric? 􏵻?
+>>> char-symbolic? char-symbolic?
+>>> char-punctuation? char-punctuation?
+>>> char-graphic? char-graphic?
+>>> char-whitespace? char-whitespace?
+>>> char-blank? char-blank?
+>>> char-iso-control? char-iso-control?
+>>> char-extended-pictographic? char-extended-pictographic?
+>>> char-general-category char-general-category
+>>> char-grapheme-break-property char-grapheme-break-property
+>>> make-known-char-range-list make-known-char-range-list
+>>> char-upcase 􏶀
+>>> char-downcase 􏵿
+>>> char-titlecase 􏵾
+>>> char-foldcase 􏶁
+>>> char-grapheme-step char-grapheme-step
