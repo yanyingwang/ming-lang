@@ -14,11 +14,13 @@
          defradical defcomponent defsuffix defprefix definsert defhas
          defzi defzis defzi/puauni defzi/sub defcompost
          zi zi-ref zitools-ref
+         ziexamples
          short-for-code short-for-racket
          )
 (require scribble/manual racket/string scribble/core
          scribble/html-properties
          (for-syntax racket/base racket/string racket/list
+                     scribble/core
                      "private/zitable.rkt"))
 
 
@@ -122,6 +124,17 @@
 
 (define (zitools-ref zi [lit-zi zi])
   (hyperlink (string-append "https://zi.tools/zi/" zi) lit-zi #:style (style #f (list (attributes '([target . "_blank"] [style . "background: #ebf5fb; "]))))))
+
+
+(define-syntax (ziexamples stx)
+  (syntax-case stx ()
+    [(_ examples ...)
+     (with-syntax ([(racket-refs ...)
+                    (map (lambda (e) #`(elem (hspace 1) (racket #,e)))
+                         (syntax->list #'(examples ...)))])
+       #`(elem (linebreak) "Examples: " racket-refs ... "."))
+     ])
+  )
 
 (define (defzi0/puauni tag) ;; unicode from pivate use areas
   (elemtag tag (elem (bold (litchar tag)) ":" (hspace 1) "PUA unicode, especially designs for ming-lang.")))

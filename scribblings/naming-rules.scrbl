@@ -20,13 +20,13 @@
 
 @defzi[山]{
 @same-as-cnchar-but["山" "mountain" "immutable"].
-Example: @code{山? 􏻼 􏾐 􏽁}
 }
+@ziexamples[山? 􏻼 􏾐 􏽁]
 
 @defzis[水/氵/𭕄]{
 @same-as-cnchar-but["水" "water" "mutable"].
-Example: @code{水? 􏻽 􏾐 􏽀}
 }
+@ziexamples[水? 􏻽 􏾐 􏽀]
 
 
 @tabular[@;#:sep @hspace[0]
@@ -235,12 +235,12 @@ Example: @code{水? 􏻽 􏾐 􏽀}
 @defzi[化]{@same-as-cnchar["化" "convert"].}
 @itemlist[
 @item{
-In the end of word：means slightly converting data, such as from @zi[山] to @zi[水].
-Example: @code{􏻼化 􏽀化 􏽁化}
+Case in the end of word：means slightly converting data, such as from @zi[山] to @zi[水].
+@ziexamples[􏻼化 􏽀化 􏽁化]
 }
 @item{
-In the middle of word：means converting data from one type to the other.
-Example: {@code{􏻿化􏿴 􏿴化􏻿}}
+Case in the middle of word：means converting data from one type to the other.
+@ziexamples[􏻿化􏿴 􏿴化􏻿]
 }
 ]
 
