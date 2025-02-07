@@ -23,6 +23,7 @@
 }
 
 @defideogr[(水 氵 𭕄) "mutable" "水" "water"]{
+@zi[氵] and @zi[𭕄 ] both are the simplified way to write @zi[水] when used as the component of characters.
 @ziexamples[水? 􏻽 􏾑? 􏽀]
 }
 

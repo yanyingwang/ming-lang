@@ -15,7 +15,7 @@
          defzi defzis defzi/puauni defzi/sub defcompost
          defideogr
          zi zi-ref zitools-ref
-         ziexamples
+         ziexamples rackets
          short-for-code short-for-racket
          )
 (require scribble/manual racket/string scribble/core
@@ -133,7 +133,18 @@
      (with-syntax ([(racket-refs ...)
                     (map (lambda (e) #`(elem (hspace 1) (racket #,e)))
                          (syntax->list #'(examples ...)))])
-       #`(elem "Examples: " racket-refs ... "."))
+       #`(elem #:style (style #f (list (alt-tag "div") (attributes '([style . "margin-top: 0.1em; margin-bottom: 0.1em"]))))
+          "Examples: " racket-refs ... "."))
+     ])
+  )
+
+(define-syntax (rackets stx)
+  (syntax-case stx ()
+    [(_ ids ...)
+     (with-syntax ([(racket-refs ...)
+                    (map (lambda (e) #`(elem (hspace 1) (racket #,e)))
+                         (syntax->list #'(ids ...)))])
+       #`(elem  racket-refs ...))
      ])
   )
 
@@ -186,17 +197,26 @@
                            #`(elemtag #,(symbol->string (syntax-e e))
                                       (elem (bold (racket (code:hilite #,e))) (hspace 1)
                                             (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                                  #,(r-background-label "ideograph"))))
+                                                  #,(r-background-label "ideographs"))))
                            )
                          (syntax->list #'(zis ...)))])
        #`(elem
           (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
                 gen-elemtags ...
                 (linebreak) (hspace 2) (italic "connotation : ") meaning
-                (linebreak) (hspace 2) (italic "originates from : ") @zitools-ref[cnchar]
+                (linebreak) (hspace 2) (italic "originates from : ") (zitools-ref cnchar)
                 (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
-          content ...))
-     ]
+          (elem content ...)))]
+    [(_ z (parts ...) connotation content ...)
+     (with-syntax ([str-z (symbol->string (syntax-e #'z))]
+                   [p+p+p #`#,(cons 'elem (add-between (map (lambda (e) `(zi-ref ,(symbol->string (syntax->datum e)))) (syntax->list #'(parts ...))) " + "))])
+       #`(elem
+          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
+                (elemtag str-z (elem (bold (racket (code:hilite z))) " : " p+p+p
+                                      (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
+                                            #,(r-background-label "ideograph"))))
+                (linebreak) (hspace 2) (italic "connotation : ") connotation)
+          (elem content ...)))]
     [(_ zi meaning cnchar cnchar-meaning content ...)
      (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
        #`(elem
@@ -205,10 +225,10 @@
                                       (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
                                             #,(r-background-label "ideograph"))
                                       (linebreak) (hspace 2) (italic "connotation : ") meaning
-                                                                                                         (linebreak) (hspace 2) (italic "originates from : ") @zitools-ref[cnchar]
+                                      (linebreak) (hspace 2) (italic "originates from : ") @zitools-ref[cnchar]
                                       (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning
                                       )))
-          content ...))]
+          (elem content ...)))]
     )
   )
 
