@@ -18,16 +18,6 @@
 @section[#:tag "character-rules"]{Characters}
 @margin-note{You may need to read @secref["character-implications"] first.}
 
-@defzi[山]{
-@same-as-cnchar-but["山" "mountain" "immutable"].
-}
-@ziexamples[山? 􏻼 􏾐 􏽁]
-
-@defzis[水/氵/𭕄]{
-@same-as-cnchar-but["水" "water" "mutable"].
-}
-@ziexamples[水? 􏻽 􏾐 􏽀]
-
 
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
@@ -191,7 +181,7 @@
                )
                (list
                @elem{suffix @bold{@litchar{!}}}
-               @elem{same as usage of @bold{@litchar{攵}}}
+                @elem{same as usage of @bold{@litchar{攵}}}
                @elem{Means @italic{directly modify the original data instead of creating new one}, thus the output is void.}
                @elem{@code{􏿰􏾘! 􏿰𠛮!}}
                )

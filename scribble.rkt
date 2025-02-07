@@ -13,6 +13,7 @@
          ;; defradical defcomponent defcharacter defhybrid
          defradical defcomponent defsuffix defprefix definsert defhas
          defzi defzis defzi/puauni defzi/sub defcompost
+         defideogr
          zi zi-ref zitools-ref
          ziexamples
          short-for-code short-for-racket
@@ -132,7 +133,7 @@
      (with-syntax ([(racket-refs ...)
                     (map (lambda (e) #`(elem (hspace 1) (racket #,e)))
                          (syntax->list #'(examples ...)))])
-       #`(elem (linebreak) "Examples: " racket-refs ... "."))
+       #`(elem "Examples: " racket-refs ... "."))
      ])
   )
 
@@ -175,6 +176,40 @@
      #`(elem #:style (style #f (list (alt-tag "p") (attributes '([class . "boxed"]))))
              #,(gen-elemtags (zis-of-str #'zis)) ":" (hspace 1) content ... #,(r-background-label "ideograph"))
      ])
+  )
+
+(define-syntax (defideogr stx)
+  (syntax-case stx ()
+    [(_ (zis ...) meaning cnchar cnchar-meaning content ...)
+     (with-syntax ([(gen-elemtags ...)
+                    (map (lambda (e)
+                           #`(elemtag #,(symbol->string (syntax-e e))
+                                      (elem (bold (racket (code:hilite #,e))) (hspace 1)
+                                            (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
+                                                  #,(r-background-label "ideograph"))))
+                           )
+                         (syntax->list #'(zis ...)))])
+       #`(elem
+          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
+                gen-elemtags ...
+                (linebreak) (hspace 2) (italic "connotation : ") meaning
+                (linebreak) (hspace 2) (italic "originates from : ") @zitools-ref[cnchar]
+                (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
+          content ...))
+     ]
+    [(_ zi meaning cnchar cnchar-meaning content ...)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
+       #`(elem
+          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
+                (elemtag str-zi (elem (bold (racket (code:hilite zi))) (hspace 1)
+                                      (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
+                                            #,(r-background-label "ideograph"))
+                                      (linebreak) (hspace 2) (italic "connotation : ") meaning
+                                                                                                         (linebreak) (hspace 2) (italic "originates from : ") @zitools-ref[cnchar]
+                                      (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning
+                                      )))
+          content ...))]
+    )
   )
 
 (define-syntax (defzi stx)

@@ -13,7 +13,7 @@
 
 @title[#:tag "ming-string"]{句}
 @defmodule[ming/string]
-Racket标准库@secref["string"]的名语言扩展。
+Orignates from @secref["string"]的名语言扩展。
 @margin-note{本页所列之例程的实现代码是名语言，因此源代码有参照意义。}
 
 
