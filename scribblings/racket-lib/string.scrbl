@@ -18,35 +18,26 @@
 Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.scrbl")] and Extends to @secref["ming-string"].
 
 
-@section[#:tag "nameing-rules-of-string"]{Naming Rules}
-Overall @secref["naming-rules"]
-
-@tabular[@;#:sep @hspace[0]
-         #:style 'boxed
-         #:column-properties '(center)
-         #:row-properties '(border)
-         (list (list @bold{Rules} @bold{Connotation} @bold{Elucidation} @bold{Examples})
-               (list
-               @elem{@bold{@litchar{句}} as component on the bottom}
-               @elem{indicate output type}
-               @elem{output type is @zi[句]}
-               @elem{@code{句 􏽀 􏼅 􏼄 􏼃 􏼂}})
-               (list
-               @elem{@bold{@litchar{句}} as compoment on the right}
-               @elem{indicate output type}
-               @elem{output type is @zi[句]}
-               @elem{@code{􏶒 􏿴化句}})
-               (list
-               @elem{@bold{@litchar{句}} as component on the left}
-               @elem{indicate input type}
-               @elem{input type is @zi[句]}
-               @elem{@code{􏺕 􏼭 􏶑 句化􏿴 􏶐 􏶊 􏶋 􏶉 􏶈 􏶇 􏶆}})
-         )]
-
-
 @section{句 􏽀 􏽁, 句? 􏽀? 􏽁?, 􏼟?}
 @eleph-note{@zi[􏷂] @zi[􏶿]}
-@defzi[句]{@same-as-cnchar-but["句" "sentences" "string"].}
+
+@defideogr[句 "string" "句" "sentences"]{
+@ziexamples[句? 句化􏿴 􏿴化句]
+
+@defsubideogr[句B "output type is string" 句]{
+@ziexamples[􏽀 􏼅 􏼄 􏼃 􏼂]
+}
+
+@defsubideogr[句L "input type is string" 句]{
+@ziexamples[􏺕 􏼭 􏶒 􏶐 􏶊 􏶋 邭 􏶉 􏶈 􏶇 􏶆]
+}
+
+@defsubideogr[句R "output type is string" 句]{
+@ziexamples[􏶑]
+}
+}
+
+
 @defzis[􏽁/􏽀]{@zi[山]/@zi[𭕄 ] + @zi[句]. resembles @zi[句], but is specified to be immutable or mutable.}
 @examples[#:eval (the-eval)
 (句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g)

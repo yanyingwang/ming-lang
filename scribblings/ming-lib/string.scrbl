@@ -12,10 +12,9 @@
 @(require scribble-rainbow-delimiters)
 @script/rainbow-delimiters*
 
-
 @title[#:tag "ming-string"]{句}
-@defmodule[ming/string]
 Orignates from @secref["string"].
+@defmodule[ming/string]
 
 @deftogether[(
 @defproc[(􏽀 [V any?] ...) 􏽀?]
