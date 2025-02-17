@@ -222,18 +222,6 @@
 
 @section[#:tag "word-rules"]{Words}
 
-@defzi[化]{@same-as-cnchar["化" "convert"].}
-@itemlist[
-@item{
-Case in the end of word：means slightly converting data, such as from @zi[山] to @zi[水].
-@ziexamples[􏻼化 􏽀化 􏽁化]
-}
-@item{
-Case in the middle of word：means converting data from one type to the other.
-@ziexamples[􏻿化􏿴 􏿴化􏻿]
-}
-]
-
 @tabular[@;#:sep @hspace[0]
          #:style 'boxed
          #:column-properties '(center)

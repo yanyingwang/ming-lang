@@ -16,13 +16,22 @@
 Orignates from @secref["string"].
 @defmodule[ming/string]
 
+@(require scribble/core)
+@(require scribble/html-properties)
+
+
+
 @deftogether[(
 @defproc[(􏽀 [V any?] ...) 􏽀?]
 @defproc[(􏽁 [V any?] ...) 􏽁?]
 )]{
 @eleph-note{@rackets[􏾐 􏾑]}
-@defideogr[􏽀 (𭕄  句) "mutable string"]
-@defideogr[􏽁 (山  句) "immutable string"]
+
+@defideogr[􏽀 (𭕄  句B) "mutable string"]
+@defideogr[􏽁 (山  句B) "immutable string"]{
+Resembles @zi[句], but specifically is immutable or mutable.
+}
+
 @examples[#:eval (the-eval)
 (􏽀 #\a #\b #\c #\d)
 (􏽁 #\a #\b #\c #\d)

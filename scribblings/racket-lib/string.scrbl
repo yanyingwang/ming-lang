@@ -15,30 +15,29 @@
 
 
 @title[#:tag "string"]{句}
-Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.scrbl")] and Extends to @secref["ming-string"].
-
+Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.scrbl")] and extends to @secref["ming-string"].
 
 @section{句 􏽀 􏽁, 句? 􏽀? 􏽁?, 􏼟?}
 @eleph-note{@zi[􏷂] @zi[􏶿]}
+@eleph-note{@zi[􏽀] @zi[􏽁]}
 
 @defideogr[句 "string" "句" "sentences"]{
 @ziexamples[句? 句化􏿴 􏿴化句]
 
-@defsubideogr[句B "output type is string" 句]{
+@defsubideogr[句B "output type is string"]{
 @ziexamples[􏽀 􏼅 􏼄 􏼃 􏼂]
 }
 
-@defsubideogr[句L "input type is string" 句]{
+@defsubideogr[句L "input type is string"]{
 @ziexamples[􏺕 􏼭 􏶒 􏶐 􏶊 􏶋 邭 􏶉 􏶈 􏶇 􏶆]
 }
 
-@defsubideogr[句R "output type is string" 句]{
+@defsubideogr[句R "output type is string"]{
 @ziexamples[􏶑]
 }
 }
 
 
-@defzis[􏽁/􏽀]{@zi[山]/@zi[𭕄 ] + @zi[句]. resembles @zi[句], but is specified to be immutable or mutable.}
 @examples[#:eval (the-eval)
 (句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g)
 (句? (句 #\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g))
@@ -58,8 +57,8 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 
 @section{􏼅, 􏼄}
 @eleph-note{@racket[􏼓] @racket[􏼎]}
-@defzi[􏼅]{@zi[三] + @zi[句]}
-@defzi[􏼄]{@zi[弓] + @zi[句]}
+@defideogr[􏼅 (三 句B) "duplicated elements of string"]
+@defideogr[􏼄 (弓 句B) "references resembled elements of string"]
 @examples[#:eval (the-eval)
 (􏼅 5 #\t)
 (􏼄 5 数化字)
@@ -67,9 +66,9 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 
 @section{􏼃, 􏼁, 􏼂}
 @eleph-note{@racket[􏿝] @racket[􏿜]}
-@defzi[􏼃]{@zi[毌] + @zi[句]}
-@defzi[􏼂]{@zi[毌] + @zi[又] + @zi[句]. @zi[毌]+@zi[又]: means append inputs with last input being @zi[􏿴] type.}
-@defzi[􏼁]{@zi[山] + @zi[􏼃]}
+@defideogr[􏼃 (毌 句B) "appended string"]
+@defideogr[􏼂 (毌 又 句B) @elem{appended string with last input being @zi[􏿴] type.}]
+@defideogr[􏼁 (山 􏼃) "immutable appended string"]
 
 @examples[#:eval (the-eval)
 (􏼃 "AAA" "BBB" "CCC")
@@ -80,18 +79,17 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 (􏽁? (􏼂 "AAA" "BBB" '("CCC" "DDD")))
 ]
 
-
 @section{􏺕, 􏼭, 邭}
 @eleph-note{@racket[巨]  @racket[弔]  @racket[􏾝] @racket[􏻿􏾝]}
-@defzi[􏺕]{@zi[句] + @zi[巨]. @defzi/sub[巨]{@same-as-cnchar-but["巨" "huge" "measure, length"]}}
-@defzi[􏼭]{@zi[句] + @zi[弔].}
-@defzi[邭]{@zi[句] + @zi[阝]. Shorts for @litchar{句􏾝}, @stands-for{substring}.}
-@; @margin-note{另见：@racket[邭*]}
+
+@defideogr[􏺕 (句 巨) "measure string length"]
+@defideogr[􏼭 (句 弔) "refers a specific element of string"]
+@defideogr[邭 (句 阝) "substring"]{
+Shorts for @litchar{句􏾝}.
+}
 @examples[#:eval (the-eval)
 (􏺕 "ThisIsString")
-
 (􏼭 "ThisIsString" 3)
-
 (邭 "ThisIsString" 3)
 (邭 "ThisIsString" 3 8)
 ]
@@ -100,10 +98,8 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 @section{􏼘, 􏼘/以􏾝, 􏼅𰅡}
 @; @bold{@litchar{拘}为古活字} @linebreak{}
 @; @bold{@litchar{􏼿}为古活字}
-@defzi[􏼘]{ @zi[扌] + @zi[句] + @zi[攵] }
+@defideogr[􏼘 (扌 句 攵) "directly change string"]
 @; @bold{@litchar{邭}为古活字} @linebreak{}
-@defzi[𰅡]{ @zi[扌] + @zi[匕]. Resembles @zi[化], @stands-for{Convert data to a specific type by modifing the original data.}}
-
 @; @margin-note{另见：@racket[􏼅], @racket[邭]}
 @eleph-note{@racket[􏼅] @racket[攸] @racket[􏻿􏾩] @racket[􏿰􏾩] @racket[􏻿􏾩/以􏾝]}
 @examples[#:eval (the-eval)
@@ -120,9 +116,9 @@ str
 ]
 
 @section{􏶑 􏶒 􏼟}
-@defzi[􏶑]{@zi[合] + @zi[句].}
-@defzi[􏶒]{@zi[句] + @zi[亻] + @zi[分].}
-@defzi[􏼟]{@zi[句] + @zi[穴] + @zi[非].}
+@defideogr[􏶑 (合 句)]
+@defideogr[􏶒 (句 亻 分)]
+@defideogr[􏼟 (句 穴 非)]
 
 @examples[#:eval (the-eval)
 (􏶑 '("This" "Is" "String"))

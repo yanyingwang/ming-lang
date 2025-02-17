@@ -15,7 +15,7 @@
 @title[#:tag "general-ideographs"]{General Ideographs}
 
 
-@section[#:tag "as-parts"]{As parts of another character}
+@; @section[#:tag "as-parts"]{As parts of another character}
 @tech[#:doc "naming-rules"]
 
 @defideogr[山 "immutable" "山" "mountain"]{
@@ -27,4 +27,32 @@
 @ziexamples[水? 􏻽 􏾑? 􏽀]
 }
 
-@section[#:tag "as-characters"]{As characters of another word}
+
+@defideogr[巨  "length" "巨" "measure"]{
+@ziexamples[巨 􏺕]
+}
+
+@defideogr[匕  "convert data type" "匕" "person upside down"]{
+@examples[@zi[化] @zi[𰅡]]
+}
+
+@defideogr[化 "convert data type" "化" "normal person and person upside down"]{
+Convert data type by the way of returning a new one in another type.
+
+@defsubideogr[化I "convert data type"]{
+@ziexamples[􏻿化􏿴 􏿴化􏻿]
+}
+
+@defsubideogr[化E "slightly convert data type"]{
+With reserving the general data type, e.g. between @zi[山] and @zi[水].
+@ziexamples[􏻼化 􏽀化 􏽁化]
+}
+}
+
+@defideogr[𰅡 (扌 匕) "directly convert data type"]{
+Convert data type by the way of modifying original data.
+@ziexamples[􏼅𰅡]
+}
+
+
+@; @section[#:tag "as-characters"]{As characters of another word}

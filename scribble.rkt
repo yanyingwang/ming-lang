@@ -192,21 +192,40 @@
 
 (define-syntax (defsubideogr stx)
   (syntax-case stx ()
-    [(_ zi meaning parent content ...)
-     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))]
-                   [str-parent (symbol->string (syntax-e #'parent))])
+    [(_ zi meaning content ...)
+     (with-syntax ([str-zi (symbol->string (syntax-e #'zi))])
        #`(elem  #:style (style #f (list (alt-tag "blockquote") (attributes '([class . "leftindent SVInsetFlow"]))))
                 (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed RBoxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
                       (elemtag str-zi (elem (bold (racket (code:hilite zi))) (hspace 1)
                                             (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
                                                   #,(r-background-label "ideograph component"))
                                             (linebreak) (hspace 2) (italic "connotation : ") meaning
-                                            (linebreak) (hspace 2) (italic "originates from : ") (zi-ref str-parent)
                                             )))
                 (elem content ...)))]
     )
   )
 
+
+;; @(define (ttt)
+;; (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "SIntrapara"]))))
+;; (elem #:style (style #f (list (alt-tag "blockquote") (attributes '([class . "SVInsetFlow"]))))
+
+;;          (elem #:style (style #f (list (alt-tag "table") (attributes '([class . "boxed RBoxed"]))))
+;;                (elem #:style (style #f (list (alt-tag "tbody")))
+;;                      (elem #:style (style #f (list (alt-tag "tr")))
+;;                            (elem #:style (style #f (list (alt-tag "td")))
+;;                                  (elem #:style (style #f (list (alt-tag "blockquote") (attributes '([class . "SubFlow"]))))
+;;                                        (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
+;;                                              (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabelInner"]))))
+;;                                                    (elem #:style (style #f (list (alt-tag "p"))) "ideographsdfsdf")))
+;;                                        (elem #:style (style #f (list (alt-tag "p") (attributes '([class . "RForeground"])))) "a" " : " "b"))))
+;;                       (elem #:style (style #f (list (alt-tag "tr")))
+;;                            (elem #:style (style #f (list (alt-tag "td")))
+;;                                  "ssssss:   jjjjjj"))
+;;          )
+;;          )
+;; ))
+;; )
 (define-syntax (defideogr stx)
   (syntax-case stx ()
     [(_ (zis ...) meaning cnchar cnchar-meaning content ...)
@@ -224,6 +243,15 @@
                 (linebreak) (hspace 2) (italic "connotation : ") meaning
                 (linebreak) (hspace 2) (italic "originates from : ") (zitools-ref cnchar)
                 (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
+          (elem content ...)))]
+    [(_ z (parts ...) content ...)
+     (with-syntax ([str-z (symbol->string (syntax-e #'z))]
+                   [p+p+p #`#,(cons 'elem (add-between (map (lambda (e) `(zi-ref ,(symbol->string (syntax->datum e)))) (syntax->list #'(parts ...))) " + "))])
+       #`(elem
+          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 1em; margin-bottom: 1em; "]))))
+                (elemtag str-z (elem (bold (racket (code:hilite z))) " : " p+p+p
+                                      (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
+                                            #,(r-background-label "ideograph")))))
           (elem content ...)))]
     [(_ z (parts ...) connotation content ...)
      (with-syntax ([str-z (symbol->string (syntax-e #'z))]
