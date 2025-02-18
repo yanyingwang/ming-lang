@@ -61,7 +61,7 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 @defideogr[􏼄 (弓 句B) "references resembled elements of string"]
 @examples[#:eval (the-eval)
 (􏼅 5 #\t)
-(􏼄 5 数化字)
+(􏼄 5 米化句)
 ]
 
 @section{􏼃, 􏼁, 􏼂}
@@ -81,12 +81,10 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 
 @section{􏺕, 􏼭, 邭}
 @eleph-note{@racket[巨]  @racket[弔]  @racket[􏾝] @racket[􏻿􏾝]}
-
+@eleph-note{@zi[邭] is short for @litchar{句􏾝}}
 @defideogr[􏺕 (句 巨) "measure string length"]
 @defideogr[􏼭 (句 弔) "refers a specific element of string"]
-@defideogr[邭 (句 阝) "substring"]{
-Shorts for @litchar{句􏾝}.
-}
+@defideogr[邭 (句 阝) "substring"]
 @examples[#:eval (the-eval)
 (􏺕 "ThisIsString")
 (􏼭 "ThisIsString" 3)
@@ -146,8 +144,10 @@ str
 ]
 
 @section{􏶐, 􏶊, 􏶋}
-@defzi[􏶐]{resembles @zi[敂]. Vertical @defzi/sub[㚘]{@same-as-cnchar["替" "substitue"]}.}
-@defzi[􏶊]{@zi[句] + @zi[𡯂]. @defzi/sub[𡯂]{@simplified-from-cnchar-and["秃" "naked, not sharp" "a state of an object with removing something from its begining and ending"]}.}
+
+@defideogr[􏶐 (句 㚘)]
+@; resembles @zi[敂].
+@defideogr[􏶊 (句 𡯂)]
 @defzi[􏶋]{@zi[句] + @zitools-ref{立} + @zitools-ref{正}.}
 @examples[#:eval (the-eval)
 (􏶐 "ThisIsString" "Is" "Isnot")

@@ -17,6 +17,6 @@
 >>> list->vector 􏿴化􏻿
 >>> vector->immutable-vector 􏻼化 ;􏻿定化 􏻿坚化 坚化/􏻿  􏻿->定􏻿
 >>> vector-fill! 􏻺𰅡  ;􏻿㙏! 􏼊化!
->>> vector-copy! 􏻿𢪛/以􏾝  ; 􏾝
+>>> vector-copy! 􏻿𢪛/以􏾝 (􏻿 𢪛 / 以 􏾝)  ; 􏾝
 >>> vector->values 􏻿􏾝化並 (􏻿􏾝 化 並) ; 􏸼
 >>> build-vector 􏻻 (弓 􏻿) ; 序􏻿 @elem{构造序@racket[􏻿]（数据内部的各个个元素是按照一定次序排列的）}

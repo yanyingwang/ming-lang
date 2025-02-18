@@ -51,12 +51,7 @@ To extend @secref["naming-rules"], specifically there are：
                @; @elem{含有“构建”的意思}
                @; @elem{@racket[􏻿㙏!]}
                @; )
-               (list
-               @elem{@defcomponent[扌]}
-               @elem{direct modification}
-               @elem{directly modify the orignal data and return void}
-               @elem{@racket[􏻿􏾩] @racket[􏻿􏽒] @racket[􏻿􏷉]}
-               )
+               
                (list @bold{Phrase} @bold{--} @bold{--} @bold{--})
                @; (list
                @; @elem{以@litchar{􏻿}结尾}
@@ -70,18 +65,7 @@ To extend @secref["naming-rules"], specifically there are：
                @elem{implies the type of input data is @racket[􏻿]}
                @elem{@racket[􏻿巨] @racket[􏻿弔] @racket[􏻿𠆯]}
                )
-               (list
-               @elem{@defsuffix[化]}
-               @elem{minor type convertion}
-               @elem{implies slightly convert the type of input data, i.e. from mutable to immutable.}
-               @elem{@racket[􏻼化]}
-               )
-               (list
-               @elem{@definsert[化]}
-               @elem{type convertion}
-               @elem{implies convert the type of input data, i.e. from @racket[􏻿] to @racket[􏿴].}
-               @elem{@racket[􏻿化􏿴] @racket[􏿴化􏻿]}
-               )
+                              
                @; (list
                @; @elem{@litchar{!}结尾}
                @; @elem{指示修改方式}

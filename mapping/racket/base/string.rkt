@@ -10,7 +10,7 @@
 >>> string-set! 􏼘 ;句􏾩 敂! 拘
 >>> substring 邭 ;邭 句􏾝
 >>> string-copy 􏽀化
->>> string-copy! 􏼘/以􏾝 ;句􏾩/以􏾝
+>>> string-copy! 􏼘/以􏾝 (􏼘 / 以 􏾝) ;句􏾩/以􏾝
 >>> string-fill! 􏼅𰅡 ; 句㙏! 句复! 𰅡 𢪎 􏼗化! 􏼗𰅡 􏼗𢪎  􏼗 􏼖
 >>> string-append 􏼃 ; 贯句 􏼱
 >>> string-append-immutable 􏼁 (山 􏼃) ; 􏼯

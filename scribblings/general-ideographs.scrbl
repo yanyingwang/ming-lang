@@ -18,6 +18,19 @@
 @; @section[#:tag "as-parts"]{As parts of another character}
 @tech[#:doc "naming-rules"]
 
+
+@defideogr[(亻) "general subset" "人" "people"]{
+As component of ideographs, which implies The type of output data is same as the input, and content is part of the input. @linebreak{}
+In particular, @zi[化] is exceptionally different, which has a more diverse usages scenarios, @zi[化I], @zi[化E].
+@ziexamples[伄 攸 𰂋 偏 􏾜 􏾛 偅 𠆯 􏹈 􏻿𠆯 􏻿􏷑]
+}
+
+@defideogr[(扌 !) "warning, is changing original data" "手" "hands, handle"]{
+Has the same meaning as @litchar{!} like how it is prevalently used in lots of modern programming languages. @linebreak{}
+When you see this component in ideographs that are used to name procedures, you know it immediately that those procedures will directly modify their input data instead of returning a new one as output. @linebreak{}
+@ziexamples[􏻿􏾩 􏻿𢪛 􏻿􏽒 􏻿􏷉 􏼅𰅡]
+}
+
 @defideogr[山 "immutable" "山" "mountain"]{
 @ziexamples[山? 􏻼 􏾐? 􏽁]
 }
@@ -27,31 +40,43 @@
 @ziexamples[水? 􏻽 􏾑? 􏽀]
 }
 
-
 @defideogr[巨  "length" "巨" "measure"]{
 @ziexamples[巨 􏺕]
 }
 
-@defideogr[匕  "convert data type" "匕" "person upside down"]{
-@examples[@zi[化] @zi[𰅡]]
+@defideogr[匕  "convert data type" "匕" "upturned person"]{
+Examples: @zi[化] @zi[𰅡]
 }
 
-@defideogr[化 "convert data type" "化" "normal person and person upside down"]{
-Convert data type by the way of returning a new one in another type.
-
-@defsubideogr[化I "convert data type"]{
+@defideogr[(化 𰅡) ((亻 扌) 匕) "convert data type" "化" "a normal person with a upturned person"]{
+@zi[化] : convert data type by the way of returning a new one in another type. @linebreak{}
+@zi[𰅡] : resemble @zi[化], especially means converting data type by modifying original data.
+}
+@nested[#:style 'inset]{
+@defideogr[(化I 𰅡I) "type conversion"]{
+@elem{
+Convert data from type 1 (as input) to type 2 (as output). @linebreak{}
+Convert data from type 1 (as input) to type 2 (change original data, no output).
 @ziexamples[􏻿化􏿴 􏿴化􏻿]
 }
-
-@defsubideogr[化E "slightly convert data type"]{
-With reserving the general data type, e.g. between @zi[山] and @zi[水].
-@ziexamples[􏻼化 􏽀化 􏽁化]
-}
 }
 
-@defideogr[𰅡 (扌 匕) "directly convert data type"]{
-Convert data type by the way of modifying original data.
-@ziexamples[􏼅𰅡]
+@defideogr[(化E 𰅡E) "minorly convert data type"]{
+@elem{
+Converting data With reserving the general data type, e.g. between @zi[山] and @zi[水].
+In this case, input and output(if has) are the same type.
+Which means the content of data may be changed, or it is mutable and immutable before but change to immutable and mutable.
+@ziexamples[􏻼化 􏽀化 􏽁化 􏼅𰅡]
+}
+}
+}
+
+@defideogr[㚘 "substitue" "替" "substitute, substitution"]{
+To easily write it, it may be also wrote in vertical when as component of another ideograph, e.g. @zi[􏶐]
+}
+
+@defideogr[𡯂 "naked, not sharp" "秃" "bald"]{
+A state of an object with removing something from its begining and ending.
 }
 
 
