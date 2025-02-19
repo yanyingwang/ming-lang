@@ -27,9 +27,8 @@ Orignates from @secref["string"].
 )]{
 @eleph-note{@rackets[􏾐 􏾑]}
 
-@defideogr[􏽀 (𭕄  句B) "mutable string"]
-@defideogr[􏽁 (山  句B) "immutable string"]{
-Resembles @zi[句], but specifically is immutable or mutable.
+@defideogr[(􏽀 􏽁) ((𭕄 山) 句B) "mutable/immutable string"]{
+@elem{Resembles @zi[句], but specifically is immutable or mutable.}
 }
 
 @examples[#:eval (the-eval)
