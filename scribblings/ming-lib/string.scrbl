@@ -20,6 +20,13 @@ Orignates from @secref["string"].
 @(require scribble/html-properties)
 
 
+@defideogr[􏽀 (𭕄 句B) "mutable string"]{
+@elem{Resembles @zi[句], but especially is mutable.}
+}
+
+@defideogr[􏽁 (山 句B) "immutable string"]{
+@elem{Resembles @zi[句], but especially is immutable.}
+}
 
 @deftogether[(
 @defproc[(􏽀 [V any?] ...) 􏽀?]
@@ -27,9 +34,6 @@ Orignates from @secref["string"].
 )]{
 @eleph-note{@rackets[􏾐 􏾑]}
 
-@defideogr[(􏽀 􏽁) ((𭕄 山) 句B) "mutable/immutable string"]{
-@elem{Resembles @zi[句], but specifically is immutable or mutable.}
-}
 
 @examples[#:eval (the-eval)
 (􏽀 #\a #\b #\c #\d)

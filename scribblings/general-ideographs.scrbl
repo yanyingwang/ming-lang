@@ -31,6 +31,7 @@ When you see this component in ideographs that are used to name procedures, you 
 @ziexamples[􏻿􏾩 􏻿𢪛 􏻿􏽒 􏻿􏷉 􏼅𰅡]
 }
 
+
 @defideogr[山 "immutable" "山" "mountain"]{
 @ziexamples[山? 􏻼 􏾐? 􏽁]
 }
@@ -40,43 +41,81 @@ When you see this component in ideographs that are used to name procedures, you 
 @ziexamples[水? 􏻽 􏾑? 􏽀]
 }
 
+@defideogr[毌  "append" "贯" "append"]{
+Appends the elements, goes through the elements and connect them as one together.
+@ziexamples[􏿝 􏼉 􏼃]
+}
+
 @defideogr[巨  "length" "巨" "measure"]{
 @ziexamples[巨 􏺕]
 }
 
-@defideogr[匕  "convert data type" "匕" "upturned person"]{
-Examples: @zi[化] @zi[𰅡]
+@defideogr[本 "start, prefix" "本" "root"]{
+@ziexamples[􏼹?]
 }
 
-@defideogr[(化 𰅡) ((亻 扌) 匕) "convert data type" "化" "a normal person with a upturned person"]{
-@zi[化] : convert data type by the way of returning a new one in another type. @linebreak{}
-@zi[𰅡] : resemble @zi[化], especially means converting data type by modifying original data.
+@defideogr[末 "end, suffix" "末" "treetop"]{
+@ziexamples[山? 􏻼 􏾐? 􏽁]
 }
+
+@defideogr[匕  "convert data type" "匕" "upturned person"]{
+Examples: @zi[化] @zi[𰅡] @zi[􏵷] @zi[􏵸]
+}
+
+@defideogr[化(亻 匕) "convert data type" "化" "a normal person with a upturned person"]{
+convert data type by the way of returning a new one in another type.
+}
+
 @nested[#:style 'inset]{
-@defideogr[(化I 𰅡I) "type conversion"]{
+@defideogr[化I "type conversion"]{
 @elem{
-Convert data from type 1 (as input) to type 2 (as output). @linebreak{}
-Convert data from type 1 (as input) to type 2 (change original data, no output).
+Convert data from type 1 (as input) to type 2 (as output).
 @ziexamples[􏻿化􏿴 􏿴化􏻿]
 }
 }
 
-@defideogr[(化E 𰅡E) "minorly convert data type"]{
+@defideogr[化E "minorly convert data type"]{
 @elem{
 Converting data With reserving the general data type, e.g. between @zi[山] and @zi[水].
-In this case, input and output(if has) are the same type.
+
+In this case, input and output are the same type.
+
 Which means the content of data may be changed, or it is mutable and immutable before but change to immutable and mutable.
+
 @ziexamples[􏻼化 􏽀化 􏽁化 􏼅𰅡]
 }
 }
 }
 
+@defideogr[𰅡 (扌 匕) "modify data type"]{
+@elem{
+Converts data type with modifying the original data.
+@ziexamples{􏼅𰅡}
+}
+}
+
+@defideogr[􏵸 (分 匕) "split and convert data type"]{
+@elem{
+Splits data and return it in a different data type.
+@ziexamples[句􏵸􏿴]
+}
+}
+
+@defideogr[􏵷 (毌 匕) "append and convert data type"]{
+@elem{
+Appends data and return it in a different data type.
+@ziexamples[􏿴􏵷句]
+}
+}
+
 @defideogr[㚘 "substitue" "替" "substitute, substitution"]{
-To easily write it, it may be also wrote in vertical when as component of another ideograph, e.g. @zi[􏶐]
+To easily write it, it may be also wrote in vertical when as component of another ideograph.
+@ziexamples[􏶐]
 }
 
 @defideogr[𡯂 "naked, not sharp" "秃" "bald"]{
 A state of an object with removing something from its begining and ending.
+@ziexamples[􏶊]
 }
 
 

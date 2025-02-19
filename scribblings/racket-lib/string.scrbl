@@ -23,17 +23,16 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 
 @defideogr[句 "string" "句" "sentences"]{
 @ziexamples[句? 句化􏿴 􏿴化句]
-
-@defsubideogr[句B "output type is string"]{
+}
+@nested[#:style 'inset]{
+@defideogr[句B "output type is string"]{
 @ziexamples[􏽀 􏼅 􏼄 􏼃 􏼂]
 }
-
-@defsubideogr[句L "input type is string"]{
-@ziexamples[􏺕 􏼭 􏶒 􏶐 􏶊 􏶋 邭 􏶉 􏶈 􏶇 􏶆]
+@defideogr[句L "input type is string"]{
+@ziexamples[􏺕 􏼭 􏶐 􏶊 􏶋 邭 􏶉 􏶈 􏶇 􏶆 􏼸? 􏼹?]
 }
-
-@defsubideogr[句R "output type is string"]{
-@ziexamples[􏶑]
+@defideogr[句R "output type is string"]{
+@; @ziexamples[􏶑]
 }
 }
 
@@ -67,7 +66,7 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 @section{􏼃, 􏼁, 􏼂}
 @eleph-note{@racket[􏿝] @racket[􏿜]}
 @defideogr[􏼃 (毌 句B) "appended string"]
-@defideogr[􏼂 (毌 又 句B) @elem{appended string with last input being @zi[􏿴] type.}]
+@defideogr[􏼂 (毌 又 句B) @elem{appended string with last input being @racket[􏿴] type.}]
 @defideogr[􏼁 (山 􏼃) "immutable appended string"]
 
 @examples[#:eval (the-eval)
@@ -113,42 +112,27 @@ str
 str
 ]
 
-@section{􏶑 􏶒 􏼟}
-@defideogr[􏶑 (合 句)]
-@defideogr[􏶒 (句 亻 分)]
-@defideogr[􏼟 (句 穴 非)]
-
+@section{􏿴􏵷句 句􏵸􏿴 句化􏿴 􏿴化句}
 @examples[#:eval (the-eval)
-(􏶑 '("This" "Is" "String"))
-(􏶑 '("This" "Is" "String") "")
-(􏶑 '("This" "Is" "String") "-")
+(􏿴􏵷句 '("This" "Is" "String"))
+(􏿴􏵷句 '("This" "Is" "String") "")
+(􏿴􏵷句 '("This" "Is" "String") "-")
 
-(􏶒 "This Is String")
-(􏶒 "This Is String" "")
-(􏶒 "This Is String" " ")
-(􏶒 "This-Is-String" "-")
-]
-@section{句化􏿴 􏿴化句}
-@examples[#:eval (the-eval)
-(􏶑 '("This" "Is" "String"))
-(􏶑 '("This" "Is" "String") "")
-(􏶑 '("This" "Is" "String") "-")
-
-(􏶒 "This Is String")
-(􏶒 "This Is String" "")
-(􏶒 "This Is String" " ")
-(􏶒 "This-Is-String" "-")
+(句􏵸􏿴 "This Is String")
+(句􏵸􏿴 "This Is String" "")
+(句􏵸􏿴 "This Is String" " ")
+(句􏵸􏿴 "This-Is-String" "-")
 
 (句化􏿴 "ThisIsString")
 (􏿴化句 '(#\T #\h #\i #\s #\I #\s #\S #\t #\r #\i #\n #\g))
 ]
 
-@section{􏶐, 􏶊, 􏶋}
 
-@defideogr[􏶐 (句 㚘)]
+@section{􏶐, 􏶊, 􏶋}
 @; resembles @zi[敂].
+@defideogr[􏶐 (句 㚘)]
 @defideogr[􏶊 (句 𡯂)]
-@defzi[􏶋]{@zi[句] + @zitools-ref{立} + @zitools-ref{正}.}
+@defideogr[􏶋 (句 正)]
 @examples[#:eval (the-eval)
 (􏶐 "ThisIsString" "Is" "Isnot")
 (􏶊 "\n\r this is string \n\r\n")
@@ -157,15 +141,15 @@ str
 (􏶋 "---this--is--string---" "-" "+" #:repeat? #t #:trim? #f)
 ]
 
-@section{句􏾺?, 句𨚞?, 邭?}
-@eleph-note{@racket[邭] @racket[􏾺] @racket[𨚞]}
+@section{􏼹?, 􏼸?, 邭?}
+@eleph-note{@racket[邭]}
 @; @bold{@litchar{􏼢}为新造字}
-@; @defzi[本]{@same-as-cnchar-but["本" "root of tree" "from begining, from left"]}
-@; @defzi[末]{@same-as-cnchar-but["末" "top of tree" "from ending, from right"]}
+@defideogr[􏼹 (句 本)]
+@defideogr[􏼸 (句 末)]
 
 @examples[#:eval (the-eval)
-(句􏾺? "ThisIsString" "Thi")
-(句𨚞? "ThisIsString" "ing")
+(􏼹? "ThisIsString" "Thi")
+(􏼸? "ThisIsString" "ing")
 
 (邭? "ThisIsString" "sIs")
 (邭? "ThisIsString" "Thi")

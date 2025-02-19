@@ -17,7 +17,9 @@
 Originated from @secref["characters" #:doc '(lib "scribblings/reference/reference.scrbl")].
 
 @section{􏶃, 􏶃?}
-@defzi[􏶃]{@simplified-from-cnchar["字" "character"].}
+@defideogr[􏶃 "character" "字" "chracters"]{
+@simplified-from-cnchar["字" "character"].
+}
 
 
 @section[#:tag "character-base"]{ming/racket/base}
