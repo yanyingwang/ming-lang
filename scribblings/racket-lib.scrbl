@@ -17,7 +17,6 @@ Racket库的名语言汉化，汉化了的Racket内部库程序应都置于此�
 
 @(table-of-contents)
 
-@include-section["racket-lib/equality.scrbl"]
 @include-section["racket-lib/pairs-and-lists.scrbl"]
 @include-section["racket-lib/vector.scrbl"]
 @; @include-section["racket-lib/box.scrbl"]
@@ -31,6 +30,7 @@ Racket库的名语言汉化，汉化了的Racket内部库程序应都置于此�
 @include-section["racket-lib/numbers.scrbl"]
 @; @include-section["racket-lib/single-level-data-types.scrbl"]
 @include-section["racket-lib/syntax.scrbl"]
+@include-section["racket-lib/equality.scrbl"]
 @include-section["racket-lib/conditionals.scrbl"]
 @include-section["racket-lib/values.scrbl"]
 @include-section["racket-lib/procedures.scrbl"]
