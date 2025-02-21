@@ -41,8 +41,8 @@ When you see this component in ideographs that are used to name procedures, you 
 @ziexamples[水? 􏻽 􏾑? 􏽀]
 }
 
-@defideogr[毌  "append" "贯" "append"]{
-Appends the elements, goes through the elements and connect them as one together.
+@defideogr[毌 "append" "毌" "to pass through, all over"]{
+Appends the elements, goes through the elements and connect them as one together. (@zi[毌] is the initial form of modern chinese char @zi-tool{贯}.)
 @ziexamples[􏿝 􏼉 􏼃]
 }
 

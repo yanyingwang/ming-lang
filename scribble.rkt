@@ -14,7 +14,7 @@
          defradical defcomponent defsuffix defprefix definsert defhas
          defzi defzis defzi/puauni defzi/sub defcompost
          defideogr
-         zi zi-ref zitools-ref
+         zi zi-ref zi-tool
          ziexamples rackets
          short-for-code short-for-racket
          )
@@ -123,7 +123,7 @@
     )
   )
 
-(define (zitools-ref zi [lit-zi zi])
+(define (zi-tool zi [lit-zi zi])
   (hyperlink (string-append "https://zi.tools/zi/" zi) lit-zi #:style (style #f (list (attributes '([target . "_blank"] [style . "background: #ebf5fb; "]))))))
 
 
@@ -229,7 +229,7 @@
           (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
                 gen-elemtags ...  " : " p+p+p
                 (linebreak) (hspace 2) (italic "connotation : ") meaning
-                (linebreak) (hspace 2) (italic "originates from : ") (zitools-ref cnchar)
+                (linebreak) (hspace 2) (italic "originates from : ") (zi-tool cnchar)
                 (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
           (elem #:style (style #f (list (alt-tag "p")))
                 content ...)))]
@@ -261,7 +261,7 @@
                                      (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
                                            #,(r-background-label "ideograph"))))
                 (linebreak) (hspace 2) (italic "connotation : ") connotation
-                (linebreak) (hspace 2) (italic "originates from : ") (zitools-ref cnchar)
+                (linebreak) (hspace 2) (italic "originates from : ") (zi-tool cnchar)
                 (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
           (elem #:style (style #f (list (alt-tag "p")))
                 content ...)))]
@@ -300,7 +300,7 @@
           (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
                 gen-elemtags ...
                 (linebreak) (hspace 2) (italic "connotation : ") meaning
-                (linebreak) (hspace 2) (italic "originates from : ") (zitools-ref cnchar)
+                (linebreak) (hspace 2) (italic "originates from : ") (zi-tool cnchar)
                 (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
           (elem #:style (style #f (list (alt-tag "p")))
                 content ...)))]
@@ -328,7 +328,7 @@
                                       (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
                                             #,(r-background-label "ideograph"))
                                       (linebreak) (hspace 2) (italic "connotation : ") meaning
-                                      (linebreak) (hspace 2) (italic "originates from : ") @zitools-ref[cnchar]
+                                      (linebreak) (hspace 2) (italic "originates from : ") @zi-tool[cnchar]
                                       (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning
                                       )))
           (elem #:style (style #f (list (alt-tag "p")))
@@ -390,18 +390,18 @@
   (elem "which stands for" (hspace 1) @(elucidate content)))
 
 (define (same-as-cnchar-and cnchar ori-meaning standing)
-  (elem "same as cnchar " @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", and especially "  @stands-for[@standing] " in Ming"))
+  (elem "same as cnchar " @zi-tool[cnchar] ", which means " @elucidate{@ori-meaning} ", and especially "  @stands-for[@standing] " in Ming"))
 (define (same-as-cnchar-but cnchar ori-meaning standing)
-  (elem "same as cnchar " @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", but borrowed to "  @stands-for[@standing] " in Ming"))
+  (elem "same as cnchar " @zi-tool[cnchar] ", which means " @elucidate{@ori-meaning} ", but borrowed to "  @stands-for[@standing] " in Ming"))
 (define (same-as-cnchar cnchar meaning)
-  (elem "same as cnchar " (hspace 1) @zitools-ref[cnchar] ", " @stands-for[@meaning] " in Ming"))
+  (elem "same as cnchar " (hspace 1) @zi-tool[cnchar] ", " @stands-for[@meaning] " in Ming"))
 
 (define (simplified-from-cnchar-and cnchar ori-meaning meaning)
-  (elem "simplified from cnchar " (hspace 1) @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", and especially " @stands-for[@meaning] " in Ming"))
+  (elem "simplified from cnchar " (hspace 1) @zi-tool[cnchar] ", which means " @elucidate{@ori-meaning} ", and especially " @stands-for[@meaning] " in Ming"))
 (define (simplified-from-cnchar-but cnchar ori-meaning meaning)
-  (elem "simplified from cnchar " (hspace 1) @zitools-ref[cnchar] ", which means " @elucidate{@ori-meaning} ", but borrowed to " @stands-for[@meaning] " in Ming"))
+  (elem "simplified from cnchar " (hspace 1) @zi-tool[cnchar] ", which means " @elucidate{@ori-meaning} ", but borrowed to " @stands-for[@meaning] " in Ming"))
 (define (simplified-from-cnchar cnchar meaning)
-  (elem "simplified from cnchar " (hspace 1) @zitools-ref[cnchar] ", " @stands-for[@meaning] " in Ming"))
+  (elem "simplified from cnchar " (hspace 1) @zi-tool[cnchar] ", " @stands-for[@meaning] " in Ming"))
 
 
 (define (eleph-note . content) ;; 像注, elephant in chinese is wrote as 象, and 像 means like

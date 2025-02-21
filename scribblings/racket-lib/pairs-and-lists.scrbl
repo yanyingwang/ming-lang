@@ -163,16 +163,67 @@ Extended from @secref["naming-rules"], specifically there are：
          )]
 
 @section[#:tag "pair-car-cdr-list-list*"]{双, 㐅, 􏿴, 􏿫, 阴, 阳}
-Abstractly, we can pair two data together. Integrally, it is called @racket[双]. Separately, the position where set the first data is call @racket[阳], the second is call @racket[阴].
+Abstractly, we can pair two data together. Integrally, it is called @zi[双]. Separately, the position where set the first data is call @zi[阳], the second is call @zi[阴].
 
 Further more, if we put another @racket[双] to @racket[阴] position of the former @racket[双], we get a linked data. Likewise, the linked data can be extended as long as you want. By this way, if we leave @racket[阴] of the ending @racket[双] to be empty(@racket[㐅]), we get a data called @racket[􏿴]; if not, we call it @racket[􏿫].
 
-@defzi[双]{@defzi/sub[又]{resembles @italic{the picture of human's right hand trying to hold an object}}. Two human hand here stand for an object with including two holding data.}
-@defzi[㐅]{@simplf-from{穴}. @defzi/sub[穴]{@simplf-from{空}, @whstands-for{empty}}.}
-@defzi[􏿴]{the reaching to left bottom @litchar{又} means multiple @zi[双] linked together, @litchar{㐅} means ending with empty(@zi[㐅]).}
-@defzi[􏿫]{resembles @zi[􏿴] except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi[㐅]).}
-@defzi[阳]{@defzi/sub[日]{means sun, implicitly means the former part of an object, or the position aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
-@defzi[阴]{@defzi/sub[月]{means moon, implicitly means the secondary part of of an object, or the negative aspect of an object.} Ref to @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].}
+
+@defideogr[又 "elment" "又" "Right hand, borrowed as again in simplified chinese."]{
+Resembles @italic{the picture of human's right hand trying to hold an object}.
+@ziexamples[双 􏿫]
+}
+@nested[ #:style "inset"
+@defideogr[又RB "linked pair"]{
+@elem{
+Is reaching from Right through Bottom to left, we write it in this way to stand multiple @racket[双] linked together.
+@ziexamples[􏿴 􏿫]
+}
+}
+]
+
+@defideogr[㐅 "null"]{
+@elem{
+Is same as @zi[穴], because @racket[㐅] is same as @racket[穴].
+@ziexamples[㐅? 􏿴]
+}
+}
+
+@defideogr[穴 "empty" "穴" "hole"]{
+Simplifies from @zi[空], which means @italic{empty}.
+@ziexamples[穴?]
+}
+
+@defideogr[空 "empty" "空" "empty"]
+
+
+@defideogr[双 (又 又) "cons, pair" "双" "pair"]{
+Two human hand here stand for an object with including two holding data.
+}
+
+@defideogr[􏿴 (又RB 㐅) "list"]{
+@elem{
+The reaching from Right through Bottom to left @zi[又] means @italic{multiple @racket[双] linked together}; @litchar{㐅} means ending with empty(@zi[㐅]).
+}
+}
+
+@defideogr[􏿫 (又RB 又) "list with last element be pair"]{
+@elem{
+resembles @zi[􏿴] except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi[㐅]).
+}
+}
+
+@defideogr[日 "the former one" "日" "sun"]{
+Original means @italic{sun} in Chinese, borrowed to means the former part of an object in Ming, or the position aspect of an object.
+@hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
+}
+
+@defideogr[月 "the latter one" "月" "moon"]{
+means moon, implicitly means the secondary part of of an object, or the negative aspect of an object.
+@hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
+}
+
+@defideogr[阳 (阝 日) "the first half part" "阳" "sun, positive"]
+@defideogr[阴 "the last half part" "阴" "negative"]
 
 @examples[#:eval (the-eval)
 (双 1 2)

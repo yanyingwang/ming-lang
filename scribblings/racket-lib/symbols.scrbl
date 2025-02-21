@@ -22,8 +22,8 @@ Originates from @secref["symbols" #:doc '(lib "scribblings/reference/reference.s
 @section[#:tag "symbol-interned-uninterned-unreadable"]{􏷂 􏺏 􏺍 􏺋}
 @racket[􏷂] normally is 􏺏(interned symbol), relatively can be：􏺍(uninterned), 􏺋(unreadable, partially interned).
 
-@defzi[􏷂]{resembles @zitools-ref["勺"], @ori-esp-means["spoon, spoon-shape objects" "symbol"]}
-@defzi[􏺏]{ @defzi/sub[罒]{simplified from @zitools-ref["罒" "网"], @ori-esp-means["fishing or bird net, net-shape object, caught by net" "interned"]}}
+@defzi[􏷂]{resembles @zi-tool["勺"], @ori-esp-means["spoon, spoon-shape objects" "symbol"]}
+@defzi[􏺏]{ @defzi/sub[罒]{simplified from @zi-tool["罒" "网"], @ori-esp-means["fishing or bird net, net-shape object, caught by net" "interned"]}}
 @defzi[􏺍]{ @defzi/sub[􏺎]{resembles @zi[罒], @ori-esp-means["broken bird net" "uninterned"].}}
 @defzi[􏺋]{ @defzi/sub[龱]{resembles @zi[罒], @ori-esp-means["moderate broken bird net" "unreadable, partially interned"]}}
 
