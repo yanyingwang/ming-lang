@@ -211,6 +211,7 @@
 ;; ))
 ;; )
 (define-syntax (defideogr stx)
+  
   (syntax-case stx ()
     ;;;;;;;;;;;;;;;;;;;;;;;;
     [(_ (zis ...) (parts ...) meaning cnchar cnchar-meaning content ...)
@@ -321,18 +322,15 @@
                 content ...)))]
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     [(_ z meaning cnchar cnchar-meaning content ...)
-     (with-syntax ([str-zi (symbol->string (syntax-e #'z))])
+     (with-syntax ([str-z (symbol->string (syntax-e #'z))]
+                   [(header ...) #'("connotation" "originates from" "originally means")]
+                   [(val ...) #'(meaning (zi-tool cnchar) cnchar-meaning)])
        #`(elem
           (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
-                (elemtag str-zi (elem (bold (racket (code:hilite z))) (hspace 1)
-                                      (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                            #,(r-background-label "ideograph"))
-                                      (linebreak) (hspace 2) (italic "connotation : ") meaning
-                                      (linebreak) (hspace 2) (italic "originates from : ") @zi-tool[cnchar]
-                                      (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning
-                                      )))
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
+                (elemtag str-z (elem (bold (racket (code:hilite z)))))
+                (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"])))) #,(r-background-label "ideograph"))
+                (elem (~@ (linebreak) (hspace 2) header " : " val) ...))
+          (elem #:style (style #f (list (alt-tag "p"))) content ...)))]
     [(_ z meaning content ...)
      (with-syntax ([str-zi (symbol->string (syntax-e #'z))])
        #`(elem

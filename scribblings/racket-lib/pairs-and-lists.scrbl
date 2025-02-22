@@ -24,19 +24,7 @@ Extended from @secref["naming-rules"], specifically there are：
          #:row-properties '(border)
          (list (list @bold{Character} @bold{Connotation} @bold{Elucidation} @bold{Example})
                (list
-               @elem{@defradical[􏷫]}
-               @elem{resembles @racket[􏿴]}
-               @elem{Has the similar function process as it resembling and the type of output is same as @racket[􏿴] accordingly.}
-               @elem{@racket[􏼓] @racket[􏼎] @racket[􏼏] @racket[􏿝]}
-               )
-               (list
-               @elem{@defradical[􏷩]}
-               @elem{resembles @racket[􏿫]}
-               @elem{Has the similar function process as it resembling and the type of output is same as (@racket[􏿫]) accordingly.}
-               @elem{@racket[􏿜]}
-               )
-               (list
-               @elem{@defcomponent[亻]}
+               @elem{@zi[亻] as component}
                "general subset or cousion"
                @elem{Returns a new list with elements produced from the input list.(Implies the input data and output data are the same type.)}
                @elem{@racket[伄] @racket[攸] @racket[𰂋] @racket[偏] @racket[􏾜] @racket[􏾛] @racket[偅] @racket[𠆯] @racket[􏹈] @racket[􏷍?]}
@@ -173,19 +161,15 @@ Resembles @italic{the picture of human's right hand trying to hold an object}.
 @ziexamples[双 􏿫]
 }
 @nested[ #:style "inset"
-@defideogr[又RB "linked pair"]{
-@elem{
+@defideogr[又LB "links pairs, linked pairs"]@elem{
 Is reaching from Right through Bottom to left, we write it in this way to stand multiple @racket[双] linked together.
 @ziexamples[􏿴 􏿫]
 }
-}
 ]
 
-@defideogr[㐅 "null"]{
-@elem{
+@defideogr[㐅 "null"]@elem{
 Is same as @zi[穴], because @racket[㐅] is same as @racket[穴].
 @ziexamples[㐅? 􏿴]
-}
 }
 
 @defideogr[穴 "empty" "穴" "hole"]{
@@ -200,30 +184,25 @@ Simplifies from @zi[空], which means @italic{empty}.
 Two human hand here stand for an object with including two holding data.
 }
 
-@defideogr[􏿴 (又RB 㐅) "list"]{
-@elem{
+@defideogr[􏿴 (又LB 㐅) "list"]@elem{
 The reaching from Right through Bottom to left @zi[又] means @italic{multiple @racket[双] linked together}; @litchar{㐅} means ending with empty(@zi[㐅]).
 }
+@nested[#:style "inset"]{
+@defideogr[􏿴BR "resembles 􏿴"]@elem{
+Has the similar function process as it resembles and the type of output is same as @racket[􏿴] accordingly.
+@ziexamples[􏼓 􏼎 􏼏 􏿝]
+}
 }
 
-@defideogr[􏿫 (又RB 又) "list with last element be pair"]{
-@elem{
-resembles @zi[􏿴] except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi[㐅]).
+@defideogr[􏿫 (又LB 又) "list with last element be pair"]@elem{
+Resembles @zi[􏿴] except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi[㐅]).
+}
+@nested[#:style "inset"]{
+@defideogr[􏿫BR "resembles 􏿫"]@elem{
+Has the similar function process as it resembles and the type of output is same as @racket[􏿫] accordingly.
+@ziexamples[􏿜]
 }
 }
-
-@defideogr[日 "the former one" "日" "sun"]{
-Original means @italic{sun} in Chinese, borrowed to means the former part of an object in Ming, or the position aspect of an object.
-@hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
-}
-
-@defideogr[月 "the latter one" "月" "moon"]{
-means moon, implicitly means the secondary part of of an object, or the negative aspect of an object.
-@hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
-}
-
-@defideogr[阳 (阝 日) "the first half part" "阳" "sun, positive"]
-@defideogr[阴 "the last half part" "阴" "negative"]
 
 @examples[#:eval (the-eval)
 (双 1 2)
@@ -244,6 +223,19 @@ means moon, implicitly means the secondary part of of an object, or the negative
 ]
 
 @section{阴阳+-}
+@defideogr[日 "the former one" "日" "sun"]{
+Original means @italic{sun} in Chinese, borrowed to means the former part of an object in Ming, or the position aspect of an object.
+@hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
+}
+
+@defideogr[月 "the latter one" "月" "moon"]{
+means moon, implicitly means the secondary part of of an object, or the negative aspect of an object.
+@hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
+}
+
+@defideogr[阳 (阝 日) "the first half part" "阳" "sun, positive"]
+@defideogr[阴 "the last half part" "阴" "negative"]
+
 @defzis[阳+/阴+/阳-/阴-]{For the case of functions starting with @zi[阴] or @zi[阳] and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi[阳] and @litchar{-} stands for @zi[阴]. @linebreak{}
 For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}. }
 @examples[#:eval (the-eval)
