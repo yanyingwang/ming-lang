@@ -19,10 +19,19 @@
 @tech[#:doc "naming-rules"]
 
 
-@defideogr[(亻) "general subset" "人" "people"]{
-As component of ideographs, which implies The type of output data is same as the input, and content is part of the input. @linebreak{}
+@defideogr[(亻) "general subset" "亻" "person, people, human"]{
+As component of ideographs, which implies The type of output data is same as the input. And the elements of output data are  part of the input.
+
 In particular, @zi[化] is exceptionally different, which has a more diverse usages scenarios, @zi[化I], @zi[化E].
-@ziexamples[伄 攸 𰂋 偏 􏾜 􏾛 偅 𠆯 􏹈 􏻿𠆯 􏻿􏷑]
+
+As Well to note that, if the procedure name has another ideograph prefix it as a word, the input and output type is determinated by the prefix ideographs, e.g. @rackets[􏻿𢪛 􏿰攸 􏻿弔 􏿰弔 􏻿巨 􏿰巨].
+
+@ziexamples[伄 攸 𰂋 偏 􏾜 􏾛 偅 𠆯 􏹈]
+}
+
+@defideogr[(阝) "serial subset" "阝" "hill"]{
+As component of ideographs, which implies The type of output data is same as the input. And the elements of ouput data is a serial of successive elements of the input.
+@ziexamples[􏾝 􏾺 𨚞 􏹋]
 }
 
 @defideogr[(扌 !) "warning, is changing original data" "手" "hands, handle"]{

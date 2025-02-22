@@ -25,9 +25,9 @@ Extended from @secref["naming-rules"], specifically there are：
          (list (list @bold{Character} @bold{Connotation} @bold{Elucidation} @bold{Example})
                (list
                @elem{@zi[亻] as component}
-               "general subset or cousion"
-               @elem{Returns a new list with elements produced from the input list.(Implies the input data and output data are the same type.)}
-               @elem{@racket[伄] @racket[攸] @racket[𰂋] @racket[偏] @racket[􏾜] @racket[􏾛] @racket[偅] @racket[𠆯] @racket[􏹈] @racket[􏷍?]}
+               "general subset"
+               @elem{Returns a new list with elements produced from the input list. (Implies the input data and output data are the same type.)}
+               @elem{@rackets[伄 攸 𰂋 偏 􏾜 􏾛 偅 𠆯 􏹈 􏷍?]}
                )
                @; (list
                @; @elem{@defcomponent[彳]}
@@ -36,7 +36,7 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{@racket[𢓜]}
                @; )
                (list
-               @elem{@defcomponent[阝]}
+               @elem{@zi[阝] as component}
                "serial subset"
                @elem{Returns a new list with elements serially produced from the input list.(Implies the input data and output data are the same type.)}
                @elem{@racket[􏾝] @racket[􏾺] @racket[𨚞] @racket[􏹋]}
@@ -157,7 +157,7 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 
 
 @defideogr[又 "elment" "又" "Right hand, borrowed as again in simplified chinese."]{
-Resembles @italic{the picture of human's right hand trying to hold an object}.
+Resembles @italic{human's hand that is holding an object}.
 @ziexamples[双 􏿫]
 }
 @nested[ #:style "inset"
@@ -167,9 +167,11 @@ Is reaching from Right through Bottom to left, we write it in this way to stand 
 }
 ]
 
-@defideogr[㐅 "null"]@elem{
+@defideogr[㐅 "null"]{
+@elem{
 Is same as @zi[穴], because @racket[㐅] is same as @racket[穴].
 @ziexamples[㐅? 􏿴]
+}
 }
 
 @defideogr[穴 "empty" "穴" "hole"]{
@@ -224,20 +226,24 @@ Has the similar function process as it resembles and the type of output is same 
 
 @section{阴阳+-}
 @defideogr[日 "the former one" "日" "sun"]{
-Original means @italic{sun} in Chinese, borrowed to means the former part of an object in Ming, or the position aspect of an object.
+Original means @italic{sun} in Chinese, borrowed to means the former part of an object in Ming, or the positive part of an object in Ming.
 @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
 }
 
 @defideogr[月 "the latter one" "月" "moon"]{
-means moon, implicitly means the secondary part of of an object, or the negative aspect of an object.
+means moon, implicitly means the secondary part of of an object, or the negative part of an object in Ming.
 @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
 }
 
 @defideogr[阳 (阝 日) "the first half part" "阳" "sun, positive"]
 @defideogr[阴 "the last half part" "阴" "negative"]
 
-@defzis[阳+/阴+/阳-/阴-]{For the case of functions starting with @zi[阴] or @zi[阳] and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi[阳] and @litchar{-} stands for @zi[阴]. @linebreak{}
-For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}. }
+@defideogr[(阳+ 阴+ 阳- 阴-) (阳 阴 + -) "mutiple parenthesis nested 阴 or 阳 in reverse order"]@elem{
+For the case of procedures that start with @zi[阴] or @zi[阳] and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi[阳] and @litchar{-} stands for @zi[阴].
+
+For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}.
+}
+
 @examples[#:eval (the-eval)
 (阴+ '(1 2 3 4))
 (阴-+ '(1 2 3 4))

@@ -211,7 +211,6 @@
 ;; ))
 ;; )
 (define-syntax (defideogr stx)
-  
   (syntax-case stx ()
     ;;;;;;;;;;;;;;;;;;;;;;;;
     [(_ (zis ...) (parts ...) meaning cnchar cnchar-meaning content ...)
