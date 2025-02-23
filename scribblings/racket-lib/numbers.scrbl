@@ -95,6 +95,8 @@
          )]
 
 @section+elemref{大类概念：米?，夈?，宩?、􏻟?，粊?、䉾?}
+
+@defideogr[米 "number" "米" "rice"]
 @margin-note{
 @bold{@litchar{夈}为古活字}  @linebreak{}
 @bold{@litchar{宩}为古活字}  @linebreak{}

@@ -215,7 +215,7 @@
 (define-syntax (defideogr stx)
   (syntax-case stx ()
     ;;;;;;;;;;;;;;;;;;;;;;;;
-    [(_ (zis ...) (parts ...) meaning cnchar cnchar-meaning content ...)
+    [(_ (zis ...) (parts ...) meaning cnchar cnchar-meaning elaboration ...)
      (with-syntax ([(gen-elemtags ...)
                     (map (lambda (e)
                            #`(elemtag #,(symbol->string (syntax-e e))
@@ -225,16 +225,15 @@
                            )
                          (syntax->list #'(zis ...)))]
                    [p+p+p #`#,(cons 'elem (add-between (map (lambda (e) (if (list? e)
-                                                                       (cons 'elem (add-between (map (lambda (ee) `(zi-ref ,(symbol->string ee)))e) " | "))
-                                                                       `(zi-ref ,(symbol->string e)))) (syntax->datum #'(parts ...))) " + "))])
+                                                                       (cons 'elem (add-between (map (lambda (ee) `(zi-ref ,(symbol->string ee)))e) " / "))
+                                                                       `(zi-ref ,(symbol->string e)))) (syntax->datum #'(parts ...))) " + "))]
+                   [(header ...) #'("connotation" "originates from" "originally means")]
+                   [(content ...) #'(meaning (zi-tool cnchar) cnchar-meaning)])
        #`(elem
           (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
                 gen-elemtags ...  " : " p+p+p
-                (linebreak) (hspace 2) (italic "connotation : ") meaning
-                (linebreak) (hspace 2) (italic "originates from : ") (zi-tool cnchar)
-                (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
+                (~@ (if content (elem (linebreak) (hspace 2) header " : " content) "")) ...)
+          (elem elaboration ...)))]
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     [(_ z (parts ...) meaning cnchar cnchar-meaning elaboration ...)
      (with-syntax ([str-z (symbol->string (syntax-e #'z))]

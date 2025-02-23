@@ -184,21 +184,21 @@ Simplifies from @zi[空], which means @italic{empty}.
 Two human hand here stand for an object with including two holding data.
 }
 
-@defideogr[􏿴 (又LB 㐅) "list"]{
+@defideogr[􏿴 (又LB 㐅) "list" #f #f]{
 The reaching from Left through Bottom to right @zi[又] means @italic{multiple @racket[双] linked together}; @litchar{㐅} means ending with empty(@zi[㐅]).
 }
 @nested[#:style "inset"]{
-@defideogr[􏿴BR "resembles 􏿴"]{
+@defideogr[􏿴BR "resembles 􏿴" #f #f]{
 Has the similar function process as it resembles and the type of output is same as @racket[􏿴] accordingly.
 @ziexamples[􏼓 􏼎 􏼏 􏿝]
 }
 }
 
-@defideogr[􏿫 (又LB 又) "list with last element be pair"]{
+@defideogr[􏿫 (又LB 又) "list with last element be pair" #f #f]{
 Resembles @zi[􏿴] except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi[㐅]).
 }
 @nested[#:style "inset"]{
-@defideogr[􏿫BR "resembles 􏿫"]{
+@defideogr[􏿫BR #f #f #f]{
 Has the similar function process as it resembles and the type of output is same as @racket[􏿫] accordingly.
 @ziexamples[􏿜]
 }
@@ -236,7 +236,7 @@ means moon, implicitly means the secondary part of of an object, or the negative
 @defideogr[阳 (阝 日) "the first half part" "阳" "sun, positive"]
 @defideogr[阴 "the last half part" "阴" "negative"]
 
-@defideogr[(阳+ 阴+ 阳- 阴-) (阳 阴 + -) "mutiple parenthesis nested 阴 or 阳 in reverse order"]{
+@defideogr[(阳+ 阴+ 阳- 阴-) ((阳 阴) (+ -)) "mutiple parenthesis nested 阴 or 阳 in reverse order" #f #f]{
 For the case of procedures that start with @zi[阴] or @zi[阳] and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi[阳] and @litchar{-} stands for @zi[阴].
 
 For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}.
@@ -253,7 +253,8 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 
 
 @section{􏿝, 􏿜}
-@defzis[􏿝/􏿜]{@defzi/sub[毌]{@simplf-from{贯}, which means @italic{append, going through a few objects and connect them together}.}}
+@defideogr[􏿝 (毌 􏿴BR) #f #f #f]
+@defideogr[􏿜 (毌 􏿫BR) #f #f #f]
 @examples[#:eval (the-eval)
 (􏿴 1 2 3 4)
 (􏿝 '(1) '(2) '(3) '(4))
@@ -279,7 +280,9 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 
 
 @section{攸}
-@defzi[攸]{@defzi/sub[攵]{means @italic{raping over something to make it changing itself}, especially means @italic{set value}.} @defzi/sub[丨]{@stands-for{only changing one value.}}}
+@defideogr[攸 (亻 丨 攵) #f #f #f]{
+@litchar{丨} implies only change one value, thus the input values are in type of @racket[number?] and @racket[any?].
+}
 @eleph-note{@racket[𰁦] @racket[􏾩] @racket[𢪛]}
 @examples[#:eval (the-eval)
 (攸 '(10 15 20 25) 1 1555)
@@ -288,8 +291,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 
 
 @section{􏼏, 􏼏*}
-@defzi[􏼏]{@defzi/sub[米]{means @italic{numbers}, ref to: @secref["numbers"]}.}
-
+@defideogr[􏼏 (米 􏿴BR) #f #f #f]
 @examples[#:eval (the-eval)
 (􏼏 10)
 (􏼏 10 20)
@@ -299,8 +301,8 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{􏼓, 􏼎}
-@defzi[􏼓]{@defzi/sub[三]{@ori-esp-means["three" "duplicate data"]}}
-@defzi[􏼎]{@zi[弓].}
+@defideogr[􏼓 (三 􏿴) #f #f #f]
+@defideogr[􏼎 (弓 􏿴) #f #f #f]
 @examples[#:eval (the-eval)
 (􏼓 5 'foo)
 (􏼎 5 並)
@@ -310,8 +312,13 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{弔, 弓,弓*, 􏹂, 􏹂*}
-@defzi[􏹂]{@defzi/sub[弓]{resembles @italic{a rope wraped on stick, thus this rope can be used to count how many circles it is wrapping on stick}. Especially means @italic{the index} of an object in ming-lang.}}
-@defzi[弔]{simplified from @litchar{第} and resembles @italic{an stick wrapped with a rope in circles, thus it can be used to ref to an specific circle}. Especially means @italic{reference} in ming-lang.}
+@defideogr[弓 "index" "弓" "bow"]{
+Resembles @italic{a rope wraped on stick, thus this rope can be used to count how many circles it is wrapping on stick}. Especially means @italic{the index} of an object in Ming.
+}
+@defideogr[􏹂 (弓 入) #f #f #f]
+@defideogr[弔 "refer a vlaue from index" "第" "refer, rank"]{
+simplified from @litchar{第} and resembles @italic{an stick wrapped with a rope in circles, thus it can be used to ref to an specific circle}. Especially means @italic{refer} in Ming.
+}
 @eleph-note{
 @racket[伄] @racket[􏾘] @racket[􏾝] @;，@racket[弓*]、@racket[弓*/入]
 }
@@ -326,16 +333,20 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{􏷜, 􏷛, 􏷚, 􏷙, 􏷘, 􏷗, 􏷖, 􏷕, 􏷔, 􏷓}
-@defzi[一]{@same-as-cnchar["一" "one"].}
-@defzi[二]{@same-as-cnchar["二" "two"].}
-@defzi[三]{@same-as-cnchar["三" "three"].}
-@defzi[四]{@same-as-cnchar["四" "four"].}
-@defzi[五]{@same-as-cnchar["五" "five"].}
-@defzi[六]{@same-as-cnchar["六" "six"].}
-@defzi[七]{@same-as-cnchar["七" "seven"].}
-@defzi[八]{@same-as-cnchar["八" "eight"].}
-@defzi[九]{@same-as-cnchar["九" "nine"].}
-@defzi[十]{@same-as-cnchar["十" "ten"].}
+@defideogr[一 "one" "一" "one"]
+@defideogr[二 "two" "二" "two"]
+@defideogr[三 "three" "三" "three"]{
+Note that, meaning is changed to @italic{duplicated elements} if is used with @zi[􏿴BR]. e.g., @racket[􏼓].
+}
+@defideogr[四 "four" "四" "four"]
+@defideogr[五 "five" "五" "five"]
+@defideogr[六 "six" "六" "six"]
+@defideogr[七 "seven" "七" "seven"]
+@defideogr[八 "eight" "八" "eight"]
+@defideogr[九 "nine" "九" "nine"]
+@defideogr[十 "ten" "十" "ten"]{
+Note that, meaning is changed to @italic{a few of fixed length elements} if is used within @zi[􏻿].
+}
 @examples[#:eval (the-eval)
 (􏷜 '(1 2 3 4 5 6 7 8 9 10))
 (􏷛 '(1 2 3 4 5 6 7 8 9 10))
@@ -345,7 +356,7 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{末, 􏹨}
-@defzi[末]{@ori-esp-means["treetop" "last"]{(@litchar{木} @stands-for{tree or wood}, @litchar{本} @stands-for{tree root.})}}
+@defideogr[􏹨 (末 双) #f #f #f]
 @examples[#:eval (the-eval)
 (末 '(1 2 3 4))
 (􏹨 '(1 2 3 4))
@@ -353,7 +364,6 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 ]
 
 @section{巨}
-@defzi[巨]{@simplf-from{矩}, @ori-esp-means["straightedge, ruler" "measure length"]}
 @eleph-note{@racket[􏹃]}
 @examples[#:eval (the-eval)
 (巨 '(a b c d e 3 f g))
