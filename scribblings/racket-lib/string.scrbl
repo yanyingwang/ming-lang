@@ -25,13 +25,13 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 @ziexamples[句? 句化􏿴 􏿴化句]
 }
 @nested[#:style 'inset]{
-@defideogr[句B "output type is string"]{
+@defideogr[句B "output type is string" #f #f]{
 @ziexamples[􏽀 􏼅 􏼄 􏼃 􏼂]
 }
-@defideogr[句L "input type is string"]{
+@defideogr[句L "input type is string" #f #f]{
 @ziexamples[􏺕 􏼭 􏶐 􏶊 􏶋 邭 􏶉 􏶈 􏶇 􏶆 􏼸? 􏼹?]
 }
-@defideogr[句R "output type is string"]{
+@defideogr[句R "output type is string" #f #f]{
 @; @ziexamples[􏶑]
 }
 }
@@ -56,8 +56,8 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 
 @section{􏼅, 􏼄}
 @eleph-note{@racket[􏼓] @racket[􏼎]}
-@defideogr[􏼅 (三 句B) "duplicated elements of string"]
-@defideogr[􏼄 (弓 句B) "references resembled elements of string"]
+@defideogr[􏼅 (三 句B) "duplicated elements of string" #f #f]
+@defideogr[􏼄 (弓 句B) "references resembled elements of string" #f #f]
 @examples[#:eval (the-eval)
 (􏼅 5 #\t)
 (􏼄 5 米化句)
@@ -65,9 +65,11 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 
 @section{􏼃, 􏼁, 􏼂}
 @eleph-note{@racket[􏿝] @racket[􏿜]}
-@defideogr[􏼃 (毌 句B) "appended string"]
-@defideogr[􏼂 (毌 又 句B) @elem{appended string with last input being @racket[􏿴] type.}]
-@defideogr[􏼁 (山 􏼃) "immutable appended string"]
+@defideogr[􏼃 (毌 句B) "appended string" #f #f]
+@defideogr[􏼂 (毌 又 句B) #f #f #f]{
+Appends strings with last input being @racket[􏿴] type.
+}
+@defideogr[􏼁 (山 􏼃) "immutable appended string" #f #f]
 
 @examples[#:eval (the-eval)
 (􏼃 "AAA" "BBB" "CCC")
@@ -81,9 +83,9 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 @section{􏺕, 􏼭, 邭}
 @eleph-note{@racket[巨]  @racket[弔]  @racket[􏾝] @racket[􏻿􏾝]}
 @eleph-note{@zi[邭] is short for @litchar{句􏾝}}
-@defideogr[􏺕 (句 巨) "measure string length"]
-@defideogr[􏼭 (句 弔) "refers a specific element of string"]
-@defideogr[邭 (句 阝) "substring"]
+@defideogr[􏺕 (句 巨) "measure string length" #f #f]
+@defideogr[􏼭 (句 弔) "refers a specific element of string" #f #f]
+@defideogr[邭 (句 阝) "substring" #f #f]
 @examples[#:eval (the-eval)
 (􏺕 "ThisIsString")
 (􏼭 "ThisIsString" 3)
@@ -95,7 +97,7 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 @section{􏼘, 􏼘/以􏾝, 􏼅𰅡}
 @; @bold{@litchar{拘}为古活字} @linebreak{}
 @; @bold{@litchar{􏼿}为古活字}
-@defideogr[􏼘 (扌 句 攵) "directly change string"]
+@defideogr[􏼘 (扌 句 攵) "directly change string" #f #f]
 @; @bold{@litchar{邭}为古活字} @linebreak{}
 @; @margin-note{另见：@racket[􏼅], @racket[邭]}
 @eleph-note{@racket[􏼅] @racket[攸] @racket[􏻿􏾩] @racket[􏿰􏾩] @racket[􏻿􏾩/以􏾝]}
@@ -130,9 +132,9 @@ str
 
 @section{􏶐, 􏶊, 􏶋}
 @; resembles @zi[敂].
-@defideogr[􏶐 (句 㚘)]
-@defideogr[􏶊 (句 𡯂)]
-@defideogr[􏶋 (句 正)]
+@defideogr[􏶐 (句 㚘) #f #f #f]
+@defideogr[􏶊 (句 𡯂) #f #f #f]
+@defideogr[􏶋 (句 正) #f #f #f]
 @examples[#:eval (the-eval)
 (􏶐 "ThisIsString" "Is" "Isnot")
 (􏶊 "\n\r this is string \n\r\n")
@@ -144,8 +146,8 @@ str
 @section{􏼹?, 􏼸?, 邭?}
 @eleph-note{@racket[邭]}
 @; @bold{@litchar{􏼢}为新造字}
-@defideogr[􏼹 (句 本)]
-@defideogr[􏼸 (句 末)]
+@defideogr[􏼹 (句 本) #f #f #f]
+@defideogr[􏼸 (句 末) #f #f #f]
 
 @examples[#:eval (the-eval)
 (􏼹? "ThisIsString" "Thi")

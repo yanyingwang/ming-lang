@@ -20,11 +20,11 @@
 @defideogr[冃 "simply equal" "冃" "hat"]{
 Ignore the original meaning in Chinese, and especially take it as the simplification version of @zi[同] in Ming. (Do not confuse with @zi[月])
 }
-@defideogr[􏷇 (𭕄  同) "equal without mutable"]{
+@defideogr[􏷇 (𭕄  同) "equal without mutable" #f #f]{
 @elem{Almost same as @zi[同] other than that @zi[𭕄] implies difference about mutable data.}
 }
 
-@defideogr[􏷅 (冃 米) "only equal on numbers"]{
+@defideogr[􏷅 (冃 米) "only equal on numbers" #f #f]{
 @elem{Almost same as @zi[冃] other than that @zi[米] implies difference about numbers.}
 }
 

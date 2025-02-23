@@ -123,8 +123,10 @@
     )
   )
 
-(define (zi-tool zi [lit-zi zi])
-  (hyperlink (string-append "https://zi.tools/zi/" zi) lit-zi #:style (style #f (list (attributes '([target . "_blank"] [style . "background: #ebf5fb; "]))))))
+(define (zi-tool zi [zi1 zi])
+  (if zi
+      (hyperlink (string-append "https://zi.tools/zi/" zi) zi1 #:style (style #f (list (attributes '([target . "_blank"] [style . "background: #ebf5fb; "])))))
+      #f))
 
 
 (define-syntax (ziexamples stx)
@@ -233,114 +235,46 @@
                 (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
           (elem #:style (style #f (list (alt-tag "p")))
                 content ...)))]
-    [(_ (zis ...) (parts ...) meaning content ...)
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    [(_ z (parts ...) meaning cnchar cnchar-meaning elaboration ...)
+     (with-syntax ([str-z (symbol->string (syntax-e #'z))]
+                   [ppp #`#,(cons 'elem (add-between (map (lambda (e) `(zi-ref ,(symbol->string (syntax->datum e)))) (syntax->list #'(parts ...))) " + "))]
+                   [(header ...) #'("connotation" "originates from" "originally means")]
+                   [(content ...) #'(meaning (zi-tool cnchar) cnchar-meaning)])
+       #`(elem
+          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
+                (elemtag str-z (elem (bold (racket (code:hilite z))) " : " ppp))
+                (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"])))) #,(r-background-label "ideograph"))
+                (~@ (if content (elem (linebreak) (hspace 2) header " : " content) "")) ...)
+          (elem elaboration ...)))]
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    [(_ (zis ...) meaning cnchar cnchar-meaning elaboration ...)
      (with-syntax ([(gen-elemtags ...)
                     (map (lambda (e)
                            #`(elemtag #,(symbol->string (syntax-e e))
                                       (elem (bold (racket (code:hilite #,e))) (hspace 1)
-                                            (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                                  #,(r-background-label "ideographs"))))
+                                            ))
                            )
                          (syntax->list #'(zis ...)))]
-                   [p+p+p #`#,(cons 'elem (add-between (map (lambda (e) (if (list? e)
-                                                                       (cons 'elem (add-between (map (lambda (ee) `(zi-ref ,(symbol->string ee)))e) " | "))
-                                                                       `(zi-ref ,(symbol->string e)))) (syntax->datum #'(parts ...))) " + "))])
-       #`(elem
-          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
-                gen-elemtags ...  " : " p+p+p
-                (linebreak) (hspace 2) (italic "connotation : ") meaning)
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    [(_ z (parts ...) connotation cnchar cnchar-meaning content ...)
-     (with-syntax ([str-z (symbol->string (syntax-e #'z))]
-                   [p+p+p #`#,(cons 'elem (add-between (map (lambda (e) `(zi-ref ,(symbol->string (syntax->datum e)))) (syntax->list #'(parts ...))) " + "))])
-       #`(elem
-          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
-                (elemtag str-z (elem (bold (racket (code:hilite z))) " : " p+p+p
-                                     (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                           #,(r-background-label "ideograph"))))
-                (linebreak) (hspace 2) (italic "connotation : ") connotation
-                (linebreak) (hspace 2) (italic "originates from : ") (zi-tool cnchar)
-                (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
-    [(_ z (parts ...) connotation content ...)
-     (with-syntax ([str-z (symbol->string (syntax-e #'z))]
-                   [p+p+p #`#,(cons 'elem (add-between (map (lambda (e) `(zi-ref ,(symbol->string (syntax->datum e)))) (syntax->list #'(parts ...))) " + "))])
-       #`(elem
-          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
-                (elemtag str-z (elem (bold (racket (code:hilite z))) " : " p+p+p
-                                     (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                           #,(r-background-label "ideograph"))))
-                (linebreak) (hspace 2) (italic "connotation : ") connotation)
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
-    [(_ z (parts ...) content ...)
-     (with-syntax ([str-z (symbol->string (syntax-e #'z))]
-                   [p+p+p #`#,(cons 'elem (add-between (map (lambda (e) `(zi-ref ,(symbol->string (syntax->datum e)))) (syntax->list #'(parts ...))) " + "))])
-       #`(elem
-          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
-                (elemtag str-z (elem (bold (racket (code:hilite z))) " : " p+p+p
-                                     (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                           #,(r-background-label "ideograph")))))
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    [(_ (zis ...) meaning cnchar cnchar-meaning content ...)
-     (with-syntax ([(gen-elemtags ...)
-                    (map (lambda (e)
-                           #`(elemtag #,(symbol->string (syntax-e e))
-                                      (elem (bold (racket (code:hilite #,e))) (hspace 1)
-                                            (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                                  #,(r-background-label "ideographs"))))
-                           )
-                         (syntax->list #'(zis ...)))])
+                   [(header ...) #'("connotation" "originates from" "originally means")]
+                   [(content ...) #'(meaning (zi-tool cnchar) cnchar-meaning)])
        #`(elem
           (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
                 gen-elemtags ...
-                (linebreak) (hspace 2) (italic "connotation : ") meaning
-                (linebreak) (hspace 2) (italic "originates from : ") (zi-tool cnchar)
-                (linebreak) (hspace 2) (italic "originally means : ") cnchar-meaning)
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
-    [(_ (zis ...) meaning  content ...)
-     (with-syntax ([(gen-elemtags ...)
-                    (map (lambda (e)
-                           #`(elemtag #,(symbol->string (syntax-e e))
-                                      (elem (bold (racket (code:hilite #,e))) (hspace 1)
-                                            (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                                  #,(r-background-label "ideographs"))))
-                           )
-                         (syntax->list #'(zis ...)))])
-       #`(elem
-          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
-                gen-elemtags ...
-                (linebreak) (hspace 2) (italic "connotation : ") meaning)
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
+                (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"])))) #,(r-background-label "ideographs"))
+                (~@ (if content (elem (linebreak) (hspace 2) header " : " content) "")) ...)
+          (elem elaboration ...)))]
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    [(_ z meaning cnchar cnchar-meaning content ...)
+    [(_ z meaning cnchar cnchar-meaning elaboration ...)
      (with-syntax ([str-z (symbol->string (syntax-e #'z))]
                    [(header ...) #'("connotation" "originates from" "originally means")]
-                   [(val ...) #'(meaning (zi-tool cnchar) cnchar-meaning)])
+                   [(content ...) #'(meaning (zi-tool cnchar) cnchar-meaning)])
        #`(elem
           (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
                 (elemtag str-z (elem (bold (racket (code:hilite z)))))
                 (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"])))) #,(r-background-label "ideograph"))
-                (elem (~@ (linebreak) (hspace 2) header " : " val) ...))
-          (elem #:style (style #f (list (alt-tag "p"))) content ...)))]
-    [(_ z meaning content ...)
-     (with-syntax ([str-zi (symbol->string (syntax-e #'z))])
-       #`(elem
-          (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "boxed"] [style . "margin-top: 2em; margin-bottom: 1em; "]))))
-                (elemtag str-zi (elem (bold (racket (code:hilite z))) (hspace 1)
-                                      (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "RBackgroundLabel SIEHidden"]))))
-                                            #,(r-background-label "ideograph"))
-                                      (linebreak) (hspace 2) (italic "connotation : ") meaning
-                                      )))
-          (elem #:style (style #f (list (alt-tag "p")))
-                content ...)))]
+                (~@ (if content (elem (linebreak) (hspace 2) header " : " content) "")) ...)
+          (elem elaboration ...)))]
     )
   )
 

@@ -20,11 +20,11 @@ Orignates from @secref["string"].
 @(require scribble/html-properties)
 
 
-@defideogr[􏽀 (𭕄 句B) "mutable string"]{
+@defideogr[􏽀 (𭕄 句B) "mutable string" #f #f]{
 @elem{Resembles @zi[句], but especially is mutable.}
 }
 
-@defideogr[􏽁 (山 句B) "immutable string"]{
+@defideogr[􏽁 (山 句B) "immutable string" #f #f]{
 @elem{Resembles @zi[句], but especially is immutable.}
 }
 
@@ -60,7 +60,7 @@ Orignates from @secref["string"].
 @; ]
 @; }
 
-@defideogr[􏻷 (穴 句) "empty string"]
+@defideogr[􏻷 (穴 句) "empty string" #f #f]
 @defproc[(􏻷? [V any?])
 boolean?]{
 @eleph-note{@racket[􏼟?]}
@@ -74,7 +74,7 @@ boolean?]{
 
 @defproc[(􏸵 [STR 句?])
 句?]{
-@defideogr[􏸵 (句 穴 刀) "remove spaces of string"]
+@defideogr[􏸵 (句 穴 刀) "remove spaces of string" #f #f]
 @margin-note{
 Same as：@code{(􏶐 STR " " "")}}
 @examples[#:eval (the-eval)

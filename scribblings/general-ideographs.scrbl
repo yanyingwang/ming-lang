@@ -21,11 +21,8 @@
 
 @defideogr[(亻) "general subset" "亻" "person, people, human"]{
 As component of ideographs, which implies The type of output data is same as the input. And the elements of output data are  part of the input.
-
 In particular, @zi[化] is exceptionally different, which has a more diverse usages scenarios, @zi[化I], @zi[化E].
-
-As Well to note that, if the procedure name has another ideograph prefix it as a word, the input and output type is determinated by the prefix ideographs, e.g. @rackets[􏻿𢪛 􏿰攸 􏻿弔 􏿰弔 􏻿巨 􏿰巨].
-
+Note that, if the procedure name has another ideograph prefix it as a word, the input and output type is determinated by the prefix ideographs, e.g. @rackets[􏻿𢪛 􏿰攸 􏻿弔 􏿰弔 􏻿巨 􏿰巨].
 @ziexamples[伄 攸 𰂋 偏 􏾜 􏾛 偅 𠆯 􏹈]
 }
 
@@ -35,7 +32,7 @@ As component of ideographs, which implies The type of output data is same as the
 }
 
 @defideogr[(扌 !) "warning, is changing original data" "手" "hands, handle"]{
-Has the same meaning as @litchar{!} like how it is prevalently used in lots of modern programming languages. @linebreak{}
+Has the same meaning as @litchar{!} like how it is prevalently used in lots of modern programming languages.
 When you see this component in ideographs that are used to name procedures, you know it immediately that those procedures will directly modify their input data instead of returning a new one as output. @linebreak{}
 @ziexamples[􏻿􏾩 􏻿𢪛 􏻿􏽒 􏻿􏷉 􏼅𰅡]
 }
@@ -76,15 +73,12 @@ convert data type by the way of returning a new one in another type.
 }
 
 @nested[#:style 'inset]{
-@defideogr[化I "type conversion"]{
-@elem{
+@defideogr[化I "type conversion" #f #f]{
 Convert data from type 1 (as input) to type 2 (as output).
 @ziexamples[􏻿化􏿴 􏿴化􏻿]
 }
-}
 
-@defideogr[化E "minorly convert data type"]{
-@elem{
+@defideogr[化E "minorly convert data type" #f #f]{
 Converting data With reserving the general data type, e.g. between @zi[山] and @zi[水].
 
 In this case, input and output are the same type.
@@ -94,23 +88,22 @@ Which means the content of data may be changed, or it is mutable and immutable b
 @ziexamples[􏻼化 􏽀化 􏽁化 􏼅𰅡]
 }
 }
-}
 
-@defideogr[𰅡 (扌 匕) "modify data type"]{
+@defideogr[𰅡 (扌 匕) "modify data type" #f #f]{
 @elem{
 Converts data type with modifying the original data.
 @ziexamples{􏼅𰅡}
 }
 }
 
-@defideogr[􏵸 (分 匕) "split and convert data type"]{
+@defideogr[􏵸 (分 匕) "split and convert data type" #f #f]{
 @elem{
 Splits data and return it in a different data type.
 @ziexamples[句􏵸􏿴]
 }
 }
 
-@defideogr[􏵷 (毌 匕) "append and convert data type"]{
+@defideogr[􏵷 (毌 匕) "append and convert data type" #f #f]{
 @elem{
 Appends data and return it in a different data type.
 @ziexamples[􏿴􏵷句]

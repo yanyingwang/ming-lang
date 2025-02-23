@@ -160,18 +160,16 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 Resembles @italic{human's hand that is holding an object}.
 @ziexamples[双 􏿫]
 }
-@nested[ #:style "inset"
-@defideogr[又LB "links pairs, linked pairs"]@elem{
-Is reaching from Right through Bottom to left, we write it in this way to stand multiple @racket[双] linked together.
+@nested[#:style "inset"
+@defideogr[又LB "links pairs, linked pairs" #f #f]{
+Is reaching from Left through Bottom to right, we write it in this way to stand multiple @racket[双] linked together.
 @ziexamples[􏿴 􏿫]
 }
 ]
 
-@defideogr[㐅 "null"]{
-@elem{
+@defideogr[㐅 "null" #f #f]{
 Is same as @zi[穴], because @racket[㐅] is same as @racket[穴].
 @ziexamples[㐅? 􏿴]
-}
 }
 
 @defideogr[穴 "empty" "穴" "hole"]{
@@ -186,21 +184,21 @@ Simplifies from @zi[空], which means @italic{empty}.
 Two human hand here stand for an object with including two holding data.
 }
 
-@defideogr[􏿴 (又LB 㐅) "list"]@elem{
-The reaching from Right through Bottom to left @zi[又] means @italic{multiple @racket[双] linked together}; @litchar{㐅} means ending with empty(@zi[㐅]).
+@defideogr[􏿴 (又LB 㐅) "list"]{
+The reaching from Left through Bottom to right @zi[又] means @italic{multiple @racket[双] linked together}; @litchar{㐅} means ending with empty(@zi[㐅]).
 }
 @nested[#:style "inset"]{
-@defideogr[􏿴BR "resembles 􏿴"]@elem{
+@defideogr[􏿴BR "resembles 􏿴"]{
 Has the similar function process as it resembles and the type of output is same as @racket[􏿴] accordingly.
 @ziexamples[􏼓 􏼎 􏼏 􏿝]
 }
 }
 
-@defideogr[􏿫 (又LB 又) "list with last element be pair"]@elem{
+@defideogr[􏿫 (又LB 又) "list with last element be pair"]{
 Resembles @zi[􏿴] except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi[㐅]).
 }
 @nested[#:style "inset"]{
-@defideogr[􏿫BR "resembles 􏿫"]@elem{
+@defideogr[􏿫BR "resembles 􏿫"]{
 Has the similar function process as it resembles and the type of output is same as @racket[􏿫] accordingly.
 @ziexamples[􏿜]
 }
@@ -238,7 +236,7 @@ means moon, implicitly means the secondary part of of an object, or the negative
 @defideogr[阳 (阝 日) "the first half part" "阳" "sun, positive"]
 @defideogr[阴 "the last half part" "阴" "negative"]
 
-@defideogr[(阳+ 阴+ 阳- 阴-) (阳 阴 + -) "mutiple parenthesis nested 阴 or 阳 in reverse order"]@elem{
+@defideogr[(阳+ 阴+ 阳- 阴-) (阳 阴 + -) "mutiple parenthesis nested 阴 or 阳 in reverse order"]{
 For the case of procedures that start with @zi[阴] or @zi[阳] and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi[阳] and @litchar{-} stands for @zi[阴].
 
 For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}.
