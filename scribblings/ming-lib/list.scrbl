@@ -14,7 +14,7 @@
 
 @title[#:tag "ming-list"]{􏿴}
 @defmodule[ming/list]
-Extention of @secref["pairs-and-lists"].
+Originates from @secref["pairs-and-lists"].
 @margin-note{All the procedures in this page are implemented in Ming, therefore, the source code can be seen as a demonstation of it.}
 
 
@@ -39,8 +39,7 @@ Extention of @secref["pairs-and-lists"].
           􏿴?]
 )]{
 @; @defzi[伄]{Composed of @racket[亻] + @racket[弔] + @racket[^].}
-@defcompost[伄 (亻 弔)]
-@defcompost[伄^ (亻 弔 ^)]
+@defideogr[(伄 伄^) (亻 弔 ^) #f #f #f]
 @examples[#:eval (the-eval)
 (伄 '(a b c d e f g) 0 2 3)
 (伄^ '(a b c d e f g) '(0 2 3))
@@ -53,7 +52,7 @@ Extention of @secref["pairs-and-lists"].
 @; @defproc[(􏾝* [LST 􏿴?] [N1 􏺡?] [N2 􏺡?])
 @;           􏿴?]
 )]{
-@defcompost[􏾝 (弔 阝)]
+@defideogr[􏾝 (弔 阝) #f #f #f]
 @examples[#:eval (the-eval)
 (􏾝 '(a b c d e f) 0)
 (􏾝 '(a b c d e f) 0 0)
@@ -79,8 +78,7 @@ Extention of @secref["pairs-and-lists"].
 @defproc[(􏾘^ [LST 􏿴?] [N-LST (listof? 􏺡?)])
           􏿴?]
 )]{
-@defcompost[􏾘 (弔 刂)]
-@defcompost[􏾘^ (弔 刂 ^)]
+@defideogr[(􏾘 􏾘^) (弔 刂 ^) #f #f #f]
 @eleph-note{@racket[􏾺] @racket[𨚞]}
 @examples[#:eval (the-eval)
 (􏾘 '(a b c d e f g) 1)
@@ -91,7 +89,7 @@ Extention of @secref["pairs-and-lists"].
 
 @defproc[(􏺊 [LST 􏿴?] [N 􏺡?] [M 􏺡?])
                        􏿴?]{
-@defcompost[􏺊 (􏷵 􏷴)]
+@defideogr[􏺊 (􏷵 􏷴) #f #f #f]
 Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 @examples[#:eval (the-eval)
 (􏺊 '(a b c d e f g) 1 3)
@@ -100,7 +98,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 @defproc[(􏹃 [LST 􏿴?] [PROC 程?])
           􏺡?]{
-@defcompost[􏹃 (巨 入)]
+@defideogr[􏹃 (巨 入) #f #f #f]
 @eleph-note{@racket[􏹈巨]}
 @examples[#:eval (the-eval)
 (􏹃 '(a b 12 c 33 d  58 f g) 米?)
@@ -109,7 +107,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 @defproc[(偅 [LST 􏿴?])
           􏿴?]{
-@defcompost[偅 (亻 重)]
+@defideogr[偅 (亻 重) #f #f #f]
 @examples[#:eval (the-eval)
 (偅 '())
 (偅 '(11))
@@ -120,7 +118,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 @defproc[(􏹊 [V any/c] [LST 􏿴?] (PROC 程? 同?))
           􏿴?]{
-@defcompost[􏹊 (彐 刂)]
+@defideogr[􏹊 (彐 刂) #f #f #f]
 @eleph-note{@racket[􏹊~] @racket[􏹊^]}
 @examples[#:eval (the-eval)
 (􏹊 'c '(a b c d e c f))
@@ -129,9 +127,9 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 @defproc[(􏷍? [LST1 􏿴?] [LST2 􏿴?])
           boolean?]{
-@racket[LST1]是否是@racket[LST2]的子集。
-@defcompost[􏷍 (亻 􏿴)]
-@defcompost[􏷍? (􏷍 ?)]
+@racket[LST1] is a subset of @racket[LST2] or not.
+@defideogr[􏷍 (亻 􏿴) #f #f #f]
+@defideogr[􏷍? (􏷍 ?) #f #f #f]
 @examples[#:eval (the-eval)
 (􏷍? '(a b) '(a b c d e f g))
 (􏷍? '(a e) '(a b c d e f g))
@@ -148,7 +146,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 @; }
 
 @defproc[(􏿳 [V any?] ...) 􏿳?]{
-@defcompost[􏿳 (双 􏿴)]{@stands-for{association list}.}
+@defideogr[􏿳 (双 􏿴) "association list" #f #f]
 @eleph-note{@racket[􏿰]}
 @examples[#:eval (the-eval)
 (􏿳 1 2 3 4 1 5)
@@ -160,8 +158,9 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 
 
 @defproc[(􏿳? [V any?]) boolean?]{
-@defcompost[􏿳? (􏿳 ?)]
-@var[V] is @racket[􏿳] or not. Shorts for @code{(并 (􏿴? V) (􏷐 双? V))}.
+@defideogr[􏿳? (􏿳 ?) #f #f #f]
+@var[V] is @racket[􏿳] or not.
+Shorts for @code{(并 (􏿴? V) (􏷐 双? V))}.
 @examples[#:eval (the-eval)
 (􏿳? '(1 2 3 4))
 (􏿳? (􏿳 1 2 3 4))
@@ -178,8 +177,7 @@ Shorts for @code{(􏷴 (􏷵 LST N) M)}.
 @defproc[(􏺇 [ALST 􏿳?])
           􏿴?]
 )]{
-@defcompost[􏺈 (日 阝)]
-@defcompost[􏺇 (􏺇 阝)]
+@defideogr[(􏺈 􏺇) ((日 月) 阝) #f #f #f]
 Same as：
 @itemlist[
 @item{@code{(􏷑 阳 ALST)}}

@@ -26,7 +26,6 @@ Racket's @secref["procedures" #:doc '(lib "scribblings/reference/reference.scrbl
 
 @section+autotag{入、􏸗}
 @eleph-note{@racket[􏸧]、@racket[􏸬]、@racket[􏸫]、@racket[􏸪]}
-@defzi[入]{@mingly-resembles["λ" "lambda"]}
 @examples[#:eval (the-eval)
 (入 () 空)
 (名 fun
@@ -61,9 +60,13 @@ Racket's @secref["procedures" #:doc '(lib "scribblings/reference/reference.scrbl
 @defmodule[ming/racket/base]
 @defmapping[racket/base/procedures]
 
+@defideogr[(入 /入 λ) (/ 入 λ) "lambda" "入" "get in"]{
+Implies the input data is procedure instead of normal data.
+@ziexamples[􏹌 攸/入]
+}
+
 @defideogr[名 "define" "名" "name"]
 @defideogr[令 "let" "令" "let, order"]
-
 
 @section[#:tag "addtional-functions"]{Additional References}
 @defmodule[ming/racket/function]

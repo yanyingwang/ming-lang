@@ -72,7 +72,7 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{@racket[􏸄] @racket[􏸃]}
                @; )
                (list
-               @elem{@defcomponent[入]}
+               @elem{@zi[入] as component}
                @elem{same as @zi[/入]}
                @elem{Implies the type of input data is function.}
                @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂]}
@@ -84,7 +84,7 @@ Extended from @secref["naming-rules"], specifically there are：
                @elem{@racket[􏷎]}
                )
                (list
-               @elem{@defsuffix[分]}
+               @elem{@zi[分] in the end of word}
                "split data to values"
                @elem{@zi[分]}
                @elem{@racket[䢼分 􏹈分]}
@@ -96,14 +96,14 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{@racket[􏼓0]}
                @; )
                (list
-               @elem{@defsuffix[*]}
+               @elem{@zi[*]}
                "strengthen"
                "Strengthen the process, thus the data of output may become longer, and the type may be changed accordingly."
                @; @elem{@racket[弓*]、@racket[􏼏*]}
                @elem{@racket[弓*] @racket[􏹂*] @racket[􏼏*]}
                )
                (list
-               @elem{@defsuffix[~]}
+               @elem{@zi[~]}
                "soften"
                "Soften the process, thus the output data shorter."
                @elem{@racket[􏹊~] @racket[􏹇~]}
@@ -115,7 +115,7 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{@racket[引v]}
                @; )
                (list
-               @elem{@defsuffix[^]}
+               @elem{@zi[^]}
                @elem{list as input}
                @elem{Implies the type of input data is list.}
                @elem{@racket[􏹊^] @racket[伄^] @racket[􏾘^]}
@@ -127,21 +127,20 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{@racket[序􏿴]、@racket[复􏿴]、@racket[𥸬􏿴]}
                @; )
                (list
-               @elem{@definsert[/]}
+               @elem{@zi[/]}
                @elem{extend prefix}
                @elem{Suffix of @litchar{/} can be considered as an extending explanation of its prefix.}
                @elem{@racket[􏷍/组合] @racket[􏷍/分组]}
                )
                (list
-               @elem{@defsuffix[?]}
+               @elem{@zi[?]}
                @elem{boolean as output}
                @elem{Implies the type of output data is boolean.}
                @elem{@racket[双?] @racket[􏿴?] @racket[􏿳?]}
                )
 
-               (list @bold{Hybrid} @bold{-} @bold{-} @bold{-})
                (list
-               @elem{@defhas[/入]}
+               @elem{@zi[/入]}
                "function as input"
                @elem{Implies the type of input data is function.}
                @elem{@racket[攸/入] @racket[􏾺/入] @racket[𨚞/入]}
@@ -221,13 +220,13 @@ Has the similar function process as it resembles and the type of output is same 
 ]
 
 @section{阴阳+-}
-@defideogr[日 "the former one" "日" "sun"]{
-Original means @italic{sun} in Chinese, borrowed to means the former part of an object in Ming, or the positive part of an object in Ming.
+@defideogr[日 "former" "日" "sun"]{
+Originally means @italic{sun} in Chinese. Especially is borrowed to mean the former part of an object, or the positive part of an object in Ming.
 @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
 }
 
-@defideogr[月 "the latter one" "月" "moon"]{
-means moon, implicitly means the secondary part of of an object, or the negative part of an object in Ming.
+@defideogr[月 "latter" "月" "moon"]{
+Originally Means moon, borrowed to mean the secondary part of of an object, or the negative part of an object in Ming.
 @hyperlink["https://en.wikipedia.org/wiki/Yin_and_yang" "wiki"].
 }
 
@@ -315,7 +314,7 @@ Resembles @italic{a rope wraped on stick, thus this rope can be used to count ho
 }
 @defideogr[􏹂 (弓 入) #f #f #f]
 @defideogr[弔 "refer a vlaue from index" "第" "refer, rank"]{
-simplified from @litchar{第} and resembles @italic{an stick wrapped with a rope in circles, thus it can be used to ref to an specific circle}. Especially means @italic{refer} in Ming.
+Simplifies from @litchar{第} and resembles @italic{an stick wrapped with a rope in circles, thus it can be used to ref to an specific circle}. Especially means @italic{refer} in Ming.
 }
 @eleph-note{
 @racket[伄] @racket[􏾘] @racket[􏾝] @;，@racket[弓*]、@racket[弓*/入]
@@ -353,12 +352,12 @@ Note that, meaning is changed to @italic{a few of fixed length elements} if is u
 (􏷓 '(1 2 3 4 5 6 7 8 9 10))
 ]
 
-@section{末, 􏹨}
-@defideogr[􏹨 (末 双) #f #f #f]
+@section{末, 􏹧}
+@defideogr[􏹧 (双 末) #f #f #f]
 @examples[#:eval (the-eval)
 (末 '(1 2 3 4))
-(􏹨 '(1 2 3 4))
-(􏹨 '(1 2 3 . 4))
+(􏹧 '(1 2 3 4))
+(􏹧 '(1 2 3 . 4))
 ]
 
 @section{巨}
@@ -367,16 +366,13 @@ Note that, meaning is changed to @italic{a few of fixed length elements} if is u
 (巨 '(a b c d e 3 f g))
 ]
 
-
 @section{􏾺,𨚞, 􏷵,􏷴, 􏸄,􏸃, 􏾺/入,𨚞/入, 􏾺?}
 @defideogr[左 "left, from left" "左" "left"]
 @defideogr[右 "right, from right" "右" "right"]
 @defideogr[分 "split" "分" "split"]{
 Implies the output type is @zi[並].
 }
-@defideogr[􏾺 (左 阝) #f #f #f]
-@defideogr[􏷵 (左 刂) #f #f #f]
-@defideogr[􏸃 (右 分) #f #f #f]
+@defideogr[(􏾺 𨚞 􏷵 􏷴 􏸃 􏸄) ((左 右) (阝 刂 分)) #f #f #f]
 @eleph-note{@racket[􏺊]}
 @examples[#:eval (the-eval)
 (􏾺 '(a b c d e f g) 2)
@@ -399,21 +395,23 @@ Implies the output type is @zi[並].
 @defideogr[共 "share" "共" "share, together"]{
 Implies the input data are more than one and have the same type.
 }
-@defideogr[䢼 (共 阝) #f #f #f]
-@defideogr[􏷳 (共 刂) #f #f #f]
+@defideogr[(䢼 􏷳) (共 (阝 刂)) #f #f #f]
 @examples[#:eval (the-eval)
 (䢼 '(a b x y z) '(a b c d e f g))
 (􏷳 '(a b x y z) '(a b c d e f g))
 (䢼分 '(a b x y z) '(a b c d e f g))
 ]
 
-
 @section{𰂋，偏，􏾜，重、𠝤}
-@defzi[间]{@stands-for{insert between}.}
-@defzi[扁]{@stands-for{faltten}.}
-@defzi[糸]{@simplf-from{紊}, @stands-for{shuffle}.}
-@defzi[重]{@stands-for{duplication}.}
-@eleph-note{@racket[偅]}
+@defideogr[间 "insert between" "间" "gap, interval, between"]
+@defideogr[扁 "flatten" "扁" "flat, thin"]
+@defideogr[糸 "shuffle" "紊" "disorder"]
+@defideogr[重 "duplication" "重" "heavy, deep, again, repeat, overlap"]
+
+@defideogr[𰂋 (亻 间) #f #f #f]
+@defideogr[偏 (亻 扁) #f #f #f]
+@defideogr[􏾜 (亻 糸) #f #f #f]
+@defideogr[𠝤 (重 刂) #f #f #f]
 
 @examples[#:eval (the-eval)
 (𰂋 '(a b c d) '和)
@@ -426,8 +424,12 @@ Implies the input data are more than one and have the same type.
 
 
 @section{􏾛、𠆯}
-@defzi[屰]{resembles @italic{the picture of person standing on his head}, @stands-for{reverse} in ming-lang.}
-@defzi[川]{@simplf-from{顺}, @stands-for{in order}.}
+@defideogr[屰 "reverse" "屰" "rotated adult"]
+@defideogr[川 "sort" "顺" "in order, comply, sort"]
+
+@defideogr[􏾛 (亻 屰) #f #f #f]
+@defideogr[𠆯 (亻 川) #f #f #f]
+
 @examples[#:eval (the-eval)
 (􏾛 '(21 3 888 666 55 77 1000))
 (𠆯 '(21 3 888 666 55 77 1000) <)
@@ -437,7 +439,10 @@ Implies the input data are more than one and have the same type.
 ]
 
 @section{􏹋、􏹉、􏹊~、􏹊^，􏹅，􏹄，􏹌、􏹈，􏹇~、􏹇}
-@defzis[􏹅/􏹇/􏹄/􏹈/􏹌/􏹊]{@defzi/sub[彐]{@simplf-from{寻}, @stands-for{find, search}.}}
+
+@defideogr[彐 "find" "寻" "find, search, seek"]
+@defideogr[(􏹅 􏹇 􏹉 􏹄 􏹈 􏹌 􏹋 􏹊) ((日 亻) 彐 入 (阝 刂)) #f #f #f]
+
 @eleph-note{@racket[􏹊] @racket[􏾘] @racket[􏺈] @racket[􏺇]}
 @examples[#:eval (the-eval)
 (􏹋 'c '(a b c d e f))
@@ -463,14 +468,23 @@ Implies the input data are more than one and have the same type.
 ]
 
 @section{􏷒,􏷑, 􏷐,􏷏，􏷎,右􏷎} @;􏷮，􏷭
-@defzi[􏷒]{@defzi/sub[夂]{@simplf-from{各}, @stands-for{each}.}}
-@defzi[􏷑]{@code{(􏷑 PROC (􏿴 a b c))} is simplified from: @code{(􏿴 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷐]{@code{(􏷐 PROC (􏿴 a b c))} is simplf-from: @code{(并 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷏]{@code{(􏷏 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))}}
-@defzi[􏷎]{@code{(􏷎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC c (PROC b (PROC a z)))} @linebreak{} @code{(右􏷎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC a (PROC b (PROC c z)))}}
+@defideogr[夂 "each" "各" "every, each"]{
+Do not confuse with @zi[攵].
+}
+@defideogr[􏷒 (夂 入) "each" #f #f]{
+@zi[入] component implies the input data is procedure.
+}
+
+@defideogr[(􏷑 􏷐 􏷏 􏷎) ((亻并 戈 土) 􏷒)]{
+@code{(􏷑 PROC (􏿴 a b c))} is simplified from: @code{(􏿴 (PROC a) (PROC b) (PROC c))} @linebreak{}
+@code{(􏷐 PROC (􏿴 a b c))} is simplf-from: @code{(并 (PROC a) (PROC b) (PROC c))} @linebreak{}
+@code{(􏷏 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))} @linebreak{}
+@code{(􏷎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC c (PROC b (PROC a z)))} @linebreak{}
+@code{(右􏷎 PROC z (􏿴 a b c))} is simplified from: @code{(PROC a (PROC b (PROC c z)))} @linebreak{}
+}
 
 @examples[#:eval (the-eval)
-(􏷒 行示 (􏿴 2 4 6 8))
+(􏷒 display (􏿴 2 4 6 8))
 (􏷑 􏽊 '(1 2 3 4))
 (􏷑 + '(1 2 3 4) '(100 200 300 400))
 
@@ -487,6 +501,10 @@ Implies the input data are more than one and have the same type.
 
 
 @section{􏷑􏹈,􏷑􏿝, 􏷑􏺗、􏷑􏺘}
+@defideogr[大 "max" "大" "big"]
+@defideogr[小 "min" "小" "small"]
+@defideogr[(􏺗 􏺘) (米 彐 (大 小)) #f #f #f]
+
 @examples[#:eval (the-eval)
 (􏹈􏷑 (入 (x) (并 (􏻛? x) (􏽊 x))) '(-2 -1 0 1 2))
 (􏷑􏿝 􏻿化􏿴 '(#(1) #(2 3) #(4)))
@@ -496,7 +514,6 @@ Implies the input data are more than one and have the same type.
 (􏷑􏺗 阳 '((3 pears) (1 banana) (2 apples)))
 (􏷑􏺘 阳 '((3 pears) (1 banana) (2 apples)))
 ]
-
 
 @section+elemref{􏷍/组合、􏷍/排列组合，􏷍/笛卡尔积，􏷍/分组}
 @examples[#:eval (the-eval)

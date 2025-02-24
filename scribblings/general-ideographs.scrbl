@@ -34,7 +34,7 @@ As component of ideographs, which implies The type of output data is same as the
 
 @defideogr[(刂) "broken subset" "刂" "knife"]{
 Returns a new list as output with removing some elements from the input list.
-@ziexamples[􏷵 􏷴 􏺊 􏾘 􏹊 􏹇]
+@ziexamples[􏷵 􏷴 􏺊 􏾘 􏹊 􏹇 𠝤]
 }
 
 @defideogr[(扌 !) "warning, is changing original data" "手" "hands, handle"]{
@@ -43,6 +43,31 @@ When you see this component in ideographs that are used to name procedures, you 
 @ziexamples[􏻿􏾩 􏻿𢪛 􏻿􏽒 􏻿􏷉 􏼅𰅡]
 }
 
+
+@defideogr[? "output is boolean" #f #f]{
+Implies the output is boolean.
+@ziexamples[双? 􏿴? 􏿳?]
+}
+
+@defideogr[* "strengthen" #f #f]{
+Almost has the same usage as the one named without @zi[*], except this strengthen the processing of inputted data. Thus the data of output may become longer, and the type may be changed accordingly.
+@ziexamples[弓*]
+}
+
+@defideogr[~ "strengthen" #f #f]{
+Almost has the same usage as the one named without @zi[~], except this soften the processing of inputted data. Thus the data of output may become shorten.
+@ziexamples[􏹊~]
+}
+
+@defideogr[^ "list as input" #f #f]{
+Almost has the same usage as the one named without @zi[^], except that input data is a list.
+@ziexamples[􏹊^ 伄^ 􏾘^]
+}
+
+@defideogr[/ "extends the prefixing" #f #f]{
+The suffixing of it is considered as an extending explanation of its prefixing.
+@ziexamples[􏷍/组合]
+}
 
 @defideogr[山 "immutable" "山" "mountain"]{
 @ziexamples[山? 􏻼 􏾐? 􏽁]
@@ -60,7 +85,7 @@ Appends the elements, goes through the elements and connect them as one together
 
 
 @defideogr[攵 "modify value" "攵" "raping over something with hands"]{
-Appends the elements, goes through the elements and connect them as one together.
+Appends the elements, goes through the elements and connect them as one together. (Do not confuse with @zi[夂].)
 @ziexamples[𰁦 攸 􏾩 𢪛]
 }
 
@@ -109,7 +134,7 @@ Which means the content of data may be changed, or it is mutable and immutable b
 @defideogr[𰅡 (扌 匕) "modify data type" #f #f]{
 @elem{
 Converts data type with modifying the original data.
-@ziexamples{􏼅𰅡}
+@ziexamples[􏼅𰅡]
 }
 }
 

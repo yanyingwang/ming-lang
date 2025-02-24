@@ -14,24 +14,24 @@
 >>> ninth 􏷔 (弔 九)
 >>> tenth 􏷓 (弔 十)
 >>> last 末
->>> last-pair 􏹨 (末 双) ;; 末链（链一定为双） 􏿦 􏷽 􏹨
+>>> last-pair 􏹧 ;; 末链（链一定为双） 􏿦 􏷽 􏹧
 ;; >>> rest 末** "􏿴除去甲以外剩下的􏿴" ;; 甲外 剩余 去甲 舍甲
 
->>> make-list 􏼓 (三 􏷫) ;; 复 㙏 复􏿴 构造复@racket[􏿴]（数据内各个元素是相同的，类比（昆虫）“复眼”一词取名 􏼓0
+>>> make-list 􏼓 ;; 复 㙏 复􏿴 构造复@racket[􏿴]（数据内各个元素是相同的，类比（昆虫）“复眼”一词取名 􏼓0
 
->>> list-set 攸 (亻 丨 攵) ;; 修 更 改 新 肖 攸 􏿛
+>>> list-set 攸  ;; 修 更 改 新 肖 攸 􏿛
 >>> list-update 攸/入 ;; 攸
 
 >>> index-of 弓  ;; 引 导 笈 扱 𫼛 弔
->>> index-where 􏹂 (弓 入) ;; 引 导  函 =》以例 􏿊 􏷻 弔 弓/入
+>>> index-where 􏹂 ;; 引 导  函 =》以例 􏿊 􏷻 弔 弓/入
 >>> indexes-of 弓* ;; 􏿉 􏿊 伋 􏷺 伄 𠇁 弓v
 >>> indexes-where 􏹂*  ;; 􏿊 伄 引 𠇁 弓v 𰁣/入
 
->>> take 􏾺 (左 阝)
->>> take-right 𨚞 (右 阝)
+>>> take 􏾺 
+>>> take-right 𨚞 
 
->>> drop 􏷵 (左 刂) ;􏾹
->>> drop-right 􏷴 (右 刂) ;􏾸
+>>> drop 􏷵 ;􏾹
+>>> drop-right 􏷴 ;􏾸
 
 >>> takef 􏾺/入
 >>> takef-right 𨚞/入
@@ -39,8 +39,8 @@
 >>> dropf 􏷵/入  ;􏾹
 >>> dropf-right 􏷴/入  ;􏾸
 
->>> split-at 􏸄 (左 分)
->>> split-at-right 􏸃 (右 分)
+>>> split-at 􏸄 
+>>> split-at-right 􏸃 
 
 >>> splitf-at 􏸄/入
 >>> splitf-at-right 􏸃/入
@@ -50,22 +50,22 @@
 >>> drop-common-prefix 􏷳   ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分 左􏸑, 左􏸒, 左􏸓
 >>> split-common-prefix 䢼分
 
->>> append* 􏿜 (毌 􏷩) ;; 􏿜 􏾞
+>>> append* 􏿜  ;; 􏿜 􏾞
 
->>> add-between 𰂋 (亻 间) ;; 侠 夹 间 插 搀 掺 􏿃 侠
->>> flatten 偏 (亻 扁) ;; 平 伻
->>> shuffle 􏾜 (亻 糸);;洗 混 淆 纷 紊 􏾷
+>>> add-between 𰂋  ;; 侠 夹 间 插 搀 掺 􏿃 侠
+>>> flatten 偏  ;; 平 伻
+>>> shuffle 􏾜 ;;洗 混 淆 纷 紊 􏾷
 >>> check-duplicates 重
->>> remove-duplicates 𠝤 (重 刂) ; 去偅 􏿄
+>>> remove-duplicates 𠝤 ; 去偅 􏿄
 
->>> filter-not 􏹇 (􏹌 刂) ;; 筛除 ; 淘 汰 剔 􏾽余 􏾼 􏷸
+>>> filter-not 􏹇  ;; 筛除 ; 淘 汰 剔 􏾽余 􏾼 􏷸
 >>> partition 􏹈分  ;; 筛开 筛分 筛离 筛分 􏾽分
 >>> count 􏹈巨  ;;度/入 计 λ 度/入
 
 >>> filter-map 􏹈􏷑 ;; 佫之􏷹 􏷹佫 􏷯 {等同于@code{(􏹈 (入 (x) x) (佫 proc lst))}}
 >>> append-map 􏷑􏿝 ;;@elem{等同于@code{(􏿝 (佫 proc lst))}} ;佫之􏿝
 
->>> range 􏼏 (米 􏷫) ;􏿴/数段 𥸬􏿴
+>>> range 􏼏  ;􏿴/数段 𥸬􏿴
 >>> inclusive-range 􏼏* ;𥸬􏿴
 
 >>> combinations 􏷍/组合
