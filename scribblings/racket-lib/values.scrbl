@@ -14,25 +14,22 @@
 
 
 @title[#:tag "values"]{並}
-Racket's @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "value"] is especially called @zi[𰅰] in ming-lang.
+Racket's @tech[#:doc '(lib "scribblings/reference/reference.scrbl") "value"] is especially called @zi[𰅰] in Ming. @linebreak{}
+Racket's @secref["values" #:doc '(lib "scribblings/reference/reference.scrbl")] is especially called @zi[並] in Ming.
 
-Racket's @secref["values" #:doc '(lib "scribblings/reference/reference.scrbl")] is especially called @zi[並] in ming-lang.
+@section{𰅰，並，𡌶}
+@defideogr[𰅰 "value" "值" "value, worth"]
+@defideogr[並 "values" "並" "side by side, together"]{
+@anciently-simplifies["竝" "two or more than two objects as a whole" "multiple values"]{(Do not confuse with @zi[并])}.
+}
+@defideogr[𡌶 (土 並) #f #f #f]
+@defideogr[􏸾 (並 名) #f #f #f]
+@defideogr[􏸽 (並 令) #f #f #f]
 
-@section+autotag{𰅰，並，𡌶}
-@eleph-note{@racket[􏸾]、@racket[􏸽]}
-@itemlist[
-@item{
-@defzi[𰅰]{@modernly-simplifies["值" "value"]}
-}
-@item{
-@defzi[並]{@anciently-simplifies["竝" "two or more than two objects as a whole" "multiple values"]{(Not confuse with @zi[并])}. }
-}
-]
 @examples[#:eval (the-eval)
 (並 1 2 3 4)
 (𡌶 􏿴 (􏸧 (並 1 2 3 4)))
 ]
-
 
 @section[#:tag "base-values"]{References}
 @defmodule[ming/racket/base]

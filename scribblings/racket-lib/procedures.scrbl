@@ -14,7 +14,7 @@
 
 
 @title[#:tag "procedures"]{禾}
-Racket's @secref["procedures" #:doc '(lib "scribblings/reference/reference.scrbl")] is especially called @zi[禾] in ming-lang.
+Racket's @secref["procedures" #:doc '(lib "scribblings/reference/reference.scrbl")] is especially called @zi[禾] in Ming.
 
 
 
@@ -57,10 +57,13 @@ Racket's @secref["procedures" #:doc '(lib "scribblings/reference/reference.scrbl
 ((􏸘 􏿴 '􏿴1) 'a 'b 'c 'd)
 ]
 
-
 @section[#:tag "base-functions"]{Base References}
 @defmodule[ming/racket/base]
 @defmapping[racket/base/procedures]
+
+@defideogr[名 "define" "名" "name"]
+@defideogr[令 "let" "令" "let, order"]
+
 
 @section[#:tag "addtional-functions"]{Additional References}
 @defmodule[ming/racket/function]

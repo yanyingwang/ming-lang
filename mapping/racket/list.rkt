@@ -46,9 +46,9 @@
 >>> splitf-at-right 􏸃/入
 
 >>> list-prefix? 􏾺?
->>> take-common-prefix 左􏸑 (左 同 􏸋) ;;􏾺共项 􏾺共相 共同/􏾺 左䢼
->>> drop-common-prefix 左􏸒 (左 同 􏸌)  ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分
->>> split-common-prefix 左􏸓 (左 同 􏸍)
+>>> take-common-prefix 䢼  ;;􏾺共项 􏾺共相 共同/􏾺 左䢼
+>>> drop-common-prefix 􏷳   ;; ;;􏾺异项 􏾺异相 共异/􏾺 左􏾶分 左􏸑, 左􏸒, 左􏸓
+>>> split-common-prefix 䢼分
 
 >>> append* 􏿜 (毌 􏷩) ;; 􏿜 􏾞
 

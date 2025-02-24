@@ -31,6 +31,12 @@ As component of ideographs, which implies The type of output data is same as the
 @ziexamples[􏾝 􏾺 𨚞 􏹋]
 }
 
+
+@defideogr[(刂) "broken subset" "刂" "knife"]{
+Returns a new list as output with removing some elements from the input list.
+@ziexamples[􏷵 􏷴 􏺊 􏾘 􏹊 􏹇]
+}
+
 @defideogr[(扌 !) "warning, is changing original data" "手" "hands, handle"]{
 Has the same meaning as @litchar{!} like how it is prevalently used in lots of modern programming languages.
 When you see this component in ideographs that are used to name procedures, you know it immediately that those procedures will directly modify their input data instead of returning a new one as output. @linebreak{}
@@ -58,7 +64,10 @@ Appends the elements, goes through the elements and connect them as one together
 @ziexamples[𰁦 攸 􏾩 𢪛]
 }
 
-@defzi/sub[攵]{means @italic{raping over something to make it changing itself}, especially means @italic{set value}.}
+@defideogr[(土 􏷪) "produce data" "土" "ground, earth"]{
+Processes input data and output a new one in a very different type.
+@ziexamples[􏷎 𡌶]
+}
 
 @defideogr[巨  "length" "巨" "straightedge, ruler, measure"]{
 @ziexamples[巨 􏺕]

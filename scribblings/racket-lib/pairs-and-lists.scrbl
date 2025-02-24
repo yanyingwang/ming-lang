@@ -22,7 +22,7 @@ Extended from @secref["naming-rules"], specifically there are：
          #:style 'boxed
          #:column-properties '(center)
          #:row-properties '(border)
-         (list (list @bold{Character} @bold{Connotation} @bold{Elucidation} @bold{Example})
+         (list (list @bold{Ideograph} @bold{Connotation} @bold{Elucidation} @bold{Example})
                (list
                @elem{@zi[亻] as component}
                "general subset"
@@ -41,36 +41,36 @@ Extended from @secref["naming-rules"], specifically there are：
                @elem{Returns a new list with elements serially produced from the input list.(Implies the input data and output data are the same type.)}
                @elem{@racket[􏾝] @racket[􏾺] @racket[𨚞] @racket[􏹋]}
                )
+               @; (list
+               @; @elem{@defcomponent[􏸋]}
+               @; "serial subset of lists"
+               @; @elem{Returns a new list with elements serially produced from the input lists.(Implies the multiple input data and output data are the same type.)}
+               @; @elem{@racket[左􏸑]}
+               @; )
                (list
-               @elem{@defcomponent[􏸋]}
-               "serial subset of lists"
-               @elem{Returns a new list with elements serially produced from the input lists.(Implies the multiple input data and output data are the same type.)}
-               @elem{@racket[左􏸑]}
-               )
-               (list
-               @elem{@defcomponent[刂]}
+               @elem{@zi[刂] as component}
                "broken subset"
                @elem{Returns a new list with removing some elements from the input list.}
                @elem{@racket[􏷵] @racket[􏷴] @racket[􏺊] @racket[􏾘] @racket[𠝤] @racket[􏹊] @racket[􏹇]}
                )
+               @; (list
+               @; @elem{@defcomponent[􏸌]}
+               @; "broken subset of lists"
+               @; @elem{Returns a new list with removing some elements from the input lists.(Implies the multiple input data and output data are the same type.)}
+               @; @elem{@racket[左􏸒]}
+               @; )
                (list
-               @elem{@defcomponent[􏸌]}
-               "broken subset of lists"
-               @elem{Returns a new list with removing some elements from the input lists.(Implies the multiple input data and output data are the same type.)}
-               @elem{@racket[左􏸒]}
-               )
-               (list
-               @elem{@defcomponent[分]}
+               @elem{@zi[分] as component}
                "split input list to values"
                @elem{Implies the type of output data is values(@racket[並]).}
                @elem{@racket[􏸄] @racket[􏸃]}
                )
-               (list
-               @elem{@defcomponent[􏸍]}
-               "split input lists to values"
-               @elem{Implies input data is lists and the type of output data is values(@racket[並]).}
-               @elem{@racket[􏸄] @racket[􏸃]}
-               )
+               @; (list
+               @; @elem{@defcomponent[􏸍]}
+               @; "split input lists to values"
+               @; @elem{Implies input data is lists and the type of output data is values(@racket[並]).}
+               @; @elem{@racket[􏸄] @racket[􏸃]}
+               @; )
                (list
                @elem{@defcomponent[入]}
                @elem{same as @zi[/入]}
@@ -78,17 +78,16 @@ Extended from @secref["naming-rules"], specifically there are：
                @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂]}
                )
                (list
-               @elem{@defcomponent[土]}
-               @elem{product data}
-               @elem{Manufactures data and product new one, implies the type of output data is not same as input.}
+               @elem{@zi[土] as component}
+               @elem{produce data}
+               @elem{Processes data and product new one, implies the type of output data is not same as input.}
                @elem{@racket[􏷎]}
                )
-               (list @bold{Phrase} @bold{-} @bold{-} @bold{-})
                (list
                @elem{@defsuffix[分]}
                "split data to values"
                @elem{@zi[分]}
-               @elem{@racket[􏹈分]}
+               @elem{@racket[䢼分 􏹈分]}
                )
                @; (list
                @; @elem{@defsuffix[0]}
@@ -96,7 +95,6 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{Implies there is another function named with omitting @litchar{0}.}
                @; @elem{@racket[􏼓0]}
                @; )
-               (list @bold{Punctuation} @bold{-} @bold{-} @bold{-})
                (list
                @elem{@defsuffix[*]}
                "strengthen"
@@ -370,10 +368,15 @@ Note that, meaning is changed to @italic{a few of fixed length elements} if is u
 ]
 
 
-
 @section{􏾺,𨚞, 􏷵,􏷴, 􏸄,􏸃, 􏾺/入,𨚞/入, 􏾺?}
-@defzis[􏾺/􏷵/􏸄]{@defzi/sub[左]{@stands-for{left}.}}
-@defzis[𨚞/􏷴/􏸃]{@defzi/sub[右]{@stands-for{right}.}}
+@defideogr[左 "left, from left" "左" "left"]
+@defideogr[右 "right, from right" "右" "right"]
+@defideogr[分 "split" "分" "split"]{
+Implies the output type is @zi[並].
+}
+@defideogr[􏾺 (左 阝) #f #f #f]
+@defideogr[􏷵 (左 刂) #f #f #f]
+@defideogr[􏸃 (右 分) #f #f #f]
 @eleph-note{@racket[􏺊]}
 @examples[#:eval (the-eval)
 (􏾺 '(a b c d e f g) 2)
@@ -392,12 +395,16 @@ Note that, meaning is changed to @italic{a few of fixed length elements} if is u
 (􏾺? '(a b z) '(a b c d e f g))
 ]
 
-@section{左􏸑, 左􏸒, 左􏸓}
-@defzis[􏸑/􏸒/􏸓]{@zi[同].}
+@section{䢼, 􏷳, 䢼分}
+@defideogr[共 "share" "共" "share, together"]{
+Implies the input data are more than one and have the same type.
+}
+@defideogr[䢼 (共 阝) #f #f #f]
+@defideogr[􏷳 (共 刂) #f #f #f]
 @examples[#:eval (the-eval)
-(左􏸑 '(a b x y z) '(a b c d e f g))
-(左􏸒 '(a b x y z) '(a b c d e f g))
-(左􏸓 '(a b x y z) '(a b c d e f g))
+(䢼 '(a b x y z) '(a b c d e f g))
+(􏷳 '(a b x y z) '(a b c d e f g))
+(䢼分 '(a b x y z) '(a b c d e f g))
 ]
 
 
