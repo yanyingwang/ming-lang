@@ -25,13 +25,13 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 @ziexamples[句? 句化􏿴 􏿴化句]
 }
 @nested[#:style 'inset]{
-@defideogr[句B "output type is string" #f #f]{
+@defideogr[句B (句 B) "output type is string" #f #f]{
 @ziexamples[􏽀 􏼅 􏼄 􏼃 􏼂]
 }
-@defideogr[句L "input type is string" #f #f]{
+@defideogr[句L (句 L) "input type is string" #f #f]{
 @ziexamples[􏺕 􏼭 􏶐 􏶊 􏶋 邭 􏶉 􏶈 􏶇 􏶆 􏼸? 􏼹?]
 }
-@defideogr[句R "output type is string" #f #f]{
+@defideogr[句R (句 R) "output type is string" #f #f]{
 @; @ziexamples[􏶑]
 }
 }
@@ -56,8 +56,8 @@ Originates from @secref["strings" #:doc '(lib "scribblings/reference/reference.s
 
 @section{􏼅, 􏼄}
 @eleph-note{@racket[􏼓] @racket[􏼎]}
-@defideogr[􏼅 (三 句B) "duplicated elements of string" #f #f]
-@defideogr[􏼄 (弓 句B) "references resembled elements of string" #f #f]
+@defideogr[􏼅 (三 句B) "generate string of duplicated elements" #f #f]
+@defideogr[􏼄 (弓 句B) "generate string of index like elements" #f #f]
 @examples[#:eval (the-eval)
 (􏼅 5 #\t)
 (􏼄 5 米化句)

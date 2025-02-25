@@ -18,73 +18,26 @@
 Originates from @secref["vectors" #:doc '(lib "scribblings/reference/reference.scrbl")] and Extends to @secref["ming-vector"].
 
 
-@section[#:tag "nameing-rules-of-vetor"]{Naming Rules}
-To extend @secref["naming-rules"], specifically there are：
+@section{􏻿 􏻽 􏻼, 􏻿? 􏻽? 􏻼?, 􏻸?}
+@defideogr[矢 "something has specific direction or fixed length" "矢" "arrow"]
+@defideogr[矢LB (矢 LB) "something similar to vector" #f #f]{
+Examples: @zi[􏻿]
+}
 
-@tabular[@;#:sep @hspace[0]
-         #:style 'boxed
-         #:column-properties '(center)
-         #:row-properties '(border)
-         (list (list @bold{Character} @bold{Connotation} @bold{Elucidation} @bold{Example})
-               @; (list
-               @; @; @bold{@litchar{氵}}
-               @; @elem{@litchar{􏻿} as radical and @litchar{山} as compoment}
-               @; @elem{immutiable vector}
-               @; @elem{immutiable vector}
-               @; @elem{@racket[􏻼] @racket[􏻽] @racket[􏻼?] @racket[􏻽?]}
-               @; )
-               @; (list
-               @; @elem{对@bold{@litchar{􏻿}}加偏旁}
-               @; @elem{构造生成特殊元素组成的@racket[􏻿]}
-               @; @elem{出参数据结构是@racket[􏻿]}
-               @; @elem{@racket[􏻺]、@racket[􏻻]、@racket[􏻹]}
-               @; )
-               @; (list
-               @; @elem{左偏旁@bold{@litchar{亻}}}
-               @; "相似集（类型相同且元素相似）"
-               @; @elem{出参数据与进参数据相比，类型相同且内容类似}
-               @; @elem{@racket[􏻿𠆯]}
-               @; )
-               @; (list
-               @; @elem{@litchar{土}偏旁}
-               @; @elem{构建}
-               @; @elem{含有“构建”的意思}
-               @; @elem{@racket[􏻿㙏!]}
-               @; )
-               
-               (list @bold{Phrase} @bold{--} @bold{--} @bold{--})
-               @; (list
-               @; @elem{以@litchar{􏻿}结尾}
-               @; @elem{指示出参}
-               @; @elem{出参数据是@racket[􏻿]类数据}
-               @; @elem{@racket[复􏻿]、@racket[序􏻿]、@racket[贯􏻿]}
-               @; )
-               (list
-               @elem{@defprefix[􏻿]}
-               @elem{@zi[􏻿] as input}
-               @elem{implies the type of input data is @racket[􏻿]}
-               @elem{@racket[􏻿巨] @racket[􏻿弔] @racket[􏻿𠆯]}
-               )
-                              
-               @; (list
-               @; @elem{@litchar{!}结尾}
-               @; @elem{指示修改方式}
-               @; @elem{直接修改了原始数据}
-               @; @elem{@racket[􏻿㙏!]}
-               @; )
-               @; (list
-               @; @elem{@bold{@litchar{+}}结尾}
-               @; @elem{入参}
-               @; @elem{入参数据以相同方式多次出现}
-               @; @elem{@racket[􏻿􏾩+]}
-               @; )
-         )
-         ]
+@defideogr[􏻿 (矢LB 十) "vector" #f #f]{
+@litchar{十} here specifically means @italic{a few of fixed length of elements}.
+}
+@defideogr[(􏻿B 􏻿BR) (􏻿 (B BR)) "vector resemblance" #f #f]{
+Examples: @zi[􏻸] @zi[􏻼] @zi[􏻺] @zi[􏻻] @zi[􏻹]
+}
 
-@section+elemref{􏻿 􏻽 􏻼, 􏻿? 􏻽? 􏻼?, 􏻸?}
-@defzi[􏻿]{@defzi/sub[矢]{@ori-esp-means["arrow" "vector"]} @zi[十], @ori-esp-means["ten" "fixed length"].}
-@defzis[􏻼/􏻽]{@zi[山]/@zi[𭕄 ] + @zi[􏻿].}
-@defzi[􏻸]{@zi[穴].}
+@defideogr[􏻿Px (􏻿 Px) "process vector" #f #f]{
+Implies the type of input data is @zi[􏻿], and how to process this data thus the output are both denpending on the suffix.
+@ziexamples[􏻿巨 􏻿弔 􏻿弔]
+}
+
+@defideogr[(􏻼 􏻽) ((𭕄  山) 􏻿BR) "immutable or mutable vector" #f #f]
+@defideogr[􏻸 (穴 􏻿B) "empty vector" #f #f]
 @examples[#:eval (the-eval)
 (􏻽 1 2 3 4)
 (􏻽? (􏻽 1 2 3 4))
@@ -105,6 +58,7 @@ To extend @secref["naming-rules"], specifically there are：
 
 @section{􏻺 􏻻 􏻹}
 @eleph-note{@racket[􏼓] @racket[􏼎] @racket[􏿝]}
+@defideogr[(􏻺 􏻻 􏻹) ((三 弓 毌) 􏻿BR) #f #f #f]
 @examples[#:eval (the-eval)
 (􏻺 5 'foo)
 (􏻻 5 􏽊)

@@ -20,14 +20,14 @@
 
 
 @defideogr[(亻) "general subset" "亻" "person, people, human"]{
-As component of ideographs, which implies The type of output data is same as the input. And the elements of output data are  part of the input.
+As component of ideographs, it implies The type of output data is same as the input. And the elements of output data are part of the input.
 In particular, @zi[化] is exceptionally different, which has a more diverse usages scenarios, @zi[化Ix], @zi[化Sx].
 Note that, if the procedure name has another ideograph prefix it as a word, the input and output type is determinated by the prefix ideographs, e.g., @rackets[􏻿𢪛 􏿰攸 􏻿弔 􏿰弔 􏻿巨 􏿰巨].
 @ziexamples[伄 攸 𰂋 偏 􏾜 􏾛 偅 𠆯 􏹈]
 }
 
 @defideogr[(阝) "serial subset" "阝" "hill"]{
-As component of ideographs, which implies The type of output data is same as the input. And the elements of ouput data is a serial of successive elements of the input.
+As component of ideographs, it implies The type of output data is same as the input. And the elements of ouput data is a serial of successive elements of the input.
 @ziexamples[􏾝 􏾺 𨚞 􏹋]
 }
 
@@ -46,7 +46,7 @@ Are Shot for: Prefix, Suffix, Infix. Which imply the position of its prefix as t
 Examples: @zi[化Ix] @zi[化Sx]
 }
 
-@defideogr[(LB BR) (L R B T) "extends from one position to another" #f #f]{
+@defideogr[(LB BR BL) ((L R B T) (L R B T)) "extends from one position to another" #f #f]{
 Means the prefix of it extends from such as Left to Bottom in an ideograph when it composes this ideograph. @linebreak{}
 Examples: @zi[又LB] @zi[􏿴BR] @zi[􏿫BR]
 }
@@ -81,6 +81,12 @@ Almost has the same usage as the one named without @zi[^], except that input dat
 @defideogr[/ "extends prefix" #f #f]{
 The suffix of it is considered as an extending explanation of the prefix.
 @ziexamples[􏷍/组合]
+}
+
+@defideogr[空 "empty" "空" "empty"]
+@defideogr[穴 "empty" "穴" "hole"]{
+Simplifies from @zi[空], which means @italic{empty}.
+@ziexamples[穴 􏻸 􏻷]
 }
 
 @defideogr[山 "immutable" "山" "mountain"]{
@@ -140,21 +146,19 @@ Which means the content of data may be changed, or it is mutable and immutable b
 @ziexamples[􏻼化 􏽀化 􏽁化 􏼅𰅡]
 }
 
-@defideogr[𰅡 (扌 匕) "modify data type" #f #f]{
-@elem{
-Converts data type with modifying the original data.
+@defideogr[(𰅡 𰅡Sx) (扌 匕 Sx) "modify data type" #f #f]{
+Converts data type with modifying the original data. (@zi[𰅡Sx] resembles @zi[化Sx].)
 @ziexamples[􏼅𰅡]
 }
-}
 
-@defideogr[􏵸 (分 匕) "split and convert data type" #f #f]{
+@defideogr[(􏵸 􏵸Ix) (分 匕 Ix) "split and convert data type" #f #f]{
 @elem{
 Splits data and return it in a different data type.
 @ziexamples[句􏵸􏿴]
 }
 }
 
-@defideogr[􏵷 (毌 匕) "append and convert data type" #f #f]{
+@defideogr[(􏵷 􏵷Ix) (毌 匕 Ix) "append and convert data type" #f #f]{
 @elem{
 Appends data and return it in a different data type.
 @ziexamples[􏿴􏵷句]

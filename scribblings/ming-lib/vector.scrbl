@@ -14,7 +14,7 @@
 
 @title[#:tag "ming-vector"]{􏻿}
 @defmodule[ming/vector]
-Exention of @secref["vector"].
+Originates from @secref["vector"].
 
 @; @defthing[空􏻿 􏻿?]{
 @; 生成@racket[空]@racket[􏻿]，与@code{(􏻿)}等同。
@@ -26,8 +26,7 @@ Exention of @secref["vector"].
 
 @defproc[(􏻽 [V 􏺡?] ...)
 􏻽?]{
-@defcompost[􏻽 (𭕄  􏻿)]
-@eleph-note{@racket[􏻿] @racket[􏻼]}
+@eleph-note{@zi[􏻽] @zi[􏻿] @zi[􏻼]}
 @examples[#:eval (the-eval)
 (􏻽 1 2 3 4)
 ]
@@ -38,8 +37,7 @@ Exention of @secref["vector"].
           boolean?]
 @defproc[(􏻼? [VEC any?])
           boolean?])]{
-@defcompost[􏻽? (􏻽 ?)]
-@defcompost[􏻼? (􏻼 ?)]
+@defideogr[(􏻼? 􏻽?) ((􏻼 􏻽) ?) #f #f #f]
 Short for @racket[(并 (水? VEC) (􏻿? VEC))] and @racket[(并 (山? VEC) (􏻿? VEC))].
 @examples[#:eval (the-eval)
 (􏻽? '#(1 2 3 4))

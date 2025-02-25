@@ -139,28 +139,20 @@ Is reaching from Left through Bottom to right, we write it in this way to stand 
 @ziexamples[􏿴 􏿫]
 }
 
+@defideogr[双 (又 又) "cons, pair" "双" "pair"]{
+Two human hand here stand for an object with including two holding data.
+}
+
 @defideogr[㐅 "null" #f #f]{
 Is same as @zi[穴], because @racket[㐅] is same as @racket[穴].
 @ziexamples[㐅? 􏿴]
-}
-
-@defideogr[穴 "empty" "穴" "hole"]{
-Simplifies from @zi[空], which means @italic{empty}.
-@ziexamples[穴?]
-}
-
-@defideogr[空 "empty" "空" "empty"]
-
-
-@defideogr[双 (又 又) "cons, pair" "双" "pair"]{
-Two human hand here stand for an object with including two holding data.
 }
 
 @defideogr[􏿴 (又LB 㐅) "list" #f #f]{
 The reaching from Left through Bottom to right @zi[又] means @italic{multiple @racket[双] linked together}; @litchar{㐅} means ending with empty(@zi[㐅]).
 }
 
-@defideogr[􏿴BR (􏿴 BR) "resembles 􏿴" #f #f]{
+@defideogr[􏿴BR (􏿴 BR) "list resemblance" #f #f]{
 Has the similar function process as it resembles and the type of output is same as @racket[􏿴] accordingly.
 @ziexamples[􏼓 􏼎 􏼏 􏿝]
 }
@@ -250,8 +242,8 @@ For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}
 
 
 @section{攸}
-@defideogr[攸 (亻 丨 攵) #f #f #f]{
-@litchar{丨} implies only change one value, thus the input values are in type of @racket[number?] and @racket[any?].
+@defideogr[(攸 􏾩 𰁦 𢪛) ((亻 扌) 丨 攵) #f #f #f]{
+@litchar{丨} at here implies only change one value, thus the input values are only two: the index and the setting value.
 }
 @eleph-note{@racket[𰁦] @racket[􏾩] @racket[𢪛]}
 @examples[#:eval (the-eval)
@@ -401,8 +393,7 @@ Implies the input data are more than one and they are in the same type.
 @defideogr[川 "sort" "顺" "in order, comply, sort"]
 
 @defideogr[􏾛 (亻 屰) #f #f #f]
-@defideogr[𠆯 (亻 川) #f #f #f]
-
+@defideogr[(𠆯 􏽒) ((亻 扌) 川) #f #f #f]
 @examples[#:eval (the-eval)
 (􏾛 '(21 3 888 666 55 77 1000))
 (𠆯 '(21 3 888 666 55 77 1000) <)
@@ -448,7 +439,7 @@ Do not confuse with @zi[攵].
 @zi[入] component implies the input data is procedure.
 }
 
-@defideogr[(􏷑 􏷐 􏷏 􏷎) ((亻并 戈 土) 􏷒)]{
+@defideogr[(􏷑 􏷉 􏷐 􏷏 􏷎) ((亻 扌 并 戈 土) 􏷒) #f #f #f]{
 @code{(􏷑 PROC (􏿴 a b c))} is simplified from: @code{(􏿴 (PROC a) (PROC b) (PROC c))} @linebreak{}
 @code{(􏷐 PROC (􏿴 a b c))} is simplf-from: @code{(并 (PROC a) (PROC b) (PROC c))} @linebreak{}
 @code{(􏷏 PROC (􏿴 a b c))} is simplified from: @code{(戈 (PROC a) (PROC b) (PROC c))} @linebreak{}

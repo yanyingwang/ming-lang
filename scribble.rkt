@@ -26,7 +26,7 @@
 
 
 (define-syntax-rule (defhzify cnid rsn enid)
-  (defthing #:kind "word" cnid (unsyntax (racketidfont rsn)) #:value enid)
+  (defthing #:kind "transformer" cnid (unsyntax (racketidfont rsn)) #:value enid)
   )
 
 (define-syntax (defradical stx)
@@ -190,7 +190,6 @@
              #,(gen-elemtags (zis-of-str #'zis)) ":" (hspace 1) content ... #,(r-background-label "ideograph"))
      ])
   )
-
 
 ;; @(define (ttt)
 ;; (elem #:style (style #f (list (alt-tag "div") (attributes '([class . "SIntrapara"]))))
