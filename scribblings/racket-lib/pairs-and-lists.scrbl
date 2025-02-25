@@ -60,11 +60,10 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{@racket[左􏸒]}
                @; )
                (list
-               @elem{@zi[分] as component}
+               @elem{@zi[分] as component or suffix}
                "split input list to values"
                @elem{Implies the type of output data is values(@racket[並]).}
-               @elem{@racket[􏸄] @racket[􏸃]}
-               )
+               @elem{@rackets[􏸄 􏸃 䢼分 􏹈分]})
                @; (list
                @; @elem{@defcomponent[􏸍]}
                @; "split input lists to values"
@@ -72,22 +71,10 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{@racket[􏸄] @racket[􏸃]}
                @; )
                (list
-               @elem{@zi[入] as component}
-               @elem{same as @zi[/入]}
+               @elem{@zi[入] as component or @zi[/入] as prefix}
+               "function as input"
                @elem{Implies the type of input data is function.}
-               @elem{@racket[􏹃] @racket[􏹌] @racket[􏹅] @racket[􏹇] @racket[􏹂]}
-               )
-               (list
-               @elem{@zi[土] as component}
-               @elem{produce data}
-               @elem{Processes data and product new one, implies the type of output data is not same as input.}
-               @elem{@racket[􏷎]}
-               )
-               (list
-               @elem{@zi[分] in the end of word}
-               "split data to values"
-               @elem{@zi[分]}
-               @elem{@racket[䢼分 􏹈分]}
+               @elem{@rackets[􏹃 􏹅 􏹌 􏹂 攸/入 􏾺/入 𨚞/入]}
                )
                @; (list
                @; @elem{@defsuffix[0]}
@@ -127,24 +114,13 @@ Extended from @secref["naming-rules"], specifically there are：
                @; @elem{@racket[序􏿴]、@racket[复􏿴]、@racket[𥸬􏿴]}
                @; )
                (list
-               @elem{@zi[/]}
-               @elem{extend prefix}
-               @elem{Suffix of @litchar{/} can be considered as an extending explanation of its prefix.}
-               @elem{@racket[􏷍/组合] @racket[􏷍/分组]}
-               )
-               (list
                @elem{@zi[?]}
                @elem{boolean as output}
                @elem{Implies the type of output data is boolean.}
                @elem{@racket[双?] @racket[􏿴?] @racket[􏿳?]}
                )
 
-               (list
-               @elem{@zi[/入]}
-               "function as input"
-               @elem{Implies the type of input data is function.}
-               @elem{@racket[攸/入] @racket[􏾺/入] @racket[𨚞/入]}
-               )
+               
          )]
 
 @section[#:tag "pair-car-cdr-list-list*"]{双, 㐅, 􏿴, 􏿫, 阴, 阳}
@@ -157,12 +133,11 @@ Further more, if we put another @racket[双] to @racket[阴] position of the for
 Resembles @italic{human's hand that is holding an object}.
 @ziexamples[双 􏿫]
 }
-@nested[#:style "inset"
-@defideogr[又LB "links pairs, linked pairs" #f #f]{
+
+@defideogr[又LB (又 LB) "links pairs, linked pairs" #f #f]{
 Is reaching from Left through Bottom to right, we write it in this way to stand multiple @racket[双] linked together.
 @ziexamples[􏿴 􏿫]
 }
-]
 
 @defideogr[㐅 "null" #f #f]{
 Is same as @zi[穴], because @racket[㐅] is same as @racket[穴].
@@ -184,21 +159,19 @@ Two human hand here stand for an object with including two holding data.
 @defideogr[􏿴 (又LB 㐅) "list" #f #f]{
 The reaching from Left through Bottom to right @zi[又] means @italic{multiple @racket[双] linked together}; @litchar{㐅} means ending with empty(@zi[㐅]).
 }
-@nested[#:style "inset"]{
-@defideogr[􏿴BR "resembles 􏿴" #f #f]{
+
+@defideogr[􏿴BR (􏿴 BR) "resembles 􏿴" #f #f]{
 Has the similar function process as it resembles and the type of output is same as @racket[􏿴] accordingly.
 @ziexamples[􏼓 􏼎 􏼏 􏿝]
-}
 }
 
 @defideogr[􏿫 (又LB 又) "list with last element be pair" #f #f]{
 Resembles @zi[􏿴] except substituting @litchar{㐅} with @litchar{又}, which means the ending position is not empty(@zi[㐅]).
 }
-@nested[#:style "inset"]{
-@defideogr[􏿫BR #f #f #f]{
+
+@defideogr[􏿫BR (􏿫 BR) "resembles 􏿫" #f #f]{
 Has the similar function process as it resembles and the type of output is same as @racket[􏿫] accordingly.
 @ziexamples[􏿜]
-}
 }
 
 @examples[#:eval (the-eval)
@@ -233,7 +206,7 @@ Originally Means moon, borrowed to mean the secondary part of of an object, or t
 @defideogr[阳 (阝 日) "the first half part" "阳" "sun, positive"]
 @defideogr[阴 "the last half part" "阴" "negative"]
 
-@defideogr[(阳+ 阴+ 阳- 阴-) ((阳 阴) (+ -)) "mutiple parenthesis nested 阴 or 阳 in reverse order" #f #f]{
+@defideogr[(阳+ 阴+ 阳- 阴-) ((阳 阴) (+ -)) "阴 or 阳 nested in mutiple parenthesis  reverse order" #f #f]{
 For the case of procedures that start with @zi[阴] or @zi[阳] and following with @litchar{+} or @litchar{-}, @litchar{+} stands for @zi[阳] and @litchar{-} stands for @zi[阴].
 
 For example, @code{(阴+-- lst)} is short for @code{(阴 (阴 (阳 (阴 lst))))}.
@@ -393,7 +366,7 @@ Implies the output type is @zi[並].
 
 @section{䢼, 􏷳, 䢼分}
 @defideogr[共 "share" "共" "share, together"]{
-Implies the input data are more than one and have the same type.
+Implies the input data are more than one and they are in the same type.
 }
 @defideogr[(䢼 􏷳) (共 (阝 刂)) #f #f #f]
 @examples[#:eval (the-eval)

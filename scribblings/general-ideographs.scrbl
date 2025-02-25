@@ -21,7 +21,7 @@
 
 @defideogr[(亻) "general subset" "亻" "person, people, human"]{
 As component of ideographs, which implies The type of output data is same as the input. And the elements of output data are  part of the input.
-In particular, @zi[化] is exceptionally different, which has a more diverse usages scenarios, @zi[化I], @zi[化E].
+In particular, @zi[化] is exceptionally different, which has a more diverse usages scenarios, @zi[化Ix], @zi[化Sx].
 Note that, if the procedure name has another ideograph prefix it as a word, the input and output type is determinated by the prefix ideographs, e.g., @rackets[􏻿𢪛 􏿰攸 􏻿弔 􏿰弔 􏻿巨 􏿰巨].
 @ziexamples[伄 攸 𰂋 偏 􏾜 􏾛 偅 𠆯 􏹈]
 }
@@ -35,6 +35,20 @@ As component of ideographs, which implies The type of output data is same as the
 @defideogr[(刂) "broken subset" "刂" "knife"]{
 Returns a new list as output with removing some elements from the input list.
 @ziexamples[􏷵 􏷴 􏺊 􏾘 􏹊 􏹇 𠝤]
+}
+
+@defideogr[(L R B T) #f #f #f]{
+Are Shot for: Left, Right, Bottom, Top. Those characters imply the prefix's position as it composes an ideograph.
+}
+
+@defideogr[(Px Sx Ix) #f #f #f]{
+Are Shot for: Prefix, Suffix, Infix. Which imply the position of its prefix as this prefix composes a word. @linebreak{}
+Examples: @zi[化Ix] @zi[化Sx]
+}
+
+@defideogr[(LB BR) (L R B T) "extends from one position to another" #f #f]{
+Means the prefix of it extends from such as Left to Bottom in an ideograph when it composes this ideograph. @linebreak{}
+Examples: @zi[又LB] @zi[􏿴BR] @zi[􏿫BR]
 }
 
 @defideogr[(扌 !) "warning, is changing original data" "手" "hands, handle"]{
@@ -64,8 +78,8 @@ Almost has the same usage as the one named without @zi[^], except that input dat
 @ziexamples[􏹊^ 伄^ 􏾘^]
 }
 
-@defideogr[/ "extends the prefixing" #f #f]{
-The suffixing of it is considered as an extending explanation of its prefixing.
+@defideogr[/ "extends prefix" #f #f]{
+The suffix of it is considered as an extending explanation of the prefix.
 @ziexamples[􏷍/组合]
 }
 
@@ -90,7 +104,7 @@ Appends the elements, goes through the elements and connect them as one together
 }
 
 @defideogr[(土 􏷪) "produce data" "土" "ground, earth"]{
-Processes input data and output a new one in a very different type.
+Processes input data and output a new one in a very different type. Implies the type of output data is not same as input.
 @ziexamples[􏷎 𡌶]
 }
 
@@ -114,21 +128,16 @@ Examples: @zi[化] @zi[𰅡] @zi[􏵷] @zi[􏵸]
 convert data type by the way of returning a new one in another type.
 }
 
-@nested[#:style 'inset]{
-@defideogr[化I "type conversion" #f #f]{
+@defideogr[化Ix (化 Ix) "type conversion" #f #f]{
 Convert data from type 1 (as input) to type 2 (as output).
 @ziexamples[􏻿化􏿴 􏿴化􏻿]
 }
 
-@defideogr[化E "minorly convert data type" #f #f]{
-Converting data With reserving the general data type, e.g., between @zi[山] and @zi[水].
-
-In this case, input and output are the same type.
-
+@defideogr[化Sx (化 Sx) "minorly convert data type" #f #f]{
+Converting data With reserving the general data type, e.g., between @zi[山] and @zi[水]. @linebreak{}
+In this case, input and output are the same type. @linebreak{}
 Which means the content of data may be changed, or it is mutable and immutable before but change to immutable and mutable.
-
 @ziexamples[􏻼化 􏽀化 􏽁化 􏼅𰅡]
-}
 }
 
 @defideogr[𰅡 (扌 匕) "modify data type" #f #f]{
